@@ -21,46 +21,52 @@ export default function Page() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const fetchFromManifest = async () => {
-          const manifestResponse = await fetch(`${basePath}/data/manifest.json`)
-          if (!manifestResponse.ok) {
-            throw new Error("Manifest response was not ok")
-          }
-          const manifest = await manifestResponse.json()
-          const files = Array.isArray(manifest?.files) ? manifest.files : []
-          if (files.length === 0) {
-            throw new Error("No files in manifest")
-          }
+        const manifestResponse = await fetch(`${basePath}/data/manifest.json`)
+        if (!manifestResponse.ok) {
+          throw new Error("Manifest response was not ok")
+        }
 
-          const results: AuditResult[] = []
-          for (const fileName of files) {
+        const manifest = await manifestResponse.json()
+        const files = Array.isArray(manifest?.files) ? manifest.files : []
+        if (files.length === 0) {
+          throw new Error("No files in manifest")
+        }
+
+        const candidateFiles = files.filter((fileName: string) =>
+          /(.+)_audit_results_(\d{8}_\d{6})\.json/.test(fileName)
+        )
+        if (candidateFiles.length === 0) {
+          throw new Error("No valid audit result filenames in manifest")
+        }
+
+        const parsedResults = await Promise.all(
+          candidateFiles.map(async (fileName: string): Promise<AuditResult | null> => {
+            const match = fileName.match(/(.+)_audit_results_(\d{8}_\d{6})\.json/)
+            if (!match) return null
+
             try {
               const fileResponse = await fetch(`${basePath}/data/${fileName}`)
-              if (!fileResponse.ok) continue
+              if (!fileResponse.ok) return null
+
               const fileData = await fileResponse.json()
-
-              const match = fileName.match(/(.+)_audit_results_(\d{8}_\d{6})\.json/)
-              if (!match) continue
-
               const [, modelName, timestamp] = match
               const formattedTimestamp = `${timestamp.slice(0, 4)}-${timestamp.slice(4, 6)}-${timestamp.slice(
                 6,
                 8,
               )}T${timestamp.slice(9, 11)}:${timestamp.slice(11, 13)}:${timestamp.slice(13, 15)}`
 
-              results.push({
+              return {
                 model: fileData.model ?? modelName.replace(/_/g, "/"),
                 timestamp: formattedTimestamp,
                 providers: fileData.providers ?? {},
-              })
+              }
             } catch {
-              continue
+              return null
             }
-          }
-          return results
-        }
+          })
+        )
 
-        const results = await fetchFromManifest()
+        const results = parsedResults.filter((result): result is AuditResult => result !== null)
 
         if (results.length > 0) {
           setAuditResults(results)
