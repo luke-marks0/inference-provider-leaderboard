@@ -1,0 +1,105 @@
+{
+  "model": "moonshotai/Kimi-K2-Thinking",
+  "parameters": {
+    "n_prompts": 100,
+    "max_tokens": 200,
+    "seed": 42,
+    "top_k": 50,
+    "top_p": 0.95,
+    "temperature": 0.0
+  },
+  "providers": {
+    "atlascloud/int4": {
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404}}"
+    },
+    "baseten/fp4": {
+      "exact_match_rate": 0.9309350333940498,
+      "avg_prob": 0.8790044628309986,
+      "avg_margin": 0.06358347518753321,
+      "avg_logit_rank": 0.08009512244484922,
+      "avg_gumbel_rank": 0.08009512244484922,
+      "infinite_margin_rate": 0.0002529852256628213,
+      "total_tokens": 19764,
+      "n_sequences": 100
+    },
+    "chutes/int4": {
+      "error": "Error code: 404 - {'error': {'message': 'No endpoints found matching your data policy (Paid model training). Configure: https://openrouter.ai/settings/privacy', 'code': 404}}"
+    },
+    "deepinfra/fp4": {
+      "exact_match_rate": 0.9224190283400809,
+      "avg_prob": 0.8679406946793872,
+      "avg_margin": 0.06874006767659725,
+      "avg_logit_rank": 0.11629554655870446,
+      "avg_gumbel_rank": 0.11629554655870446,
+      "infinite_margin_rate": 0.006730769230769231,
+      "total_tokens": 19760,
+      "n_sequences": 100
+    },
+    "gmicloud/int4": {
+      "exact_match_rate": 0.9524248004910988,
+      "avg_prob": 0.879761556722948,
+      "avg_margin": 0.023994038590830716,
+      "avg_logit_rank": 0.07545528954368734,
+      "avg_gumbel_rank": 0.07545528954368734,
+      "infinite_margin_rate": 0.006087579291999182,
+      "total_tokens": 19548,
+      "n_sequences": 100
+    },
+    "google": {
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404}}"
+    },
+    "moonshotai/int4": {
+      "exact_match_rate": 0.9650165016501651,
+      "avg_prob": 0.8984141880960809,
+      "avg_margin": 0.01414500748165685,
+      "avg_logit_rank": 0.0328002030972328,
+      "avg_gumbel_rank": 0.0328002030972328,
+      "infinite_margin_rate": 5.077430820005077e-05,
+      "total_tokens": 19695,
+      "n_sequences": 100
+    },
+    "nebius/fp8": {
+      "exact_match_rate": 0.9558620689655173,
+      "avg_prob": 0.8888930553477614,
+      "avg_margin": 0.020412678773173112,
+      "avg_logit_rank": 0.06574712643678161,
+      "avg_gumbel_rank": 0.06574712643678161,
+      "infinite_margin_rate": 0.005210727969348659,
+      "total_tokens": 19575,
+      "n_sequences": 100
+    },
+    "novita/bf16": {
+      "exact_match_rate": 0.9099823098306798,
+      "avg_prob": 0.8606870211136486,
+      "avg_margin": 0.10657136165136911,
+      "avg_logit_rank": 0.12600454890068233,
+      "avg_gumbel_rank": 0.12600454890068233,
+      "infinite_margin_rate": 0.0027293404094010615,
+      "total_tokens": 19785,
+      "n_sequences": 100
+    },
+    "parasail/int4": {
+      "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'moonshotai/kimi-k2-thinking is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Parasail', 'is_byok': False}}, 'user_id': 'user_2l152bn3bp13g6n2iBaxPOEhD1W'}"
+    },
+    "siliconflow/fp8": {
+      "exact_match_rate": 0.9578824366204339,
+      "avg_prob": 0.8965241957503379,
+      "avg_margin": 0.02469943697681139,
+      "avg_logit_rank": 0.043540110755474266,
+      "avg_gumbel_rank": 0.043540110755474266,
+      "infinite_margin_rate": 0.00010161052685058171,
+      "total_tokens": 19683,
+      "n_sequences": 100
+    },
+    "together": {
+      "exact_match_rate": 0.9495712011503107,
+      "avg_prob": 0.881672174964556,
+      "avg_margin": 0.026661524850248645,
+      "avg_logit_rank": 0.07892980023622452,
+      "avg_gumbel_rank": 0.07892980023622452,
+      "infinite_margin_rate": 0.006059672366866944,
+      "total_tokens": 19473,
+      "n_sequences": 100
+    }
+  }
+}

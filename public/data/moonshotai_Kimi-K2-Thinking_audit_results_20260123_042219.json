@@ -1,0 +1,84 @@
+{
+  "model": "moonshotai/Kimi-K2-Thinking",
+  "parameters": {
+    "n_prompts": 100,
+    "max_tokens": 200,
+    "seed": 42,
+    "top_k": 50,
+    "top_p": 0.95,
+    "temperature": 0.0
+  },
+  "providers": {
+    "atlascloud/int4": {
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404}}"
+    },
+    "baseten/fp4": {
+      "exact_match_rate": 0.9282585712128077,
+      "avg_prob": 0.8764171449882745,
+      "avg_margin": 0.06816866685324618,
+      "avg_logit_rank": 0.0886573025222776,
+      "avg_gumbel_rank": 0.0886573025222776,
+      "infinite_margin_rate": 0.0008055177969088254,
+      "total_tokens": 19863,
+      "n_sequences": 100
+    },
+    "chutes/int4": {
+      "error": "Error code: 404 - {'error': {'message': 'No endpoints found matching your data policy (Paid model training). Configure: https://openrouter.ai/settings/privacy', 'code': 404}}"
+    },
+    "deepinfra/fp4": {
+      "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'moonshotai/kimi-k2-thinking is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'DeepInfra', 'is_byok': False}}, 'user_id': 'user_2l152bn3bp13g6n2iBaxPOEhD1W'}"
+    },
+    "gmicloud/int4": {
+      "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'moonshotai/kimi-k2-thinking is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'GMICloud', 'is_byok': False, 'retry_after_seconds': 60}}, 'user_id': 'user_2l152bn3bp13g6n2iBaxPOEhD1W'}"
+    },
+    "google": {
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404}}"
+    },
+    "moonshotai/int4": {
+      "exact_match_rate": 0.9673685820629174,
+      "avg_prob": 0.8993755569860543,
+      "avg_margin": 0.01476908867976239,
+      "avg_logit_rank": 0.031458726354968644,
+      "avg_gumbel_rank": 0.031458726354968644,
+      "infinite_margin_rate": 5.098659052669148e-05,
+      "total_tokens": 19613,
+      "n_sequences": 100
+    },
+    "nebius/fp8": {
+      "exact_match_rate": 0.956151965777144,
+      "avg_prob": 0.8887225720421675,
+      "avg_margin": 0.018902545711223444,
+      "avg_logit_rank": 0.06457526991240578,
+      "avg_gumbel_rank": 0.06457526991240578,
+      "infinite_margin_rate": 0.005143613770625382,
+      "total_tokens": 19636,
+      "n_sequences": 100
+    },
+    "novita/bf16": {
+      "error": "Expecting value: line 149 column 1 (char 814)"
+    },
+    "parasail/int4": {
+      "exact_match_rate": 0.9580426701970569,
+      "avg_prob": 0.8922157095271649,
+      "avg_margin": 0.0191714677615922,
+      "avg_logit_rank": 0.06339426651051479,
+      "avg_gumbel_rank": 0.06339426651051479,
+      "infinite_margin_rate": 0.005091908956667855,
+      "total_tokens": 19639,
+      "n_sequences": 100
+    },
+    "siliconflow/fp8": {
+      "error": "Expecting value: line 943 column 1 (char 5181)"
+    },
+    "together": {
+      "exact_match_rate": 0.9511171772318269,
+      "avg_prob": 0.8792588721129028,
+      "avg_margin": 0.026312810071939856,
+      "avg_logit_rank": 0.07769689616823375,
+      "avg_gumbel_rank": 0.07769689616823375,
+      "infinite_margin_rate": 0.005914467697907188,
+      "total_tokens": 19782,
+      "n_sequences": 100
+    }
+  }
+}
