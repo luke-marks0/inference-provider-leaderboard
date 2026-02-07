@@ -1,0 +1,112 @@
+{
+  "model": "moonshotai/Kimi-K2-Thinking",
+  "parameters": {
+    "n_prompts": 100,
+    "max_tokens": 200,
+    "seed": 42,
+    "top_k": 50,
+    "top_p": 0.95,
+    "temperature": 0.0
+  },
+  "providers": {
+    "atlascloud/int4": {
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['chutes', 'deepinfra', 'parasail', 'siliconflow', 'moonshotai', 'baseten', 'atlas-cloud', 'nebius', 'novita', 'google-vertex', 'together'], 'requested_providers': ['atlascloud/int4']}}}"
+    },
+    "baseten/fp4": {
+      "exact_match_rate": 0.9279834351800414,
+      "avg_prob": 0.874374220897347,
+      "avg_margin": 0.0656082580517055,
+      "avg_logit_rank": 0.08504620978738447,
+      "avg_gumbel_rank": 0.08504620978738447,
+      "infinite_margin_rate": 0.0006565324983586687,
+      "total_tokens": 19801,
+      "n_sequences": 100
+    },
+    "chutes/int4": {
+      "error": "Error code: 404 - {'error': {'message': 'No endpoints found matching your data policy (Paid model training). Configure: https://openrouter.ai/settings/privacy', 'code': 404}}"
+    },
+    "deepinfra/fp4": {
+      "exact_match_rate": 0.9248578391551584,
+      "avg_prob": 0.8720404931409191,
+      "avg_margin": 0.06428203258228853,
+      "avg_logit_rank": 0.11083468724614134,
+      "avg_gumbel_rank": 0.11083468724614134,
+      "infinite_margin_rate": 0.00634646628757108,
+      "total_tokens": 19696,
+      "n_sequences": 100
+    },
+    "google": {
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['chutes', 'deepinfra', 'parasail', 'siliconflow', 'moonshotai', 'baseten', 'atlas-cloud', 'nebius', 'novita', 'google-vertex', 'together'], 'requested_providers': ['google']}}}"
+    },
+    "moonshotai/int4": {
+      "exact_match_rate": 0.9681088767011985,
+      "avg_prob": 0.9003096874877085,
+      "avg_margin": 0.015023737065134586,
+      "avg_logit_rank": 0.030926264472882388,
+      "avg_gumbel_rank": 0.030926264472882388,
+      "infinite_margin_rate": 0.00010156408693885842,
+      "total_tokens": 19692,
+      "n_sequences": 100
+    },
+    "nebius/fp8": {
+      "exact_match_rate": 0.9601219071233018,
+      "avg_prob": 0.8938790991137627,
+      "avg_margin": 0.016557648120261708,
+      "avg_logit_rank": 0.06017872824009505,
+      "avg_gumbel_rank": 0.06017872824009505,
+      "infinite_margin_rate": 0.005217211632832275,
+      "total_tokens": 19359,
+      "n_sequences": 100
+    },
+    "novita/bf16": {
+      "exact_match_rate": 0.8998224702003551,
+      "avg_prob": 0.8509172885259578,
+      "avg_margin": 0.12181642847485942,
+      "avg_logit_rank": 0.14876997210246007,
+      "avg_gumbel_rank": 0.14876997210246007,
+      "infinite_margin_rate": 0.004717220390565559,
+      "total_tokens": 19715,
+      "n_sequences": 100
+    },
+    "parasail/int4": {
+      "exact_match_rate": 0.956687315933787,
+      "avg_prob": 0.8897338678033776,
+      "avg_margin": 0.019529355988107996,
+      "avg_logit_rank": 0.06357266172438306,
+      "avg_gumbel_rank": 0.06357266172438306,
+      "infinite_margin_rate": 0.00512846552249416,
+      "total_tokens": 19694,
+      "n_sequences": 100
+    },
+    "siliconflow/fp8": {
+      "exact_match_rate": 0.9588554614174826,
+      "avg_prob": 0.8963353584134165,
+      "avg_margin": 0.0230628909222793,
+      "avg_logit_rank": 0.042209933539647915,
+      "avg_gumbel_rank": 0.042209933539647915,
+      "infinite_margin_rate": 5.07330931966922e-05,
+      "total_tokens": 19711,
+      "n_sequences": 100
+    },
+    "together": {
+      "exact_match_rate": 0.9508565584249552,
+      "avg_prob": 0.8810087252562098,
+      "avg_margin": 0.025851953948891403,
+      "avg_logit_rank": 0.07808744566607007,
+      "avg_gumbel_rank": 0.07808744566607007,
+      "infinite_margin_rate": 0.005931986704167732,
+      "total_tokens": 19555,
+      "n_sequences": 100
+    }
+  },
+  "reference": {
+    "total_tokens": 211,
+    "exact_match_rate": 0.8246445497630331,
+    "avg_prob": 0.7720037404154273,
+    "avg_margin": 0.16126665609137056,
+    "infinite_margin_rate": 0.06635071090047394,
+    "avg_logit_rank": 0.4928909952606635,
+    "avg_gumbel_rank": 0.4928909952606635,
+    "n_sequences": 100
+  }
+}
