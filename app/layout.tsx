@@ -16,24 +16,11 @@ const workSans = Work_Sans({
 })
 
 export const metadata: Metadata = {
-  title: "DiFR Leaderboard",
+  title: "Inference Provider Leaderboard",
   description: "",
   generator: "v0.app",
   icons: {
-    icon: [
-      {
-        url: `${basePath}/icon-light-32x32.png`,
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: `${basePath}/icon-dark-32x32.png`,
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: `${basePath}/icon.svg`,
-        type: "image/svg+xml",
-      },
-    ],
+    icon: `${basePath}/icon_Light_Primary.svg`,
     apple: `${basePath}/apple-icon.png`,
   },
 }
