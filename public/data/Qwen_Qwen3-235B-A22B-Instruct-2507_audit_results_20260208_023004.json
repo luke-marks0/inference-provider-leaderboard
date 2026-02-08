@@ -1,0 +1,134 @@
+{
+  "model": "Qwen/Qwen3-235B-A22B-Instruct-2507",
+  "parameters": {
+    "n_prompts": 100,
+    "max_tokens": 200,
+    "seed": 42,
+    "top_k": 50,
+    "top_p": 0.95,
+    "temperature": 0.0
+  },
+  "providers": {
+    "alibaba": {
+      "exact_match_rate": 0.873767747535495,
+      "avg_prob": 0.8036917288555987,
+      "avg_margin": 0.12074023977728661,
+      "avg_logit_rank": 0.19344038688077375,
+      "avg_gumbel_rank": 0.19344038688077375,
+      "infinite_margin_rate": 0.008122016244032488,
+      "total_tokens": 16129,
+      "n_sequences": 100
+    },
+    "atlascloud/fp8": {
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'chutes', 'novita', 'siliconflow', 'wandb', 'parasail', 'together', 'nebius', 'friendli', 'atlas-cloud', 'crusoe', 'google-vertex', 'fireworks', 'alibaba', 'hyperbolic', 'cerebras'], 'requested_providers': ['atlascloud/fp8']}}}"
+    },
+    "cerebras/fp16": {
+      "exact_match_rate": 0.9397778332501248,
+      "avg_prob": 0.8352651076983993,
+      "avg_margin": 0.03295817275755205,
+      "avg_logit_rank": 0.05991013479780329,
+      "avg_gumbel_rank": 0.05991013479780329,
+      "infinite_margin_rate": 0.00037443834248627057,
+      "total_tokens": 16024,
+      "n_sequences": 100
+    },
+    "chutes/bf16": {
+      "error": "Error code: 404 - {'error': {'message': 'No endpoints found matching your data policy (Paid model training). Configure: https://openrouter.ai/settings/privacy', 'code': 404}}"
+    },
+    "crusoe/bf16": {
+      "exact_match_rate": 0.9455879609477023,
+      "avg_prob": 0.839677040668398,
+      "avg_margin": 0.02957939425174605,
+      "avg_logit_rank": 0.05677507617685467,
+      "avg_gumbel_rank": 0.05677507617685467,
+      "infinite_margin_rate": 0.0005596666873950625,
+      "total_tokens": 16081,
+      "n_sequences": 100
+    },
+    "deepinfra/fp8": {
+      "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'qwen/qwen3-235b-a22b-2507 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'DeepInfra', 'is_byok': False}}, 'user_id': 'org_38rKyd152Zb70CQdezTFCc4UiHd'}"
+    },
+    "fireworks/fp8": {
+      "exact_match_rate": 0.9621003996003996,
+      "avg_prob": 0.8420130735780527,
+      "avg_margin": 0.012910761189428,
+      "avg_logit_rank": 0.034278221778221776,
+      "avg_gumbel_rank": 0.034278221778221776,
+      "infinite_margin_rate": 0.00012487512487512488,
+      "total_tokens": 16016,
+      "n_sequences": 100
+    },
+    "friendli": {
+      "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'qwen/qwen3-235b-a22b-2507 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Friendli', 'is_byok': False}}, 'user_id': 'org_38rKyd152Zb70CQdezTFCc4UiHd'}"
+    },
+    "google": {
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'chutes', 'novita', 'siliconflow', 'wandb', 'parasail', 'together', 'nebius', 'friendli', 'atlas-cloud', 'crusoe', 'google-vertex', 'fireworks', 'alibaba', 'hyperbolic', 'cerebras'], 'requested_providers': ['google']}}}"
+    },
+    "hyperbolic": {
+      "exact_match_rate": 0.9577683791516358,
+      "avg_prob": 0.8442691314734234,
+      "avg_margin": 0.016186895533631417,
+      "avg_logit_rank": 0.03688269685284239,
+      "avg_gumbel_rank": 0.03688269685284239,
+      "infinite_margin_rate": 0.00018659037193680805,
+      "total_tokens": 16078,
+      "n_sequences": 100
+    },
+    "nebius/fp8": {
+      "exact_match_rate": 0.9571526865578283,
+      "avg_prob": 0.8427600869667171,
+      "avg_margin": 0.01678970364593107,
+      "avg_logit_rank": 0.03928191655720273,
+      "avg_gumbel_rank": 0.03928191655720273,
+      "infinite_margin_rate": 0.0,
+      "total_tokens": 15987,
+      "n_sequences": 100
+    },
+    "novita/fp8": {
+      "exact_match_rate": 0.9604226584969363,
+      "avg_prob": 0.8431370513486549,
+      "avg_margin": 0.015217727521844129,
+      "avg_logit_rank": 0.035388270601475556,
+      "avg_gumbel_rank": 0.035388270601475556,
+      "infinite_margin_rate": 0.0,
+      "total_tokens": 15994,
+      "n_sequences": 100
+    },
+    "parasail/fp8": {
+      "error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded: limit_rpm/qwen/qwen3-235b-a22b-07-25/043eb28f-fc28-4b0d-9800-b249fcfcfbf9. High demand for qwen/qwen3-235b-a22b-2507 on OpenRouter - limited to 18 requests per minute. Please retry shortly.', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '18', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1770518400000'}, 'provider_name': None}}, 'user_id': 'org_38rKyd152Zb70CQdezTFCc4UiHd'}"
+    },
+    "siliconflow/fp8": {
+      "error": "Expecting value: line 449 column 1 (char 2464)"
+    },
+    "together": {
+      "exact_match_rate": 0.9583981095703004,
+      "avg_prob": 0.8456942970013653,
+      "avg_margin": 0.015596547292832712,
+      "avg_logit_rank": 0.03588085318077234,
+      "avg_gumbel_rank": 0.03588085318077234,
+      "infinite_margin_rate": 6.218518748834027e-05,
+      "total_tokens": 16081,
+      "n_sequences": 100
+    },
+    "wandb/bf16": {
+      "exact_match_rate": 0.9569051167411823,
+      "avg_prob": 0.8437395358682086,
+      "avg_margin": 0.017019118788819877,
+      "avg_logit_rank": 0.03943119721808246,
+      "avg_gumbel_rank": 0.03943119721808246,
+      "infinite_margin_rate": 0.00024838549428713363,
+      "total_tokens": 16104,
+      "n_sequences": 100
+    }
+  },
+  "reference": {
+    "total_tokens": 15973,
+    "exact_match_rate": 0.9648782320165279,
+    "avg_prob": 0.8445223561731053,
+    "avg_margin": 0.012950687292618794,
+    "infinite_margin_rate": 0.0,
+    "avg_logit_rank": 0.02998810492706442,
+    "avg_gumbel_rank": 0.02998810492706442,
+    "n_sequences": 100
+  }
+}
