@@ -93,24 +93,39 @@ export default function Page() {
   // Get unique providers
   const allProviders = Array.from(new Set(auditResults.flatMap((r) => Object.keys(r.providers))))
 
-  // Calculate aggregate leaderboard data
-  const leaderboardData = allProviders.map((provider) => {
-    const providerResults = auditResults.filter((r) => r.providers[provider])
-  
-    // Extract scores and drop NaN / non-numeric values
-    const rawScores = providerResults.map((r) => r.providers[provider]?.exact_match_rate)
-    const scores = rawScores.filter((v): v is number => typeof v === "number" && Number.isFinite(v))
-  
-    const avgScore = scores.length > 0 ? scores.reduce((a, b) => a + b, 0) / scores.length : 0
-    const modelCount = new Set(providerResults.map((r) => r.model)).size
-  
-    return {
-      provider,
-      avgScore,
-      modelCount,
-      dataPoints: scores.length,
+  // Calculate aggregate leaderboard data (group endpoint variants like provider/fp8, provider/fp16 under provider)
+  const leaderboardAccumulator = new Map<
+    string,
+    { scoreSum: number; dataPoints: number; models: Set<string> }
+  >()
+
+  for (const result of auditResults) {
+    for (const [endpointName, providerData] of Object.entries(result.providers)) {
+      const providerName = endpointName.split("/")[0]
+      const score = providerData?.exact_match_rate
+      if (typeof score !== "number" || !Number.isFinite(score)) continue
+
+      const existing = leaderboardAccumulator.get(providerName)
+      if (existing) {
+        existing.scoreSum += score
+        existing.dataPoints += 1
+        existing.models.add(result.model)
+      } else {
+        leaderboardAccumulator.set(providerName, {
+          scoreSum: score,
+          dataPoints: 1,
+          models: new Set([result.model]),
+        })
+      }
     }
-  }).filter((entry) => entry.dataPoints > 0)
+  }
+
+  const leaderboardData = Array.from(leaderboardAccumulator.entries()).map(([provider, aggregate]) => ({
+    provider,
+    avgScore: aggregate.scoreSum / aggregate.dataPoints,
+    modelCount: aggregate.models.size,
+    dataPoints: aggregate.dataPoints,
+  }))
   
   // Sort by average score
   leaderboardData.sort((a, b) => b.avgScore - a.avgScore)
@@ -162,19 +177,22 @@ export default function Page() {
       </header>
 
       <div className="container mx-auto px-4 py-8 space-y-6">
-        <section className="rounded-lg border border-border/60 bg-card/70 p-5">
-          <h2 className="text-lg font-semibold">How to read this leaderboard</h2>
-          <p className="mt-2 text-sm text-muted-foreground">
-            We audit providers by comparing their outputs against trusted reference implementations of models. 
-	    The exact match rate is the share of tokens that match the reference; higher means the
-            provider is more likely serving models correctly. We compare tens of thousands of tokens per run. 
-	    This means that low exact match rates imply that a model is behaving differently than expected.
-          </p>
-          <p className="mt-2 text-sm text-muted-foreground">
-            Exact match rates above 95% are typical; sustained drops can indicate model substitution, heavy quantization, or
-	    that we are incorrectly tokenizing the provider's response.
-          </p>
-        </section>
+        <Card>
+          <CardHeader>
+            <CardTitle>How to read this leaderboard</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-sm text-muted-foreground">
+              We rank inference providers on how accurately they serve models. Our ranking is based on the provider's "exact match rate": the share of output tokens sent by the provider that match tokens sourced from a trusted reference implementation of the model. We simply give inference providers the same inputs as our trusted reference implementations of models and see how similar the output tokens are.
+            </p>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Exact match rates above 95% are typical. Lower rates can indicate that the quantization used by the provider is causing the model to behave differently, that the provider has a bug in their inference setup, or that the provider is using a non-standard chat template or tokenizer.
+            </p>
+            <p className="mt-2 text-sm text-muted-foreground">
+              For more details on how we rank providers, read our blog post [link pending].
+            </p>
+          </CardContent>
+        </Card>
         {/* Overall Leaderboard */}
         <Card>
           <CardHeader>
