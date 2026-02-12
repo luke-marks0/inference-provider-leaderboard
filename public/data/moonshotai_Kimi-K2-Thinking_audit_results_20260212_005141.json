@@ -1,0 +1,98 @@
+{
+  "model": "moonshotai/Kimi-K2-Thinking",
+  "parameters": {
+    "n_prompts": 100,
+    "max_tokens": 200,
+    "seed": 42,
+    "top_k": 50,
+    "top_p": 0.95,
+    "temperature": 0.0
+  },
+  "providers": {
+    "atlascloud/int4": {
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['chutes', 'deepinfra', 'parasail', 'siliconflow', 'moonshotai', 'baseten', 'atlas-cloud', 'nebius', 'novita', 'google-vertex', 'together'], 'requested_providers': ['atlascloud/int4']}}}"
+    },
+    "baseten/fp4": {
+      "exact_match_rate": 0.9268156989682379,
+      "avg_prob": 0.8753569389061622,
+      "avg_margin": 0.06658397830826185,
+      "avg_logit_rank": 0.08861015577584463,
+      "avg_gumbel_rank": 0.08861015577584463,
+      "infinite_margin_rate": 0.001163261177422618,
+      "total_tokens": 19772,
+      "n_sequences": 100
+    },
+    "chutes/int4": {
+      "error": "Error code: 404 - {'error': {'message': 'No endpoints found matching your data policy (Paid model training). Configure: https://openrouter.ai/settings/privacy', 'code': 404}}"
+    },
+    "deepinfra/fp4": {
+      "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'moonshotai/kimi-k2-thinking is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'DeepInfra', 'is_byok': False}}, 'user_id': 'org_38rKyd152Zb70CQdezTFCc4UiHd'}"
+    },
+    "google": {
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['chutes', 'deepinfra', 'parasail', 'siliconflow', 'moonshotai', 'baseten', 'atlas-cloud', 'nebius', 'novita', 'google-vertex', 'together'], 'requested_providers': ['google']}}}"
+    },
+    "moonshotai/int4": {
+      "exact_match_rate": 0.9664196268847431,
+      "avg_prob": 0.898497693823332,
+      "avg_margin": 0.01373785861539592,
+      "avg_logit_rank": 0.030820342448249424,
+      "avg_gumbel_rank": 0.030820342448249424,
+      "infinite_margin_rate": 0.00015333503705596728,
+      "total_tokens": 19565,
+      "n_sequences": 100
+    },
+    "nebius/fp8": {
+      "exact_match_rate": 0.9576098059244127,
+      "avg_prob": 0.8906806787669057,
+      "avg_margin": 0.017982456668078444,
+      "avg_logit_rank": 0.06220633299284985,
+      "avg_gumbel_rank": 0.06220633299284985,
+      "infinite_margin_rate": 0.00515832482124617,
+      "total_tokens": 19580,
+      "n_sequences": 100
+    },
+    "novita/bf16": {
+      "exact_match_rate": 0.9014592973000458,
+      "avg_prob": 0.8538096570046273,
+      "avg_margin": 0.11880268220468887,
+      "avg_logit_rank": 0.14709920170844562,
+      "avg_gumbel_rank": 0.14709920170844562,
+      "infinite_margin_rate": 0.004627040219657294,
+      "total_tokens": 19667,
+      "n_sequences": 100
+    },
+    "parasail/int4": {
+      "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'moonshotai/kimi-k2-thinking is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Parasail', 'is_byok': False}}, 'user_id': 'org_38rKyd152Zb70CQdezTFCc4UiHd'}"
+    },
+    "siliconflow/fp8": {
+      "exact_match_rate": 0.9621459140004076,
+      "avg_prob": 0.8973260325184561,
+      "avg_margin": 0.019438773621407827,
+      "avg_logit_rank": 0.0381088241287956,
+      "avg_gumbel_rank": 0.0381088241287956,
+      "infinite_margin_rate": 0.00010189525168127165,
+      "total_tokens": 19628,
+      "n_sequences": 100
+    },
+    "together": {
+      "exact_match_rate": 0.9484936831875608,
+      "avg_prob": 0.878641155046839,
+      "avg_margin": 0.02796557117197952,
+      "avg_logit_rank": 0.08050739092629533,
+      "avg_gumbel_rank": 0.08050739092629533,
+      "infinite_margin_rate": 0.005984348626668713,
+      "total_tokens": 19551,
+      "n_sequences": 100
+    }
+  },
+  "reference": {
+    "total_tokens": 211,
+    "exact_match_rate": 0.8246445497630331,
+    "avg_prob": 0.7720037404154273,
+    "avg_margin": 0.16126665609137056,
+    "infinite_margin_rate": 0.06635071090047394,
+    "avg_logit_rank": 0.4928909952606635,
+    "avg_gumbel_rank": 0.4928909952606635,
+    "n_sequences": 100
+  }
+}
