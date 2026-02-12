@@ -1,0 +1,105 @@
+{
+  "model": "moonshotai/Kimi-K2-Thinking",
+  "parameters": {
+    "n_prompts": 100,
+    "max_tokens": 200,
+    "seed": 42,
+    "top_k": 50,
+    "top_p": 0.95,
+    "temperature": 0.0
+  },
+  "providers": {
+    "atlascloud/int4": {
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['chutes', 'deepinfra', 'parasail', 'siliconflow', 'moonshotai', 'baseten', 'atlas-cloud', 'nebius', 'novita', 'google-vertex', 'together'], 'requested_providers': ['atlascloud/int4']}}}"
+    },
+    "baseten/fp4": {
+      "exact_match_rate": 0.9283856159143076,
+      "avg_prob": 0.8770775233873054,
+      "avg_margin": 0.06495587876062095,
+      "avg_logit_rank": 0.08849783218566692,
+      "avg_gumbel_rank": 0.08849783218566692,
+      "infinite_margin_rate": 0.001224177505738332,
+      "total_tokens": 19605,
+      "n_sequences": 100
+    },
+    "chutes/int4": {
+      "error": "Error code: 404 - {'error': {'message': 'No endpoints found matching your data policy (Paid model training). Configure: https://openrouter.ai/settings/privacy', 'code': 404}}"
+    },
+    "deepinfra/fp4": {
+      "exact_match_rate": 0.9276694615617739,
+      "avg_prob": 0.8753488538405794,
+      "avg_margin": 0.06214969994981961,
+      "avg_logit_rank": 0.1072330538438226,
+      "avg_gumbel_rank": 0.1072330538438226,
+      "infinite_margin_rate": 0.00601070815233862,
+      "total_tokens": 19798,
+      "n_sequences": 100
+    },
+    "google": {
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['chutes', 'deepinfra', 'parasail', 'siliconflow', 'moonshotai', 'baseten', 'atlas-cloud', 'nebius', 'novita', 'google-vertex', 'together'], 'requested_providers': ['google']}}}"
+    },
+    "moonshotai/int4": {
+      "exact_match_rate": 0.9634009583035987,
+      "avg_prob": 0.8971739130286248,
+      "avg_margin": 0.016823737064790744,
+      "avg_logit_rank": 0.03522275461311041,
+      "avg_gumbel_rank": 0.03522275461311041,
+      "infinite_margin_rate": 5.0973595677439085e-05,
+      "total_tokens": 19618,
+      "n_sequences": 100
+    },
+    "nebius/fp8": {
+      "exact_match_rate": 0.9585217927631579,
+      "avg_prob": 0.8910488039023461,
+      "avg_margin": 0.017605839010185233,
+      "avg_logit_rank": 0.06260279605263158,
+      "avg_gumbel_rank": 0.06260279605263158,
+      "infinite_margin_rate": 0.005242598684210526,
+      "total_tokens": 19456,
+      "n_sequences": 100
+    },
+    "novita/bf16": {
+      "exact_match_rate": 0.903473528963027,
+      "avg_prob": 0.8573240347884822,
+      "avg_margin": 0.12300250727727823,
+      "avg_logit_rank": 0.14265371509942532,
+      "avg_gumbel_rank": 0.14265371509942532,
+      "infinite_margin_rate": 0.0041194120937801965,
+      "total_tokens": 19663,
+      "n_sequences": 100
+    },
+    "parasail/int4": {
+      "exact_match_rate": 0.957727737973388,
+      "avg_prob": 0.8925825606135531,
+      "avg_margin": 0.018330439814814813,
+      "avg_logit_rank": 0.06264073694984647,
+      "avg_gumbel_rank": 0.06264073694984647,
+      "infinite_margin_rate": 0.00511770726714432,
+      "total_tokens": 19540,
+      "n_sequences": 100
+    },
+    "siliconflow/fp8": {
+      "error": "Expecting value: line 227 column 1 (char 1243)"
+    },
+    "together": {
+      "exact_match_rate": 0.9493632195618951,
+      "avg_prob": 0.879113050608863,
+      "avg_margin": 0.02659904227413652,
+      "avg_logit_rank": 0.07865511971472236,
+      "avg_gumbel_rank": 0.07865511971472236,
+      "infinite_margin_rate": 0.005909322465613856,
+      "total_tokens": 19630,
+      "n_sequences": 100
+    }
+  },
+  "reference": {
+    "total_tokens": 211,
+    "exact_match_rate": 0.8246445497630331,
+    "avg_prob": 0.7717830438720795,
+    "avg_margin": 0.16381464149746192,
+    "infinite_margin_rate": 0.06635071090047394,
+    "avg_logit_rank": 0.4928909952606635,
+    "avg_gumbel_rank": 0.4928909952606635,
+    "n_sequences": 100
+  }
+}
