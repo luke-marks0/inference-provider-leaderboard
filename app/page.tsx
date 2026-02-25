@@ -130,7 +130,7 @@ export default function Page() {
   // Sort by average score
   leaderboardData.sort((a, b) => b.avgScore - a.avgScore)
 
-  const leaderboardRows = showAllProviders ? leaderboardData : leaderboardData.slice(0, 10)
+  const leaderboardRows = showAllProviders ? leaderboardData : leaderboardData.slice(0, 5)
 
   // Get time series data for selected model
   const timeSeriesData = selectedModel
@@ -160,11 +160,11 @@ export default function Page() {
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="border-b border-border/40 bg-card/50 backdrop-blur-sm sticky top-0 z-10">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between gap-6">
+      <header className="border-b border-[var(--neutral-border-secondary)] bg-card/95 backdrop-blur-sm sticky top-0 z-10 mb-[var(--size-64)]">
+        <div className="container mx-auto px-[var(--size-24)] md:px-[var(--size-48)] py-[var(--size-24)] md:py-[var(--size-48)] flex items-center justify-between gap-[var(--size-24)]">
           <div>
-            <h1 className="text-2xl font-bold tracking-tight">Inference Provider Leaderboard</h1>
-            <p className="text-sm text-muted-foreground mt-0.5">Inference reliability metrics</p>
+            <h1 className="text-2xl md:text-3xl">Inference Provider Leaderboard</h1>
+            <p className="text-sm text-muted-foreground mt-[var(--size-4)]">Inference reliability metrics</p>
           </div>
           <Image
             src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/icon_Light_Primary.svg`}
@@ -176,7 +176,7 @@ export default function Page() {
         </div>
       </header>
 
-      <div className="container mx-auto px-4 py-8 space-y-6">
+      <div className="container mx-auto px-[var(--size-24)] md:px-[var(--size-48)] pb-[var(--size-48)] space-y-[var(--size-24)]">
         <Card>
           <CardHeader>
             <CardTitle>How to read this leaderboard</CardTitle>
@@ -202,14 +202,14 @@ export default function Page() {
           <CardContent>
             <div className="space-y-3">
               <LeaderboardTable data={leaderboardRows} />
-              {leaderboardData.length > 10 && (
+              {leaderboardData.length > 5 && (
                 <div className="flex justify-center">
                   <Button
                     variant="outline"
-                    className="hover:bg-[#FFB3A8] hover:text-foreground"
+                    className="hover:bg-[var(--brand-primary-light)] hover:text-foreground"
                     onClick={() => setShowAllProviders((prev) => !prev)}
                   >
-                    {showAllProviders ? "Show top 10 providers" : "Show all providers"}
+                    {showAllProviders ? "Show top 5 providers" : "Show all providers"}
                   </Button>
                 </div>
               )}

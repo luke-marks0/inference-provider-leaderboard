@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { TrendingUp, TrendingDown } from "lucide-react"
+import { getExactMatchRateTextColor } from "@/lib/utils"
 
 type ProviderData = {
   exact_match_rate: number
@@ -26,14 +27,6 @@ export function ProviderComparison({
   model: string
   auditResults: AuditResult[]
 }) {
-  const getScoreColor = (score: number) => {
-    if (score >= 0.95) return "text-[#55C89F]"
-    if (score >= 0.9) return "text-[#A6D8C0]"
-    if (score >= 0.85) return "text-[#FFB3A8]"
-    if (score >= 0.8) return "text-[#FF563F]"
-    return "text-muted-foreground"
-  }
-
   const sortedResults = [...auditResults].sort((a, b) => a.timestamp.localeCompare(b.timestamp))
 
   // Get unique providers for this model
@@ -95,8 +88,8 @@ export function ProviderComparison({
       <CardContent>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {providerStats.map((stat, index) => (
-            <Card key={stat.provider} className="border hover:bg-muted/50 transition-colors">
-              <CardHeader className="pb-3">
+            <Card key={stat.provider} className="border py-5 hover:bg-muted/50 transition-colors">
+              <CardHeader className="pb-2">
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
                     <CardTitle className="text-base font-mono">{stat.provider}</CardTitle>
@@ -107,7 +100,7 @@ export function ProviderComparison({
                       >
                         #{index + 1}
                       </Badge>
-                      <Badge variant="outline" className="text-xs bg-[#F0F0F0]">
+                      <Badge variant="outline" className="text-xs bg-[var(--neutral-border-secondary)]">
                         {stat.dataPoints} runs
                       </Badge>
                     </div>
@@ -123,14 +116,14 @@ export function ProviderComparison({
                   )}
                 </div>
               </CardHeader>
-              <CardContent className="space-y-3">
+              <CardContent className="space-y-2">
                 <div>
                   <p className="text-xs text-muted-foreground mb-1">Average Score</p>
-                  <p className={`text-2xl font-bold ${getScoreColor(stat.avgScore)}`}>
+                  <p className={`text-2xl font-bold ${getExactMatchRateTextColor(stat.avgScore)}`}>
                     {(stat.avgScore * 100).toFixed(2)}%
                   </p>
                 </div>
-                <div className="grid grid-cols-2 gap-3 pt-3 border-t">
+                <div className="grid grid-cols-2 gap-3 pt-2 border-t">
                   <div>
                     <p className="text-xs text-muted-foreground mb-1">Min</p>
                     <p className="text-sm font-semibold text-foreground">

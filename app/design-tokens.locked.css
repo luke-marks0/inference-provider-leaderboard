@@ -1,0 +1,304 @@
+:root {
+  /* ==================== BRAND COLORS ==================== */
+  /* Source: 01 Brand Elements/UI-Colors-Brand.jpg */
+
+  /* Primary Brand Color - LOCKED */
+  --brand-primary: #FF563F;
+  --brand-primary-hover: #E54D36;
+  --brand-primary-active: #D44530;
+  --brand-primary-light: #FFF5F3;
+  --brand-primary-lighter: #FFEBE8;
+
+  /* Accent Colors */
+  --brand-accent-light: #ffb5a6;
+  --brand-accent: #ff563f;
+  --brand-accent-dark: #ff2222;
+
+
+  /* ==================== NEUTRAL COLORS ==================== */
+  /* Source: 02 Product UI UX/UI Colors:Neutrals.jpg */
+
+  /* Text Colors - LOCKED */
+  --neutral-text: #0D0C0Ce0;              /* Primary text (88% opacity) */
+  --neutral-text-secondary: #0D0C0Ca6;   /* Secondary text (65% opacity) */
+  --neutral-text-tertiary: #0D0C0C73;    /* Tertiary text (45% opacity) */
+  --neutral-text-quaternary: #0D0C0C4d;  /* Quaternary text (30% opacity) */
+  --neutral-text-disabled: #0D0C0C4d;    /* Disabled text (30% opacity) */
+  --neutral-text-placeholder: #0D0C0C59; /* Placeholder text (35% opacity) */
+  --neutral-text-heading: #0D0C0Ce0;     /* Heading text (88% opacity) */
+  --neutral-text-label: #0D0C0Ca6;       /* Label text (65% opacity) */
+  --neutral-text-description: #0D0C0C73; /* Description text (45% opacity) */
+
+  /* Background Colors - LOCKED */
+  --neutral-bg-container: #ffffff;       /* Card/container background */
+  --neutral-bg-elevated: #ffffff;        /* Elevated surfaces */
+  --neutral-bg-layout: #FAFAFA;          /* Page background */
+  --neutral-bg-spotlight: #0D0C0Cd9;     /* Spotlight background (85% opacity) */
+  --neutral-bg-mask: #0D0C0C73;          /* Overlay mask (45% opacity) */
+  --neutral-bg-hover: #fafafa;           /* Hover state background */
+  --neutral-bg-text-active: #0D0C0C26;   /* Active text background (15% opacity) */
+  --neutral-bg-text-hover: #0D0C0C0f;    /* Hover text background (6% opacity) */
+
+  /* Border Colors - LOCKED */
+  --neutral-border: #e5dfdf;             /* Primary borders */
+  --neutral-border-secondary: #f0f0f0;   /* Secondary/light borders */
+  --neutral-border-split: #0000000f;     /* Split borders (6% opacity) */
+
+  /* Fill Colors - LOCKED */
+  --neutral-fill: #0D0C0C26;             /* Default fill (15% opacity) */
+  --neutral-fill-secondary: #0D0C0C0f;   /* Secondary fill (6% opacity) */
+  --neutral-fill-tertiary: #0D0C0C0a;    /* Tertiary fill (4% opacity) */
+  --neutral-fill-quaternary: #0D0C0C05;  /* Quaternary fill (2% opacity) */
+  --neutral-fill-content: #0D0C0C0f;     /* Content fill (6% opacity) */
+  --neutral-fill-content-hover: #0D0C0C26; /* Content fill hover (15% opacity) */
+  --neutral-fill-alter: #0D0C0C05;       /* Alternative fill (2% opacity) */
+  --neutral-fill-alter-solid: #fafafa0a; /* Solid alternative fill */
+
+  /* Icon Colors - LOCKED */
+  --neutral-icon: #0D0C0C73;             /* Default icon color (45% opacity) */
+  --neutral-icon-hover: #0D0C0Ce0;       /* Icon hover state (88% opacity) */
+
+
+  /* ==================== SEMANTIC COLORS ==================== */
+  /* Source: 01 Brand Elements/UI-Colors-Brand.jpg */
+
+  /* Success Colors - LOCKED */
+  --success: #52c41a;
+  --success-bg: #f6ffed;
+  --success-border: #b7eb8f;
+  --success-hover: #73d13d;
+  --success-active: #389e0d;
+
+  /* Warning Colors - LOCKED */
+  --warning: #faad14;
+  --warning-bg: #fffbe6;
+  --warning-border: #ffe58f;
+  --warning-hover: #ffc53d;
+  --warning-active: #d48806;
+
+  /* Error Colors - LOCKED */
+  --error: #ff4d4f;
+  --error-bg: #fff2f0;
+  --error-border: #ffccc7;
+  --error-hover: #ff7875;
+  --error-active: #d9363e;
+
+  /* Info Colors - LOCKED */
+  --info: #1890ff;
+  --info-bg: #e6f7ff;
+  --info-border: #91d5ff;
+  --info-hover: #40a9ff;
+  --info-active: #096dd9;
+
+  /* Link Colors - LOCKED */
+  --link: #1890ff;
+  --link-hover: #40a9ff;
+  --link-active: #096dd9;
+  --link-visited: #531dab;
+
+
+  /* ==================== CHART / DATA VISUALIZATION COLORS ==================== */
+  /* Source: 01 Brand Elements/UI-Colors-Brand.jpg */
+  /* LOCKED - For charts, graphs, and data visualization */
+  /* Usage: Use getComputedStyle(document.documentElement).getPropertyValue('--chart-1') */
+
+  --chart-1: #ff563f;   /* Brand Primary - Orange */
+  --chart-2: #6e73ff;   /* Purple Blue */
+  --chart-3: #ff9b8a;   /* Light Coral */
+  --chart-4: #606060;   /* Neutral Gray */
+  --chart-5: #55c89f;   /* Mint Green */
+  --chart-6: #277a63;   /* Forest Green */
+  --chart-7: #301DB6;   /* Deep Purple */
+  --chart-8: #ffd24d;   /* Golden Yellow */
+  --chart-9: #c07d20;   /* Burnt Orange */
+  --chart-10: #9e9e9e;  /* Light Gray */
+
+  /* Chart Neutrals */
+  --chart-neutral-light: #d9d9d9;
+  --chart-neutral-dark: #595959;
+
+
+  /* ==================== SPACING SCALE ==================== */
+  /* Source: 02 Product UI UX/Space.jpg */
+  /* Base unit: 4px - LOCKED */
+
+  --size-4: 4px;     /* Minimum spacing unit */
+  --size-8: 8px;     /* Extra small spacing */
+  --size-12: 12px;   /* Small spacing */
+  --size-16: 16px;   /* Base spacing unit */
+  --size-20: 20px;   /* Medium-small spacing */
+  --size-24: 24px;   /* Medium spacing */
+  --size-32: 32px;   /* Large spacing */
+  --size-48: 48px;   /* Extra large spacing */
+  --size-64: 64px;   /* Section spacing */
+  --size-80: 80px;   /* Major section spacing */
+
+
+  /* ==================== BORDER RADIUS ==================== */
+  /* Source: 02 Product UI UX/Border Radius.jpg + 05 buttons */
+  /* LOCKED */
+
+  --radius-xs: 2px;      /* Extra small radius */
+  --radius-sm: 4px;      /* Small radius / Small interactive elements */
+  --radius: 6px;         /* Default radius */
+  --radius-lg: 8px;      /* Large radius / Containers, cards */
+  --radius-button: 6px;  /* Button-specific radius */
+  --radius-item: 4px;    /* Small interactive items */
+  --radius-round: 50%;   /* Full circle */
+
+
+  /* ==================== TYPOGRAPHY ==================== */
+  /* Source: 01 Brand Elements */
+  /* LOCKED */
+
+  /* Font Families */
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Font Weights */
+  --font-weight-light: 300;    /* H1 only */
+  --font-weight-regular: 400;  /* Body text default */
+  --font-weight-medium: 500;   /* H2-H6, labels, emphasis */
+  --font-weight-semibold: 600; /* Strong emphasis */
+
+  /* Font Sizes */
+  --font-size-xs: 0.75rem;    /* 12px */
+  --font-size-sm: 0.875rem;   /* 14px */
+  --font-size-base: 1rem;     /* 16px */
+  --font-size-lg: 1.125rem;   /* 18px */
+  --font-size-xl: 1.25rem;    /* 20px */
+  --font-size-2xl: 1.5rem;    /* 24px */
+  --font-size-3xl: 2rem;      /* 32px */
+  --font-size-4xl: 2.5rem;    /* 40px */
+
+  /* Line Heights */
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.6;
+  --line-height-loose: 2;
+
+  /* Letter Spacing - LOCKED */
+  /* MANDATORY for Space Grotesk headings to maintain optical balance */
+  --letter-spacing-tight: -0.04em;   /* For headings with Space Grotesk */
+  --letter-spacing-normal: 0;        /* Default - no adjustment */
+  --letter-spacing-wide: 0.05em;     /* For small caps, labels, uppercase */
+  --letter-spacing-wider: 0.1em;     /* For tracking-heavy elements */
+
+
+  /* ==================== COMPONENT TOKENS ==================== */
+  /* Source: 05 buttons / 02 Product UI UX/Buttons.jpg */
+
+  /* Button Sizing */
+  --button-height-sm: 28px;
+  --button-height-md: 36px;
+  --button-height-lg: 44px;
+
+  /* Button Padding (Tailwind-style) */
+  --button-padding-sm: var(--size-12) var(--size-12);    /* py-1.5 px-3 → 6px 12px */
+  --button-padding-md: var(--size-8) var(--size-16);     /* py-2 px-4 → 8px 16px */
+  --button-padding-lg: var(--size-12) var(--size-24);    /* py-3 px-6 → 12px 24px */
+
+  /* Button Font Sizing */
+  --button-font-size-sm: var(--font-size-xs);    /* 12px */
+  --button-font-size-md: var(--font-size-sm);    /* 14px */
+  --button-font-size-lg: var(--font-size-base);  /* 16px */
+
+  /* Button Border & Radius */
+  --button-border-radius: 6px;     /* Specific button radius */
+  --button-border-width: 1px;
+
+  /* Button Icon Sizing */
+  --button-icon-sm: 14px;
+  --button-icon-md: 16px;
+  --button-icon-lg: 18px;
+
+  /* Button Icon Gap Spacing */
+  --button-gap-sm: var(--size-4);    /* gap-1.5 → 6px */
+  --button-gap-md: var(--size-8);    /* gap-2 → 8px */
+  --button-gap-lg: 10px;             /* gap-2.5 → 10px */
+
+  /* Button Variant Colors - Source: 05 buttons */
+  /* Primary Button */
+  --button-primary-bg: var(--neutral-text);              /* Dark background */
+  --button-primary-fg: var(--neutral-bg-container);      /* White text */
+  --button-primary-hover: rgba(12, 12, 12, 0.9);
+
+  /* Secondary Button */
+  --button-secondary-bg: var(--neutral-bg-layout);       /* Light gray */
+  --button-secondary-fg: var(--neutral-text);
+  --button-secondary-hover: rgba(245, 245, 245, 0.8);
+
+  /* Accent Button */
+  --button-accent-bg: var(--brand-primary);              /* Brand color */
+  --button-accent-fg: var(--neutral-bg-container);       /* White text */
+  --button-accent-hover: var(--brand-primary-hover);
+
+  /* Destructive Button */
+  --button-destructive-bg: #A5210F;                      /* Red */
+  --button-destructive-fg: var(--neutral-bg-container);
+  --button-destructive-hover: #8B1C0D;
+
+  /* Ghost Button */
+  --button-ghost-bg: transparent;
+  --button-ghost-fg: var(--neutral-text);
+  --button-ghost-hover: var(--neutral-fill-secondary);   /* 6% opacity */
+
+  /* Outline Button */
+  --button-outline-bg: transparent;
+  --button-outline-fg: var(--neutral-text);
+  --button-outline-border: var(--neutral-border);
+  --button-outline-hover: var(--neutral-fill-secondary);
+
+  /* Table Tokens */
+  /* Source: 02 Product UI UX/Tables/ */
+  --table-header-bg: var(--neutral-bg-container);
+  --table-row-bg: var(--neutral-bg-container);
+  --table-row-hover-bg: var(--neutral-bg-hover);
+  --table-border: var(--neutral-border-secondary);
+  --table-padding-sm: var(--size-8) var(--size-12);
+  --table-padding-md: var(--size-12) var(--size-16);
+  --table-padding-lg: var(--size-16) var(--size-24);
+
+
+  /* ==================== SHADOWS ==================== */
+  /* Line-Style variant uses minimal shadows */
+  /* Source: 05 buttons adds elevation-sm for cards and elevated surfaces */
+
+  --shadow-minimal: 0 1px 2px 0 rgba(0, 0, 0, 0.02);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+
+  /* Elevation Shadow - Multi-layer for cards and elevated surfaces */
+  --elevation-sm:
+    0px 6px 16px 0px rgba(0, 0, 0, 0.08),
+    0px 3px 6px -4px rgba(0, 0, 0, 0.12),
+    0px 9px 28px 8px rgba(0, 0, 0, 0.05);
+
+
+  /* ==================== TRANSITIONS ==================== */
+  /* Animation timing - LOCKED */
+
+  --transition-fast: 0.15s;
+  --transition-base: 0.2s;
+  --transition-slow: 0.3s;
+  --transition-slower: 0.5s;
+
+  --easing-default: ease;
+  --easing-in: ease-in;
+  --easing-out: ease-out;
+  --easing-in-out: ease-in-out;
+
+
+  /* ==================== Z-INDEX SCALE ==================== */
+  /* Layering system */
+
+  --z-base: 0;
+  --z-dropdown: 1000;
+  --z-sticky: 1100;
+  --z-fixed: 1200;
+  --z-modal-backdrop: 1300;
+  --z-modal: 1400;
+  --z-popover: 1500;
+  --z-tooltip: 1600;
+}
