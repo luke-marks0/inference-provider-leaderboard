@@ -11,6 +11,11 @@ import { ProviderComparison } from "@/components/provider-comparison"
 import { sampleAuditResults } from "@/lib/mock-data"
 import type { AuditResult } from "@/lib/types"
 
+type TimeSeriesPoint = {
+  timestamp: string
+  [key: string]: string | number
+}
+
 export default function Page() {
   const [auditResults, setAuditResults] = useState<AuditResult[]>(sampleAuditResults)
   const [isLoading, setIsLoading] = useState(true)
@@ -20,7 +25,24 @@ export default function Page() {
 
   useEffect(() => {
     async function fetchData() {
-      try {
+      const providersFromEntries = (entries: unknown): AuditResult["providers"] => {
+        if (!Array.isArray(entries)) return {}
+
+        return Object.fromEntries(
+          entries
+            .filter(
+              (entry): entry is { endpoint: string; metrics: AuditResult["providers"][string] } =>
+                typeof entry === "object" &&
+                entry !== null &&
+                typeof (entry as { endpoint?: unknown }).endpoint === "string" &&
+                typeof (entry as { metrics?: unknown }).metrics === "object" &&
+                (entry as { metrics?: unknown }).metrics !== null
+            )
+            .map((entry) => [entry.endpoint, entry.metrics])
+        )
+      }
+
+      const parseFromManifest = async (): Promise<AuditResult[]> => {
         const manifestResponse = await fetch(`${basePath}/data/manifest.json`)
         if (!manifestResponse.ok) {
           throw new Error("Manifest response was not ok")
@@ -54,10 +76,11 @@ export default function Page() {
                 6,
                 8,
               )}T${timestamp.slice(9, 11)}:${timestamp.slice(11, 13)}:${timestamp.slice(13, 15)}`
+              const utcTimestamp = `${formattedTimestamp}Z`
 
               return {
                 model: fileData.model ?? modelName.replace(/_/g, "/"),
-                timestamp: formattedTimestamp,
+                timestamp: utcTimestamp,
                 providers: fileData.providers ?? {},
               }
             } catch {
@@ -66,7 +89,36 @@ export default function Page() {
           })
         )
 
-        const results = parsedResults.filter((result): result is AuditResult => result !== null)
+        return parsedResults.filter((result): result is AuditResult => result !== null)
+      }
+
+      try {
+        let results: AuditResult[] = []
+
+        try {
+          const runsResponse = await fetch(`${basePath}/api/v1/runs.json`)
+          if (!runsResponse.ok) {
+            throw new Error("Static API response was not ok")
+          }
+
+          const payload = await runsResponse.json()
+          const apiRuns: unknown[] = Array.isArray(payload?.runs) ? payload.runs : []
+          results = apiRuns
+            .filter(
+              (run: unknown): run is { model: string; timestamp: string; providerEntries?: unknown } =>
+                typeof run === "object" &&
+                run !== null &&
+                typeof (run as { model?: unknown }).model === "string" &&
+                typeof (run as { timestamp?: unknown }).timestamp === "string"
+            )
+            .map((run) => ({
+              model: run.model,
+              timestamp: run.timestamp,
+              providers: providersFromEntries(run.providerEntries),
+            }))
+        } catch {
+          results = await parseFromManifest()
+        }
 
         if (results.length > 0) {
           setAuditResults(results)
@@ -133,10 +185,10 @@ export default function Page() {
   const leaderboardRows = showAllProviders ? leaderboardData : leaderboardData.slice(0, 5)
 
   // Get time series data for selected model
-  const timeSeriesData = selectedModel
+  const timeSeriesData: TimeSeriesPoint[] = selectedModel
     ? auditResults
         .filter((r) => r.model === selectedModel)
-        .map((r) => ({
+        .map((r): TimeSeriesPoint => ({
           timestamp: r.timestamp,
           ...Object.fromEntries(Object.entries(r.providers).map(([name, data]) => [name, data.exact_match_rate])),
         }))
