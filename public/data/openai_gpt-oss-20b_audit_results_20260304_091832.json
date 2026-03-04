@@ -1,0 +1,118 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "parameters": {
+    "n_prompts": 100,
+    "max_tokens": 200,
+    "seed": 42,
+    "top_k": 50,
+    "top_p": 0.95,
+    "temperature": 0.0,
+    "verification_backend": "fireworks",
+    "fireworks_verification_mode": "serverless",
+    "fireworks_verification_strategy": "fixed-per-audit",
+    "fireworks_deployment_created_for_audit": false,
+    "fireworks_serverless_mapping_error": null
+  },
+  "providers": {
+    "amazonbedrock": {
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'novita', 'parasail', 'clarifai', 'together', 'nebius', 'wandb', 'amazon-bedrock', 'google-vertex', 'fireworks', 'groq', 'nextbit'], 'requested_providers': ['amazonbedrock']}}}"
+    },
+    "clarifai/fp4": {
+      "exact_match_rate": 0.9720004562043796,
+      "avg_prob": 0.6769270852531466,
+      "avg_margin": 0.003288324731979927,
+      "avg_logit_rank": 0.019616788321167884,
+      "avg_gumbel_rank": 0.019616788321167884,
+      "infinite_margin_rate": 0.0,
+      "total_tokens": 17536,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "deepinfra/bf16": {
+      "exact_match_rate": 0.9627040930440617,
+      "avg_prob": 0.6770253913841886,
+      "avg_margin": 0.007028740462117611,
+      "avg_logit_rank": 0.03125698948781033,
+      "avg_gumbel_rank": 0.03125698948781033,
+      "infinite_margin_rate": 0.0001677477074479982,
+      "total_tokens": 17884,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "fireworks": {
+      "exact_match_rate": 0.9697601081202838,
+      "avg_prob": 0.6758019868420034,
+      "avg_margin": 0.005274001271648831,
+      "avg_logit_rank": 0.023932875323797724,
+      "avg_gumbel_rank": 0.023932875323797724,
+      "infinite_margin_rate": 0.0001689379434621016,
+      "total_tokens": 17758,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "google": {
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'novita', 'parasail', 'clarifai', 'together', 'nebius', 'wandb', 'amazon-bedrock', 'google-vertex', 'fireworks', 'groq', 'nextbit'], 'requested_providers': ['google']}}}"
+    },
+    "groq": {
+      "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-oss-20b is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Groq', 'is_byok': False, 'retry_after_seconds': 1}}, 'user_id': 'redacted'}"
+    },
+    "nebius/fp4": {
+      "exact_match_rate": 0.9606738439225749,
+      "avg_prob": 0.6777638454852551,
+      "avg_margin": 0.00820778956949947,
+      "avg_logit_rank": 0.0340826686004351,
+      "avg_gumbel_rank": 0.0340826686004351,
+      "infinite_margin_rate": 0.00033469069002063927,
+      "total_tokens": 17927,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "nextbit/fp8": {
+      "exact_match_rate": 0.9643537719986549,
+      "avg_prob": 0.6747411532781945,
+      "avg_margin": 0.007742517586342917,
+      "avg_logit_rank": 0.03413294473713709,
+      "avg_gumbel_rank": 0.03413294473713709,
+      "infinite_margin_rate": 0.0009528079811680305,
+      "total_tokens": 17842,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "novita/fp4": {
+      "exact_match_rate": 0.9715204150688022,
+      "avg_prob": 0.6792328834834959,
+      "avg_margin": 0.0035524581265508684,
+      "avg_logit_rank": 0.01945635010151139,
+      "avg_gumbel_rank": 0.01945635010151139,
+      "infinite_margin_rate": 0.0,
+      "total_tokens": 17732,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "parasail/fp4": {
+      "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-oss-20b is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Parasail', 'is_byok': False}}, 'user_id': 'redacted'}"
+    },
+    "together": {
+      "exact_match_rate": 0.9767349260523321,
+      "avg_prob": 0.6828031338728254,
+      "avg_margin": 0.0026293676560588874,
+      "avg_logit_rank": 0.010295790671217293,
+      "avg_gumbel_rank": 0.010295790671217293,
+      "infinite_margin_rate": 0.00011376564277588168,
+      "total_tokens": 17580,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "wandb/fp4": {
+      "exact_match_rate": 0.949978060552874,
+      "avg_prob": 0.6676082550373873,
+      "avg_margin": 0.014734952700005506,
+      "avg_logit_rank": 0.06230802983764809,
+      "avg_gumbel_rank": 0.06230802983764809,
+      "infinite_margin_rate": 0.0038394032470381746,
+      "total_tokens": 18232,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    }
+  }
+}
