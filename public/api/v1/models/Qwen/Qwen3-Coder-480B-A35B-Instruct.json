@@ -1,11 +1,11 @@
 {
   "version": "v1",
-  "generatedAt": "2026-03-04T07:23:33.187Z",
+  "generatedAt": "2026-03-04T10:57:17.965Z",
   "model": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
   "id": "Qwen%2FQwen3-Coder-480B-A35B-Instruct",
-  "runCount": 12,
+  "runCount": 13,
   "firstTimestamp": "2026-02-27T08:55:31Z",
-  "lastTimestamp": "2026-03-04T02:17:46Z",
+  "lastTimestamp": "2026-03-04T09:47:49Z",
   "providers": [
     "alibaba",
     "hyperbolic/fp8",
@@ -1280,6 +1280,141 @@
         "fireworks_deployment_created_for_audit": true,
         "fireworks_serverless_mapping_error": null
       }
+    },
+    {
+      "id": "Qwen_Qwen3-Coder-480B-A35B-Instruct_audit_results_20260304_094749",
+      "filename": "Qwen_Qwen3-Coder-480B-A35B-Instruct_audit_results_20260304_094749.json",
+      "dataUrl": "../../../data/Qwen_Qwen3-Coder-480B-A35B-Instruct_audit_results_20260304_094749.json",
+      "model": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
+      "timestamp": "2026-03-04T09:47:49Z",
+      "providerEntries": [
+        {
+          "endpoint": "alibaba",
+          "provider": "alibaba",
+          "variant": null,
+          "metrics": {
+            "exact_match_rate": 0.9260916136349316,
+            "avg_prob": 0.9023573143696283,
+            "avg_margin": 0.1032917889134741,
+            "avg_logit_rank": 0.09123558691953879,
+            "avg_gumbel_rank": 0.09123558691953879,
+            "infinite_margin_rate": 0.0013231680423413774,
+            "total_tokens": 15871,
+            "n_sequences": 100,
+            "fireworks_verification_mode": "on-demand",
+            "serverless_error": "Error code: 404 - {'error': {'message': 'Model not found, inaccessible, and/or not deployed', 'param': 'model', 'code': 'NOT_FOUND', 'type': 'error'}, 'request_id': 'redacted'}"
+          }
+        },
+        {
+          "endpoint": "deepinfra/fp8",
+          "provider": "deepinfra",
+          "variant": "fp8",
+          "metrics": {
+            "exact_match_rate": 0.9665682146672532,
+            "avg_prob": 0.9267446908973094,
+            "avg_margin": 0.024516399850763232,
+            "avg_logit_rank": 0.03142085087664174,
+            "avg_gumbel_rank": 0.03142085087664174,
+            "infinite_margin_rate": 0,
+            "total_tokens": 15913,
+            "n_sequences": 100,
+            "fireworks_verification_mode": "on-demand"
+          }
+        },
+        {
+          "endpoint": "hyperbolic/fp8",
+          "provider": "hyperbolic",
+          "variant": "fp8",
+          "metrics": {
+            "exact_match_rate": 0.9734746347275349,
+            "avg_prob": 0.9312896402908095,
+            "avg_margin": 0.017394299027822142,
+            "avg_logit_rank": 0.024832256850818336,
+            "avg_gumbel_rank": 0.024832256850818336,
+            "infinite_margin_rate": 0,
+            "total_tokens": 15947,
+            "n_sequences": 100,
+            "fireworks_verification_mode": "on-demand"
+          }
+        },
+        {
+          "endpoint": "nebius/fp8",
+          "provider": "nebius",
+          "variant": "fp8",
+          "metrics": {
+            "exact_match_rate": 0.9730711422845691,
+            "avg_prob": 0.932330468965063,
+            "avg_margin": 0.017614278974310296,
+            "avg_logit_rank": 0.02655310621242485,
+            "avg_gumbel_rank": 0.02655310621242485,
+            "infinite_margin_rate": 0.000062625250501002,
+            "total_tokens": 15968,
+            "n_sequences": 100,
+            "fireworks_verification_mode": "on-demand"
+          }
+        },
+        {
+          "endpoint": "novita/fp8",
+          "provider": "novita",
+          "variant": "fp8",
+          "metrics": {
+            "exact_match_rate": 0.952863215803951,
+            "avg_prob": 0.9186068261521421,
+            "avg_margin": 0.051431579804487544,
+            "avg_logit_rank": 0.04957489372343086,
+            "avg_gumbel_rank": 0.04957489372343086,
+            "infinite_margin_rate": 0.00006251562890722681,
+            "total_tokens": 15996,
+            "n_sequences": 100,
+            "fireworks_verification_mode": "on-demand"
+          }
+        },
+        {
+          "endpoint": "together/fp8",
+          "provider": "together",
+          "variant": "fp8",
+          "metrics": {
+            "exact_match_rate": 0.9708921370967742,
+            "avg_prob": 0.931832051286645,
+            "avg_margin": 0.017039598957184824,
+            "avg_logit_rank": 0.02652469758064516,
+            "avg_gumbel_rank": 0.02652469758064516,
+            "infinite_margin_rate": 0,
+            "total_tokens": 15872,
+            "n_sequences": 100,
+            "fireworks_verification_mode": "on-demand"
+          }
+        },
+        {
+          "endpoint": "wandb/bf16",
+          "provider": "wandb",
+          "variant": "bf16",
+          "metrics": {
+            "exact_match_rate": 0.9708125,
+            "avg_prob": 0.9310688609452482,
+            "avg_margin": 0.01946108913421631,
+            "avg_logit_rank": 0.0286875,
+            "avg_gumbel_rank": 0.0286875,
+            "infinite_margin_rate": 0,
+            "total_tokens": 16000,
+            "n_sequences": 100,
+            "fireworks_verification_mode": "on-demand"
+          }
+        }
+      ],
+      "parameters": {
+        "n_prompts": 100,
+        "max_tokens": 200,
+        "seed": 42,
+        "top_k": 50,
+        "top_p": 0.95,
+        "temperature": 0,
+        "verification_backend": "fireworks",
+        "fireworks_verification_mode": "on-demand",
+        "fireworks_verification_strategy": "fixed-per-audit",
+        "fireworks_deployment_created_for_audit": true,
+        "fireworks_serverless_mapping_error": null
+      }
     }
   ],
   "timeSeries": [
@@ -1380,6 +1515,16 @@
       "novita/fp8": 0.9545848286103205,
       "together/fp8": 0.9724793439771386,
       "wandb/bf16": 0.9695186831069663
+    },
+    {
+      "timestamp": "2026-03-04T09:47:49Z",
+      "alibaba": 0.9260916136349316,
+      "deepinfra/fp8": 0.9665682146672532,
+      "hyperbolic/fp8": 0.9734746347275349,
+      "nebius/fp8": 0.9730711422845691,
+      "novita/fp8": 0.952863215803951,
+      "together/fp8": 0.9708921370967742,
+      "wandb/bf16": 0.9708125
     }
   ]
 }

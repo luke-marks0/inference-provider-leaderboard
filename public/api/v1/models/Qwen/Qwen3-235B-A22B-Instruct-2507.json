@@ -1,11 +1,11 @@
 {
   "version": "v1",
-  "generatedAt": "2026-03-04T07:23:33.187Z",
+  "generatedAt": "2026-03-04T10:57:17.965Z",
   "model": "Qwen/Qwen3-235B-A22B-Instruct-2507",
   "id": "Qwen%2FQwen3-235B-A22B-Instruct-2507",
-  "runCount": 38,
+  "runCount": 39,
   "firstTimestamp": "2026-02-07T10:02:53Z",
-  "lastTimestamp": "2026-03-04T00:35:35Z",
+  "lastTimestamp": "2026-03-04T08:15:54Z",
   "providers": [
     "alibaba",
     "crusoe/bf16",
@@ -4488,6 +4488,125 @@
         "fireworks_deployment_created_for_audit": false,
         "fireworks_serverless_mapping_error": null
       }
+    },
+    {
+      "id": "Qwen_Qwen3-235B-A22B-Instruct-2507_audit_results_20260304_081554",
+      "filename": "Qwen_Qwen3-235B-A22B-Instruct-2507_audit_results_20260304_081554.json",
+      "dataUrl": "../../../data/Qwen_Qwen3-235B-A22B-Instruct-2507_audit_results_20260304_081554.json",
+      "model": "Qwen/Qwen3-235B-A22B-Instruct-2507",
+      "timestamp": "2026-03-04T08:15:54Z",
+      "providerEntries": [
+        {
+          "endpoint": "alibaba",
+          "provider": "alibaba",
+          "variant": null,
+          "metrics": {
+            "exact_match_rate": 0.8739369684842421,
+            "avg_prob": 0.8032037274008682,
+            "avg_margin": 0.12205649311056065,
+            "avg_logit_rank": 0.1913456728364182,
+            "avg_gumbel_rank": 0.1913456728364182,
+            "infinite_margin_rate": 0.007003501750875438,
+            "total_tokens": 15992,
+            "n_sequences": 100,
+            "fireworks_verification_mode": "on-demand",
+            "serverless_error": "Error code: 404 - {'error': {'message': 'Model not found, inaccessible, and/or not deployed', 'param': 'model', 'code': 'NOT_FOUND', 'type': 'error'}, 'request_id': 'redacted'}"
+          }
+        },
+        {
+          "endpoint": "deepinfra/fp8",
+          "provider": "deepinfra",
+          "variant": "fp8",
+          "metrics": {
+            "exact_match_rate": 0.9569494924175962,
+            "avg_prob": 0.8421334679155509,
+            "avg_margin": 0.015459138607733769,
+            "avg_logit_rank": 0.03891465095876676,
+            "avg_gumbel_rank": 0.03891465095876676,
+            "infinite_margin_rate": 0.00012532898859506203,
+            "total_tokens": 15958,
+            "n_sequences": 100,
+            "fireworks_verification_mode": "on-demand"
+          }
+        },
+        {
+          "endpoint": "hyperbolic",
+          "provider": "hyperbolic",
+          "variant": null,
+          "metrics": {
+            "exact_match_rate": 0.9638921745626595,
+            "avg_prob": 0.8455698674568232,
+            "avg_margin": 0.012122312340471892,
+            "avg_logit_rank": 0.03050488700740833,
+            "avg_gumbel_rank": 0.03050488700740833,
+            "infinite_margin_rate": 0,
+            "total_tokens": 16063,
+            "n_sequences": 100,
+            "fireworks_verification_mode": "on-demand"
+          }
+        },
+        {
+          "endpoint": "novita/fp8",
+          "provider": "novita",
+          "variant": "fp8",
+          "metrics": {
+            "exact_match_rate": 0.9671455340412243,
+            "avg_prob": 0.8441048196553579,
+            "avg_margin": 0.011541664551970766,
+            "avg_logit_rank": 0.027982510930668333,
+            "avg_gumbel_rank": 0.027982510930668333,
+            "infinite_margin_rate": 0.00006246096189881324,
+            "total_tokens": 16010,
+            "n_sequences": 100,
+            "fireworks_verification_mode": "on-demand"
+          }
+        },
+        {
+          "endpoint": "together",
+          "provider": "together",
+          "variant": null,
+          "metrics": {
+            "exact_match_rate": 0.9616546452129955,
+            "avg_prob": 0.8454732731938689,
+            "avg_margin": 0.012176713133169934,
+            "avg_logit_rank": 0.03224215523087356,
+            "avg_gumbel_rank": 0.03224215523087356,
+            "infinite_margin_rate": 0.000184945441094877,
+            "total_tokens": 16221,
+            "n_sequences": 100,
+            "fireworks_verification_mode": "on-demand"
+          }
+        },
+        {
+          "endpoint": "wandb/bf16",
+          "provider": "wandb",
+          "variant": "bf16",
+          "metrics": {
+            "exact_match_rate": 0.9631689531578297,
+            "avg_prob": 0.8486981693452206,
+            "avg_margin": 0.01274600853238366,
+            "avg_logit_rank": 0.03139290569768879,
+            "avg_gumbel_rank": 0.03139290569768879,
+            "infinite_margin_rate": 0.00006179705846001731,
+            "total_tokens": 16182,
+            "n_sequences": 100,
+            "fireworks_verification_mode": "on-demand"
+          }
+        }
+      ],
+      "parameters": {
+        "n_prompts": 100,
+        "max_tokens": 200,
+        "seed": 42,
+        "top_k": 50,
+        "top_p": 0.95,
+        "temperature": 0,
+        "verification_backend": "fireworks",
+        "fireworks_verification_mode": "on-demand",
+        "fireworks_verification_strategy": "fixed-per-audit",
+        "fireworks_deployment_created_for_audit": true,
+        "fireworks_serverless_mapping_error": null
+      }
     }
   ],
   "timeSeries": [
@@ -4840,6 +4959,15 @@
     },
     {
       "timestamp": "2026-03-04T00:35:35Z"
+    },
+    {
+      "timestamp": "2026-03-04T08:15:54Z",
+      "alibaba": 0.8739369684842421,
+      "deepinfra/fp8": 0.9569494924175962,
+      "hyperbolic": 0.9638921745626595,
+      "novita/fp8": 0.9671455340412243,
+      "together": 0.9616546452129955,
+      "wandb/bf16": 0.9631689531578297
     }
   ]
 }
