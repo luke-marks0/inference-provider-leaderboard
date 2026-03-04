@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "/api/v1/schemas/models.schema.json",
+  "title": "ModelsPayload",
+  "type": "object",
+  "required": [
+    "version",
+    "generatedAt",
+    "count",
+    "models"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "generatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "count": {
+      "type": "number"
+    },
+    "models": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "model",
+          "id",
+          "runCount",
+          "firstTimestamp",
+          "lastTimestamp",
+          "endpoint"
+        ],
+        "properties": {
+          "model": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "runCount": {
+            "type": "number"
+          },
+          "firstTimestamp": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "lastTimestamp": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "endpoint": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

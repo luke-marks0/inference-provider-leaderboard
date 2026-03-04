@@ -1,0 +1,87 @@
+{
+  "model": "moonshotai/Kimi-K2-Thinking",
+  "parameters": {
+    "n_prompts": 100,
+    "max_tokens": 200,
+    "seed": 42,
+    "top_k": 50,
+    "top_p": 0.95,
+    "temperature": 0,
+    "fireworks_verification_mode": "serverless",
+    "fireworks_verification_strategy": "fixed-per-audit",
+    "fireworks_deployment_created_for_audit": false,
+    "fireworks_serverless_mapping_error": null
+  },
+  "providers": {
+    "atlascloud/int4": {
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'parasail', 'siliconflow', 'moonshotai', 'baseten', 'atlas-cloud', 'nebius', 'novita', 'google-vertex', 'together'], 'requested_providers': ['atlascloud/int4']}}}"
+    },
+    "baseten/fp4": {
+      "error": "Error code: 502 - {'error': {'message': 'Provider returned error', 'code': 502, 'metadata': {'raw': '{\"error\": \"Internal Server Error\"}', 'provider_name': 'BaseTen', 'is_byok': False}}, 'user_id': 'org_[redacted]'}"
+    },
+    "deepinfra/fp4": {
+      "exact_match_rate": 0.9318009980341752,
+      "avg_prob": 0.8786957512197586,
+      "avg_margin": 0.05385555210663787,
+      "avg_logit_rank": 0.09940017137960583,
+      "avg_gumbel_rank": 0.09940017137960583,
+      "infinite_margin_rate": 0.0058470689046826955,
+      "total_tokens": 19839,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "google": {
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'parasail', 'siliconflow', 'moonshotai', 'baseten', 'atlas-cloud', 'nebius', 'novita', 'google-vertex', 'together'], 'requested_providers': ['google']}}}"
+    },
+    "moonshotai/int4": {
+      "exact_match_rate": 0.9652681727370525,
+      "avg_prob": 0.8978530009645525,
+      "avg_margin": 0.016264401182740702,
+      "avg_logit_rank": 0.03329747451462527,
+      "avg_gumbel_rank": 0.03329747451462527,
+      "infinite_margin_rate": 0,
+      "total_tokens": 19521,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "nebius/fp8": {
+      "exact_match_rate": 0.9554718538775089,
+      "avg_prob": 0.8891595630042956,
+      "avg_margin": 0.020833223571159933,
+      "avg_logit_rank": 0.06635364532273877,
+      "avg_gumbel_rank": 0.06635364532273877,
+      "infinite_margin_rate": 0.005366080181621175,
+      "total_tokens": 19381,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "novita/bf16": {
+      "exact_match_rate": 0.8919908466819222,
+      "avg_prob": 0.8448114973597076,
+      "avg_margin": 0.1377402058065145,
+      "avg_logit_rank": 0.16364098652428172,
+      "avg_gumbel_rank": 0.16364098652428172,
+      "infinite_margin_rate": 0.005542842613780829,
+      "total_tokens": 19665,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "parasail/int4": {
+      "error": "Error code: 403 - {'error': {'message': 'Provider returned error', 'code': 403, 'metadata': {'raw': '{\"error\":{\"message\":\"Deployment parasail-kimi-k2-thinking doesn\\'t exist or isn\\'t accessible.\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}', 'provider_name': 'Parasail', 'is_byok': False}}, 'user_id': 'org_[redacted]'}"
+    },
+    "siliconflow/fp8": {
+      "error": "'NoneType' object is not subscriptable"
+    },
+    "together": {
+      "exact_match_rate": 0.9494442452491932,
+      "avg_prob": 0.8789675547797883,
+      "avg_margin": 0.026971826257441243,
+      "avg_logit_rank": 0.08057163345797265,
+      "avg_gumbel_rank": 0.08057163345797265,
+      "infinite_margin_rate": 0.006197817958305588,
+      "total_tokens": 19523,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    }
+  }
+}

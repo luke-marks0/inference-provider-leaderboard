@@ -54,3 +54,23 @@ Raw data endpoints:
 - API versioning uses path prefixes (`/api/v1/...`).
 - Additive fields may appear in provider metrics over time. Consumers should treat unknown metric keys as forward-compatible.
 - JSON Schemas in `/api/v1/schemas/` are the canonical contract for v1 payload shape.
+
+## Ignoring Models
+
+You can exclude models globally (API payloads and site rendering) by editing:
+
+- `/public/data/api-config.json`
+
+Example:
+
+```json
+{
+  "ignoredModels": ["Qwen/Qwen3-8B"]
+}
+```
+
+Then regenerate the static API:
+
+```bash
+node scripts/generate-manifest.mjs
+```

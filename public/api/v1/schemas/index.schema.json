@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "/api/v1/schemas/index.schema.json",
+  "title": "IndexPayload",
+  "type": "object",
+  "required": [
+    "version",
+    "generatedAt",
+    "dataset",
+    "ignoredModels",
+    "endpoints"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "generatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "dataset": {
+      "type": "object",
+      "required": [
+        "runCount",
+        "modelCount"
+      ],
+      "properties": {
+        "runCount": {
+          "type": "number"
+        },
+        "modelCount": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ignoredModels": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "endpoints": {
+      "type": "object",
+      "required": [
+        "metadata",
+        "runs",
+        "runsIndex",
+        "runsByDate",
+        "models",
+        "leaderboard",
+        "summary",
+        "modelDetails",
+        "schemas",
+        "rawManifest"
+      ],
+      "properties": {
+        "metadata": {
+          "type": "string"
+        },
+        "runs": {
+          "type": "string"
+        },
+        "runsIndex": {
+          "type": "string"
+        },
+        "runsByDate": {
+          "type": "string"
+        },
+        "models": {
+          "type": "string"
+        },
+        "leaderboard": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "modelDetails": {
+          "type": "string"
+        },
+        "schemas": {
+          "type": "string"
+        },
+        "rawManifest": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

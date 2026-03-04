@@ -1,0 +1,95 @@
+{
+  "model": "moonshotai/Kimi-K2-Thinking",
+  "parameters": {
+    "n_prompts": 100,
+    "max_tokens": 200,
+    "seed": 42,
+    "top_k": 50,
+    "top_p": 0.95,
+    "temperature": 0,
+    "fireworks_verification_mode": "serverless",
+    "fireworks_verification_strategy": "fixed-per-audit",
+    "fireworks_deployment_created_for_audit": false,
+    "fireworks_serverless_mapping_error": null
+  },
+  "providers": {
+    "atlascloud/int4": {
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'parasail', 'siliconflow', 'moonshotai', 'baseten', 'atlas-cloud', 'nebius', 'novita', 'google-vertex', 'together'], 'requested_providers': ['atlascloud/int4']}}}"
+    },
+    "baseten/fp4": {
+      "exact_match_rate": 0.9291279215883388,
+      "avg_prob": 0.878014865025436,
+      "avg_margin": 0.06480101955787192,
+      "avg_logit_rank": 0.08303593867805982,
+      "avg_gumbel_rank": 0.08303593867805982,
+      "infinite_margin_rate": 0.0006534305101784368,
+      "total_tokens": 19895,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "deepinfra/fp4": {
+      "exact_match_rate": 0.9242470492470493,
+      "avg_prob": 0.8718434453624672,
+      "avg_margin": 0.06352727589327206,
+      "avg_logit_rank": 0.11268823768823769,
+      "avg_gumbel_rank": 0.11268823768823769,
+      "infinite_margin_rate": 0.00635938135938136,
+      "total_tokens": 19656,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "google": {
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'parasail', 'siliconflow', 'moonshotai', 'baseten', 'atlas-cloud', 'nebius', 'novita', 'google-vertex', 'together'], 'requested_providers': ['google']}}}"
+    },
+    "moonshotai/int4": {
+      "exact_match_rate": 0.9658916316705931,
+      "avg_prob": 0.8983891389702742,
+      "avg_margin": 0.016963353273047377,
+      "avg_logit_rank": 0.0331353067704599,
+      "avg_gumbel_rank": 0.0331353067704599,
+      "infinite_margin_rate": 0.00005121376626037079,
+      "total_tokens": 19526,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "nebius/fp8": {
+      "exact_match_rate": 0.9575892857142857,
+      "avg_prob": 0.8908265312506543,
+      "avg_margin": 0.018313522226046607,
+      "avg_logit_rank": 0.06214488636363636,
+      "avg_gumbel_rank": 0.06214488636363636,
+      "infinite_margin_rate": 0.005123782467532468,
+      "total_tokens": 19712,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "novita/bf16": {
+      "exact_match_rate": 0.907593965737663,
+      "avg_prob": 0.8585361022720489,
+      "avg_margin": 0.11550200002642474,
+      "avg_logit_rank": 0.13500383533623114,
+      "avg_gumbel_rank": 0.13500383533623114,
+      "infinite_margin_rate": 0.004039887496803886,
+      "total_tokens": 19555,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "parasail/int4": {
+      "error": "Error code: 403 - {'error': {'message': 'Provider returned error', 'code': 403, 'metadata': {'raw': '{\"error\":{\"message\":\"Deployment parasail-kimi-k2-thinking doesn\\'t exist or isn\\'t accessible.\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}', 'provider_name': 'Parasail', 'is_byok': False}}, 'user_id': 'org_[redacted]'}"
+    },
+    "siliconflow/fp8": {
+      "error": "'NoneType' object is not subscriptable"
+    },
+    "together": {
+      "exact_match_rate": 0.9496897276783425,
+      "avg_prob": 0.8806624057292392,
+      "avg_margin": 0.02649119183664912,
+      "avg_logit_rank": 0.07933740191804708,
+      "avg_gumbel_rank": 0.07933740191804708,
+      "infinite_margin_rate": 0.006256731114416124,
+      "total_tokens": 19499,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    }
+  }
+}

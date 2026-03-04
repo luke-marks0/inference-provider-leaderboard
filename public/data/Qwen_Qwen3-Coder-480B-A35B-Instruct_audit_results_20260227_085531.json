@@ -1,0 +1,107 @@
+{
+  "model": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
+  "parameters": {
+    "n_prompts": 100,
+    "max_tokens": 200,
+    "seed": 42,
+    "top_k": 50,
+    "top_p": 0.95,
+    "temperature": 0,
+    "fireworks_verification_mode": "on-demand",
+    "fireworks_verification_strategy": "fixed-per-audit",
+    "fireworks_deployment_created_for_audit": true,
+    "fireworks_serverless_mapping_error": null
+  },
+  "providers": {
+    "alibaba": {
+      "exact_match_rate": 0.9274968394437421,
+      "avg_prob": 0.9027045658206269,
+      "avg_margin": 0.09896209670196675,
+      "avg_logit_rank": 0.09146649810366625,
+      "avg_gumbel_rank": 0.09146649810366625,
+      "infinite_margin_rate": 0.001327433628318584,
+      "total_tokens": 15820,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand",
+      "serverless_error": "Error code: 404 - {'error': {'message': 'Model not found, inaccessible, and/or not deployed', 'param': 'model', 'code': 'NOT_FOUND', 'type': 'error'}, 'request_id': 'cmpl-[redacted]'}"
+    },
+    "atlascloud/fp8": {
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['atlascloud/fp8']}}}"
+    },
+    "deepinfra/fp4": {
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['deepinfra/fp4']}}}"
+    },
+    "deepinfra/fp8": {
+      "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'qwen/qwen3-coder is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'DeepInfra', 'is_byok': False}}, 'user_id': 'org_[redacted]'}"
+    },
+    "google": {
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['google']}}}"
+    },
+    "hyperbolic/fp8": {
+      "exact_match_rate": 0.9692760152681309,
+      "avg_prob": 0.9290547091027843,
+      "avg_margin": 0.019806731247751237,
+      "avg_logit_rank": 0.028971904136161693,
+      "avg_gumbel_rank": 0.028971904136161693,
+      "infinite_margin_rate": 0,
+      "total_tokens": 15981,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    },
+    "nebius/fp8": {
+      "exact_match_rate": 0.9733283009372837,
+      "avg_prob": 0.9324895941473147,
+      "avg_margin": 0.01664314334809634,
+      "avg_logit_rank": 0.02409259608731207,
+      "avg_gumbel_rank": 0.02409259608731207,
+      "infinite_margin_rate": 0,
+      "total_tokens": 15897,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    },
+    "novita/fp8": {
+      "exact_match_rate": 0.9512134566445286,
+      "avg_prob": 0.9171585581786234,
+      "avg_margin": 0.051062531533409984,
+      "avg_logit_rank": 0.04990379243994786,
+      "avg_gumbel_rank": 0.04990379243994786,
+      "infinite_margin_rate": 0.00006206939358202471,
+      "total_tokens": 16111,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    },
+    "siliconflow/fp8": {
+      "exact_match_rate": 0.9626930742401595,
+      "avg_prob": 0.9257905314463527,
+      "avg_margin": 0.030509890989629362,
+      "avg_logit_rank": 0.03817887394120578,
+      "avg_gumbel_rank": 0.03817887394120578,
+      "infinite_margin_rate": 0.00012456402590931738,
+      "total_tokens": 16056,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    },
+    "together/fp8": {
+      "exact_match_rate": 0.9711466865227103,
+      "avg_prob": 0.9304341196052077,
+      "avg_margin": 0.017122431183098044,
+      "avg_logit_rank": 0.027984611566145446,
+      "avg_gumbel_rank": 0.027984611566145446,
+      "infinite_margin_rate": 0.00006205013651030033,
+      "total_tokens": 16116,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    },
+    "wandb/bf16": {
+      "exact_match_rate": 0.9678147939017504,
+      "avg_prob": 0.9275702748927984,
+      "avg_margin": 0.02099437248124196,
+      "avg_logit_rank": 0.030240291109856328,
+      "avg_gumbel_rank": 0.030240291109856328,
+      "infinite_margin_rate": 0,
+      "total_tokens": 15939,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    }
+  }
+}

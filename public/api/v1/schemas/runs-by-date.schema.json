@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "/api/v1/schemas/runs-by-date.schema.json",
+  "title": "RunsByDatePayload",
+  "type": "object",
+  "required": [
+    "version",
+    "generatedAt",
+    "date",
+    "count",
+    "runs"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "generatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "count": {
+      "type": "number"
+    },
+    "runs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "filename",
+          "dataUrl",
+          "model",
+          "timestamp",
+          "providerEntries",
+          "parameters"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "filename": {
+            "type": "string"
+          },
+          "dataUrl": {
+            "type": "string"
+          },
+          "model": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "providerEntries": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "endpoint",
+                "provider",
+                "variant",
+                "metrics"
+              ],
+              "properties": {
+                "endpoint": {
+                  "type": "string"
+                },
+                "provider": {
+                  "type": "string"
+                },
+                "variant": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "metrics": {
+                  "type": "object",
+                  "required": [
+                    "exact_match_rate"
+                  ],
+                  "properties": {
+                    "exact_match_rate": {
+                      "type": "number"
+                    },
+                    "avg_prob": {
+                      "type": "number"
+                    },
+                    "avg_margin": {
+                      "type": "number"
+                    },
+                    "avg_logit_rank": {
+                      "type": "number"
+                    },
+                    "avg_gumbel_rank": {
+                      "type": "number"
+                    },
+                    "infinite_margin_rate": {
+                      "type": "number"
+                    },
+                    "total_tokens": {
+                      "type": "number"
+                    },
+                    "n_sequences": {
+                      "type": "number"
+                    }
+                  },
+                  "additionalProperties": true
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "parameters": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "additionalProperties": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

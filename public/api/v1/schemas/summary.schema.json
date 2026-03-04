@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "/api/v1/schemas/summary.schema.json",
+  "title": "SummaryPayload",
+  "type": "object",
+  "required": [
+    "version",
+    "generatedAt",
+    "leaderboard",
+    "models"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "generatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "leaderboard": {
+      "type": "object",
+      "required": [
+        "count",
+        "providers"
+      ],
+      "properties": {
+        "count": {
+          "type": "number"
+        },
+        "providers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "provider",
+              "avgScore",
+              "dataPoints",
+              "modelCount"
+            ],
+            "properties": {
+              "provider": {
+                "type": "string"
+              },
+              "avgScore": {
+                "type": "number"
+              },
+              "dataPoints": {
+                "type": "number"
+              },
+              "modelCount": {
+                "type": "number"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "models": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "model",
+          "id",
+          "lastTimestamp",
+          "latestRun"
+        ],
+        "properties": {
+          "model": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "lastTimestamp": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "latestRun": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "object",
+                "required": [
+                  "id",
+                  "timestamp",
+                  "dataUrl",
+                  "providerCount",
+                  "providerEntries"
+                ],
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "timestamp": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "dataUrl": {
+                    "type": "string"
+                  },
+                  "providerCount": {
+                    "type": "number"
+                  },
+                  "providerEntries": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "endpoint",
+                        "provider",
+                        "variant",
+                        "exact_match_rate"
+                      ],
+                      "properties": {
+                        "endpoint": {
+                          "type": "string"
+                        },
+                        "provider": {
+                          "type": "string"
+                        },
+                        "variant": {
+                          "type": [
+                            "string",
+                            "null"
+                          ]
+                        },
+                        "exact_match_rate": {
+                          "type": "number"
+                        }
+                      },
+                      "additionalProperties": false
+                    }
+                  }
+                },
+                "additionalProperties": false
+              }
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

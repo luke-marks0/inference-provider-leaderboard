@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "/api/v1/schemas/runs-index.schema.json",
+  "title": "RunsIndexPayload",
+  "type": "object",
+  "required": [
+    "version",
+    "generatedAt",
+    "count",
+    "firstTimestamp",
+    "lastTimestamp",
+    "availableDates",
+    "dateEndpoints"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "generatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "count": {
+      "type": "number"
+    },
+    "firstTimestamp": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "lastTimestamp": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "availableDates": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "date"
+      }
+    },
+    "dateEndpoints": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "date",
+          "endpoint",
+          "count"
+        ],
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "endpoint": {
+            "type": "string"
+          },
+          "count": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

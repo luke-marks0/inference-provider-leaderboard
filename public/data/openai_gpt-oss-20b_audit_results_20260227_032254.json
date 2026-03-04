@@ -1,0 +1,133 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "parameters": {
+    "n_prompts": 100,
+    "max_tokens": 200,
+    "seed": 42,
+    "top_k": 50,
+    "top_p": 0.95,
+    "temperature": 0,
+    "fireworks_verification_mode": "serverless",
+    "fireworks_verification_strategy": "fixed-per-audit",
+    "fireworks_deployment_created_for_audit": false,
+    "fireworks_serverless_mapping_error": null
+  },
+  "providers": {
+    "amazonbedrock": {
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'novita', 'parasail', 'clarifai', 'together', 'nebius', 'wandb', 'amazon-bedrock', 'google-vertex', 'fireworks', 'groq', 'nextbit'], 'requested_providers': ['amazonbedrock']}}}"
+    },
+    "clarifai/fp4": {
+      "exact_match_rate": 0.9691808134898029,
+      "avg_prob": 0.6811661923130605,
+      "avg_margin": 0.003395994146633246,
+      "avg_logit_rank": 0.019482738976871368,
+      "avg_gumbel_rank": 0.019482738976871368,
+      "infinite_margin_rate": 0,
+      "total_tokens": 17554,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "deepinfra/bf16": {
+      "exact_match_rate": 0.9635214547067302,
+      "avg_prob": 0.6775302079593588,
+      "avg_margin": 0.006698638855102295,
+      "avg_logit_rank": 0.03076837786894334,
+      "avg_gumbel_rank": 0.03076837786894334,
+      "infinite_margin_rate": 0.00011087703736556159,
+      "total_tokens": 18038,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "fireworks": {
+      "exact_match_rate": 0.9694921031700943,
+      "avg_prob": 0.6754458082749556,
+      "avg_margin": 0.005777634088390726,
+      "avg_logit_rank": 0.025678900124985797,
+      "avg_gumbel_rank": 0.025678900124985797,
+      "infinite_margin_rate": 0.00022724690376093625,
+      "total_tokens": 17602,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "google": {
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'novita', 'parasail', 'clarifai', 'together', 'nebius', 'wandb', 'amazon-bedrock', 'google-vertex', 'fireworks', 'groq', 'nextbit'], 'requested_providers': ['google']}}}"
+    },
+    "groq": {
+      "exact_match_rate": 0.9767376365889378,
+      "avg_prob": 0.6803629702230383,
+      "avg_margin": 0.0021825096462569707,
+      "avg_logit_rank": 0.009800608313619466,
+      "avg_gumbel_rank": 0.009800608313619466,
+      "infinite_margin_rate": 0.00005632533513574406,
+      "total_tokens": 17754,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "nebius/fp4": {
+      "exact_match_rate": 0.9613674263479711,
+      "avg_prob": 0.6770152024870276,
+      "avg_margin": 0.0076985812830136224,
+      "avg_logit_rank": 0.03157309616453585,
+      "avg_gumbel_rank": 0.03157309616453585,
+      "infinite_margin_rate": 0.00027793218454697053,
+      "total_tokens": 17990,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "nextbit/fp8": {
+      "exact_match_rate": 0.9636333259077745,
+      "avg_prob": 0.6738245841642682,
+      "avg_margin": 0.007204732080072686,
+      "avg_logit_rank": 0.030407663176654044,
+      "avg_gumbel_rank": 0.030407663176654044,
+      "infinite_margin_rate": 0.00011138338159946537,
+      "total_tokens": 17956,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "novita/fp4": {
+      "exact_match_rate": 0.9701355912809657,
+      "avg_prob": 0.6793028128432772,
+      "avg_margin": 0.004519102487982145,
+      "avg_logit_rank": 0.020824989987985584,
+      "avg_gumbel_rank": 0.020824989987985584,
+      "infinite_margin_rate": 0.0002860575547800217,
+      "total_tokens": 17479,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "parasail/fp4": {
+      "exact_match_rate": 0.9766732561423327,
+      "avg_prob": 0.6793780903252243,
+      "avg_margin": 0.0015491518991810223,
+      "avg_logit_rank": 0.010449025698955098,
+      "avg_gumbel_rank": 0.010449025698955098,
+      "infinite_margin_rate": 0,
+      "total_tokens": 17705,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "together": {
+      "exact_match_rate": 0.97632058287796,
+      "avg_prob": 0.6749452329686044,
+      "avg_margin": 0.0015759974312631638,
+      "avg_logit_rank": 0.010985883424408014,
+      "avg_gumbel_rank": 0.010985883424408014,
+      "infinite_margin_rate": 0.00005692167577413479,
+      "total_tokens": 17568,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "wandb/fp4": {
+      "exact_match_rate": 0.9594444444444444,
+      "avg_prob": 0.6731730469510149,
+      "avg_margin": 0.008336350329221537,
+      "avg_logit_rank": 0.035055555555555555,
+      "avg_gumbel_rank": 0.035055555555555555,
+      "infinite_margin_rate": 0.00016666666666666666,
+      "total_tokens": 18000,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    }
+  }
+}

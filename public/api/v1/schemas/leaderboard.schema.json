@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "/api/v1/schemas/leaderboard.schema.json",
+  "title": "LeaderboardPayload",
+  "type": "object",
+  "required": [
+    "version",
+    "generatedAt",
+    "count",
+    "providers"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "generatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "count": {
+      "type": "number"
+    },
+    "providers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "provider",
+          "avgScore",
+          "dataPoints",
+          "modelCount"
+        ],
+        "properties": {
+          "provider": {
+            "type": "string"
+          },
+          "avgScore": {
+            "type": "number"
+          },
+          "dataPoints": {
+            "type": "number"
+          },
+          "modelCount": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

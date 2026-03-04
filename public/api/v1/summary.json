@@ -1,0 +1,387 @@
+{
+  "version": "v1",
+  "generatedAt": "2026-03-04T07:23:33.187Z",
+  "leaderboard": {
+    "count": 19,
+    "providers": [
+      {
+        "provider": "groq",
+        "avgScore": 0.9734082998178715,
+        "dataPoints": 44,
+        "modelCount": 2
+      },
+      {
+        "provider": "sambanova",
+        "avgScore": 0.9688804434315351,
+        "dataPoints": 15,
+        "modelCount": 1
+      },
+      {
+        "provider": "clarifai",
+        "avgScore": 0.9664103530692822,
+        "dataPoints": 41,
+        "modelCount": 2
+      },
+      {
+        "provider": "moonshotai",
+        "avgScore": 0.9664085267281032,
+        "dataPoints": 36,
+        "modelCount": 1
+      },
+      {
+        "provider": "nextbit",
+        "avgScore": 0.9652053894321411,
+        "dataPoints": 18,
+        "modelCount": 1
+      },
+      {
+        "provider": "hyperbolic",
+        "avgScore": 0.9634690456052336,
+        "dataPoints": 40,
+        "modelCount": 2
+      },
+      {
+        "provider": "fireworks",
+        "avgScore": 0.9595425538651553,
+        "dataPoints": 49,
+        "modelCount": 3
+      },
+      {
+        "provider": "together",
+        "avgScore": 0.9582982984254586,
+        "dataPoints": 128,
+        "modelCount": 5
+      },
+      {
+        "provider": "cerebras",
+        "avgScore": 0.9561085319692831,
+        "dataPoints": 25,
+        "modelCount": 2
+      },
+      {
+        "provider": "parasail",
+        "avgScore": 0.9542968525533055,
+        "dataPoints": 44,
+        "modelCount": 3
+      },
+      {
+        "provider": "phala",
+        "avgScore": 0.9540476470974335,
+        "dataPoints": 14,
+        "modelCount": 1
+      },
+      {
+        "provider": "wandb",
+        "avgScore": 0.9521398711703798,
+        "dataPoints": 90,
+        "modelCount": 4
+      },
+      {
+        "provider": "siliconflow",
+        "avgScore": 0.951247474112072,
+        "dataPoints": 61,
+        "modelCount": 4
+      },
+      {
+        "provider": "nebius",
+        "avgScore": 0.9505287313302999,
+        "dataPoints": 103,
+        "modelCount": 5
+      },
+      {
+        "provider": "deepinfra",
+        "avgScore": 0.94638980924234,
+        "dataPoints": 82,
+        "modelCount": 5
+      },
+      {
+        "provider": "crusoe",
+        "avgScore": 0.945094114325731,
+        "dataPoints": 11,
+        "modelCount": 1
+      },
+      {
+        "provider": "novita",
+        "avgScore": 0.9423848208686123,
+        "dataPoints": 126,
+        "modelCount": 5
+      },
+      {
+        "provider": "baseten",
+        "avgScore": 0.9294389394166199,
+        "dataPoints": 56,
+        "modelCount": 2
+      },
+      {
+        "provider": "alibaba",
+        "avgScore": 0.8842753691211597,
+        "dataPoints": 43,
+        "modelCount": 2
+      }
+    ]
+  },
+  "models": [
+    {
+      "model": "Qwen/Qwen3-235B-A22B-Instruct-2507",
+      "id": "Qwen%2FQwen3-235B-A22B-Instruct-2507",
+      "lastTimestamp": "2026-03-04T00:35:35Z",
+      "latestRun": {
+        "id": "Qwen_Qwen3-235B-A22B-Instruct-2507_audit_results_20260304_003535",
+        "timestamp": "2026-03-04T00:35:35Z",
+        "dataUrl": "../../data/Qwen_Qwen3-235B-A22B-Instruct-2507_audit_results_20260304_003535.json",
+        "providerCount": 0,
+        "providerEntries": []
+      }
+    },
+    {
+      "model": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
+      "id": "Qwen%2FQwen3-Coder-480B-A35B-Instruct",
+      "lastTimestamp": "2026-03-04T02:17:46Z",
+      "latestRun": {
+        "id": "Qwen_Qwen3-Coder-480B-A35B-Instruct_audit_results_20260304_021746",
+        "timestamp": "2026-03-04T02:17:46Z",
+        "dataUrl": "../../data/Qwen_Qwen3-Coder-480B-A35B-Instruct_audit_results_20260304_021746.json",
+        "providerCount": 6,
+        "providerEntries": [
+          {
+            "endpoint": "alibaba",
+            "provider": "alibaba",
+            "variant": null,
+            "exact_match_rate": 0.9257630950885567
+          },
+          {
+            "endpoint": "hyperbolic/fp8",
+            "provider": "hyperbolic",
+            "variant": "fp8",
+            "exact_match_rate": 0.9734384858044164
+          },
+          {
+            "endpoint": "nebius/fp8",
+            "provider": "nebius",
+            "variant": "fp8",
+            "exact_match_rate": 0.9692753258200592
+          },
+          {
+            "endpoint": "novita/fp8",
+            "provider": "novita",
+            "variant": "fp8",
+            "exact_match_rate": 0.9545848286103205
+          },
+          {
+            "endpoint": "together/fp8",
+            "provider": "together",
+            "variant": "fp8",
+            "exact_match_rate": 0.9724793439771386
+          },
+          {
+            "endpoint": "wandb/bf16",
+            "provider": "wandb",
+            "variant": "bf16",
+            "exact_match_rate": 0.9695186831069663
+          }
+        ]
+      }
+    },
+    {
+      "model": "moonshotai/Kimi-K2-Thinking",
+      "id": "moonshotai%2FKimi-K2-Thinking",
+      "lastTimestamp": "2026-03-04T01:01:35Z",
+      "latestRun": {
+        "id": "moonshotai_Kimi-K2-Thinking_audit_results_20260304_010135",
+        "timestamp": "2026-03-04T01:01:35Z",
+        "dataUrl": "../../data/moonshotai_Kimi-K2-Thinking_audit_results_20260304_010135.json",
+        "providerCount": 5,
+        "providerEntries": [
+          {
+            "endpoint": "baseten/fp4",
+            "provider": "baseten",
+            "variant": "fp4",
+            "exact_match_rate": 0.9305337718188718
+          },
+          {
+            "endpoint": "moonshotai/int4",
+            "provider": "moonshotai",
+            "variant": "int4",
+            "exact_match_rate": 0.9656429745275267
+          },
+          {
+            "endpoint": "nebius/fp8",
+            "provider": "nebius",
+            "variant": "fp8",
+            "exact_match_rate": 0.959580079115529
+          },
+          {
+            "endpoint": "novita/bf16",
+            "provider": "novita",
+            "variant": "bf16",
+            "exact_match_rate": 0.8982181836641454
+          },
+          {
+            "endpoint": "together",
+            "provider": "together",
+            "variant": null,
+            "exact_match_rate": 0.9496572188683107
+          }
+        ]
+      }
+    },
+    {
+      "model": "openai/gpt-oss-120b",
+      "id": "openai%2Fgpt-oss-120b",
+      "lastTimestamp": "2026-03-04T01:59:29Z",
+      "latestRun": {
+        "id": "openai_gpt-oss-120b_audit_results_20260304_015929",
+        "timestamp": "2026-03-04T01:59:29Z",
+        "dataUrl": "../../data/openai_gpt-oss-120b_audit_results_20260304_015929.json",
+        "providerCount": 12,
+        "providerEntries": [
+          {
+            "endpoint": "baseten/fp4",
+            "provider": "baseten",
+            "variant": "fp4",
+            "exact_match_rate": 0.9274407856730214
+          },
+          {
+            "endpoint": "cerebras/fp16",
+            "provider": "cerebras",
+            "variant": "fp16",
+            "exact_match_rate": 0.9595094863489125
+          },
+          {
+            "endpoint": "clarifai/fp4",
+            "provider": "clarifai",
+            "variant": "fp4",
+            "exact_match_rate": 0.9652777777777778
+          },
+          {
+            "endpoint": "fireworks",
+            "provider": "fireworks",
+            "variant": null,
+            "exact_match_rate": 0.9505325030553454
+          },
+          {
+            "endpoint": "groq",
+            "provider": "groq",
+            "variant": null,
+            "exact_match_rate": 0.970646361311323
+          },
+          {
+            "endpoint": "nebius/fp4",
+            "provider": "nebius",
+            "variant": "fp4",
+            "exact_match_rate": 0.9234011048465175
+          },
+          {
+            "endpoint": "novita/fp4",
+            "provider": "novita",
+            "variant": "fp4",
+            "exact_match_rate": 0.9472181765219925
+          },
+          {
+            "endpoint": "parasail/fp4",
+            "provider": "parasail",
+            "variant": "fp4",
+            "exact_match_rate": 0.9217248784898836
+          },
+          {
+            "endpoint": "sambanova",
+            "provider": "sambanova",
+            "variant": null,
+            "exact_match_rate": 0.9711261934890142
+          },
+          {
+            "endpoint": "siliconflow/fp8",
+            "provider": "siliconflow",
+            "variant": "fp8",
+            "exact_match_rate": 0.9420600858369099
+          },
+          {
+            "endpoint": "together",
+            "provider": "together",
+            "variant": null,
+            "exact_match_rate": 0.9423673278333626
+          },
+          {
+            "endpoint": "wandb/fp4",
+            "provider": "wandb",
+            "variant": "fp4",
+            "exact_match_rate": 0.9203781751907962
+          }
+        ]
+      }
+    },
+    {
+      "model": "openai/gpt-oss-20b",
+      "id": "openai%2Fgpt-oss-20b",
+      "lastTimestamp": "2026-03-04T01:51:36Z",
+      "latestRun": {
+        "id": "openai_gpt-oss-20b_audit_results_20260304_015136",
+        "timestamp": "2026-03-04T01:51:36Z",
+        "dataUrl": "../../data/openai_gpt-oss-20b_audit_results_20260304_015136.json",
+        "providerCount": 10,
+        "providerEntries": [
+          {
+            "endpoint": "clarifai/fp4",
+            "provider": "clarifai",
+            "variant": "fp4",
+            "exact_match_rate": 0.9672875965470241
+          },
+          {
+            "endpoint": "deepinfra/bf16",
+            "provider": "deepinfra",
+            "variant": "bf16",
+            "exact_match_rate": 0.9629691409507923
+          },
+          {
+            "endpoint": "fireworks",
+            "provider": "fireworks",
+            "variant": null,
+            "exact_match_rate": 0.9664001789008777
+          },
+          {
+            "endpoint": "groq",
+            "provider": "groq",
+            "variant": null,
+            "exact_match_rate": 0.9783087612269107
+          },
+          {
+            "endpoint": "nebius/fp4",
+            "provider": "nebius",
+            "variant": "fp4",
+            "exact_match_rate": 0.9577660461239234
+          },
+          {
+            "endpoint": "nextbit/fp8",
+            "provider": "nextbit",
+            "variant": "fp8",
+            "exact_match_rate": 0.9656546383074247
+          },
+          {
+            "endpoint": "novita/fp4",
+            "provider": "novita",
+            "variant": "fp4",
+            "exact_match_rate": 0.9704751131221719
+          },
+          {
+            "endpoint": "parasail/fp4",
+            "provider": "parasail",
+            "variant": "fp4",
+            "exact_match_rate": 0.9768283033796767
+          },
+          {
+            "endpoint": "together",
+            "provider": "together",
+            "variant": null,
+            "exact_match_rate": 0.9761837255457896
+          },
+          {
+            "endpoint": "wandb/fp4",
+            "provider": "wandb",
+            "variant": "fp4",
+            "exact_match_rate": 0.9605892162312396
+          }
+        ]
+      }
+    }
+  ]
+}

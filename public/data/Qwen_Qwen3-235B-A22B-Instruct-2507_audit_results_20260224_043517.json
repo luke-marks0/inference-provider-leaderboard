@@ -1,0 +1,100 @@
+{
+  "model": "Qwen/Qwen3-235B-A22B-Instruct-2507",
+  "parameters": {
+    "n_prompts": 100,
+    "max_tokens": 200,
+    "seed": 42,
+    "top_k": 50,
+    "top_p": 0.95,
+    "temperature": 0,
+    "fireworks_verification_mode": "on-demand",
+    "fireworks_verification_strategy": "fixed-per-audit",
+    "fireworks_deployment_created_for_audit": true,
+    "fireworks_serverless_mapping_error": null
+  },
+  "providers": {
+    "alibaba": {
+      "exact_match_rate": 0.8711116619159747,
+      "avg_prob": 0.8047635439178037,
+      "avg_margin": 0.12178890032859588,
+      "avg_logit_rank": 0.1913496096170529,
+      "avg_gumbel_rank": 0.1913496096170529,
+      "infinite_margin_rate": 0.006878175734291734,
+      "total_tokens": 16138,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand",
+      "serverless_error": "Error code: 404 - {'error': {'message': 'Model not found, inaccessible, and/or not deployed', 'param': 'model', 'code': 'NOT_FOUND', 'type': 'error'}, 'request_id': 'cmpl-[redacted]'}"
+    },
+    "atlascloud/fp8": {
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'chutes', 'novita', 'siliconflow', 'wandb', 'parasail', 'alibaba', 'together', 'friendli', 'atlas-cloud', 'crusoe', 'google-vertex', 'hyperbolic', 'cerebras'], 'requested_providers': ['atlascloud/fp8']}}}"
+    },
+    "cerebras/fp16": {
+      "error": "Error code: 404 - {'error': {'message': 'Provider returned error', 'code': 404, 'metadata': {'raw': '{\"message\":\"Model qwen-3-235b-a22b-instruct-2507 does not exist or you do not have access to it.\",\"type\":\"not_found_error\",\"param\":\"model\",\"code\":\"model_not_found\"}', 'provider_name': 'Cerebras', 'is_byok': False}}, 'user_id': 'org_[redacted]'}"
+    },
+    "chutes/bf16": {
+      "error": "Error code: 404 - {'error': {'message': 'No endpoints found matching your data policy (Paid model training). Configure: https://openrouter.ai/settings/privacy', 'code': 404}}"
+    },
+    "crusoe/bf16": {
+      "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'qwen/qwen3-235b-a22b-2507 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Crusoe', 'is_byok': False}}, 'user_id': 'org_[redacted]'}"
+    },
+    "deepinfra/fp8": {
+      "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'qwen/qwen3-235b-a22b-2507 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'DeepInfra', 'is_byok': False}}, 'user_id': 'org_[redacted]'}"
+    },
+    "friendli": {
+      "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'qwen/qwen3-235b-a22b-2507 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Friendli', 'is_byok': False}}, 'user_id': 'org_[redacted]'}"
+    },
+    "google": {
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'chutes', 'novita', 'siliconflow', 'wandb', 'parasail', 'alibaba', 'together', 'friendli', 'atlas-cloud', 'crusoe', 'google-vertex', 'hyperbolic', 'cerebras'], 'requested_providers': ['google']}}}"
+    },
+    "hyperbolic": {
+      "exact_match_rate": 0.9617670984293849,
+      "avg_prob": 0.8447954754978764,
+      "avg_margin": 0.01265097884792879,
+      "avg_logit_rank": 0.031662599336712345,
+      "avg_gumbel_rank": 0.031662599336712345,
+      "infinite_margin_rate": 0,
+      "total_tokens": 15981,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    },
+    "novita/fp8": {
+      "exact_match_rate": 0.9641280696300901,
+      "avg_prob": 0.845002764371711,
+      "avg_margin": 0.012388451838783884,
+      "avg_logit_rank": 0.03071184333229717,
+      "avg_gumbel_rank": 0.03071184333229717,
+      "infinite_margin_rate": 0.00006216972334473111,
+      "total_tokens": 16085,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    },
+    "parasail/fp8": {
+      "error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded: limit_rpm/qwen/qwen3-235b-a22b-07-25/043eb28f-fc28-4b0d-9800-b249fcfcfbf9. High demand for qwen/qwen3-235b-a22b-2507 on OpenRouter - limited to 18 requests per minute. Please retry shortly.', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '18', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1771908540000'}, 'provider_name': None}}, 'user_id': 'org_[redacted]'}"
+    },
+    "siliconflow/fp8": {
+      "error": "Error code: 503 - {'error': {'message': 'Provider returned error', 'code': 503, 'metadata': {'raw': '{\"code\":50508,\"message\":\"System is too busy now. Please try again later.\",\"data\":null}', 'provider_name': 'SiliconFlow', 'is_byok': False}}, 'user_id': 'org_[redacted]'}"
+    },
+    "together": {
+      "exact_match_rate": 0.9636171403694259,
+      "avg_prob": 0.8429581869162596,
+      "avg_margin": 0.011574191052991666,
+      "avg_logit_rank": 0.030474531998258596,
+      "avg_gumbel_rank": 0.030474531998258596,
+      "infinite_margin_rate": 0.00006219292244542571,
+      "total_tokens": 16079,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    },
+    "wandb/bf16": {
+      "exact_match_rate": 0.963522247079294,
+      "avg_prob": 0.8464781824796151,
+      "avg_margin": 0.012933672404216643,
+      "avg_logit_rank": 0.03212776534924186,
+      "avg_gumbel_rank": 0.03212776534924186,
+      "infinite_margin_rate": 0.00006214267959234402,
+      "total_tokens": 16092,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    }
+  }
+}

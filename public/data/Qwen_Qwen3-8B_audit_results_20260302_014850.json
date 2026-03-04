@@ -1,0 +1,31 @@
+{
+  "model": "Qwen/Qwen3-8B",
+  "parameters": {
+    "n_prompts": 100,
+    "max_tokens": 200,
+    "seed": 42,
+    "top_k": 50,
+    "top_p": 0.95,
+    "temperature": 0,
+    "fireworks_verification_mode": "serverless",
+    "fireworks_verification_strategy": "fixed-per-audit",
+    "fireworks_deployment_created_for_audit": false,
+    "fireworks_serverless_mapping_error": null
+  },
+  "providers": {
+    "alibaba": {
+      "exact_match_rate": 0.900390023606692,
+      "avg_prob": 0.8340325249436724,
+      "avg_margin": 0.09102357707252991,
+      "avg_logit_rank": 0.1519039310274043,
+      "avg_gumbel_rank": 0.1519039310274043,
+      "infinite_margin_rate": 0.008878168941804373,
+      "total_tokens": 19486,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "atlascloud/fp8": {
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['atlas-cloud', 'alibaba'], 'requested_providers': ['atlascloud/fp8']}}}"
+    }
+  }
+}

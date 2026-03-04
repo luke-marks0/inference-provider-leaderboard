@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "/api/v1/schemas/meta.schema.json",
+  "title": "MetaPayload",
+  "type": "object",
+  "required": [
+    "version",
+    "generatedAt",
+    "runCount",
+    "modelCount",
+    "providerCount",
+    "ignoredModels"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "generatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "runCount": {
+      "type": "number"
+    },
+    "modelCount": {
+      "type": "number"
+    },
+    "providerCount": {
+      "type": "number"
+    },
+    "ignoredModels": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}

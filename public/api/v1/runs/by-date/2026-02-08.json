@@ -1,0 +1,297 @@
+{
+  "version": "v1",
+  "generatedAt": "2026-03-04T07:23:33.187Z",
+  "date": "2026-02-08",
+  "count": 2,
+  "runs": [
+    {
+      "id": "Qwen_Qwen3-235B-A22B-Instruct-2507_audit_results_20260208_023004",
+      "filename": "Qwen_Qwen3-235B-A22B-Instruct-2507_audit_results_20260208_023004.json",
+      "dataUrl": "../../../../data/Qwen_Qwen3-235B-A22B-Instruct-2507_audit_results_20260208_023004.json",
+      "model": "Qwen/Qwen3-235B-A22B-Instruct-2507",
+      "timestamp": "2026-02-08T02:30:04Z",
+      "providerEntries": [
+        {
+          "endpoint": "alibaba",
+          "provider": "alibaba",
+          "variant": null,
+          "metrics": {
+            "exact_match_rate": 0.873767747535495,
+            "avg_prob": 0.8036917288555987,
+            "avg_margin": 0.12074023977728661,
+            "avg_logit_rank": 0.19344038688077375,
+            "avg_gumbel_rank": 0.19344038688077375,
+            "infinite_margin_rate": 0.008122016244032488,
+            "total_tokens": 16129,
+            "n_sequences": 100
+          }
+        },
+        {
+          "endpoint": "cerebras/fp16",
+          "provider": "cerebras",
+          "variant": "fp16",
+          "metrics": {
+            "exact_match_rate": 0.9397778332501248,
+            "avg_prob": 0.8352651076983993,
+            "avg_margin": 0.03295817275755205,
+            "avg_logit_rank": 0.05991013479780329,
+            "avg_gumbel_rank": 0.05991013479780329,
+            "infinite_margin_rate": 0.00037443834248627057,
+            "total_tokens": 16024,
+            "n_sequences": 100
+          }
+        },
+        {
+          "endpoint": "crusoe/bf16",
+          "provider": "crusoe",
+          "variant": "bf16",
+          "metrics": {
+            "exact_match_rate": 0.9455879609477023,
+            "avg_prob": 0.839677040668398,
+            "avg_margin": 0.02957939425174605,
+            "avg_logit_rank": 0.05677507617685467,
+            "avg_gumbel_rank": 0.05677507617685467,
+            "infinite_margin_rate": 0.0005596666873950625,
+            "total_tokens": 16081,
+            "n_sequences": 100
+          }
+        },
+        {
+          "endpoint": "fireworks/fp8",
+          "provider": "fireworks",
+          "variant": "fp8",
+          "metrics": {
+            "exact_match_rate": 0.9621003996003996,
+            "avg_prob": 0.8420130735780527,
+            "avg_margin": 0.012910761189428,
+            "avg_logit_rank": 0.034278221778221776,
+            "avg_gumbel_rank": 0.034278221778221776,
+            "infinite_margin_rate": 0.00012487512487512488,
+            "total_tokens": 16016,
+            "n_sequences": 100
+          }
+        },
+        {
+          "endpoint": "hyperbolic",
+          "provider": "hyperbolic",
+          "variant": null,
+          "metrics": {
+            "exact_match_rate": 0.9577683791516358,
+            "avg_prob": 0.8442691314734234,
+            "avg_margin": 0.016186895533631417,
+            "avg_logit_rank": 0.03688269685284239,
+            "avg_gumbel_rank": 0.03688269685284239,
+            "infinite_margin_rate": 0.00018659037193680805,
+            "total_tokens": 16078,
+            "n_sequences": 100
+          }
+        },
+        {
+          "endpoint": "nebius/fp8",
+          "provider": "nebius",
+          "variant": "fp8",
+          "metrics": {
+            "exact_match_rate": 0.9571526865578283,
+            "avg_prob": 0.8427600869667171,
+            "avg_margin": 0.01678970364593107,
+            "avg_logit_rank": 0.03928191655720273,
+            "avg_gumbel_rank": 0.03928191655720273,
+            "infinite_margin_rate": 0,
+            "total_tokens": 15987,
+            "n_sequences": 100
+          }
+        },
+        {
+          "endpoint": "novita/fp8",
+          "provider": "novita",
+          "variant": "fp8",
+          "metrics": {
+            "exact_match_rate": 0.9604226584969363,
+            "avg_prob": 0.8431370513486549,
+            "avg_margin": 0.015217727521844129,
+            "avg_logit_rank": 0.035388270601475556,
+            "avg_gumbel_rank": 0.035388270601475556,
+            "infinite_margin_rate": 0,
+            "total_tokens": 15994,
+            "n_sequences": 100
+          }
+        },
+        {
+          "endpoint": "together",
+          "provider": "together",
+          "variant": null,
+          "metrics": {
+            "exact_match_rate": 0.9583981095703004,
+            "avg_prob": 0.8456942970013653,
+            "avg_margin": 0.015596547292832712,
+            "avg_logit_rank": 0.03588085318077234,
+            "avg_gumbel_rank": 0.03588085318077234,
+            "infinite_margin_rate": 0.00006218518748834027,
+            "total_tokens": 16081,
+            "n_sequences": 100
+          }
+        },
+        {
+          "endpoint": "wandb/bf16",
+          "provider": "wandb",
+          "variant": "bf16",
+          "metrics": {
+            "exact_match_rate": 0.9569051167411823,
+            "avg_prob": 0.8437395358682086,
+            "avg_margin": 0.017019118788819877,
+            "avg_logit_rank": 0.03943119721808246,
+            "avg_gumbel_rank": 0.03943119721808246,
+            "infinite_margin_rate": 0.00024838549428713363,
+            "total_tokens": 16104,
+            "n_sequences": 100
+          }
+        }
+      ],
+      "parameters": {
+        "n_prompts": 100,
+        "max_tokens": 200,
+        "seed": 42,
+        "top_k": 50,
+        "top_p": 0.95,
+        "temperature": 0
+      }
+    },
+    {
+      "id": "moonshotai_Kimi-K2-Thinking_audit_results_20260208_024341",
+      "filename": "moonshotai_Kimi-K2-Thinking_audit_results_20260208_024341.json",
+      "dataUrl": "../../../../data/moonshotai_Kimi-K2-Thinking_audit_results_20260208_024341.json",
+      "model": "moonshotai/Kimi-K2-Thinking",
+      "timestamp": "2026-02-08T02:43:41Z",
+      "providerEntries": [
+        {
+          "endpoint": "baseten/fp4",
+          "provider": "baseten",
+          "variant": "fp4",
+          "metrics": {
+            "exact_match_rate": 0.9302290307902321,
+            "avg_prob": 0.8799480581086471,
+            "avg_margin": 0.06565767857093456,
+            "avg_logit_rank": 0.0836240457050407,
+            "avg_gumbel_rank": 0.0836240457050407,
+            "infinite_margin_rate": 0.000556145406744527,
+            "total_tokens": 19779,
+            "n_sequences": 100
+          }
+        },
+        {
+          "endpoint": "deepinfra/fp4",
+          "provider": "deepinfra",
+          "variant": "fp4",
+          "metrics": {
+            "exact_match_rate": 0.9238298088138344,
+            "avg_prob": 0.8713989776906761,
+            "avg_margin": 0.06148335903012706,
+            "avg_logit_rank": 0.1121760738374157,
+            "avg_gumbel_rank": 0.1121760738374157,
+            "infinite_margin_rate": 0.006643338911709519,
+            "total_tokens": 19719,
+            "n_sequences": 100
+          }
+        },
+        {
+          "endpoint": "moonshotai/int4",
+          "provider": "moonshotai",
+          "variant": "int4",
+          "metrics": {
+            "exact_match_rate": 0.9671957137080469,
+            "avg_prob": 0.89999966058991,
+            "avg_margin": 0.015629739156809222,
+            "avg_logit_rank": 0.031338455317428224,
+            "avg_gumbel_rank": 0.031338455317428224,
+            "infinite_margin_rate": 0.00010109179134654265,
+            "total_tokens": 19784,
+            "n_sequences": 100
+          }
+        },
+        {
+          "endpoint": "nebius/fp8",
+          "provider": "nebius",
+          "variant": "fp8",
+          "metrics": {
+            "exact_match_rate": 0.9590587044534413,
+            "avg_prob": 0.8937479285008617,
+            "avg_margin": 0.017553384290583507,
+            "avg_logit_rank": 0.060172064777327935,
+            "avg_gumbel_rank": 0.060172064777327935,
+            "infinite_margin_rate": 0.005212550607287449,
+            "total_tokens": 19760,
+            "n_sequences": 100
+          }
+        },
+        {
+          "endpoint": "novita/bf16",
+          "provider": "novita",
+          "variant": "bf16",
+          "metrics": {
+            "exact_match_rate": 0.896987614047607,
+            "avg_prob": 0.8496230401043442,
+            "avg_margin": 0.12981038041946844,
+            "avg_logit_rank": 0.16066058412763137,
+            "avg_gumbel_rank": 0.16066058412763137,
+            "infinite_margin_rate": 0.006524287680309904,
+            "total_tokens": 19619,
+            "n_sequences": 100
+          }
+        },
+        {
+          "endpoint": "parasail/int4",
+          "provider": "parasail",
+          "variant": "int4",
+          "metrics": {
+            "exact_match_rate": 0.9575503097956884,
+            "avg_prob": 0.8921940550722182,
+            "avg_margin": 0.018403505551230246,
+            "avg_logit_rank": 0.06277843207537508,
+            "avg_gumbel_rank": 0.06277843207537508,
+            "infinite_margin_rate": 0.005223001689794665,
+            "total_tokens": 19529,
+            "n_sequences": 100
+          }
+        },
+        {
+          "endpoint": "siliconflow/fp8",
+          "provider": "siliconflow",
+          "variant": "fp8",
+          "metrics": {
+            "exact_match_rate": 0.9585173902005585,
+            "avg_prob": 0.8969273501693612,
+            "avg_margin": 0.023944167424429973,
+            "avg_logit_rank": 0.042802741812642806,
+            "avg_gumbel_rank": 0.042802741812642806,
+            "infinite_margin_rate": 0.0001523229246001523,
+            "total_tokens": 19695,
+            "n_sequences": 100
+          }
+        },
+        {
+          "endpoint": "together",
+          "provider": "together",
+          "variant": null,
+          "metrics": {
+            "exact_match_rate": 0.9488723339116236,
+            "avg_prob": 0.8788593011145136,
+            "avg_margin": 0.027165238305716707,
+            "avg_logit_rank": 0.0814879069292785,
+            "avg_gumbel_rank": 0.0814879069292785,
+            "infinite_margin_rate": 0.0061230737830390855,
+            "total_tokens": 19598,
+            "n_sequences": 100
+          }
+        }
+      ],
+      "parameters": {
+        "n_prompts": 100,
+        "max_tokens": 200,
+        "seed": 42,
+        "top_k": 50,
+        "top_p": 0.95,
+        "temperature": 0
+      }
+    }
+  ]
+}

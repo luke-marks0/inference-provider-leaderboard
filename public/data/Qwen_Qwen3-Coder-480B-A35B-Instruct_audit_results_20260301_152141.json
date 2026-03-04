@@ -1,0 +1,115 @@
+{
+  "model": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
+  "parameters": {
+    "n_prompts": 100,
+    "max_tokens": 200,
+    "seed": 42,
+    "top_k": 50,
+    "top_p": 0.95,
+    "temperature": 0,
+    "fireworks_verification_mode": "on-demand",
+    "fireworks_verification_strategy": "fixed-per-audit",
+    "fireworks_deployment_created_for_audit": true,
+    "fireworks_serverless_mapping_error": null
+  },
+  "providers": {
+    "alibaba": {
+      "exact_match_rate": 0.9278988941548183,
+      "avg_prob": 0.9016072747530663,
+      "avg_margin": 0.10249418323680647,
+      "avg_logit_rank": 0.08985781990521327,
+      "avg_gumbel_rank": 0.08985781990521327,
+      "infinite_margin_rate": 0.0007582938388625592,
+      "total_tokens": 15825,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand",
+      "serverless_error": "Error code: 404 - {'error': {'message': 'Model not found, inaccessible, and/or not deployed', 'param': 'model', 'code': 'NOT_FOUND', 'type': 'error'}, 'request_id': 'cmpl-[redacted]'}"
+    },
+    "atlascloud/fp8": {
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['atlascloud/fp8']}}}"
+    },
+    "deepinfra/fp4": {
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['deepinfra/fp4']}}}"
+    },
+    "deepinfra/fp8": {
+      "exact_match_rate": 0.9676812048948855,
+      "avg_prob": 0.927210789500608,
+      "avg_margin": 0.021535290615439677,
+      "avg_logit_rank": 0.03118920614998431,
+      "avg_gumbel_rank": 0.03118920614998431,
+      "infinite_margin_rate": 0,
+      "total_tokens": 15935,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    },
+    "google": {
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['google']}}}"
+    },
+    "hyperbolic/fp8": {
+      "exact_match_rate": 0.9716875,
+      "avg_prob": 0.9301320878144761,
+      "avg_margin": 0.01621167755126953,
+      "avg_logit_rank": 0.0265625,
+      "avg_gumbel_rank": 0.0265625,
+      "infinite_margin_rate": 0,
+      "total_tokens": 16000,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    },
+    "nebius/fp8": {
+      "exact_match_rate": 0.9723036616555424,
+      "avg_prob": 0.931377031885916,
+      "avg_margin": 0.01654157435691005,
+      "avg_logit_rank": 0.02582496413199426,
+      "avg_gumbel_rank": 0.02582496413199426,
+      "infinite_margin_rate": 0,
+      "total_tokens": 16031,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    },
+    "novita/fp8": {
+      "exact_match_rate": 0.9524227418040494,
+      "avg_prob": 0.919249597709689,
+      "avg_margin": 0.05353107122405602,
+      "avg_logit_rank": 0.048893625023506554,
+      "avg_gumbel_rank": 0.048893625023506554,
+      "infinite_margin_rate": 0,
+      "total_tokens": 15953,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    },
+    "siliconflow/fp8": {
+      "exact_match_rate": 0.9609516098897677,
+      "avg_prob": 0.9231952932199717,
+      "avg_margin": 0.03312844959830465,
+      "avg_logit_rank": 0.0391729463785265,
+      "avg_gumbel_rank": 0.0391729463785265,
+      "infinite_margin_rate": 0.0001245562682942019,
+      "total_tokens": 16057,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    },
+    "together/fp8": {
+      "exact_match_rate": 0.9721609875921143,
+      "avg_prob": 0.9324826836263845,
+      "avg_margin": 0.015975385085855814,
+      "avg_logit_rank": 0.02620142344271588,
+      "avg_gumbel_rank": 0.02620142344271588,
+      "infinite_margin_rate": 0.00006298419096806702,
+      "total_tokens": 15877,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    },
+    "wandb/bf16": {
+      "exact_match_rate": 0.9682984554060787,
+      "avg_prob": 0.927607366810946,
+      "avg_margin": 0.023084867636125123,
+      "avg_logit_rank": 0.03139013452914798,
+      "avg_gumbel_rank": 0.03139013452914798,
+      "infinite_margin_rate": 0,
+      "total_tokens": 16056,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    }
+  }
+}

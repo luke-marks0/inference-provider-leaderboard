@@ -1,0 +1,103 @@
+{
+  "model": "moonshotai/Kimi-K2-Thinking",
+  "parameters": {
+    "n_prompts": 100,
+    "max_tokens": 200,
+    "seed": 42,
+    "top_k": 50,
+    "top_p": 0.95,
+    "temperature": 0,
+    "fireworks_verification_mode": "serverless",
+    "fireworks_verification_strategy": "fixed-per-audit",
+    "fireworks_deployment_created_for_audit": false,
+    "fireworks_serverless_mapping_error": null
+  },
+  "providers": {
+    "atlascloud/int4": {
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'parasail', 'siliconflow', 'moonshotai', 'baseten', 'atlas-cloud', 'nebius', 'novita', 'google-vertex', 'together'], 'requested_providers': ['atlascloud/int4']}}}"
+    },
+    "baseten/fp4": {
+      "exact_match_rate": 0.9308755760368663,
+      "avg_prob": 0.8771742722970884,
+      "avg_margin": 0.062333803733942796,
+      "avg_logit_rank": 0.08092368461032055,
+      "avg_gumbel_rank": 0.08092368461032055,
+      "infinite_margin_rate": 0.0004051248290879627,
+      "total_tokens": 19747,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "deepinfra/fp4": {
+      "exact_match_rate": 0.9315075402229284,
+      "avg_prob": 0.8770658900455293,
+      "avg_margin": 0.05410561726361508,
+      "avg_logit_rank": 0.09946033187068139,
+      "avg_gumbel_rank": 0.09946033187068139,
+      "infinite_margin_rate": 0.006052352852171282,
+      "total_tokens": 19827,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "google": {
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'parasail', 'siliconflow', 'moonshotai', 'baseten', 'atlas-cloud', 'nebius', 'novita', 'google-vertex', 'together'], 'requested_providers': ['google']}}}"
+    },
+    "moonshotai/int4": {
+      "exact_match_rate": 0.9672323294093665,
+      "avg_prob": 0.8990969230568823,
+      "avg_margin": 0.015587945273877479,
+      "avg_logit_rank": 0.031901340263975946,
+      "avg_gumbel_rank": 0.031901340263975946,
+      "infinite_margin_rate": 0.00010192121490088162,
+      "total_tokens": 19623,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "nebius/fp8": {
+      "exact_match_rate": 0.9572579822503315,
+      "avg_prob": 0.8908975921960011,
+      "avg_margin": 0.018318283064624675,
+      "avg_logit_rank": 0.0629399163521371,
+      "avg_gumbel_rank": 0.0629399163521371,
+      "infinite_margin_rate": 0.0052534938284198715,
+      "total_tokens": 19606,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "novita/bf16": {
+      "exact_match_rate": 0.8981505069547052,
+      "avg_prob": 0.8530959189206909,
+      "avg_margin": 0.12392300945276905,
+      "avg_logit_rank": 0.15055790492688642,
+      "avg_gumbel_rank": 0.15055790492688642,
+      "infinite_margin_rate": 0.004738370611912162,
+      "total_tokens": 19627,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "parasail/int4": {
+      "error": "Error code: 403 - {'error': {'message': 'Provider returned error', 'code': 403, 'metadata': {'raw': '{\"error\":{\"message\":\"Deployment parasail-kimi-k2-thinking doesn\\'t exist or isn\\'t accessible.\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}', 'provider_name': 'Parasail', 'is_byok': False}}, 'user_id': 'org_[redacted]'}"
+    },
+    "siliconflow/fp8": {
+      "exact_match_rate": 0.9617827920922905,
+      "avg_prob": 0.896506994289747,
+      "avg_margin": 0.019280533112992986,
+      "avg_logit_rank": 0.038776236214870155,
+      "avg_gumbel_rank": 0.038776236214870155,
+      "infinite_margin_rate": 0.00005082075519642222,
+      "total_tokens": 19677,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "together": {
+      "exact_match_rate": 0.9483831480159135,
+      "avg_prob": 0.8809131411809425,
+      "avg_margin": 0.027283591785650145,
+      "avg_logit_rank": 0.08094460879322657,
+      "avg_gumbel_rank": 0.08094460879322657,
+      "infinite_margin_rate": 0.006018565745180047,
+      "total_tokens": 19606,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    }
+  }
+}

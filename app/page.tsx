@@ -25,6 +25,33 @@ export default function Page() {
 
   useEffect(() => {
     async function fetchData() {
+      const fetchIgnoredModels = async (): Promise<Set<string>> => {
+        try {
+          const metaResponse = await fetch(`${basePath}/api/v1/meta.json`)
+          if (metaResponse.ok) {
+            const meta = await metaResponse.json()
+            const ignored = Array.isArray(meta?.ignoredModels)
+              ? meta.ignoredModels.filter((value: unknown): value is string => typeof value === "string")
+              : []
+            return new Set(ignored)
+          }
+        } catch {
+          // Fall through to api-config fallback.
+        }
+
+        try {
+          const configResponse = await fetch(`${basePath}/data/api-config.json`)
+          if (!configResponse.ok) return new Set()
+          const config = await configResponse.json()
+          const ignored = Array.isArray(config?.ignoredModels)
+            ? config.ignoredModels.filter((value: unknown): value is string => typeof value === "string")
+            : []
+          return new Set(ignored)
+        } catch {
+          return new Set()
+        }
+      }
+
       const providersFromEntries = (entries: unknown): AuditResult["providers"] => {
         if (!Array.isArray(entries)) return {}
 
@@ -42,7 +69,7 @@ export default function Page() {
         )
       }
 
-      const parseFromManifest = async (): Promise<AuditResult[]> => {
+      const parseFromManifest = async (ignoredModels: Set<string>): Promise<AuditResult[]> => {
         const manifestResponse = await fetch(`${basePath}/data/manifest.json`)
         if (!manifestResponse.ok) {
           throw new Error("Manifest response was not ok")
@@ -77,9 +104,11 @@ export default function Page() {
                 8,
               )}T${timestamp.slice(9, 11)}:${timestamp.slice(11, 13)}:${timestamp.slice(13, 15)}`
               const utcTimestamp = `${formattedTimestamp}Z`
+              const resolvedModel = fileData.model ?? modelName.replace(/_/g, "/")
+              if (ignoredModels.has(resolvedModel)) return null
 
               return {
-                model: fileData.model ?? modelName.replace(/_/g, "/"),
+                model: resolvedModel,
                 timestamp: utcTimestamp,
                 providers: fileData.providers ?? {},
               }
@@ -94,6 +123,7 @@ export default function Page() {
 
       try {
         let results: AuditResult[] = []
+        const ignoredModels = await fetchIgnoredModels()
 
         try {
           const runsResponse = await fetch(`${basePath}/api/v1/runs.json`)
@@ -111,13 +141,14 @@ export default function Page() {
                 typeof (run as { model?: unknown }).model === "string" &&
                 typeof (run as { timestamp?: unknown }).timestamp === "string"
             )
+            .filter((run) => !ignoredModels.has(run.model))
             .map((run) => ({
               model: run.model,
               timestamp: run.timestamp,
               providers: providersFromEntries(run.providerEntries),
             }))
         } catch {
-          results = await parseFromManifest()
+          results = await parseFromManifest(ignoredModels)
         }
 
         if (results.length > 0) {
@@ -129,8 +160,9 @@ export default function Page() {
       } catch (error) {
         console.error("Error fetching audit results:", error)
         // Fallback to mock data on error
-        setAuditResults(sampleAuditResults)
-        setSelectedModel(sampleAuditResults[0]?.model || "")
+        const fallbackResults = sampleAuditResults
+        setAuditResults(fallbackResults)
+        setSelectedModel(fallbackResults[0]?.model || "")
       } finally {
         setIsLoading(false)
       }
