@@ -44,6 +44,7 @@ Raw data endpoints:
 - Timestamps are emitted in UTC RFC3339 format (`YYYY-MM-DDTHH:MM:SSZ`).
 - Date partitions use UTC (`YYYY-MM-DD`).
 - Provider entries without a valid numeric `exact_match_rate` are removed from API responses.
+- In `/api/v1/leaderboard.json`, each provider `avgScore` is computed by averaging per-model provider means (equal weight per model).
 - `runs.json` remains the complete dataset snapshot.
 - `runs/index.json` plus `runs/by-date/*.json` support incremental pulls by date.
 - URL fields (`endpoint`, `dataUrl`) are emitted as relative paths.

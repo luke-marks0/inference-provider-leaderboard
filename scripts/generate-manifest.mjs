@@ -75,26 +75,51 @@ function summarizeProviders(runs) {
       const providerName = endpointName.split("/")[0]
       const existing = providerMap.get(providerName)
       if (existing) {
-        existing.scoreSum += score
         existing.dataPoints += 1
-        existing.models.add(run.model)
+        const modelAggregate = existing.modelScores.get(run.model)
+        if (modelAggregate) {
+          modelAggregate.scoreSum += score
+          modelAggregate.dataPoints += 1
+        } else {
+          existing.modelScores.set(run.model, {
+            scoreSum: score,
+            dataPoints: 1,
+          })
+        }
       } else {
         providerMap.set(providerName, {
-          scoreSum: score,
+          modelScores: new Map([
+            [
+              run.model,
+              {
+                scoreSum: score,
+                dataPoints: 1,
+              },
+            ],
+          ]),
           dataPoints: 1,
-          models: new Set([run.model]),
         })
       }
     }
   }
 
   return Array.from(providerMap.entries())
-    .map(([provider, aggregate]) => ({
-      provider,
-      avgScore: aggregate.scoreSum / aggregate.dataPoints,
-      dataPoints: aggregate.dataPoints,
-      modelCount: aggregate.models.size,
-    }))
+    .map(([provider, aggregate]) => {
+      const modelAverages = Array.from(aggregate.modelScores.values()).map(
+        (modelAggregate) => modelAggregate.scoreSum / modelAggregate.dataPoints
+      )
+      if (modelAverages.length === 0) return null
+
+      const avgScore = modelAverages.reduce((sum, value) => sum + value, 0) / modelAverages.length
+
+      return {
+        provider,
+        avgScore,
+        dataPoints: aggregate.dataPoints,
+        modelCount: aggregate.modelScores.size,
+      }
+    })
+    .filter(Boolean)
     .sort((a, b) => b.avgScore - a.avgScore)
 }
 

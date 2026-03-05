@@ -177,10 +177,14 @@ export default function Page() {
   // Get unique providers
   const allProviders = Array.from(new Set(auditResults.flatMap((r) => Object.keys(r.providers))))
 
-  // Calculate aggregate leaderboard data (group endpoint variants like provider/fp8, provider/fp16 under provider)
+  // Calculate aggregate leaderboard data with equal model weighting:
+  // for each provider, average per model first, then average those model averages.
   const leaderboardAccumulator = new Map<
     string,
-    { scoreSum: number; dataPoints: number; models: Set<string> }
+    {
+      modelScores: Map<string, { scoreSum: number; dataPoints: number }>
+      dataPoints: number
+    }
   >()
 
   for (const result of auditResults) {
@@ -191,25 +195,52 @@ export default function Page() {
 
       const existing = leaderboardAccumulator.get(providerName)
       if (existing) {
-        existing.scoreSum += score
         existing.dataPoints += 1
-        existing.models.add(result.model)
+        const modelAggregate = existing.modelScores.get(result.model)
+        if (modelAggregate) {
+          modelAggregate.scoreSum += score
+          modelAggregate.dataPoints += 1
+        } else {
+          existing.modelScores.set(result.model, {
+            scoreSum: score,
+            dataPoints: 1,
+          })
+        }
       } else {
         leaderboardAccumulator.set(providerName, {
-          scoreSum: score,
+          modelScores: new Map([
+            [
+              result.model,
+              {
+                scoreSum: score,
+                dataPoints: 1,
+              },
+            ],
+          ]),
           dataPoints: 1,
-          models: new Set([result.model]),
         })
       }
     }
   }
 
-  const leaderboardData = Array.from(leaderboardAccumulator.entries()).map(([provider, aggregate]) => ({
-    provider,
-    avgScore: aggregate.scoreSum / aggregate.dataPoints,
-    modelCount: aggregate.models.size,
-    dataPoints: aggregate.dataPoints,
-  }))
+  const leaderboardData = Array.from(leaderboardAccumulator.entries())
+    .map(([provider, aggregate]) => {
+      const modelAverages = Array.from(aggregate.modelScores.values()).map(
+        (modelAggregate) => modelAggregate.scoreSum / modelAggregate.dataPoints
+      )
+
+      if (modelAverages.length === 0) return null
+
+      const avgScore = modelAverages.reduce((sum, value) => sum + value, 0) / modelAverages.length
+
+      return {
+        provider,
+        avgScore,
+        modelCount: aggregate.modelScores.size,
+        dataPoints: aggregate.dataPoints,
+      }
+    })
+    .filter((item): item is { provider: string; avgScore: number; modelCount: number; dataPoints: number } => item !== null)
   
   // Sort by average score
   leaderboardData.sort((a, b) => b.avgScore - a.avgScore)
@@ -281,7 +312,9 @@ export default function Page() {
         <Card>
           <CardHeader>
             <CardTitle>Overall Provider Rankings</CardTitle>
-            <CardDescription>The rate that a token sampled from a provider matches our reference implementation averaged across all models and timesteps</CardDescription>
+            <CardDescription>
+              The average exact match rate per model, then averaged across models so each model contributes equally
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <div className="space-y-3">

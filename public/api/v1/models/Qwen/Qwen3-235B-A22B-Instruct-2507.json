@@ -1,11 +1,11 @@
 {
   "version": "v1",
-  "generatedAt": "2026-03-04T10:57:17.965Z",
+  "generatedAt": "2026-03-05T13:22:30.228Z",
   "model": "Qwen/Qwen3-235B-A22B-Instruct-2507",
   "id": "Qwen%2FQwen3-235B-A22B-Instruct-2507",
-  "runCount": 39,
+  "runCount": 42,
   "firstTimestamp": "2026-02-07T10:02:53Z",
-  "lastTimestamp": "2026-03-04T08:15:54Z",
+  "lastTimestamp": "2026-03-05T06:00:25Z",
   "providers": [
     "alibaba",
     "crusoe/bf16",
@@ -17,7 +17,9 @@
     "siliconflow/fp8",
     "together",
     "wandb/bf16",
-    "cerebras/fp16"
+    "cerebras/fp16",
+    "atlas-cloud/fp8",
+    "google-vertex"
   ],
   "providerNames": [
     "alibaba",
@@ -30,7 +32,9 @@
     "siliconflow",
     "together",
     "wandb",
-    "cerebras"
+    "cerebras",
+    "atlas-cloud",
+    "google-vertex"
   ],
   "runs": [
     {
@@ -4607,6 +4611,411 @@
         "fireworks_deployment_created_for_audit": true,
         "fireworks_serverless_mapping_error": null
       }
+    },
+    {
+      "id": "Qwen_Qwen3-235B-A22B-Instruct-2507_audit_results_20260304_121739",
+      "filename": "Qwen_Qwen3-235B-A22B-Instruct-2507_audit_results_20260304_121739.json",
+      "dataUrl": "../../../data/Qwen_Qwen3-235B-A22B-Instruct-2507_audit_results_20260304_121739.json",
+      "model": "Qwen/Qwen3-235B-A22B-Instruct-2507",
+      "timestamp": "2026-03-04T12:17:39Z",
+      "providerEntries": [
+        {
+          "endpoint": "alibaba",
+          "provider": "alibaba",
+          "variant": null,
+          "metrics": {
+            "exact_match_rate": 0.8702699332959292,
+            "avg_prob": 0.8019840032500493,
+            "avg_margin": 0.12253327502228002,
+            "avg_logit_rank": 0.20054859422729257,
+            "avg_gumbel_rank": 0.20054859422729257,
+            "infinite_margin_rate": 0.008665295181098435,
+            "total_tokens": 16041,
+            "n_sequences": 100,
+            "fireworks_verification_mode": "on-demand",
+            "serverless_error": "Error code: 404 - {'error': {'message': 'Model not found, inaccessible, and/or not deployed', 'param': 'model', 'code': 'NOT_FOUND', 'type': 'error'}, 'request_id': 'redacted'}"
+          }
+        },
+        {
+          "endpoint": "hyperbolic",
+          "provider": "hyperbolic",
+          "variant": null,
+          "metrics": {
+            "exact_match_rate": 0.9644714581114104,
+            "avg_prob": 0.8451612091420339,
+            "avg_margin": 0.012848122253188456,
+            "avg_logit_rank": 0.02869854000877248,
+            "avg_gumbel_rank": 0.02869854000877248,
+            "infinite_margin_rate": 0.0001879817031142302,
+            "total_tokens": 15959,
+            "n_sequences": 100,
+            "fireworks_verification_mode": "on-demand"
+          }
+        },
+        {
+          "endpoint": "novita/fp8",
+          "provider": "novita",
+          "variant": "fp8",
+          "metrics": {
+            "exact_match_rate": 0.965452847805789,
+            "avg_prob": 0.8475401340004368,
+            "avg_margin": 0.011866222183317772,
+            "avg_logit_rank": 0.029505135387488328,
+            "avg_gumbel_rank": 0.029505135387488328,
+            "infinite_margin_rate": 0,
+            "total_tokens": 16065,
+            "n_sequences": 100,
+            "fireworks_verification_mode": "on-demand"
+          }
+        },
+        {
+          "endpoint": "together",
+          "provider": "together",
+          "variant": null,
+          "metrics": {
+            "exact_match_rate": 0.9602718566573988,
+            "avg_prob": 0.8454840849045806,
+            "avg_margin": 0.011415463536839667,
+            "avg_logit_rank": 0.029224590670373803,
+            "avg_gumbel_rank": 0.029224590670373803,
+            "infinite_margin_rate": 0,
+            "total_tokens": 16185,
+            "n_sequences": 100,
+            "fireworks_verification_mode": "on-demand"
+          }
+        },
+        {
+          "endpoint": "wandb/bf16",
+          "provider": "wandb",
+          "variant": "bf16",
+          "metrics": {
+            "exact_match_rate": 0.9646693573424402,
+            "avg_prob": 0.8469670302241818,
+            "avg_margin": 0.013187656444039119,
+            "avg_logit_rank": 0.03179136914001863,
+            "avg_gumbel_rank": 0.03179136914001863,
+            "infinite_margin_rate": 0,
+            "total_tokens": 16105,
+            "n_sequences": 100,
+            "fireworks_verification_mode": "on-demand"
+          }
+        }
+      ],
+      "parameters": {
+        "n_prompts": 100,
+        "max_tokens": 200,
+        "seed": 42,
+        "top_k": 50,
+        "top_p": 0.95,
+        "temperature": 0,
+        "verification_backend": "fireworks",
+        "fireworks_verification_mode": "on-demand",
+        "fireworks_verification_strategy": "fixed-per-audit",
+        "fireworks_deployment_created_for_audit": true,
+        "fireworks_serverless_mapping_error": null
+      }
+    },
+    {
+      "id": "Qwen_Qwen3-235B-A22B-Instruct-2507_audit_results_20260305_003644",
+      "filename": "Qwen_Qwen3-235B-A22B-Instruct-2507_audit_results_20260305_003644.json",
+      "dataUrl": "../../../data/Qwen_Qwen3-235B-A22B-Instruct-2507_audit_results_20260305_003644.json",
+      "model": "Qwen/Qwen3-235B-A22B-Instruct-2507",
+      "timestamp": "2026-03-05T00:36:44Z",
+      "providerEntries": [
+        {
+          "endpoint": "alibaba",
+          "provider": "alibaba",
+          "variant": null,
+          "metrics": {
+            "exact_match_rate": 0.8777612310747084,
+            "avg_prob": 0.8065438091912395,
+            "avg_margin": 0.11608584101374324,
+            "avg_logit_rank": 0.18608835939439067,
+            "avg_gumbel_rank": 0.18608835939439067,
+            "infinite_margin_rate": 0.008190618019359643,
+            "total_tokens": 16116,
+            "n_sequences": 100,
+            "fireworks_verification_mode": "on-demand",
+            "serverless_error": "Error code: 404 - {'error': {'message': 'Model not found, inaccessible, and/or not deployed', 'param': 'model', 'code': 'NOT_FOUND', 'type': 'error'}, 'request_id': 'redacted'}"
+          }
+        },
+        {
+          "endpoint": "atlas-cloud/fp8",
+          "provider": "atlas-cloud",
+          "variant": "fp8",
+          "metrics": {
+            "exact_match_rate": 0.9593394996585759,
+            "avg_prob": 0.8464434374886028,
+            "avg_margin": 0.01644997127186685,
+            "avg_logit_rank": 0.0361288720590974,
+            "avg_gumbel_rank": 0.0361288720590974,
+            "infinite_margin_rate": 0.00018623129927369795,
+            "total_tokens": 16109,
+            "n_sequences": 100,
+            "fireworks_verification_mode": "on-demand"
+          }
+        },
+        {
+          "endpoint": "google-vertex",
+          "provider": "google-vertex",
+          "variant": null,
+          "metrics": {
+            "exact_match_rate": 0.94824016563147,
+            "avg_prob": 0.8388718754695379,
+            "avg_margin": 0.02479200208664659,
+            "avg_logit_rank": 0.05263818307296568,
+            "avg_gumbel_rank": 0.05263818307296568,
+            "infinite_margin_rate": 0.0008156095112616851,
+            "total_tokens": 15939,
+            "n_sequences": 100,
+            "fireworks_verification_mode": "on-demand"
+          }
+        },
+        {
+          "endpoint": "hyperbolic",
+          "provider": "hyperbolic",
+          "variant": null,
+          "metrics": {
+            "exact_match_rate": 0.965598609041232,
+            "avg_prob": 0.8476086214311528,
+            "avg_margin": 0.011505826262963422,
+            "avg_logit_rank": 0.027074018877297566,
+            "avg_gumbel_rank": 0.027074018877297566,
+            "infinite_margin_rate": 0.00006209637357178341,
+            "total_tokens": 16104,
+            "n_sequences": 100,
+            "fireworks_verification_mode": "on-demand"
+          }
+        },
+        {
+          "endpoint": "novita/fp8",
+          "provider": "novita",
+          "variant": "fp8",
+          "metrics": {
+            "exact_match_rate": 0.9684833385238244,
+            "avg_prob": 0.8470681104202279,
+            "avg_margin": 0.009782534646527561,
+            "avg_logit_rank": 0.02553721582061663,
+            "avg_gumbel_rank": 0.02553721582061663,
+            "infinite_margin_rate": 0,
+            "total_tokens": 16055,
+            "n_sequences": 100,
+            "fireworks_verification_mode": "on-demand"
+          }
+        },
+        {
+          "endpoint": "siliconflow/fp8",
+          "provider": "siliconflow",
+          "variant": "fp8",
+          "metrics": {
+            "exact_match_rate": 0.9510845646023263,
+            "avg_prob": 0.8448245976134287,
+            "avg_margin": 0.023661053781126203,
+            "avg_logit_rank": 0.04721785602011946,
+            "avg_gumbel_rank": 0.04721785602011946,
+            "infinite_margin_rate": 0.00012574662055957246,
+            "total_tokens": 15905,
+            "n_sequences": 100,
+            "fireworks_verification_mode": "on-demand"
+          }
+        },
+        {
+          "endpoint": "together",
+          "provider": "together",
+          "variant": null,
+          "metrics": {
+            "exact_match_rate": 0.963629569658093,
+            "avg_prob": 0.8468134685840529,
+            "avg_margin": 0.012176409140094662,
+            "avg_logit_rank": 0.029582113719872953,
+            "avg_gumbel_rank": 0.029582113719872953,
+            "infinite_margin_rate": 0,
+            "total_tokens": 16057,
+            "n_sequences": 100,
+            "fireworks_verification_mode": "on-demand"
+          }
+        },
+        {
+          "endpoint": "wandb/bf16",
+          "provider": "wandb",
+          "variant": "bf16",
+          "metrics": {
+            "exact_match_rate": 0.962686102286177,
+            "avg_prob": 0.8463274562210522,
+            "avg_margin": 0.01224015929692854,
+            "avg_logit_rank": 0.03326481031582882,
+            "avg_gumbel_rank": 0.03326481031582882,
+            "infinite_margin_rate": 0.00012458730455366598,
+            "total_tokens": 16053,
+            "n_sequences": 100,
+            "fireworks_verification_mode": "on-demand"
+          }
+        }
+      ],
+      "parameters": {
+        "n_prompts": 100,
+        "max_tokens": 200,
+        "seed": 42,
+        "top_k": 50,
+        "top_p": 0.95,
+        "temperature": 0,
+        "verification_backend": "fireworks",
+        "fireworks_verification_mode": "on-demand",
+        "fireworks_verification_strategy": "fixed-per-audit",
+        "fireworks_deployment_created_for_audit": true,
+        "fireworks_serverless_mapping_error": null
+      }
+    },
+    {
+      "id": "Qwen_Qwen3-235B-A22B-Instruct-2507_audit_results_20260305_060025",
+      "filename": "Qwen_Qwen3-235B-A22B-Instruct-2507_audit_results_20260305_060025.json",
+      "dataUrl": "../../../data/Qwen_Qwen3-235B-A22B-Instruct-2507_audit_results_20260305_060025.json",
+      "model": "Qwen/Qwen3-235B-A22B-Instruct-2507",
+      "timestamp": "2026-03-05T06:00:25Z",
+      "providerEntries": [
+        {
+          "endpoint": "alibaba",
+          "provider": "alibaba",
+          "variant": null,
+          "metrics": {
+            "exact_match_rate": 0.8795588419601453,
+            "avg_prob": 0.8065984053961642,
+            "avg_margin": 0.1141345598431683,
+            "avg_logit_rank": 0.1804110790825918,
+            "avg_gumbel_rank": 0.1804110790825918,
+            "infinite_margin_rate": 0.006893094372728412,
+            "total_tokens": 15958,
+            "n_sequences": 100,
+            "fireworks_verification_mode": "on-demand",
+            "serverless_error": "Error code: 404 - {'error': {'message': 'Model not found, inaccessible, and/or not deployed', 'param': 'model', 'code': 'NOT_FOUND', 'type': 'error'}, 'request_id': 'redacted'}"
+          }
+        },
+        {
+          "endpoint": "atlas-cloud/fp8",
+          "provider": "atlas-cloud",
+          "variant": "fp8",
+          "metrics": {
+            "exact_match_rate": 0.9582630427991252,
+            "avg_prob": 0.8443517206101139,
+            "avg_margin": 0.015100051125667844,
+            "avg_logit_rank": 0.03480162449234614,
+            "avg_gumbel_rank": 0.03480162449234614,
+            "infinite_margin_rate": 0.00012496094970321776,
+            "total_tokens": 16005,
+            "n_sequences": 100,
+            "fireworks_verification_mode": "on-demand"
+          }
+        },
+        {
+          "endpoint": "google-vertex",
+          "provider": "google-vertex",
+          "variant": null,
+          "metrics": {
+            "exact_match_rate": 0.9517568495288024,
+            "avg_prob": 0.840285904035833,
+            "avg_margin": 0.0226312364170295,
+            "avg_logit_rank": 0.04793109904512264,
+            "avg_gumbel_rank": 0.04793109904512264,
+            "infinite_margin_rate": 0.00031205142607501716,
+            "total_tokens": 16023,
+            "n_sequences": 100,
+            "fireworks_verification_mode": "on-demand"
+          }
+        },
+        {
+          "endpoint": "hyperbolic",
+          "provider": "hyperbolic",
+          "variant": null,
+          "metrics": {
+            "exact_match_rate": 0.9658794282162834,
+            "avg_prob": 0.8450086002730671,
+            "avg_margin": 0.010570118972229129,
+            "avg_logit_rank": 0.027035425730267248,
+            "avg_gumbel_rank": 0.027035425730267248,
+            "infinite_margin_rate": 0.00018645121193287757,
+            "total_tokens": 16090,
+            "n_sequences": 100,
+            "fireworks_verification_mode": "on-demand"
+          }
+        },
+        {
+          "endpoint": "novita/fp8",
+          "provider": "novita",
+          "variant": "fp8",
+          "metrics": {
+            "exact_match_rate": 0.964964964964965,
+            "avg_prob": 0.8454010534082521,
+            "avg_margin": 0.01243137668918919,
+            "avg_logit_rank": 0.030342842842842842,
+            "avg_gumbel_rank": 0.030342842842842842,
+            "infinite_margin_rate": 0,
+            "total_tokens": 15984,
+            "n_sequences": 100,
+            "fireworks_verification_mode": "on-demand"
+          }
+        },
+        {
+          "endpoint": "siliconflow/fp8",
+          "provider": "siliconflow",
+          "variant": "fp8",
+          "metrics": {
+            "exact_match_rate": 0.950436775912273,
+            "avg_prob": 0.8408367549849953,
+            "avg_margin": 0.024682086282603308,
+            "avg_logit_rank": 0.05005885632860418,
+            "avg_gumbel_rank": 0.05005885632860418,
+            "infinite_margin_rate": 0,
+            "total_tokens": 16141,
+            "n_sequences": 100,
+            "fireworks_verification_mode": "on-demand"
+          }
+        },
+        {
+          "endpoint": "together",
+          "provider": "together",
+          "variant": null,
+          "metrics": {
+            "exact_match_rate": 0.9619842951514396,
+            "avg_prob": 0.8438705127404416,
+            "avg_margin": 0.012072856614210035,
+            "avg_logit_rank": 0.030537205534089493,
+            "avg_gumbel_rank": 0.030537205534089493,
+            "infinite_margin_rate": 0.0000623208276205908,
+            "total_tokens": 16046,
+            "n_sequences": 100,
+            "fireworks_verification_mode": "on-demand"
+          }
+        },
+        {
+          "endpoint": "wandb/bf16",
+          "provider": "wandb",
+          "variant": "bf16",
+          "metrics": {
+            "exact_match_rate": 0.9645127445534778,
+            "avg_prob": 0.8485363932604747,
+            "avg_margin": 0.01241220460822738,
+            "avg_logit_rank": 0.03054989816700611,
+            "avg_gumbel_rank": 0.03054989816700611,
+            "infinite_margin_rate": 0.00006171696599395174,
+            "total_tokens": 16203,
+            "n_sequences": 100,
+            "fireworks_verification_mode": "on-demand"
+          }
+        }
+      ],
+      "parameters": {
+        "n_prompts": 100,
+        "max_tokens": 200,
+        "seed": 42,
+        "top_k": 50,
+        "top_p": 0.95,
+        "temperature": 0,
+        "verification_backend": "fireworks",
+        "fireworks_verification_mode": "on-demand",
+        "fireworks_verification_strategy": "fixed-per-audit",
+        "fireworks_deployment_created_for_audit": true,
+        "fireworks_serverless_mapping_error": null
+      }
     }
   ],
   "timeSeries": [
@@ -4968,6 +5377,36 @@
       "novita/fp8": 0.9671455340412243,
       "together": 0.9616546452129955,
       "wandb/bf16": 0.9631689531578297
+    },
+    {
+      "timestamp": "2026-03-04T12:17:39Z",
+      "alibaba": 0.8702699332959292,
+      "hyperbolic": 0.9644714581114104,
+      "novita/fp8": 0.965452847805789,
+      "together": 0.9602718566573988,
+      "wandb/bf16": 0.9646693573424402
+    },
+    {
+      "timestamp": "2026-03-05T00:36:44Z",
+      "alibaba": 0.8777612310747084,
+      "atlas-cloud/fp8": 0.9593394996585759,
+      "google-vertex": 0.94824016563147,
+      "hyperbolic": 0.965598609041232,
+      "novita/fp8": 0.9684833385238244,
+      "siliconflow/fp8": 0.9510845646023263,
+      "together": 0.963629569658093,
+      "wandb/bf16": 0.962686102286177
+    },
+    {
+      "timestamp": "2026-03-05T06:00:25Z",
+      "alibaba": 0.8795588419601453,
+      "atlas-cloud/fp8": 0.9582630427991252,
+      "google-vertex": 0.9517568495288024,
+      "hyperbolic": 0.9658794282162834,
+      "novita/fp8": 0.964964964964965,
+      "siliconflow/fp8": 0.950436775912273,
+      "together": 0.9619842951514396,
+      "wandb/bf16": 0.9645127445534778
     }
   ]
 }
