@@ -1,0 +1,104 @@
+{
+  "model": "moonshotai/Kimi-K2-Thinking",
+  "parameters": {
+    "n_prompts": 100,
+    "max_tokens": 200,
+    "seed": 42,
+    "top_k": 50,
+    "top_p": 0.95,
+    "temperature": 0.0,
+    "verification_backend": "fireworks",
+    "fireworks_verification_mode": "serverless",
+    "fireworks_verification_strategy": "fixed-per-audit",
+    "fireworks_deployment_created_for_audit": false,
+    "fireworks_serverless_mapping_error": null
+  },
+  "providers": {
+    "atlas-cloud/int4": {
+      "exact_match_rate": 0.8871595330739299,
+      "avg_prob": 0.8486523644165932,
+      "avg_margin": 0.1446766533576039,
+      "avg_logit_rank": 0.1668543927913168,
+      "avg_gumbel_rank": 0.1668543927913168,
+      "infinite_margin_rate": 0.005171001433544952,
+      "total_tokens": 19532,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "baseten/fp4": {
+      "exact_match_rate": 0.9305209656925032,
+      "avg_prob": 0.8777216921234947,
+      "avg_margin": 0.06346435663265458,
+      "avg_logit_rank": 0.08177890724269378,
+      "avg_gumbel_rank": 0.08177890724269378,
+      "infinite_margin_rate": 0.0005082592121982211,
+      "total_tokens": 19675,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "deepinfra/fp4": {
+      "exact_match_rate": 0.9301948051948052,
+      "avg_prob": 0.8748830564693996,
+      "avg_margin": 0.05470332877444695,
+      "avg_logit_rank": 0.10095373376623376,
+      "avg_gumbel_rank": 0.10095373376623376,
+      "infinite_margin_rate": 0.00588474025974026,
+      "total_tokens": 19712,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "google-vertex": {
+      "exact_match_rate": 0.9243797586367639,
+      "avg_prob": 0.8656130098710184,
+      "avg_margin": 0.06154622425532591,
+      "avg_logit_rank": 0.11420728233283266,
+      "avg_gumbel_rank": 0.11420728233283266,
+      "infinite_margin_rate": 0.0065261304190190085,
+      "total_tokens": 19307,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "moonshotai/int4": {
+      "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'moonshotai/kimi-k2-thinking is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Moonshot AI', 'is_byok': False}}, 'user_id': 'redacted'}"
+    },
+    "nebius/fp8": {
+      "exact_match_rate": 0.9594181893472747,
+      "avg_prob": 0.8938020451922947,
+      "avg_margin": 0.017331507015272935,
+      "avg_logit_rank": 0.060458615870386666,
+      "avg_gumbel_rank": 0.060458615870386666,
+      "infinite_margin_rate": 0.005279776385941301,
+      "total_tokens": 19319,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "novita/bf16": {
+      "exact_match_rate": 0.8859029484029484,
+      "avg_prob": 0.8442123323425694,
+      "avg_margin": 0.14818927262028264,
+      "avg_logit_rank": 0.17296273546273547,
+      "avg_gumbel_rank": 0.17296273546273547,
+      "infinite_margin_rate": 0.005937755937755937,
+      "total_tokens": 19536,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "parasail/int4": {
+      "error": "Error code: 403 - {'error': {'message': 'Provider returned error', 'code': 403, 'metadata': {'raw': '{\"error\":{\"message\":\"Deployment parasail-kimi-k2-thinking doesn\\'t exist or isn\\'t accessible.\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}', 'provider_name': 'Parasail', 'is_byok': False}}, 'user_id': 'redacted'}"
+    },
+    "siliconflow/fp8": {
+      "error": "'NoneType' object is not subscriptable"
+    },
+    "together": {
+      "exact_match_rate": 0.9506873115642087,
+      "avg_prob": 0.878668979232449,
+      "avg_margin": 0.026442819383932243,
+      "avg_logit_rank": 0.07925801011804384,
+      "avg_gumbel_rank": 0.07925801011804384,
+      "infinite_margin_rate": 0.005978844090142573,
+      "total_tokens": 19569,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    }
+  }
+}

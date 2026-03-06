@@ -1,0 +1,94 @@
+{
+  "model": "Qwen/Qwen3-32B",
+  "parameters": {
+    "n_prompts": 100,
+    "max_tokens": 200,
+    "seed": 42,
+    "top_k": 50,
+    "top_p": 0.95,
+    "temperature": 0.0,
+    "verification_backend": "fireworks",
+    "fireworks_verification_mode": "on-demand",
+    "fireworks_verification_strategy": "fixed-per-audit",
+    "fireworks_deployment_created_for_audit": true,
+    "fireworks_serverless_mapping_error": null
+  },
+  "providers": {
+    "alibaba": {
+      "exact_match_rate": 0.8199196207749382,
+      "avg_prob": 0.7208338615500449,
+      "avg_margin": 0.16582647160669067,
+      "avg_logit_rank": 0.3042559769167354,
+      "avg_gumbel_rank": 0.3042559769167354,
+      "infinite_margin_rate": 0.015663643858202802,
+      "total_tokens": 19408,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand",
+      "serverless_error": "Error code: 404 - {'error': {'message': 'Model not found, inaccessible, and/or not deployed', 'param': 'model', 'code': 'NOT_FOUND', 'type': 'error'}, 'request_id': 'redacted'}"
+    },
+    "atlas-cloud/fp8": {
+      "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'qwen/qwen3-32b is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'AtlasCloud', 'is_byok': False}}, 'user_id': 'redacted'}"
+    },
+    "chutes/bf16": {
+      "error": "Error code: 404 - {'error': {'message': 'No endpoints found matching your data policy (Paid model training). Configure: https://openrouter.ai/settings/privacy', 'code': 404}}"
+    },
+    "deepinfra/fp8": {
+      "exact_match_rate": 0.9696507549184078,
+      "avg_prob": 0.7931474283398953,
+      "avg_margin": 0.007897949839751742,
+      "avg_logit_rank": 0.028366631081287175,
+      "avg_gumbel_rank": 0.028366631081287175,
+      "infinite_margin_rate": 0.0007117075898530833,
+      "total_tokens": 19671,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    },
+    "groq": {
+      "exact_match_rate": 0.9137887187833783,
+      "avg_prob": 0.7691302367753315,
+      "avg_margin": 0.036929638049028844,
+      "avg_logit_rank": 0.1317328721835105,
+      "avg_gumbel_rank": 0.1317328721835105,
+      "infinite_margin_rate": 0.011138802705864401,
+      "total_tokens": 19661,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    },
+    "nebius/fp8": {
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['chutes', 'deepinfra', 'nebius', 'novita', 'atlas-cloud', 'alibaba', 'siliconflow', 'groq', 'sambanova'], 'requested_providers': ['nebius/fp8']}}}"
+    },
+    "novita/fp8": {
+      "exact_match_rate": 0.9419800460475825,
+      "avg_prob": 0.7838645893198872,
+      "avg_margin": 0.028748306014067863,
+      "avg_logit_rank": 0.06513174724993605,
+      "avg_gumbel_rank": 0.06513174724993605,
+      "infinite_margin_rate": 0.001432591455615247,
+      "total_tokens": 19545,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    },
+    "sambanova": {
+      "exact_match_rate": 0.961792235691269,
+      "avg_prob": 0.792648212602471,
+      "avg_margin": 0.011713365154115927,
+      "avg_logit_rank": 0.034371643394199784,
+      "avg_gumbel_rank": 0.034371643394199784,
+      "infinite_margin_rate": 0.0012787069715104087,
+      "total_tokens": 19551,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    },
+    "siliconflow/fp8": {
+      "exact_match_rate": 0.9091839868946452,
+      "avg_prob": 0.7730023131698669,
+      "avg_margin": 0.05386004969496756,
+      "avg_logit_rank": 0.1082727551960684,
+      "avg_gumbel_rank": 0.1082727551960684,
+      "infinite_margin_rate": 0.0016893621378109961,
+      "total_tokens": 19534,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    }
+  }
+}
