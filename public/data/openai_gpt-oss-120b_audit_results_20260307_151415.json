@@ -1,0 +1,150 @@
+{
+  "model": "openai/gpt-oss-120b",
+  "parameters": {
+    "n_prompts": 100,
+    "max_tokens": 200,
+    "seed": 42,
+    "top_k": 50,
+    "top_p": 0.95,
+    "temperature": 0.0,
+    "verification_backend": "fireworks",
+    "fireworks_verification_mode": "serverless",
+    "fireworks_verification_strategy": "fixed-per-audit",
+    "fireworks_deployment_created_for_audit": false,
+    "fireworks_serverless_mapping_error": null
+  },
+  "providers": {
+    "amazonbedrock": {
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'novita', 'chutes', 'siliconflow', 'clarifai', 'google-vertex', 'atlas-cloud', 'phala', 'baseten', 'parasail', 'sambanova', 'amazon-bedrock', 'together', 'wandb', 'groq', 'crusoe', 'fireworks', 'io-net', 'cerebras'], 'requested_providers': ['amazonbedrock']}}}"
+    },
+    "atlas-cloud/fp8": {
+      "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-oss-120b is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'AtlasCloud', 'is_byok': False}}, 'user_id': 'redacted'}"
+    },
+    "baseten/fp4": {
+      "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-oss-120b is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'BaseTen', 'is_byok': False}}, 'user_id': 'redacted'}"
+    },
+    "cerebras/fp16": {
+      "exact_match_rate": 0.955594507741747,
+      "avg_prob": 0.8022662854091911,
+      "avg_margin": 0.014007698707698862,
+      "avg_logit_rank": 0.04458077709611452,
+      "avg_gumbel_rank": 0.04458077709611452,
+      "infinite_margin_rate": 0.0014022787028921998,
+      "total_tokens": 17115,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "chutes/bf16": {
+      "error": "Error code: 404 - {'error': {'message': 'No endpoints found matching your data policy (Paid model training). Configure: https://openrouter.ai/settings/privacy', 'code': 404}}"
+    },
+    "clarifai/fp4": {
+      "error": "'NoneType' object is not subscriptable"
+    },
+    "crusoe/bf16": {
+      "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-oss-120b is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Crusoe', 'is_byok': False}}, 'user_id': 'redacted'}"
+    },
+    "deepinfra/bf16": {
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'novita', 'chutes', 'siliconflow', 'clarifai', 'google-vertex', 'atlas-cloud', 'phala', 'baseten', 'parasail', 'sambanova', 'amazon-bedrock', 'together', 'wandb', 'groq', 'crusoe', 'fireworks', 'io-net', 'cerebras'], 'requested_providers': ['deepinfra/bf16']}}}"
+    },
+    "deepinfra/fp4": {
+      "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-oss-120b is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'DeepInfra', 'is_byok': False}}, 'user_id': 'redacted'}"
+    },
+    "fireworks": {
+      "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-oss-120b is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Fireworks', 'is_byok': False}}, 'user_id': 'redacted'}"
+    },
+    "google-vertex": {
+      "exact_match_rate": 0.9614563567362429,
+      "avg_prob": 0.7935597408958884,
+      "avg_margin": 0.010657804459952019,
+      "avg_logit_rank": 0.030182637571157495,
+      "avg_gumbel_rank": 0.030182637571157495,
+      "infinite_margin_rate": 0.00011859582542694497,
+      "total_tokens": 16864,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "groq": {
+      "exact_match_rate": 0.9721853540308154,
+      "avg_prob": 0.8000339368481112,
+      "avg_margin": 0.005402004046684748,
+      "avg_logit_rank": 0.020889837844076404,
+      "avg_gumbel_rank": 0.020889837844076404,
+      "infinite_margin_rate": 0.0,
+      "total_tokens": 17329,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "ionet/fp16": {
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'novita', 'chutes', 'siliconflow', 'clarifai', 'google-vertex', 'atlas-cloud', 'phala', 'baseten', 'parasail', 'sambanova', 'amazon-bedrock', 'together', 'wandb', 'groq', 'crusoe', 'fireworks', 'io-net', 'cerebras'], 'requested_providers': ['ionet/fp16']}}}"
+    },
+    "novita/fp4": {
+      "exact_match_rate": 0.9487576748723245,
+      "avg_prob": 0.7941443666232392,
+      "avg_margin": 0.019878496517611092,
+      "avg_logit_rank": 0.05290640959430768,
+      "avg_gumbel_rank": 0.05290640959430768,
+      "infinite_margin_rate": 0.0005164400068858667,
+      "total_tokens": 17427,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "parasail/fp4": {
+      "exact_match_rate": 0.9228739825989335,
+      "avg_prob": 0.7608784107963047,
+      "avg_margin": 0.044966603892358764,
+      "avg_logit_rank": 0.10053325849003648,
+      "avg_gumbel_rank": 0.10053325849003648,
+      "infinite_margin_rate": 0.0024136963233230423,
+      "total_tokens": 17815,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "phala": {
+      "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-oss-120b is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Phala', 'is_byok': False}}, 'user_id': 'redacted'}"
+    },
+    "sambanova": {
+      "exact_match_rate": 0.9673187438323562,
+      "avg_prob": 0.8038385657951173,
+      "avg_margin": 0.006616926705370101,
+      "avg_logit_rank": 0.024612526847390723,
+      "avg_gumbel_rank": 0.024612526847390723,
+      "infinite_margin_rate": 0.00011609682475184304,
+      "total_tokens": 17227,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "siliconflow/fp8": {
+      "exact_match_rate": 0.9418906176331919,
+      "avg_prob": 0.7970220661369585,
+      "avg_margin": 0.02524876747781414,
+      "avg_logit_rank": 0.05917020273455917,
+      "avg_gumbel_rank": 0.05917020273455917,
+      "infinite_margin_rate": 0.0005304101838755304,
+      "total_tokens": 16968,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "together": {
+      "exact_match_rate": 0.9431268708266175,
+      "avg_prob": 0.8004400505650648,
+      "avg_margin": 0.023916950960735473,
+      "avg_logit_rank": 0.056700437485609025,
+      "avg_gumbel_rank": 0.056700437485609025,
+      "infinite_margin_rate": 0.0005180750633202855,
+      "total_tokens": 17372,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "wandb/fp4": {
+      "exact_match_rate": 0.9229908215804791,
+      "avg_prob": 0.7669474014873269,
+      "avg_margin": 0.04641537349570803,
+      "avg_logit_rank": 0.10247369599283636,
+      "avg_gumbel_rank": 0.10247369599283636,
+      "infinite_margin_rate": 0.0024625027982986343,
+      "total_tokens": 17868,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    }
+  }
+}
