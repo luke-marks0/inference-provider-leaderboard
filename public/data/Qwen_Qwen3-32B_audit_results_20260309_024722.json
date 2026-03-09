@@ -1,0 +1,94 @@
+{
+  "model": "Qwen/Qwen3-32B",
+  "parameters": {
+    "n_prompts": 100,
+    "max_tokens": 200,
+    "seed": 42,
+    "top_k": 50,
+    "top_p": 0.95,
+    "temperature": 0.0,
+    "verification_backend": "fireworks",
+    "fireworks_verification_mode": "on-demand",
+    "fireworks_verification_strategy": "fixed-per-audit",
+    "fireworks_deployment_created_for_audit": true,
+    "fireworks_serverless_mapping_error": null
+  },
+  "providers": {
+    "alibaba": {
+      "exact_match_rate": 0.8228692594124948,
+      "avg_prob": 0.7235944027518327,
+      "avg_margin": 0.1614762815952276,
+      "avg_logit_rank": 0.29985519238725694,
+      "avg_gumbel_rank": 0.29985519238725694,
+      "infinite_margin_rate": 0.015877120397186594,
+      "total_tokens": 19336,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand",
+      "serverless_error": "Error code: 404 - {'error': {'message': 'Model not found, inaccessible, and/or not deployed', 'param': 'model', 'code': 'NOT_FOUND', 'type': 'error'}, 'request_id': 'redacted'}"
+    },
+    "atlas-cloud/fp8": {
+      "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'qwen/qwen3-32b is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'AtlasCloud', 'is_byok': False}}, 'user_id': 'redacted'}"
+    },
+    "chutes/bf16": {
+      "error": "Error code: 404 - {'error': {'message': 'No endpoints found matching your data policy (Paid model training). Configure: https://openrouter.ai/settings/privacy', 'code': 404}}"
+    },
+    "deepinfra/fp8": {
+      "exact_match_rate": 0.9680020413370758,
+      "avg_prob": 0.7919879450964423,
+      "avg_margin": 0.00809640590683896,
+      "avg_logit_rank": 0.029854554733350344,
+      "avg_gumbel_rank": 0.029854554733350344,
+      "infinite_margin_rate": 0.0008165348303138556,
+      "total_tokens": 19595,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    },
+    "groq": {
+      "exact_match_rate": 0.9118169364249835,
+      "avg_prob": 0.7718241661470906,
+      "avg_margin": 0.04056176484847805,
+      "avg_logit_rank": 0.13323862194936323,
+      "avg_gumbel_rank": 0.13323862194936323,
+      "infinite_margin_rate": 0.010705768938048607,
+      "total_tokens": 19709,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    },
+    "nebius/fp8": {
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['chutes', 'deepinfra', 'nebius', 'novita', 'atlas-cloud', 'alibaba', 'siliconflow', 'groq', 'sambanova'], 'requested_providers': ['nebius/fp8']}}}"
+    },
+    "novita/fp8": {
+      "exact_match_rate": 0.9404385517593065,
+      "avg_prob": 0.7826678657808332,
+      "avg_margin": 0.0289004034843439,
+      "avg_logit_rank": 0.06359000509943906,
+      "avg_gumbel_rank": 0.06359000509943906,
+      "infinite_margin_rate": 0.0008669046404895461,
+      "total_tokens": 19610,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    },
+    "sambanova": {
+      "exact_match_rate": 0.9626617564318961,
+      "avg_prob": 0.7926659662300097,
+      "avg_margin": 0.011555569515992148,
+      "avg_logit_rank": 0.03319523298041021,
+      "avg_gumbel_rank": 0.03319523298041021,
+      "infinite_margin_rate": 0.0012787069715104087,
+      "total_tokens": 19551,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    },
+    "siliconflow/fp8": {
+      "exact_match_rate": 0.9117616899097621,
+      "avg_prob": 0.7706722409046699,
+      "avg_margin": 0.051189111719291615,
+      "avg_logit_rank": 0.10464520098441345,
+      "avg_gumbel_rank": 0.10464520098441345,
+      "infinite_margin_rate": 0.0015894175553732568,
+      "total_tokens": 19504,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    }
+  }
+}
