@@ -1,0 +1,86 @@
+{
+  "model": "Qwen/Qwen3-32B",
+  "parameters": {
+    "n_prompts": 100,
+    "max_tokens": 200,
+    "seed": 42,
+    "top_k": 50,
+    "top_p": 0.95,
+    "temperature": 0.0,
+    "verification_backend": "fireworks",
+    "fireworks_verification_mode": "on-demand",
+    "fireworks_verification_strategy": "fixed-per-audit",
+    "fireworks_deployment_created_for_audit": true,
+    "fireworks_serverless_mapping_error": null
+  },
+  "providers": {
+    "alibaba": {
+      "exact_match_rate": 0.8171970908340641,
+      "avg_prob": 0.7186571945884774,
+      "avg_margin": 0.16397746846430544,
+      "avg_logit_rank": 0.3045855470160417,
+      "avg_gumbel_rank": 0.3045855470160417,
+      "infinite_margin_rate": 0.0159900964563883,
+      "total_tokens": 19387,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand",
+      "serverless_error": "Error code: 404 - {'error': {'message': 'Model not found, inaccessible, and/or not deployed', 'param': 'model', 'code': 'NOT_FOUND', 'type': 'error'}, 'request_id': 'redacted'}"
+    },
+    "atlas-cloud/fp8": {
+      "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'qwen/qwen3-32b is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'AtlasCloud', 'is_byok': False}}, 'user_id': 'redacted'}"
+    },
+    "chutes/bf16": {
+      "error": "Error code: 404 - {'error': {'message': 'No endpoints found matching your data policy (Paid model training). Configure: https://openrouter.ai/settings/privacy', 'code': 404}}"
+    },
+    "deepinfra/fp8": {
+      "exact_match_rate": 0.964667763834602,
+      "avg_prob": 0.7936169644943598,
+      "avg_margin": 0.011914241876329274,
+      "avg_logit_rank": 0.04016663238016869,
+      "avg_gumbel_rank": 0.04016663238016869,
+      "infinite_margin_rate": 0.0025200576013166016,
+      "total_tokens": 19444,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    },
+    "groq": {
+      "exact_match_rate": 0.9107052257737189,
+      "avg_prob": 0.7705663960665429,
+      "avg_margin": 0.039179649435198485,
+      "avg_logit_rank": 0.13490613901572807,
+      "avg_gumbel_rank": 0.13490613901572807,
+      "infinite_margin_rate": 0.010755961440892949,
+      "total_tokens": 19710,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    },
+    "nebius/fp8": {
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['chutes', 'deepinfra', 'nebius', 'novita', 'atlas-cloud', 'alibaba', 'siliconflow', 'groq', 'sambanova'], 'requested_providers': ['nebius/fp8']}}}"
+    },
+    "novita/fp8": {
+      "exact_match_rate": 0.9378862951422587,
+      "avg_prob": 0.7871770243943595,
+      "avg_margin": 0.0334597364468088,
+      "avg_logit_rank": 0.07054196250702355,
+      "avg_gumbel_rank": 0.07054196250702355,
+      "infinite_margin_rate": 0.0011237676865709762,
+      "total_tokens": 19577,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    },
+    "sambanova": {
+      "exact_match_rate": 0.9630709426627794,
+      "avg_prob": 0.7924221059814786,
+      "avg_margin": 0.011451028915478731,
+      "avg_logit_rank": 0.03329752953813104,
+      "avg_gumbel_rank": 0.03329752953813104,
+      "infinite_margin_rate": 0.0012787069715104087,
+      "total_tokens": 19551,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    },
+    "siliconflow/fp8": {
+      "error": "Expecting value: line 327 column 1 (char 1793)"
+    }
+  }
+}

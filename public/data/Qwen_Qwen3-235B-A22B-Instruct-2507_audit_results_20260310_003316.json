@@ -1,0 +1,130 @@
+{
+  "model": "Qwen/Qwen3-235B-A22B-Instruct-2507",
+  "parameters": {
+    "n_prompts": 100,
+    "max_tokens": 200,
+    "seed": 42,
+    "top_k": 50,
+    "top_p": 0.95,
+    "temperature": 0.0,
+    "verification_backend": "fireworks",
+    "fireworks_verification_mode": "on-demand",
+    "fireworks_verification_strategy": "fixed-per-audit",
+    "fireworks_deployment_created_for_audit": true,
+    "fireworks_serverless_mapping_error": null
+  },
+  "providers": {
+    "alibaba": {
+      "exact_match_rate": 0.8797797108705175,
+      "avg_prob": 0.8090151122436718,
+      "avg_margin": 0.11289124778415092,
+      "avg_logit_rank": 0.1826146817698229,
+      "avg_gumbel_rank": 0.1826146817698229,
+      "infinite_margin_rate": 0.007635020965016584,
+      "total_tokens": 15979,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand",
+      "serverless_error": "Error code: 404 - {'error': {'message': 'Model not found, inaccessible, and/or not deployed', 'param': 'model', 'code': 'NOT_FOUND', 'type': 'error'}, 'request_id': 'redacted'}"
+    },
+    "atlas-cloud/fp8": {
+      "exact_match_rate": 0.9550463856546915,
+      "avg_prob": 0.843946865297057,
+      "avg_margin": 0.018401157098867527,
+      "avg_logit_rank": 0.040159392316792226,
+      "avg_gumbel_rank": 0.040159392316792226,
+      "infinite_margin_rate": 6.226262374696469e-05,
+      "total_tokens": 16061,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    },
+    "chutes/bf16": {
+      "error": "Error code: 404 - {'error': {'message': 'No endpoints found matching your data policy (Paid model training). Configure: https://openrouter.ai/settings/privacy', 'code': 404}}"
+    },
+    "crusoe/bf16": {
+      "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'qwen/qwen3-235b-a22b-2507 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Crusoe', 'is_byok': False}}, 'user_id': 'redacted'}"
+    },
+    "deepinfra/fp8": {
+      "exact_match_rate": 0.9577447180897612,
+      "avg_prob": 0.8422971214429159,
+      "avg_margin": 0.015849865160264424,
+      "avg_logit_rank": 0.03637954744343043,
+      "avg_gumbel_rank": 0.03637954744343043,
+      "infinite_margin_rate": 6.250781347668459e-05,
+      "total_tokens": 15998,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    },
+    "friendli": {
+      "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'qwen/qwen3-235b-a22b-2507 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Friendli', 'is_byok': False}}, 'user_id': 'redacted'}"
+    },
+    "google-vertex": {
+      "exact_match_rate": 0.9479024873159263,
+      "avg_prob": 0.8395909006035357,
+      "avg_margin": 0.024995267848680443,
+      "avg_logit_rank": 0.0517881450315555,
+      "avg_gumbel_rank": 0.0517881450315555,
+      "infinite_margin_rate": 0.0003712411830219032,
+      "total_tokens": 16162,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    },
+    "hyperbolic": {
+      "exact_match_rate": 0.9629191812356125,
+      "avg_prob": 0.8436567490873317,
+      "avg_margin": 0.011843843208491476,
+      "avg_logit_rank": 0.030796988738878865,
+      "avg_gumbel_rank": 0.030796988738878865,
+      "infinite_margin_rate": 6.221613886642194e-05,
+      "total_tokens": 16073,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    },
+    "novita/fp8": {
+      "exact_match_rate": 0.9592962667810948,
+      "avg_prob": 0.8438000700715192,
+      "avg_margin": 0.016882885547593502,
+      "avg_logit_rank": 0.03714828664255502,
+      "avg_gumbel_rank": 0.03714828664255502,
+      "infinite_margin_rate": 0.0001839024091215595,
+      "total_tokens": 16313,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    },
+    "parasail/fp8": {
+      "error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded: limit_rpm/qwen/qwen3-235b-a22b-07-25/043eb28f-fc28-4b0d-9800-b249fcfcfbf9. High demand for qwen/qwen3-235b-a22b-2507 on OpenRouter - limited to 18 requests per minute. Please retry shortly.', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '18', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1773103740000'}, 'provider_name': None}}, 'user_id': 'redacted'}"
+    },
+    "siliconflow/fp8": {
+      "exact_match_rate": 0.9539392442578415,
+      "avg_prob": 0.8419249117255734,
+      "avg_margin": 0.021718427917129888,
+      "avg_logit_rank": 0.045937268461348484,
+      "avg_gumbel_rank": 0.045937268461348484,
+      "infinite_margin_rate": 0.0003087182020251914,
+      "total_tokens": 16196,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    },
+    "together": {
+      "exact_match_rate": 0.96440489432703,
+      "avg_prob": 0.8488246186063966,
+      "avg_margin": 0.011526032814431398,
+      "avg_logit_rank": 0.028982820417748117,
+      "avg_gumbel_rank": 0.028982820417748117,
+      "infinite_margin_rate": 0.00012359411692003462,
+      "total_tokens": 16182,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    },
+    "wandb/bf16": {
+      "exact_match_rate": 0.9622031580256123,
+      "avg_prob": 0.8436082019357733,
+      "avg_margin": 0.013913176957035379,
+      "avg_logit_rank": 0.03431555389779933,
+      "avg_gumbel_rank": 0.03431555389779933,
+      "infinite_margin_rate": 0.0001864975755315181,
+      "total_tokens": 16086,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    }
+  }
+}
