@@ -1,0 +1,132 @@
+{
+  "model": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
+  "parameters": {
+    "n_prompts": 100,
+    "max_tokens": 200,
+    "seed": 42,
+    "top_k": 50,
+    "top_p": 0.95,
+    "temperature": 0.0,
+    "verification_backend": "fireworks",
+    "fireworks_verification_mode": "on-demand",
+    "fireworks_verification_strategy": "fixed-per-audit",
+    "fireworks_deployment_created_for_audit": true,
+    "fireworks_serverless_mapping_error": null
+  },
+  "providers": {
+    "alibaba": {
+      "exact_match_rate": 0.9235319758390933,
+      "avg_prob": 0.9002811068808378,
+      "avg_margin": 0.11123003194324835,
+      "avg_logit_rank": 0.09988168628183573,
+      "avg_gumbel_rank": 0.09988168628183573,
+      "infinite_margin_rate": 0.0017435705834734417,
+      "total_tokens": 16059,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand",
+      "serverless_error": "Error code: 404 - {'error': {'message': 'Model not found, inaccessible, and/or not deployed', 'param': 'model', 'code': 'NOT_FOUND', 'type': 'error'}, 'request_id': 'redacted'}"
+    },
+    "atlas-cloud/fp8": {
+      "exact_match_rate": 0.9654629104430579,
+      "avg_prob": 0.9272978557981275,
+      "avg_margin": 0.02771861469786963,
+      "avg_logit_rank": 0.03460011344299489,
+      "avg_gumbel_rank": 0.03460011344299489,
+      "infinite_margin_rate": 0.00012604777210562803,
+      "total_tokens": 15867,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    },
+    "deepinfra/fp4": {
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['deepinfra/fp4']}}}"
+    },
+    "deepinfra/fp8": {
+      "exact_match_rate": 0.9679276315789473,
+      "avg_prob": 0.9277134747061783,
+      "avg_margin": 0.022480003264268883,
+      "avg_logit_rank": 0.030870445344129555,
+      "avg_gumbel_rank": 0.030870445344129555,
+      "infinite_margin_rate": 0.0,
+      "total_tokens": 15808,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    },
+    "google-vertex": {
+      "exact_match_rate": 0.9590728225857387,
+      "avg_prob": 0.9242023634032871,
+      "avg_margin": 0.0365278520215362,
+      "avg_logit_rank": 0.04376934251247395,
+      "avg_gumbel_rank": 0.04376934251247395,
+      "infinite_margin_rate": 0.00031579612202362154,
+      "total_tokens": 15833,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    },
+    "hyperbolic/fp8": {
+      "exact_match_rate": 0.9721389305347327,
+      "avg_prob": 0.9303437358370914,
+      "avg_margin": 0.016900354871805884,
+      "avg_logit_rank": 0.026861569215392303,
+      "avg_gumbel_rank": 0.026861569215392303,
+      "infinite_margin_rate": 0.0001249375312343828,
+      "total_tokens": 16008,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    },
+    "nebius/fp8": {
+      "exact_match_rate": 0.9725588697017269,
+      "avg_prob": 0.9324573022903095,
+      "avg_margin": 0.01769057437052345,
+      "avg_logit_rank": 0.026373626373626374,
+      "avg_gumbel_rank": 0.026373626373626374,
+      "infinite_margin_rate": 0.0,
+      "total_tokens": 15925,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    },
+    "novita/fp8": {
+      "exact_match_rate": 0.9478853853853854,
+      "avg_prob": 0.915158636021148,
+      "avg_margin": 0.05742240995047455,
+      "avg_logit_rank": 0.05518018018018018,
+      "avg_gumbel_rank": 0.05518018018018018,
+      "infinite_margin_rate": 0.0003128128128128128,
+      "total_tokens": 15984,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    },
+    "siliconflow/fp8": {
+      "exact_match_rate": 0.9593153063755891,
+      "avg_prob": 0.9231368224116099,
+      "avg_margin": 0.034731084241464774,
+      "avg_logit_rank": 0.042297196725378315,
+      "avg_gumbel_rank": 0.042297196725378315,
+      "infinite_margin_rate": 0.00024807740014884643,
+      "total_tokens": 16124,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    },
+    "together/fp8": {
+      "exact_match_rate": 0.9719373309003964,
+      "avg_prob": 0.9309298104496365,
+      "avg_margin": 0.017248296080605918,
+      "avg_logit_rank": 0.02579752092116026,
+      "avg_gumbel_rank": 0.02579752092116026,
+      "infinite_margin_rate": 0.0,
+      "total_tokens": 15893,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    },
+    "wandb/bf16": {
+      "exact_match_rate": 0.9684413244703982,
+      "avg_prob": 0.9278666701605451,
+      "avg_margin": 0.0203088538916413,
+      "avg_logit_rank": 0.03099956513636081,
+      "avg_gumbel_rank": 0.03099956513636081,
+      "infinite_margin_rate": 0.0,
+      "total_tokens": 16097,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    }
+  }
+}
