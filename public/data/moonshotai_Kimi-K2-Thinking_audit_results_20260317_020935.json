@@ -1,0 +1,76 @@
+{
+  "model": "moonshotai/Kimi-K2-Thinking",
+  "parameters": {
+    "n_prompts": 100,
+    "max_tokens": 200,
+    "seed": 42,
+    "top_k": 50,
+    "top_p": 0.95,
+    "temperature": 0.0,
+    "verification_backend": "fireworks",
+    "fireworks_verification_mode": "serverless",
+    "fireworks_verification_strategy": "fixed-per-audit",
+    "fireworks_deployment_created_for_audit": false,
+    "fireworks_serverless_mapping_error": null
+  },
+  "providers": {
+    "atlas-cloud/int4": {
+      "exact_match_rate": 0.8845666176396003,
+      "avg_prob": 0.8412598864533875,
+      "avg_margin": 0.15126705855424477,
+      "avg_logit_rank": 0.17436729725617486,
+      "avg_gumbel_rank": 0.17436729725617486,
+      "infinite_margin_rate": 0.005477506720089263,
+      "total_tokens": 19717,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "deepinfra/fp4": {
+      "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'moonshotai/kimi-k2-thinking is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'DeepInfra', 'is_byok': False}}, 'user_id': 'redacted'}"
+    },
+    "google-vertex": {
+      "exact_match_rate": 0.9256466645722066,
+      "avg_prob": 0.8654654177832611,
+      "avg_margin": 0.05943412961743666,
+      "avg_logit_rank": 0.11587600795894858,
+      "avg_gumbel_rank": 0.11587600795894858,
+      "infinite_margin_rate": 0.006702272489265892,
+      "total_tokens": 19098,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "moonshotai/int4": {
+      "exact_match_rate": 0.9678192574459404,
+      "avg_prob": 0.8982962305936409,
+      "avg_margin": 0.015302169254264262,
+      "avg_logit_rank": 0.03105875152998776,
+      "avg_gumbel_rank": 0.03105875152998776,
+      "infinite_margin_rate": 5.0999592003263974e-05,
+      "total_tokens": 19608,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "nebius/fp8": {
+      "exact_match_rate": 0.959306745046369,
+      "avg_prob": 0.8924046619989003,
+      "avg_margin": 0.017481896385684086,
+      "avg_logit_rank": 0.05924086555516141,
+      "avg_gumbel_rank": 0.05924086555516141,
+      "infinite_margin_rate": 0.005118329701515228,
+      "total_tokens": 19733,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "novita/bf16": {
+      "exact_match_rate": 0.8978353226785353,
+      "avg_prob": 0.8495396123394747,
+      "avg_margin": 0.12532018857345886,
+      "avg_logit_rank": 0.15774833097309326,
+      "avg_gumbel_rank": 0.15774833097309326,
+      "infinite_margin_rate": 0.00551284644952458,
+      "total_tokens": 19772,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    }
+  }
+}
