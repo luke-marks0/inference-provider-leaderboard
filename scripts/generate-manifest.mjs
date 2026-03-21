@@ -39,7 +39,11 @@ function sanitizeProviders(providers) {
   return Object.fromEntries(
     Object.entries(providers ?? {}).filter(([, providerData]) => {
       const score = providerData?.exact_match_rate
-      return typeof score === "number" && Number.isFinite(score)
+      const vailScore = providerData?.vail?.divergence_ratio
+      return (
+        (typeof score === "number" && Number.isFinite(score)) ||
+        (typeof vailScore === "number" && Number.isFinite(vailScore))
+      )
     })
   )
 }
@@ -139,8 +143,22 @@ function buildModelDetail(model, modelRuns, toRunForFile, modelDetailFilePath) {
     timestamp: run.timestamp,
     ...Object.fromEntries(
       Object.entries(run.providers)
-        .filter(([, providerData]) => typeof providerData?.exact_match_rate === "number")
-        .map(([providerName, providerData]) => [providerName, providerData.exact_match_rate])
+        .flatMap(([providerName, providerData]) => {
+          const entries = []
+
+          if (typeof providerData?.exact_match_rate === "number" && Number.isFinite(providerData.exact_match_rate)) {
+            entries.push([providerName, providerData.exact_match_rate])
+          }
+
+          if (
+            typeof providerData?.vail?.divergence_ratio === "number" &&
+            Number.isFinite(providerData.vail.divergence_ratio)
+          ) {
+            entries.push([`${providerName}__vail`, providerData.vail.divergence_ratio])
+          }
+
+          return entries
+        })
     ),
   }))
 
@@ -160,7 +178,6 @@ function buildModelDetail(model, modelRuns, toRunForFile, modelDetailFilePath) {
 function makeSchemas() {
   const providerMetricsSchema = {
     type: "object",
-    required: ["exact_match_rate"],
     properties: {
       exact_match_rate: { type: "number" },
       avg_prob: { type: "number" },
@@ -170,8 +187,30 @@ function makeSchemas() {
       infinite_margin_rate: { type: "number" },
       total_tokens: { type: "number" },
       n_sequences: { type: "number" },
+      vail: {
+        type: "object",
+        properties: {
+          endpoint: { type: "string" },
+          divergence_ratio: { type: "number" },
+          date: { type: "string", format: "date" },
+          comparison_providers: { type: "array", items: { type: "string" } },
+        },
+        additionalProperties: true,
+      },
     },
     additionalProperties: true,
+    anyOf: [
+      { required: ["exact_match_rate"] },
+      {
+        required: ["vail"],
+        properties: {
+          vail: {
+            type: "object",
+            required: ["divergence_ratio"],
+          },
+        },
+      },
+    ],
   }
 
   const providerEntrySchema = {

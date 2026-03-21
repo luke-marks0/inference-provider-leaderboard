@@ -2,23 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { TrendingUp, TrendingDown } from "lucide-react"
 import { getExactMatchRateTextColor } from "@/lib/utils"
-
-type ProviderData = {
-  exact_match_rate: number
-  avg_prob: number
-  avg_margin: number
-  avg_logit_rank: number
-  avg_gumbel_rank: number
-  infinite_margin_rate: number
-  total_tokens: number
-  n_sequences: number
-}
-
-type AuditResult = {
-  model: string
-  timestamp: string
-  providers: Record<string, ProviderData>
-}
+import type { AuditResult } from "@/lib/types"
 
 export function ProviderComparison({
   model,

@@ -114,9 +114,6 @@
                 },
                 "metrics": {
                   "type": "object",
-                  "required": [
-                    "exact_match_rate"
-                  ],
                   "properties": {
                     "exact_match_rate": {
                       "type": "number"
@@ -141,9 +138,51 @@
                     },
                     "n_sequences": {
                       "type": "number"
+                    },
+                    "vail": {
+                      "type": "object",
+                      "properties": {
+                        "endpoint": {
+                          "type": "string"
+                        },
+                        "divergence_ratio": {
+                          "type": "number"
+                        },
+                        "date": {
+                          "type": "string",
+                          "format": "date"
+                        },
+                        "comparison_providers": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "additionalProperties": true
                     }
                   },
-                  "additionalProperties": true
+                  "additionalProperties": true,
+                  "anyOf": [
+                    {
+                      "required": [
+                        "exact_match_rate"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "vail"
+                      ],
+                      "properties": {
+                        "vail": {
+                          "type": "object",
+                          "required": [
+                            "divergence_ratio"
+                          ]
+                        }
+                      }
+                    }
+                  ]
                 }
               },
               "additionalProperties": false

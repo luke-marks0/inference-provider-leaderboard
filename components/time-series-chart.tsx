@@ -2,15 +2,15 @@
 
 import { useMemo } from "react"
 import {
-  LineChart,
+  Brush,
+  CartesianGrid,
+  Legend,
   Line,
+  LineChart,
+  ResponsiveContainer,
+  Tooltip,
   XAxis,
   YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-  Brush,
 } from "recharts"
 
 const CHART_COLORS = [
@@ -31,57 +31,130 @@ type TimeSeriesData = {
   [key: string]: string | number
 }
 
-export function TimeSeriesChart({
+type ChartSection = "exact" | "vail"
+
+function formatTimestamp(timestamp: string) {
+  return new Date(timestamp).toLocaleString("en-US", {
+    month: "short",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+  })
+}
+
+function formatAxisDate(timestamp: string) {
+  return new Date(timestamp).toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+  })
+}
+
+function formatMetricValue(value: number, section: ChartSection) {
+  if (section === "exact") {
+    return `${(value * 100).toFixed(2)}%`
+  }
+
+  return value.toFixed(3)
+}
+
+function getSectionDomain(data: TimeSeriesData[], providers: string[], section: ChartSection): [number, number] | ["auto", "auto"] {
+  const values = data.flatMap((point) =>
+    providers.flatMap((provider) => {
+      const dataKey = section === "exact" ? provider : `${provider}__vail`
+      const value = point[dataKey]
+      return typeof value === "number" && Number.isFinite(value) ? [value] : []
+    })
+  )
+
+  if (values.length === 0) return ["auto", "auto"]
+
+  if (section === "exact") {
+    const minPercent = Math.max(0, Math.floor(Math.min(...values) * 100))
+    return [minPercent / 100, 1]
+  }
+
+  const min = Math.min(...values)
+  const max = Math.max(...values)
+  if (min === max) {
+    const padding = min === 0 ? 0.1 : Math.abs(min) * 0.1
+    return [min - padding, max + padding]
+  }
+
+  const padding = Math.max((max - min) * 0.1, 0.05)
+  return [Math.max(0, min - padding), max + padding]
+}
+
+function getExactAxisTicks(domain: [number, number] | ["auto", "auto"]) {
+  if (domain[0] === "auto") return undefined
+
+  const minPercent = Math.round(domain[0] * 100)
+  const maxPercent = Math.round(domain[1] * 100)
+  const span = maxPercent - minPercent
+
+  let step = 2
+  if (span > 24) step = 5
+  else if (span > 12) step = 3
+
+  const ticks: number[] = []
+  for (let value = minPercent; value <= maxPercent; value += step) {
+    ticks.push(value / 100)
+  }
+
+  if (ticks[ticks.length - 1] !== 1) {
+    ticks.push(1)
+  }
+
+  return ticks
+}
+
+function SeriesChart({
   data,
   providers,
+  section,
+  showXAxis,
+  showBrush,
+  height,
 }: {
   data: TimeSeriesData[]
   providers: string[]
+  section: ChartSection
+  showXAxis: boolean
+  showBrush: boolean
+  height: number
 }) {
-  const formattedData = useMemo(() => {
-    const withTime: Array<TimeSeriesData & { time: string }> = data.map((item) => ({
-      ...item,
-      time: new Date(
-        item.timestamp.toString().replace(/(\d{4})(\d{2})(\d{2})_(\d{2})(\d{2})(\d{2})/, "$1-$2-$3T$4:$5:$6"),
-      ).toLocaleString("en-US", {
-        month: "short",
-        day: "numeric",
-        hour: "2-digit",
-        minute: "2-digit",
-      }),
-    }))
-
-    if (providers.length === 0) return withTime
-
-    let lastValidIndex = -1
-    for (let i = withTime.length - 1; i >= 0; i--) {
-      const point = withTime[i]
-      const hasAnyProvider = providers.some((provider) => {
-        const value = point[provider]
-        return typeof value === "number" && Number.isFinite(value)
-      })
-      if (hasAnyProvider) {
-        lastValidIndex = i
-        break
-      }
-    }
-
-    return lastValidIndex >= 0 ? withTime.slice(0, lastValidIndex + 1) : withTime
-  }, [data, providers])
+  const domain = useMemo(() => getSectionDomain(data, providers, section), [data, providers, section])
+  const exactTicks = useMemo(
+    () => (section === "exact" ? getExactAxisTicks(domain) : undefined),
+    [domain, section]
+  )
 
   return (
-    <ResponsiveContainer width="100%" height={400}>
-      <LineChart data={formattedData} margin={{ top: 5, right: 20, left: 0, bottom: 5 }}>
+    <ResponsiveContainer width="100%" height={height}>
+      <LineChart data={data} syncId="provider-performance-timeline" margin={{ top: 5, right: 20, left: 0, bottom: 5 }}>
         <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" opacity={0.3} />
-        <XAxis
-          dataKey="time"
-          stroke="var(--muted-foreground)"
-          tick={{ fill: "var(--muted-foreground)" }}
-          tickLine={{ stroke: "var(--border)" }}
-        />
+        {showXAxis ? (
+          <XAxis
+            dataKey="axisDate"
+            stroke="var(--muted-foreground)"
+            tick={{ fill: "var(--muted-foreground)" }}
+            tickLine={{ stroke: "var(--border)" }}
+            minTickGap={24}
+            padding={{ left: 16, right: 16 }}
+          />
+        ) : (
+          <XAxis dataKey="axisDate" hide />
+        )}
         <YAxis
-          domain={[0.7, 1]}
-          tickFormatter={(value) => `${(value * 100).toFixed(0)}%`}
+          domain={domain}
+          ticks={exactTicks}
+          tickFormatter={(value) =>
+            typeof value === "number"
+              ? section === "exact"
+                ? `${Math.round(value * 100)}%`
+                : formatMetricValue(value, section)
+              : String(value)
+          }
+          width={section === "exact" ? 64 : 72}
           stroke="var(--muted-foreground)"
           tick={{ fill: "var(--muted-foreground)" }}
           tickLine={{ stroke: "var(--border)" }}
@@ -92,36 +165,139 @@ export function TimeSeriesChart({
             border: "1px solid var(--border)",
             borderRadius: "var(--radius)",
           }}
-          formatter={(value: number) => `${(value * 100).toFixed(2)}%`}
+          formatter={(value: number) => formatMetricValue(value, section)}
+          labelFormatter={(_, payload) => {
+            const point = payload?.[0]?.payload as { time?: string } | undefined
+            return point?.time ?? ""
+          }}
         />
-        <Legend wrapperStyle={{ paddingTop: "20px" }} iconType="line" />
-        <Brush
-          dataKey="time"
-          height={30}
-          stroke="var(--primary)"
-          travellerWidth={12}
-          tickFormatter={() => ""}
-        />
-        {providers.map((provider, index) => (
-          <Line
-            key={provider}
-            type="monotone"
-            dataKey={provider}
-            stroke={CHART_COLORS[index % CHART_COLORS.length]}
-            strokeWidth={3}
-            dot={{
-              r: 6,
-              fill: CHART_COLORS[index % CHART_COLORS.length],
-              stroke: CHART_COLORS[index % CHART_COLORS.length],
-              strokeWidth: 2,
-            }}
-            activeDot={{ r: 8 }}
-            name={provider}
-            connectNulls
-            isAnimationActive={false}
+        {section === "exact" ? <Legend wrapperStyle={{ paddingTop: "20px" }} iconType="line" /> : null}
+        {showBrush ? (
+          <Brush
+            dataKey="time"
+            height={30}
+            stroke="var(--primary)"
+            travellerWidth={12}
+            tickFormatter={() => ""}
           />
-        ))}
+        ) : null}
+        {providers.map((provider, index) => {
+          const dataKey = section === "exact" ? provider : `${provider}__vail`
+          const color = CHART_COLORS[index % CHART_COLORS.length]
+
+          return (
+            <Line
+              key={`${section}-${provider}`}
+              type="monotone"
+              dataKey={dataKey}
+              stroke={color}
+              strokeWidth={3}
+              dot={{
+                r: 6,
+                fill: color,
+                stroke: color,
+                strokeWidth: 2,
+              }}
+              activeDot={{ r: 8 }}
+              name={provider}
+              connectNulls
+              isAnimationActive={false}
+            />
+          )
+        })}
       </LineChart>
     </ResponsiveContainer>
+  )
+}
+
+export function TimeSeriesChart({
+  data,
+  providers,
+  showExactMatch,
+  showVail,
+}: {
+  data: TimeSeriesData[]
+  providers: string[]
+  showExactMatch: boolean
+  showVail: boolean
+}) {
+  const formattedData = useMemo(() => {
+    const withTime: Array<TimeSeriesData & { time: string }> = data.map((item) => ({
+      ...item,
+      time: formatTimestamp(item.timestamp),
+      axisDate: formatAxisDate(item.timestamp),
+    }))
+
+    if (providers.length === 0) return withTime
+
+    let lastValidIndex = -1
+    for (let i = withTime.length - 1; i >= 0; i--) {
+      const point = withTime[i]
+      const hasAnyProvider = providers.some((provider) => {
+        const exactValue = point[provider]
+        const vailValue = point[`${provider}__vail`]
+        return (
+          (typeof exactValue === "number" && Number.isFinite(exactValue)) ||
+          (typeof vailValue === "number" && Number.isFinite(vailValue))
+        )
+      })
+      if (hasAnyProvider) {
+        lastValidIndex = i
+        break
+      }
+    }
+
+    return lastValidIndex >= 0 ? withTime.slice(0, lastValidIndex + 1) : withTime
+  }, [data, providers])
+
+  const exactProviders = useMemo(
+    () =>
+      providers.filter((provider) =>
+        formattedData.some((point) => typeof point[provider] === "number" && Number.isFinite(point[provider]))
+      ),
+    [formattedData, providers]
+  )
+
+  const vailProviders = useMemo(
+    () =>
+      providers.filter((provider) =>
+        formattedData.some(
+          (point) => typeof point[`${provider}__vail`] === "number" && Number.isFinite(point[`${provider}__vail`])
+        )
+      ),
+    [formattedData, providers]
+  )
+
+  const shouldShowExact = showExactMatch && exactProviders.length > 0
+  const shouldShowVail = showVail && vailProviders.length > 0
+
+  if (!shouldShowExact && !shouldShowVail) {
+    return <div className="flex items-center justify-center py-12 text-muted-foreground">No timeline data enabled</div>
+  }
+
+  if (shouldShowExact && shouldShowVail) {
+    return (
+      <div className="space-y-4">
+        <div className="rounded-lg border border-border/70 bg-muted/20 p-3">
+          <p className="text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">Exact Match Rate</p>
+          <SeriesChart data={formattedData} providers={exactProviders} section="exact" showXAxis={false} showBrush={false} height={240} />
+        </div>
+        <div className="rounded-lg border border-border/70 bg-muted/20 p-3">
+          <p className="text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">VAIL Divergence Score</p>
+          <SeriesChart data={formattedData} providers={vailProviders} section="vail" showXAxis={true} showBrush={true} height={240} />
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <SeriesChart
+      data={formattedData}
+      providers={shouldShowExact ? exactProviders : vailProviders}
+      section={shouldShowExact ? "exact" : "vail"}
+      showXAxis={true}
+      showBrush={true}
+      height={400}
+    />
   )
 }
