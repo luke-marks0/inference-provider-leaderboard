@@ -1,0 +1,84 @@
+{
+  "model": "moonshotai/Kimi-K2-Thinking",
+  "parameters": {
+    "n_prompts": 100,
+    "max_tokens": 200,
+    "seed": 42,
+    "top_k": 50,
+    "top_p": 0.95,
+    "temperature": 0.0,
+    "verification_backend": "fireworks",
+    "fireworks_verification_mode": "serverless",
+    "fireworks_verification_strategy": "fixed-per-audit",
+    "fireworks_deployment_created_for_audit": false,
+    "fireworks_serverless_mapping_error": null
+  },
+  "providers": {
+    "atlas-cloud/int4": {
+      "exact_match_rate": 0.886246491451901,
+      "avg_prob": 0.8424767876727474,
+      "avg_margin": 0.14511950129682558,
+      "avg_logit_rank": 0.1732074508803266,
+      "avg_gumbel_rank": 0.1732074508803266,
+      "infinite_margin_rate": 0.005511610104618525,
+      "total_tokens": 19595,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "deepinfra/fp4": {
+      "exact_match_rate": 0.9273370389085397,
+      "avg_prob": 0.8762680918637012,
+      "avg_margin": 0.056638509559340446,
+      "avg_logit_rank": 0.1044466902475998,
+      "avg_gumbel_rank": 0.1044466902475998,
+      "infinite_margin_rate": 0.00606366851945427,
+      "total_tokens": 19790,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "google-vertex": {
+      "exact_match_rate": 0.9230249128829251,
+      "avg_prob": 0.8659387257768698,
+      "avg_margin": 0.06046275599369962,
+      "avg_logit_rank": 0.11478649815363812,
+      "avg_gumbel_rank": 0.11478649815363812,
+      "infinite_margin_rate": 0.0062932334737608574,
+      "total_tokens": 19227,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "moonshotai/int4": {
+      "exact_match_rate": 0.9668287688763757,
+      "avg_prob": 0.8970980535534031,
+      "avg_margin": 0.01464386337823138,
+      "avg_logit_rank": 0.030560532377783466,
+      "avg_gumbel_rank": 0.030560532377783466,
+      "infinite_margin_rate": 0.0,
+      "total_tokens": 19535,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "nebius/int4": {
+      "exact_match_rate": 0.9587343845996313,
+      "avg_prob": 0.8916924733061289,
+      "avg_margin": 0.017402162812017497,
+      "avg_logit_rank": 0.06174482899856645,
+      "avg_gumbel_rank": 0.06174482899856645,
+      "infinite_margin_rate": 0.005222199467540447,
+      "total_tokens": 19532,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "novita/bf16": {
+      "exact_match_rate": 0.9071154234889832,
+      "avg_prob": 0.8591687528709909,
+      "avg_margin": 0.11343408767284278,
+      "avg_logit_rank": 0.13705275924802912,
+      "avg_gumbel_rank": 0.13705275924802912,
+      "infinite_margin_rate": 0.0043966040024257125,
+      "total_tokens": 19788,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    }
+  }
+}

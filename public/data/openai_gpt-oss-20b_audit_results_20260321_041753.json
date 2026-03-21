@@ -1,0 +1,143 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "parameters": {
+    "n_prompts": 100,
+    "max_tokens": 200,
+    "seed": 42,
+    "top_k": 50,
+    "top_p": 0.95,
+    "temperature": 0.0,
+    "verification_backend": "fireworks",
+    "fireworks_verification_mode": "serverless",
+    "fireworks_verification_strategy": "fixed-per-audit",
+    "fireworks_deployment_created_for_audit": false,
+    "fireworks_serverless_mapping_error": null
+  },
+  "providers": {
+    "amazonbedrock": {
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'novita', 'parasail', 'clarifai', 'nebius', 'together', 'wandb', 'amazon-bedrock', 'google-vertex', 'fireworks', 'groq', 'nextbit'], 'requested_providers': ['amazonbedrock']}}}",
+      "collection_complete": false
+    },
+    "clarifai/fp4": {
+      "exact_match_rate": 0.9710736770461119,
+      "avg_prob": 0.6791115356906618,
+      "avg_margin": 0.0036496884039475923,
+      "avg_logit_rank": 0.020985763711644262,
+      "avg_gumbel_rank": 0.020985763711644262,
+      "infinite_margin_rate": 0.0,
+      "total_tokens": 17631,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "deepinfra/bf16": {
+      "exact_match_rate": 0.9639892242564188,
+      "avg_prob": 0.6741320929722009,
+      "avg_margin": 0.006484695043577477,
+      "avg_logit_rank": 0.031062730221562484,
+      "avg_gumbel_rank": 0.031062730221562484,
+      "infinite_margin_rate": 0.00016493485073396007,
+      "total_tokens": 18189,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "fireworks": {
+      "exact_match_rate": 0.9691080656032353,
+      "avg_prob": 0.6756690394544594,
+      "avg_margin": 0.00593601869733146,
+      "avg_logit_rank": 0.02527521905189845,
+      "avg_gumbel_rank": 0.02527521905189845,
+      "infinite_margin_rate": 0.00022466861379465288,
+      "total_tokens": 17804,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "google-vertex": {
+      "exact_match_rate": 0.9775492716366753,
+      "avg_prob": 0.6694200187907559,
+      "avg_margin": 0.0027140785351975377,
+      "avg_logit_rank": 0.013196229648671808,
+      "avg_gumbel_rank": 0.013196229648671808,
+      "infinite_margin_rate": 0.00011425307055127106,
+      "total_tokens": 17505,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "groq": {
+      "exact_match_rate": 0.9771906052393857,
+      "avg_prob": 0.6751279279600817,
+      "avg_margin": 0.0020102455256323397,
+      "avg_logit_rank": 0.009202800361336947,
+      "avg_gumbel_rank": 0.009202800361336947,
+      "infinite_margin_rate": 0.0,
+      "total_tokens": 17712,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "nebius/fp4": {
+      "exact_match_rate": 0.960278164116829,
+      "avg_prob": 0.6735099081420987,
+      "avg_margin": 0.009269000493060927,
+      "avg_logit_rank": 0.035271210013908205,
+      "avg_gumbel_rank": 0.035271210013908205,
+      "infinite_margin_rate": 0.0004450625869262865,
+      "total_tokens": 17975,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "nextbit/fp8": {
+      "exact_match_rate": 0.9657204374185506,
+      "avg_prob": 0.6745554326413801,
+      "avg_margin": 0.008348192888942512,
+      "avg_logit_rank": 0.030369992634143576,
+      "avg_gumbel_rank": 0.030369992634143576,
+      "infinite_margin_rate": 0.00022664173607569833,
+      "total_tokens": 17649,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "novita/fp4": {
+      "exact_match_rate": 0.968604393166186,
+      "avg_prob": 0.6730381970504385,
+      "avg_margin": 0.003921418219892383,
+      "avg_logit_rank": 0.022243177279787,
+      "avg_gumbel_rank": 0.022243177279787,
+      "infinite_margin_rate": 5.546927002440648e-05,
+      "total_tokens": 18028,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "parasail/fp4": {
+      "exact_match_rate": 0.9592926259592927,
+      "avg_prob": 0.6738582116657075,
+      "avg_margin": 0.008751686276145972,
+      "avg_logit_rank": 0.037815593371148926,
+      "avg_gumbel_rank": 0.037815593371148926,
+      "infinite_margin_rate": 0.000333667000333667,
+      "total_tokens": 17982,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "together": {
+      "exact_match_rate": 0.976737556303096,
+      "avg_prob": 0.6800148268357079,
+      "avg_margin": 0.0026970431752448534,
+      "avg_logit_rank": 0.011232111294828668,
+      "avg_gumbel_rank": 0.011232111294828668,
+      "infinite_margin_rate": 0.00017104738012429442,
+      "total_tokens": 17539,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "wandb/fp4": {
+      "exact_match_rate": 0.9609004077528905,
+      "avg_prob": 0.6787074625282137,
+      "avg_margin": 0.008477601431105772,
+      "avg_logit_rank": 0.0356923420655756,
+      "avg_gumbel_rank": 0.0356923420655756,
+      "infinite_margin_rate": 0.0003351393621180808,
+      "total_tokens": 17903,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    }
+  }
+}
