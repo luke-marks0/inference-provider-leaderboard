@@ -29,7 +29,18 @@
       "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['atlascloud/fp8']}}}"
     },
     "deepinfra/fp4": {
-      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['deepinfra/fp4']}}}"
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['deepinfra/fp4']}}}",
+      "vail": {
+        "endpoint": "qwen3-coder-480b-deepinfra-chat",
+        "divergence_ratio": 5.030370244029407,
+        "date": "2026-02-28",
+        "comparison_providers": [
+          "nebius",
+          "novita",
+          "together",
+          "vertex"
+        ]
+      }
     },
     "deepinfra/fp8": {
       "exact_match_rate": 0.9672672859903984,
@@ -40,10 +51,32 @@
       "infinite_margin_rate": 0.00006234802668495543,
       "total_tokens": 16039,
       "n_sequences": 100,
-      "fireworks_verification_mode": "on-demand"
+      "fireworks_verification_mode": "on-demand",
+      "vail": {
+        "endpoint": "qwen3-coder-480b-deepinfra-chat",
+        "divergence_ratio": 5.030370244029407,
+        "date": "2026-02-28",
+        "comparison_providers": [
+          "nebius",
+          "novita",
+          "together",
+          "vertex"
+        ]
+      }
     },
     "google": {
-      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['google']}}}"
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['google']}}}",
+      "vail": {
+        "endpoint": "qwen3-coder-480b-vertex-chat",
+        "divergence_ratio": 1,
+        "date": "2026-02-28",
+        "comparison_providers": [
+          "deepinfra",
+          "nebius",
+          "novita",
+          "together"
+        ]
+      }
     },
     "hyperbolic/fp8": {
       "exact_match_rate": 0.9707301786273895,
@@ -65,7 +98,18 @@
       "infinite_margin_rate": 0.00006224324660774306,
       "total_tokens": 16066,
       "n_sequences": 100,
-      "fireworks_verification_mode": "on-demand"
+      "fireworks_verification_mode": "on-demand",
+      "vail": {
+        "endpoint": "qwen3-coder-480b-nebius-chat",
+        "divergence_ratio": 0.581690317476662,
+        "date": "2026-02-28",
+        "comparison_providers": [
+          "deepinfra",
+          "novita",
+          "together",
+          "vertex"
+        ]
+      }
     },
     "novita/fp8": {
       "exact_match_rate": 0.9523720698874588,
@@ -76,7 +120,18 @@
       "infinite_margin_rate": 0.0001243549089100292,
       "total_tokens": 16083,
       "n_sequences": 100,
-      "fireworks_verification_mode": "on-demand"
+      "fireworks_verification_mode": "on-demand",
+      "vail": {
+        "endpoint": "qwen3-coder-480b-novita-chat",
+        "divergence_ratio": 1.642374850859975,
+        "date": "2026-02-28",
+        "comparison_providers": [
+          "deepinfra",
+          "nebius",
+          "together",
+          "vertex"
+        ]
+      }
     },
     "siliconflow/fp8": {
       "error": "'NoneType' object is not subscriptable"
@@ -90,7 +145,18 @@
       "infinite_margin_rate": 0,
       "total_tokens": 16013,
       "n_sequences": 100,
-      "fireworks_verification_mode": "on-demand"
+      "fireworks_verification_mode": "on-demand",
+      "vail": {
+        "endpoint": "qwen3-coder-480b-together-chat",
+        "divergence_ratio": 0.7701302095852911,
+        "date": "2026-02-28",
+        "comparison_providers": [
+          "deepinfra",
+          "nebius",
+          "novita",
+          "vertex"
+        ]
+      }
     },
     "wandb/bf16": {
       "exact_match_rate": 0.9689093396343739,

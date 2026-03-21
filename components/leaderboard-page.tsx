@@ -21,8 +21,6 @@ export function LeaderboardPage({ enableVailTimeline }: { enableVailTimeline: bo
   const [isLoading, setIsLoading] = useState(true)
   const [selectedModel, setSelectedModel] = useState<string>("")
   const [showAllProviders, setShowAllProviders] = useState(false)
-  const [showExactMatch, setShowExactMatch] = useState(true)
-  const [showVail, setShowVail] = useState(true)
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
 
   useEffect(() => {
@@ -315,11 +313,11 @@ export function LeaderboardPage({ enableVailTimeline }: { enableVailTimeline: bo
       </header>
 
       <div className="container mx-auto px-[var(--size-24)] md:px-[var(--size-48)] pb-[var(--size-48)] space-y-[var(--size-24)]">
-        <Card>
-          <CardHeader>
+        <Card className="gap-1">
+          <CardHeader className="pb-2">
             <CardTitle>How to read this leaderboard</CardTitle>
           </CardHeader>
-          <CardContent>
+          <CardContent className="pt-0">
             <p className="text-sm text-muted-foreground">
               We rank inference providers on how accurately they serve models. Our ranking is based on the provider&apos;s
               &quot;exact match rate&quot;: the share of output tokens sent by the provider that match tokens sourced from a trusted
@@ -361,10 +359,10 @@ export function LeaderboardPage({ enableVailTimeline }: { enableVailTimeline: bo
           </CardContent>
         </Card>
 
-        <Card>
-          <CardHeader>
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-              <div>
+        <Card className="gap-1">
+          <CardHeader className="pb-2">
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+              <div className="space-y-2">
                 <CardTitle>Provider Performance Over Time</CardTitle>
                 <CardDescription>
                   {selectedModelHasVailData
@@ -386,38 +384,14 @@ export function LeaderboardPage({ enableVailTimeline }: { enableVailTimeline: bo
               </Select>
             </div>
           </CardHeader>
-          <CardContent>
+          <CardContent className="pt-0">
             {timeSeriesData.length > 0 ? (
-              <div className="space-y-4">
-                {selectedModelHasVailData ? (
-                  <div className="flex flex-wrap gap-2">
-                    <Button
-                      variant={showExactMatch ? "default" : "outline"}
-                      className={showExactMatch ? "" : "hover:bg-[var(--brand-primary-light)] hover:text-foreground"}
-                      onClick={() => {
-                        if (showExactMatch && !showVail) return
-                        setShowExactMatch((prev) => !prev)
-                      }}
-                    >
-                      {showExactMatch ? "Hide exact match rate" : "Show exact match rate"}
-                    </Button>
-                    <Button
-                      variant={showVail ? "default" : "outline"}
-                      className={showVail ? "" : "hover:bg-[var(--brand-primary-light)] hover:text-foreground"}
-                      onClick={() => {
-                        if (showVail && !showExactMatch) return
-                        setShowVail((prev) => !prev)
-                      }}
-                    >
-                      {showVail ? "Hide VAIL divergence" : "Show VAIL divergence"}
-                    </Button>
-                  </div>
-                ) : null}
+              <div className="space-y-2">
                 <TimeSeriesChart
                   data={timeSeriesData}
                   providers={timelineProviders}
-                  showExactMatch={selectedModelHasVailData ? showExactMatch : true}
-                  showVail={selectedModelHasVailData ? showVail : false}
+                  showExactMatch={true}
+                  showVail={selectedModelHasVailData}
                 />
               </div>
             ) : (

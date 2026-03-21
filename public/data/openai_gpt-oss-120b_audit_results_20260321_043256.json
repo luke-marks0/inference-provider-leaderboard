@@ -6,7 +6,7 @@
     "seed": 42,
     "top_k": 50,
     "top_p": 0.95,
-    "temperature": 0.0,
+    "temperature": 0,
     "verification_backend": "fireworks",
     "fireworks_verification_mode": "serverless",
     "fireworks_verification_strategy": "fixed-per-audit",
@@ -16,7 +16,25 @@
   "providers": {
     "amazonbedrock": {
       "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'novita', 'chutes', 'siliconflow', 'clarifai', 'google-vertex', 'atlas-cloud', 'phala', 'baseten', 'parasail', 'sambanova', 'amazon-bedrock', 'together', 'wandb', 'groq', 'crusoe', 'fireworks', 'io-net'], 'requested_providers': ['amazonbedrock']}}}",
-      "collection_complete": false
+      "collection_complete": false,
+      "vail": {
+        "endpoint": "gpt-oss-120b-bedrock-chat",
+        "divergence_ratio": 0.9586368612217322,
+        "date": "2026-03-20",
+        "comparison_providers": [
+          "azure",
+          "baseten",
+          "deepinfra",
+          "fireworks",
+          "groq",
+          "nebius",
+          "novita",
+          "openrouter",
+          "parasail",
+          "together",
+          "vertex"
+        ]
+      }
     },
     "atlas-cloud/fp8": {
       "exact_match_rate": 0.948905109489051,
@@ -38,25 +56,7 @@
       "infinite_margin_rate": 0.007114947221088237,
       "total_tokens": 17147,
       "n_sequences": 100,
-      "fireworks_verification_mode": "serverless",
-      "vail": {
-        "endpoint": "gpt-oss-120b-baseten-chat",
-        "divergence_ratio": 1.9796469277452278,
-        "date": "2026-03-20",
-        "comparison_providers": [
-          "azure",
-          "bedrock",
-          "deepinfra",
-          "fireworks",
-          "groq",
-          "nebius",
-          "novita",
-          "openrouter",
-          "parasail",
-          "together",
-          "vertex"
-        ]
-      }
+      "fireworks_verification_mode": "serverless"
     },
     "chutes/bf16": {
       "error": "Error code: 404 - {'error': {'message': 'No endpoints available matching your guardrail restrictions and data policy. Configure: https://openrouter.ai/settings/privacy', 'code': 404}}",
@@ -68,7 +68,7 @@
       "avg_margin": 0.010297693813168196,
       "avg_logit_rank": 0.030903142890524593,
       "avg_gumbel_rank": 0.030903142890524593,
-      "infinite_margin_rate": 5.8418039490594695e-05,
+      "infinite_margin_rate": 0.000058418039490594695,
       "total_tokens": 17118,
       "n_sequences": 100,
       "fireworks_verification_mode": "serverless"
@@ -163,13 +163,13 @@
       "avg_margin": 0.006284554250172771,
       "avg_logit_rank": 0.024647279009501873,
       "avg_gumbel_rank": 0.024647279009501873,
-      "infinite_margin_rate": 5.7587100489490355e-05,
+      "infinite_margin_rate": 0.000057587100489490355,
       "total_tokens": 17365,
       "n_sequences": 100,
       "fireworks_verification_mode": "serverless",
       "vail": {
         "endpoint": "gpt-oss-120b-groq-chat",
-        "divergence_ratio": 1.0,
+        "divergence_ratio": 1,
         "date": "2026-03-20",
         "comparison_providers": [
           "azure",

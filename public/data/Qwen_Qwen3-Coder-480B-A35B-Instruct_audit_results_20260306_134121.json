@@ -6,7 +6,7 @@
     "seed": 42,
     "top_k": 50,
     "top_p": 0.95,
-    "temperature": 0.0,
+    "temperature": 0,
     "verification_backend": "fireworks",
     "fireworks_verification_mode": "on-demand",
     "fireworks_verification_strategy": "fixed-per-audit",
@@ -32,7 +32,18 @@
       "on_demand_first_error": "Error code: 503 - {'error': {'message': 'Deployment is currently scaled to zero and is scaling up. Please retry your request in a few minutes.', 'param': None, 'code': 'DEPLOYMENT_SCALING_UP', 'type': 'error'}, 'request_id': 'redacted'}"
     },
     "deepinfra/fp4": {
-      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['deepinfra/fp4']}}}"
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['deepinfra/fp4']}}}",
+      "vail": {
+        "endpoint": "qwen3-coder-480b-deepinfra-chat",
+        "divergence_ratio": 1,
+        "date": "2026-03-07",
+        "comparison_providers": [
+          "nebius",
+          "novita",
+          "together",
+          "vertex"
+        ]
+      }
     },
     "deepinfra/fp8": {
       "exact_match_rate": 0.969136189699517,
@@ -43,10 +54,32 @@
       "infinite_margin_rate": 0.00018819396524684775,
       "total_tokens": 15941,
       "n_sequences": 100,
-      "fireworks_verification_mode": "on-demand"
+      "fireworks_verification_mode": "on-demand",
+      "vail": {
+        "endpoint": "qwen3-coder-480b-deepinfra-chat",
+        "divergence_ratio": 1,
+        "date": "2026-03-07",
+        "comparison_providers": [
+          "nebius",
+          "novita",
+          "together",
+          "vertex"
+        ]
+      }
     },
     "google-vertex": {
-      "error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded: limit_rpm/qwen/qwen3-coder-480b-a35b-07-25/803d4906-0d0b-49b6-8705-7ae0a4d45217. High demand for qwen/qwen3-coder on OpenRouter - limited to 80 requests per minute. Please retry shortly.', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '80', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1772805300000'}, 'provider_name': None}}, 'user_id': 'redacted'}"
+      "error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded: limit_rpm/qwen/qwen3-coder-480b-a35b-07-25/803d4906-0d0b-49b6-8705-7ae0a4d45217. High demand for qwen/qwen3-coder on OpenRouter - limited to 80 requests per minute. Please retry shortly.', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '80', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1772805300000'}, 'provider_name': None}}, 'user_id': 'redacted'}",
+      "vail": {
+        "endpoint": "qwen3-coder-480b-vertex-chat",
+        "divergence_ratio": 1.9296002759807944,
+        "date": "2026-03-07",
+        "comparison_providers": [
+          "deepinfra",
+          "nebius",
+          "novita",
+          "together"
+        ]
+      }
     },
     "hyperbolic/fp8": {
       "exact_match_rate": 0.9699074074074074,
@@ -54,7 +87,7 @@
       "avg_margin": 0.020888724007286707,
       "avg_logit_rank": 0.028653653653653653,
       "avg_gumbel_rank": 0.028653653653653653,
-      "infinite_margin_rate": 0.0,
+      "infinite_margin_rate": 0,
       "total_tokens": 15984,
       "n_sequences": 100,
       "fireworks_verification_mode": "on-demand"
@@ -65,10 +98,21 @@
       "avg_margin": 0.01791590950166456,
       "avg_logit_rank": 0.026374720079621796,
       "avg_gumbel_rank": 0.026374720079621796,
-      "infinite_margin_rate": 6.220452848967405e-05,
+      "infinite_margin_rate": 0.00006220452848967405,
       "total_tokens": 16076,
       "n_sequences": 100,
-      "fireworks_verification_mode": "on-demand"
+      "fireworks_verification_mode": "on-demand",
+      "vail": {
+        "endpoint": "qwen3-coder-480b-nebius-chat",
+        "divergence_ratio": 0.5123405979949276,
+        "date": "2026-03-07",
+        "comparison_providers": [
+          "deepinfra",
+          "novita",
+          "together",
+          "vertex"
+        ]
+      }
     },
     "novita/fp8": {
       "exact_match_rate": 0.9531446540880503,
@@ -79,7 +123,18 @@
       "infinite_margin_rate": 0.00031446540880503143,
       "total_tokens": 15900,
       "n_sequences": 100,
-      "fireworks_verification_mode": "on-demand"
+      "fireworks_verification_mode": "on-demand",
+      "vail": {
+        "endpoint": "qwen3-coder-480b-novita-chat",
+        "divergence_ratio": 5.089017978649787,
+        "date": "2026-03-07",
+        "comparison_providers": [
+          "deepinfra",
+          "nebius",
+          "together",
+          "vertex"
+        ]
+      }
     },
     "siliconflow/fp8": {
       "exact_match_rate": 0.9594905250077664,
@@ -98,10 +153,21 @@
       "avg_margin": 0.01703062680617726,
       "avg_logit_rank": 0.02601120099564406,
       "avg_gumbel_rank": 0.02601120099564406,
-      "infinite_margin_rate": 0.0,
+      "infinite_margin_rate": 0,
       "total_tokens": 16070,
       "n_sequences": 100,
-      "fireworks_verification_mode": "on-demand"
+      "fireworks_verification_mode": "on-demand",
+      "vail": {
+        "endpoint": "qwen3-coder-480b-together-chat",
+        "divergence_ratio": 0.5364033644437909,
+        "date": "2026-03-07",
+        "comparison_providers": [
+          "deepinfra",
+          "nebius",
+          "novita",
+          "vertex"
+        ]
+      }
     },
     "wandb/bf16": {
       "exact_match_rate": 0.9696667704764871,
@@ -109,7 +175,7 @@
       "avg_margin": 0.020672182373259778,
       "avg_logit_rank": 0.030520087200249145,
       "avg_gumbel_rank": 0.030520087200249145,
-      "infinite_margin_rate": 6.228589224540641e-05,
+      "infinite_margin_rate": 0.00006228589224540641,
       "total_tokens": 16055,
       "n_sequences": 100,
       "fireworks_verification_mode": "on-demand"

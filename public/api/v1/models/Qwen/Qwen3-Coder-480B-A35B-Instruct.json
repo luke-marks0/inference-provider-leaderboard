@@ -1,6 +1,6 @@
 {
   "version": "v1",
-  "generatedAt": "2026-03-21T07:46:05.158Z",
+  "generatedAt": "2026-03-21T12:11:18.535Z",
   "model": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
   "id": "Qwen%2FQwen3-Coder-480B-A35B-Instruct",
   "runCount": 36,
@@ -8,27 +8,30 @@
   "lastTimestamp": "2026-03-21T04:53:59Z",
   "providers": [
     "alibaba",
+    "deepinfra/fp4",
+    "deepinfra/fp8",
+    "google",
     "hyperbolic/fp8",
     "nebius/fp8",
     "novita/fp8",
     "siliconflow/fp8",
     "together/fp8",
     "wandb/bf16",
-    "deepinfra/fp8",
-    "atlas-cloud/fp8",
-    "google-vertex"
+    "google-vertex",
+    "atlas-cloud/fp8"
   ],
   "providerNames": [
     "alibaba",
+    "deepinfra",
+    "google",
     "hyperbolic",
     "nebius",
     "novita",
     "siliconflow",
     "together",
     "wandb",
-    "deepinfra",
-    "atlas-cloud",
-    "google-vertex"
+    "google-vertex",
+    "atlas-cloud"
   ],
   "runs": [
     {
@@ -53,6 +56,63 @@
             "n_sequences": 100,
             "fireworks_verification_mode": "on-demand",
             "serverless_error": "Error code: 404 - {'error': {'message': 'Model not found, inaccessible, and/or not deployed', 'param': 'model', 'code': 'NOT_FOUND', 'type': 'error'}, 'request_id': 'cmpl-[redacted]'}"
+          }
+        },
+        {
+          "endpoint": "deepinfra/fp4",
+          "provider": "deepinfra",
+          "variant": "fp4",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['deepinfra/fp4']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 0.4099787184594559,
+              "date": "2026-02-27",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "deepinfra/fp8",
+          "provider": "deepinfra",
+          "variant": "fp8",
+          "metrics": {
+            "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'qwen/qwen3-coder is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'DeepInfra', 'is_byok': False}}, 'user_id': 'org_[redacted]'}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 0.4099787184594559,
+              "date": "2026-02-27",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "google",
+          "provider": "google",
+          "variant": null,
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['google']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-vertex-chat",
+              "divergence_ratio": 2.0323812966324413,
+              "date": "2026-02-27",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "together"
+              ]
+            }
           }
         },
         {
@@ -84,7 +144,18 @@
             "infinite_margin_rate": 0,
             "total_tokens": 15897,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-nebius-chat",
+              "divergence_ratio": 0.193798959854895,
+              "date": "2026-02-27",
+              "comparison_providers": [
+                "deepinfra",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -100,7 +171,18 @@
             "infinite_margin_rate": 0.00006206939358202471,
             "total_tokens": 16111,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-novita-chat",
+              "divergence_ratio": 3.1404619139208068,
+              "date": "2026-02-27",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -132,7 +214,18 @@
             "infinite_margin_rate": 0.00006205013651030033,
             "total_tokens": 16116,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-together-chat",
+              "divergence_ratio": 1,
+              "date": "2026-02-27",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -190,6 +283,25 @@
           }
         },
         {
+          "endpoint": "deepinfra/fp4",
+          "provider": "deepinfra",
+          "variant": "fp4",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['deepinfra/fp4']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 5.030370244029407,
+              "date": "2026-02-28",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
           "endpoint": "deepinfra/fp8",
           "provider": "deepinfra",
           "variant": "fp8",
@@ -202,7 +314,37 @@
             "infinite_margin_rate": 0.00006234802668495543,
             "total_tokens": 16039,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 5.030370244029407,
+              "date": "2026-02-28",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "google",
+          "provider": "google",
+          "variant": null,
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['google']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-vertex-chat",
+              "divergence_ratio": 1,
+              "date": "2026-02-28",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "together"
+              ]
+            }
           }
         },
         {
@@ -234,7 +376,18 @@
             "infinite_margin_rate": 0.00006224324660774306,
             "total_tokens": 16066,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-nebius-chat",
+              "divergence_ratio": 0.581690317476662,
+              "date": "2026-02-28",
+              "comparison_providers": [
+                "deepinfra",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -250,7 +403,18 @@
             "infinite_margin_rate": 0.0001243549089100292,
             "total_tokens": 16083,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-novita-chat",
+              "divergence_ratio": 1.642374850859975,
+              "date": "2026-02-28",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -266,7 +430,18 @@
             "infinite_margin_rate": 0,
             "total_tokens": 16013,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-together-chat",
+              "divergence_ratio": 0.7701302095852911,
+              "date": "2026-02-28",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -324,6 +499,25 @@
           }
         },
         {
+          "endpoint": "deepinfra/fp4",
+          "provider": "deepinfra",
+          "variant": "fp4",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['deepinfra/fp4']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 5.030370244029407,
+              "date": "2026-02-28",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
           "endpoint": "deepinfra/fp8",
           "provider": "deepinfra",
           "variant": "fp8",
@@ -336,7 +530,37 @@
             "infinite_margin_rate": 0.00006312732782021337,
             "total_tokens": 15841,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 5.030370244029407,
+              "date": "2026-02-28",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "google",
+          "provider": "google",
+          "variant": null,
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['google']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-vertex-chat",
+              "divergence_ratio": 1,
+              "date": "2026-02-28",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "together"
+              ]
+            }
           }
         },
         {
@@ -368,7 +592,18 @@
             "infinite_margin_rate": 0,
             "total_tokens": 15872,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-nebius-chat",
+              "divergence_ratio": 0.581690317476662,
+              "date": "2026-02-28",
+              "comparison_providers": [
+                "deepinfra",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -384,7 +619,18 @@
             "infinite_margin_rate": 0.00037450845764933527,
             "total_tokens": 16021,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-novita-chat",
+              "divergence_ratio": 1.642374850859975,
+              "date": "2026-02-28",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -400,7 +646,18 @@
             "infinite_margin_rate": 0.00006218132073125233,
             "total_tokens": 16082,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-together-chat",
+              "divergence_ratio": 0.7701302095852911,
+              "date": "2026-02-28",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -458,6 +715,25 @@
           }
         },
         {
+          "endpoint": "deepinfra/fp4",
+          "provider": "deepinfra",
+          "variant": "fp4",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['deepinfra/fp4']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 5.030370244029407,
+              "date": "2026-02-28",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
           "endpoint": "deepinfra/fp8",
           "provider": "deepinfra",
           "variant": "fp8",
@@ -470,7 +746,37 @@
             "infinite_margin_rate": 0.005434782608695652,
             "total_tokens": 16008,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 5.030370244029407,
+              "date": "2026-02-28",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "google",
+          "provider": "google",
+          "variant": null,
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['google']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-vertex-chat",
+              "divergence_ratio": 1,
+              "date": "2026-02-28",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "together"
+              ]
+            }
           }
         },
         {
@@ -502,7 +808,18 @@
             "infinite_margin_rate": 0,
             "total_tokens": 16017,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-nebius-chat",
+              "divergence_ratio": 0.581690317476662,
+              "date": "2026-02-28",
+              "comparison_providers": [
+                "deepinfra",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -518,7 +835,18 @@
             "infinite_margin_rate": 0.00006232471174820816,
             "total_tokens": 16045,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-novita-chat",
+              "divergence_ratio": 1.642374850859975,
+              "date": "2026-02-28",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -534,7 +862,18 @@
             "infinite_margin_rate": 0,
             "total_tokens": 16074,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-together-chat",
+              "divergence_ratio": 0.7701302095852911,
+              "date": "2026-02-28",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -575,6 +914,105 @@
       "timestamp": "2026-02-28T13:36:40Z",
       "providerEntries": [
         {
+          "endpoint": "deepinfra/fp4",
+          "provider": "deepinfra",
+          "variant": "fp4",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['deepinfra/fp4']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-01",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "deepinfra/fp8",
+          "provider": "deepinfra",
+          "variant": "fp8",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'Model not found, inaccessible, and/or not deployed', 'param': 'model', 'code': 'NOT_FOUND', 'type': 'error'}, 'request_id': 'cmpl-[redacted]'}",
+            "serverless_error": "Error code: 404 - {'error': {'message': 'Model not found, inaccessible, and/or not deployed', 'param': 'model', 'code': 'NOT_FOUND', 'type': 'error'}, 'request_id': 'cmpl-[redacted]'}",
+            "fireworks_verification_mode": "on-demand-fallback-failed",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-01",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "google",
+          "provider": "google",
+          "variant": null,
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['google']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-vertex-chat",
+              "divergence_ratio": 1.5895472878760142,
+              "date": "2026-03-01",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "together"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "nebius/fp8",
+          "provider": "nebius",
+          "variant": "fp8",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'Model not found, inaccessible, and/or not deployed', 'param': 'model', 'code': 'NOT_FOUND', 'type': 'error'}, 'request_id': 'cmpl-[redacted]'}",
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-nebius-chat",
+              "divergence_ratio": 0.000955691813907373,
+              "date": "2026-03-01",
+              "comparison_providers": [
+                "deepinfra",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "novita/fp8",
+          "provider": "novita",
+          "variant": "fp8",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'Model not found, inaccessible, and/or not deployed', 'param': 'model', 'code': 'NOT_FOUND', 'type': 'error'}, 'request_id': 'cmpl-[redacted]'}",
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-novita-chat",
+              "divergence_ratio": 2.9041252907214403,
+              "date": "2026-03-01",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
           "endpoint": "together/fp8",
           "provider": "together",
           "variant": "fp8",
@@ -587,7 +1025,18 @@
             "infinite_margin_rate": 0,
             "total_tokens": 15971,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-together-chat",
+              "divergence_ratio": 0.14467856325989115,
+              "date": "2026-03-01",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -626,7 +1075,125 @@
       "dataUrl": "../../../data/Qwen_Qwen3-Coder-480B-A35B-Instruct_audit_results_20260301_015452.json",
       "model": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
       "timestamp": "2026-03-01T01:54:52Z",
-      "providerEntries": [],
+      "providerEntries": [
+        {
+          "endpoint": "deepinfra/fp4",
+          "provider": "deepinfra",
+          "variant": "fp4",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['deepinfra/fp4']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-01",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "deepinfra/fp8",
+          "provider": "deepinfra",
+          "variant": "fp8",
+          "metrics": {
+            "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'qwen/qwen3-coder is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'DeepInfra', 'is_byok': False}}, 'user_id': 'org_[redacted]'}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-01",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "google",
+          "provider": "google",
+          "variant": null,
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['google']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-vertex-chat",
+              "divergence_ratio": 1.5895472878760142,
+              "date": "2026-03-01",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "together"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "nebius/fp8",
+          "provider": "nebius",
+          "variant": "fp8",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'Model not found, inaccessible, and/or not deployed', 'param': 'model', 'code': 'NOT_FOUND', 'type': 'error'}, 'request_id': 'cmpl-[redacted]'}",
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-nebius-chat",
+              "divergence_ratio": 0.000955691813907373,
+              "date": "2026-03-01",
+              "comparison_providers": [
+                "deepinfra",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "novita/fp8",
+          "provider": "novita",
+          "variant": "fp8",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'Model not found, inaccessible, and/or not deployed', 'param': 'model', 'code': 'NOT_FOUND', 'type': 'error'}, 'request_id': 'cmpl-[redacted]'}",
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-novita-chat",
+              "divergence_ratio": 2.9041252907214403,
+              "date": "2026-03-01",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "together/fp8",
+          "provider": "together",
+          "variant": "fp8",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'Model not found, inaccessible, and/or not deployed', 'param': 'model', 'code': 'NOT_FOUND', 'type': 'error'}, 'request_id': 'cmpl-[redacted]'}",
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-together-chat",
+              "divergence_ratio": 0.14467856325989115,
+              "date": "2026-03-01",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "vertex"
+              ]
+            }
+          }
+        }
+      ],
       "parameters": {
         "n_prompts": 100,
         "max_tokens": 200,
@@ -665,6 +1232,25 @@
           }
         },
         {
+          "endpoint": "deepinfra/fp4",
+          "provider": "deepinfra",
+          "variant": "fp4",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['deepinfra/fp4']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 0.5684948355072532,
+              "date": "2026-03-02",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
           "endpoint": "deepinfra/fp8",
           "provider": "deepinfra",
           "variant": "fp8",
@@ -677,7 +1263,37 @@
             "infinite_margin_rate": 0,
             "total_tokens": 15935,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 0.5684948355072532,
+              "date": "2026-03-02",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "google",
+          "provider": "google",
+          "variant": null,
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['google']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-vertex-chat",
+              "divergence_ratio": 1.8875002492522321,
+              "date": "2026-03-02",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "together"
+              ]
+            }
           }
         },
         {
@@ -709,7 +1325,18 @@
             "infinite_margin_rate": 0,
             "total_tokens": 16031,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-nebius-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-02",
+              "comparison_providers": [
+                "deepinfra",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -725,7 +1352,18 @@
             "infinite_margin_rate": 0,
             "total_tokens": 15953,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-novita-chat",
+              "divergence_ratio": 4.347669066559596,
+              "date": "2026-03-02",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -757,7 +1395,18 @@
             "infinite_margin_rate": 0.00006298419096806702,
             "total_tokens": 15877,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-together-chat",
+              "divergence_ratio": 0.55932197536897,
+              "date": "2026-03-02",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -798,6 +1447,105 @@
       "timestamp": "2026-03-02T03:13:52Z",
       "providerEntries": [
         {
+          "endpoint": "deepinfra/fp4",
+          "provider": "deepinfra",
+          "variant": "fp4",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['deepinfra/fp4']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 0.5684948355072532,
+              "date": "2026-03-02",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "deepinfra/fp8",
+          "provider": "deepinfra",
+          "variant": "fp8",
+          "metrics": {
+            "error": "'NoneType' object is not subscriptable",
+            "serverless_error": "Error code: 404 - {'error': {'message': 'Model not found, inaccessible, and/or not deployed', 'param': 'model', 'code': 'NOT_FOUND', 'type': 'error'}, 'request_id': 'cmpl-[redacted]'}",
+            "fireworks_verification_mode": "on-demand-fallback-failed",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 0.5684948355072532,
+              "date": "2026-03-02",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "google",
+          "provider": "google",
+          "variant": null,
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['google']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-vertex-chat",
+              "divergence_ratio": 1.8875002492522321,
+              "date": "2026-03-02",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "together"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "nebius/fp8",
+          "provider": "nebius",
+          "variant": "fp8",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'Model not found, inaccessible, and/or not deployed', 'param': 'model', 'code': 'NOT_FOUND', 'type': 'error'}, 'request_id': 'cmpl-[redacted]'}",
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-nebius-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-02",
+              "comparison_providers": [
+                "deepinfra",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "novita/fp8",
+          "provider": "novita",
+          "variant": "fp8",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'Model not found, inaccessible, and/or not deployed', 'param': 'model', 'code': 'NOT_FOUND', 'type': 'error'}, 'request_id': 'cmpl-[redacted]'}",
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-novita-chat",
+              "divergence_ratio": 4.347669066559596,
+              "date": "2026-03-02",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
           "endpoint": "siliconflow/fp8",
           "provider": "siliconflow",
           "variant": "fp8",
@@ -826,7 +1574,18 @@
             "infinite_margin_rate": 0,
             "total_tokens": 15959,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-together-chat",
+              "divergence_ratio": 0.55932197536897,
+              "date": "2026-03-02",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -884,6 +1643,25 @@
           }
         },
         {
+          "endpoint": "deepinfra/fp4",
+          "provider": "deepinfra",
+          "variant": "fp4",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['deepinfra/fp4']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-03",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
           "endpoint": "deepinfra/fp8",
           "provider": "deepinfra",
           "variant": "fp8",
@@ -896,7 +1674,37 @@
             "infinite_margin_rate": 0.00006253908692933083,
             "total_tokens": 15990,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-03",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "google",
+          "provider": "google",
+          "variant": null,
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['google']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-vertex-chat",
+              "divergence_ratio": 3.4517190202107577,
+              "date": "2026-03-03",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "together"
+              ]
+            }
           }
         },
         {
@@ -928,7 +1736,18 @@
             "infinite_margin_rate": 0.0000626527159952384,
             "total_tokens": 15961,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-nebius-chat",
+              "divergence_ratio": 0.9381407150424081,
+              "date": "2026-03-03",
+              "comparison_providers": [
+                "deepinfra",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -944,7 +1763,18 @@
             "infinite_margin_rate": 0.00012679092177000128,
             "total_tokens": 15774,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-novita-chat",
+              "divergence_ratio": 6.494517498709127,
+              "date": "2026-03-03",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -976,7 +1806,18 @@
             "infinite_margin_rate": 0,
             "total_tokens": 16121,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-together-chat",
+              "divergence_ratio": 0.9394873126610852,
+              "date": "2026-03-03",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -1035,6 +1876,25 @@
           }
         },
         {
+          "endpoint": "deepinfra/fp4",
+          "provider": "deepinfra",
+          "variant": "fp4",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['deepinfra/fp4']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-03",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
           "endpoint": "deepinfra/fp8",
           "provider": "deepinfra",
           "variant": "fp8",
@@ -1047,7 +1907,37 @@
             "infinite_margin_rate": 0,
             "total_tokens": 15805,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-03",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "google",
+          "provider": "google",
+          "variant": null,
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['google']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-vertex-chat",
+              "divergence_ratio": 3.4517190202107577,
+              "date": "2026-03-03",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "together"
+              ]
+            }
           }
         },
         {
@@ -1063,7 +1953,18 @@
             "infinite_margin_rate": 0,
             "total_tokens": 15956,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-nebius-chat",
+              "divergence_ratio": 0.9381407150424081,
+              "date": "2026-03-03",
+              "comparison_providers": [
+                "deepinfra",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -1079,7 +1980,18 @@
             "infinite_margin_rate": 0.0002517781834204066,
             "total_tokens": 15887,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-novita-chat",
+              "divergence_ratio": 6.494517498709127,
+              "date": "2026-03-03",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -1111,7 +2023,18 @@
             "infinite_margin_rate": 0.00006259389083625437,
             "total_tokens": 15976,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-together-chat",
+              "divergence_ratio": 0.9394873126610852,
+              "date": "2026-03-03",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -1151,7 +2074,127 @@
       "dataUrl": "../../../data/Qwen_Qwen3-Coder-480B-A35B-Instruct_audit_results_20260303_132648.json",
       "model": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
       "timestamp": "2026-03-03T13:26:48Z",
-      "providerEntries": [],
+      "providerEntries": [
+        {
+          "endpoint": "deepinfra/fp4",
+          "provider": "deepinfra",
+          "variant": "fp4",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['deepinfra/fp4']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 0.8218932062567357,
+              "date": "2026-03-04",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "deepinfra/fp8",
+          "provider": "deepinfra",
+          "variant": "fp8",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'Model not found, inaccessible, and/or not deployed', 'param': 'model', 'code': 'NOT_FOUND', 'type': 'error'}, 'request_id': 'cmpl-[redacted]'}",
+            "serverless_error": "Error code: 404 - {'error': {'message': 'Model not found, inaccessible, and/or not deployed', 'param': 'model', 'code': 'NOT_FOUND', 'type': 'error'}, 'request_id': 'cmpl-[redacted]'}",
+            "fireworks_verification_mode": "on-demand-fallback-failed",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 0.8218932062567357,
+              "date": "2026-03-04",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "google",
+          "provider": "google",
+          "variant": null,
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['google']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-vertex-chat",
+              "divergence_ratio": 3.281301927487457,
+              "date": "2026-03-04",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "together"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "nebius/fp8",
+          "provider": "nebius",
+          "variant": "fp8",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'Model not found, inaccessible, and/or not deployed', 'param': 'model', 'code': 'NOT_FOUND', 'type': 'error'}, 'request_id': 'cmpl-[redacted]'}",
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-nebius-chat",
+              "divergence_ratio": 0.4067950216897192,
+              "date": "2026-03-04",
+              "comparison_providers": [
+                "deepinfra",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "novita/fp8",
+          "provider": "novita",
+          "variant": "fp8",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'Model not found, inaccessible, and/or not deployed', 'param': 'model', 'code': 'NOT_FOUND', 'type': 'error'}, 'request_id': 'cmpl-[redacted]'}",
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-novita-chat",
+              "divergence_ratio": 8.38066324494054,
+              "date": "2026-03-04",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "together/fp8",
+          "provider": "together",
+          "variant": "fp8",
+          "metrics": {
+            "error": "Error code: 503 - {'error': {'message': 'Deployment is currently scaled to zero and is scaling up. Please retry your request in a few minutes.', 'param': None, 'code': 'DEPLOYMENT_SCALING_UP', 'type': 'error'}, 'request_id': 'cmpl-[redacted]'}",
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-together-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-04",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "vertex"
+              ]
+            }
+          }
+        }
+      ],
       "parameters": {
         "n_prompts": 100,
         "max_tokens": 200,
@@ -1191,6 +2234,63 @@
           }
         },
         {
+          "endpoint": "deepinfra/fp4",
+          "provider": "deepinfra",
+          "variant": "fp4",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['deepinfra/fp4']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 0.8218932062567357,
+              "date": "2026-03-04",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "deepinfra/fp8",
+          "provider": "deepinfra",
+          "variant": "fp8",
+          "metrics": {
+            "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'qwen/qwen3-coder is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'DeepInfra', 'is_byok': False}}, 'user_id': 'org_[redacted]'}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 0.8218932062567357,
+              "date": "2026-03-04",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "google",
+          "provider": "google",
+          "variant": null,
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['google']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-vertex-chat",
+              "divergence_ratio": 3.281301927487457,
+              "date": "2026-03-04",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "together"
+              ]
+            }
+          }
+        },
+        {
           "endpoint": "hyperbolic/fp8",
           "provider": "hyperbolic",
           "variant": "fp8",
@@ -1219,7 +2319,18 @@
             "infinite_margin_rate": 0,
             "total_tokens": 15883,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-nebius-chat",
+              "divergence_ratio": 0.4067950216897192,
+              "date": "2026-03-04",
+              "comparison_providers": [
+                "deepinfra",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -1235,7 +2346,18 @@
             "infinite_margin_rate": 0.0001856205915109516,
             "total_tokens": 16162,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-novita-chat",
+              "divergence_ratio": 8.38066324494054,
+              "date": "2026-03-04",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -1251,7 +2373,18 @@
             "infinite_margin_rate": 0,
             "total_tokens": 16097,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-together-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-04",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -1310,6 +2443,25 @@
           }
         },
         {
+          "endpoint": "deepinfra/fp4",
+          "provider": "deepinfra",
+          "variant": "fp4",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['deepinfra/fp4']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 0.8218932062567357,
+              "date": "2026-03-04",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
           "endpoint": "deepinfra/fp8",
           "provider": "deepinfra",
           "variant": "fp8",
@@ -1322,7 +2474,37 @@
             "infinite_margin_rate": 0,
             "total_tokens": 15913,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 0.8218932062567357,
+              "date": "2026-03-04",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "google",
+          "provider": "google",
+          "variant": null,
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['google']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-vertex-chat",
+              "divergence_ratio": 3.281301927487457,
+              "date": "2026-03-04",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "together"
+              ]
+            }
           }
         },
         {
@@ -1354,7 +2536,18 @@
             "infinite_margin_rate": 0.000062625250501002,
             "total_tokens": 15968,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-nebius-chat",
+              "divergence_ratio": 0.4067950216897192,
+              "date": "2026-03-04",
+              "comparison_providers": [
+                "deepinfra",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -1370,7 +2563,18 @@
             "infinite_margin_rate": 0.00006251562890722681,
             "total_tokens": 15996,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-novita-chat",
+              "divergence_ratio": 8.38066324494054,
+              "date": "2026-03-04",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -1386,7 +2590,18 @@
             "infinite_margin_rate": 0,
             "total_tokens": 15872,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-together-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-04",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -1445,6 +2660,25 @@
           }
         },
         {
+          "endpoint": "deepinfra/fp4",
+          "provider": "deepinfra",
+          "variant": "fp4",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['deepinfra/fp4']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-05",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
           "endpoint": "deepinfra/fp8",
           "provider": "deepinfra",
           "variant": "fp8",
@@ -1457,7 +2691,37 @@
             "infinite_margin_rate": 0,
             "total_tokens": 15889,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-05",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "google",
+          "provider": "google",
+          "variant": null,
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['google']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-vertex-chat",
+              "divergence_ratio": 2.0010375215181773,
+              "date": "2026-03-05",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "together"
+              ]
+            }
           }
         },
         {
@@ -1489,7 +2753,18 @@
             "infinite_margin_rate": 0,
             "total_tokens": 15947,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-nebius-chat",
+              "divergence_ratio": 0.46988571129960094,
+              "date": "2026-03-05",
+              "comparison_providers": [
+                "deepinfra",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -1505,7 +2780,18 @@
             "infinite_margin_rate": 0.00018735948038970773,
             "total_tokens": 16012,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-novita-chat",
+              "divergence_ratio": 3.3981038032552244,
+              "date": "2026-03-05",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -1521,7 +2807,18 @@
             "infinite_margin_rate": 0,
             "total_tokens": 15921,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-together-chat",
+              "divergence_ratio": 0.36780706403491076,
+              "date": "2026-03-05",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -1561,7 +2858,125 @@
       "dataUrl": "../../../data/Qwen_Qwen3-Coder-480B-A35B-Instruct_audit_results_20260305_021829.json",
       "model": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
       "timestamp": "2026-03-05T02:18:29Z",
-      "providerEntries": [],
+      "providerEntries": [
+        {
+          "endpoint": "deepinfra/fp4",
+          "provider": "deepinfra",
+          "variant": "fp4",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['deepinfra/fp4']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-05",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "deepinfra/fp8",
+          "provider": "deepinfra",
+          "variant": "fp8",
+          "metrics": {
+            "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'qwen/qwen3-coder is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'DeepInfra', 'is_byok': False}}, 'user_id': 'redacted'}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-05",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "google-vertex",
+          "provider": "google-vertex",
+          "variant": null,
+          "metrics": {
+            "error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded: limit_rpm/qwen/qwen3-coder-480b-a35b-07-25/803d4906-0d0b-49b6-8705-7ae0a4d45217. High demand for qwen/qwen3-coder on OpenRouter - limited to 80 requests per minute. Please retry shortly.', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '80', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1772678460000'}, 'provider_name': None}}, 'user_id': 'redacted'}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-vertex-chat",
+              "divergence_ratio": 2.0010375215181773,
+              "date": "2026-03-05",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "together"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "nebius/fp8",
+          "provider": "nebius",
+          "variant": "fp8",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'Model not found, inaccessible, and/or not deployed', 'param': 'model', 'code': 'NOT_FOUND', 'type': 'error'}, 'request_id': 'redacted'}",
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-nebius-chat",
+              "divergence_ratio": 0.46988571129960094,
+              "date": "2026-03-05",
+              "comparison_providers": [
+                "deepinfra",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "novita/fp8",
+          "provider": "novita",
+          "variant": "fp8",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'Model not found, inaccessible, and/or not deployed', 'param': 'model', 'code': 'NOT_FOUND', 'type': 'error'}, 'request_id': 'redacted'}",
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-novita-chat",
+              "divergence_ratio": 3.3981038032552244,
+              "date": "2026-03-05",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "together/fp8",
+          "provider": "together",
+          "variant": "fp8",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'Model not found, inaccessible, and/or not deployed', 'param': 'model', 'code': 'NOT_FOUND', 'type': 'error'}, 'request_id': 'redacted'}",
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-together-chat",
+              "divergence_ratio": 0.36780706403491076,
+              "date": "2026-03-05",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "vertex"
+              ]
+            }
+          }
+        }
+      ],
       "parameters": {
         "n_prompts": 100,
         "max_tokens": 200,
@@ -1625,6 +3040,25 @@
           }
         },
         {
+          "endpoint": "deepinfra/fp4",
+          "provider": "deepinfra",
+          "variant": "fp4",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['deepinfra/fp4']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-06",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
           "endpoint": "deepinfra/fp8",
           "provider": "deepinfra",
           "variant": "fp8",
@@ -1637,7 +3071,37 @@
             "infinite_margin_rate": 0.00006255864873318736,
             "total_tokens": 15985,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-06",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "google-vertex",
+          "provider": "google-vertex",
+          "variant": null,
+          "metrics": {
+            "error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded: limit_rpm/qwen/qwen3-coder-480b-a35b-07-25/803d4906-0d0b-49b6-8705-7ae0a4d45217. High demand for qwen/qwen3-coder on OpenRouter - limited to 80 requests per minute. Please retry shortly.', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '80', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1772721960000'}, 'provider_name': None}}, 'user_id': 'redacted'}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-vertex-chat",
+              "divergence_ratio": 4.388386657754909,
+              "date": "2026-03-06",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "together"
+              ]
+            }
           }
         },
         {
@@ -1669,7 +3133,18 @@
             "infinite_margin_rate": 0,
             "total_tokens": 15961,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-nebius-chat",
+              "divergence_ratio": 0.14111253401424442,
+              "date": "2026-03-06",
+              "comparison_providers": [
+                "deepinfra",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -1685,7 +3160,18 @@
             "infinite_margin_rate": 0.00006204243702692642,
             "total_tokens": 16118,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-novita-chat",
+              "divergence_ratio": 8.43386403439855,
+              "date": "2026-03-06",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -1717,7 +3203,18 @@
             "infinite_margin_rate": 0.0000625117209476777,
             "total_tokens": 15997,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-together-chat",
+              "divergence_ratio": 0.9840919813044423,
+              "date": "2026-03-06",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -1792,6 +3289,63 @@
           }
         },
         {
+          "endpoint": "deepinfra/fp4",
+          "provider": "deepinfra",
+          "variant": "fp4",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['deepinfra/fp4']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-06",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "deepinfra/fp8",
+          "provider": "deepinfra",
+          "variant": "fp8",
+          "metrics": {
+            "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'qwen/qwen3-coder is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'DeepInfra', 'is_byok': False}}, 'user_id': 'redacted'}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-06",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "google-vertex",
+          "provider": "google-vertex",
+          "variant": null,
+          "metrics": {
+            "error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded: limit_rpm/qwen/qwen3-coder-480b-a35b-07-25/803d4906-0d0b-49b6-8705-7ae0a4d45217. High demand for qwen/qwen3-coder on OpenRouter - limited to 80 requests per minute. Please retry shortly.', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '80', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1772763000000'}, 'provider_name': None}}, 'user_id': 'redacted'}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-vertex-chat",
+              "divergence_ratio": 4.388386657754909,
+              "date": "2026-03-06",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "together"
+              ]
+            }
+          }
+        },
+        {
           "endpoint": "hyperbolic/fp8",
           "provider": "hyperbolic",
           "variant": "fp8",
@@ -1820,7 +3374,18 @@
             "infinite_margin_rate": 0,
             "total_tokens": 16037,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-nebius-chat",
+              "divergence_ratio": 0.14111253401424442,
+              "date": "2026-03-06",
+              "comparison_providers": [
+                "deepinfra",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -1836,7 +3401,18 @@
             "infinite_margin_rate": 0,
             "total_tokens": 16053,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-novita-chat",
+              "divergence_ratio": 8.43386403439855,
+              "date": "2026-03-06",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -1868,7 +3444,18 @@
             "infinite_margin_rate": 0.00006286145335680161,
             "total_tokens": 15908,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-together-chat",
+              "divergence_ratio": 0.9840919813044423,
+              "date": "2026-03-06",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -1928,6 +3515,25 @@
           }
         },
         {
+          "endpoint": "deepinfra/fp4",
+          "provider": "deepinfra",
+          "variant": "fp4",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['deepinfra/fp4']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-07",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
           "endpoint": "deepinfra/fp8",
           "provider": "deepinfra",
           "variant": "fp8",
@@ -1940,7 +3546,37 @@
             "infinite_margin_rate": 0.00018819396524684775,
             "total_tokens": 15941,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-07",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "google-vertex",
+          "provider": "google-vertex",
+          "variant": null,
+          "metrics": {
+            "error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded: limit_rpm/qwen/qwen3-coder-480b-a35b-07-25/803d4906-0d0b-49b6-8705-7ae0a4d45217. High demand for qwen/qwen3-coder on OpenRouter - limited to 80 requests per minute. Please retry shortly.', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '80', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1772805300000'}, 'provider_name': None}}, 'user_id': 'redacted'}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-vertex-chat",
+              "divergence_ratio": 1.9296002759807944,
+              "date": "2026-03-07",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "together"
+              ]
+            }
           }
         },
         {
@@ -1972,7 +3608,18 @@
             "infinite_margin_rate": 0.00006220452848967405,
             "total_tokens": 16076,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-nebius-chat",
+              "divergence_ratio": 0.5123405979949276,
+              "date": "2026-03-07",
+              "comparison_providers": [
+                "deepinfra",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -1988,7 +3635,18 @@
             "infinite_margin_rate": 0.00031446540880503143,
             "total_tokens": 15900,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-novita-chat",
+              "divergence_ratio": 5.089017978649787,
+              "date": "2026-03-07",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -2020,7 +3678,18 @@
             "infinite_margin_rate": 0,
             "total_tokens": 16070,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-together-chat",
+              "divergence_ratio": 0.5364033644437909,
+              "date": "2026-03-07",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -2095,6 +3764,44 @@
           }
         },
         {
+          "endpoint": "deepinfra/fp4",
+          "provider": "deepinfra",
+          "variant": "fp4",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['deepinfra/fp4']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-07",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "deepinfra/fp8",
+          "provider": "deepinfra",
+          "variant": "fp8",
+          "metrics": {
+            "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'qwen/qwen3-coder is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'DeepInfra', 'is_byok': False}}, 'user_id': 'redacted'}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-07",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
           "endpoint": "google-vertex",
           "provider": "google-vertex",
           "variant": null,
@@ -2107,7 +3814,18 @@
             "infinite_margin_rate": 0.00018869111264859426,
             "total_tokens": 15899,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-vertex-chat",
+              "divergence_ratio": 1.9296002759807944,
+              "date": "2026-03-07",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "together"
+              ]
+            }
           }
         },
         {
@@ -2139,7 +3857,18 @@
             "infinite_margin_rate": 0,
             "total_tokens": 16068,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-nebius-chat",
+              "divergence_ratio": 0.5123405979949276,
+              "date": "2026-03-07",
+              "comparison_providers": [
+                "deepinfra",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -2155,7 +3884,18 @@
             "infinite_margin_rate": 0.0001872308556450103,
             "total_tokens": 16023,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-novita-chat",
+              "divergence_ratio": 5.089017978649787,
+              "date": "2026-03-07",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -2187,7 +3927,18 @@
             "infinite_margin_rate": 0.00006257039169065198,
             "total_tokens": 15982,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-together-chat",
+              "divergence_ratio": 0.5364033644437909,
+              "date": "2026-03-07",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -2262,6 +4013,25 @@
           }
         },
         {
+          "endpoint": "deepinfra/fp4",
+          "provider": "deepinfra",
+          "variant": "fp4",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['deepinfra/fp4']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 0.6527822393530369,
+              "date": "2026-03-08",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
           "endpoint": "deepinfra/fp8",
           "provider": "deepinfra",
           "variant": "fp8",
@@ -2274,7 +4044,37 @@
             "infinite_margin_rate": 0,
             "total_tokens": 15879,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 0.6527822393530369,
+              "date": "2026-03-08",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "google-vertex",
+          "provider": "google-vertex",
+          "variant": null,
+          "metrics": {
+            "error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded: limit_rpm/qwen/qwen3-coder-480b-a35b-07-25/803d4906-0d0b-49b6-8705-7ae0a4d45217. High demand for qwen/qwen3-coder on OpenRouter - limited to 80 requests per minute. Please retry shortly.', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '80', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1772901480000'}, 'provider_name': None}}, 'user_id': 'redacted'}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-vertex-chat",
+              "divergence_ratio": 2.390064919707467,
+              "date": "2026-03-08",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "together"
+              ]
+            }
           }
         },
         {
@@ -2306,7 +4106,18 @@
             "infinite_margin_rate": 0,
             "total_tokens": 16107,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-nebius-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-08",
+              "comparison_providers": [
+                "deepinfra",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -2322,7 +4133,18 @@
             "infinite_margin_rate": 0.0003714020427112349,
             "total_tokens": 16155,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-novita-chat",
+              "divergence_ratio": 8.478014229110993,
+              "date": "2026-03-08",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -2354,7 +4176,18 @@
             "infinite_margin_rate": 0,
             "total_tokens": 16167,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-together-chat",
+              "divergence_ratio": 0.7085180970211272,
+              "date": "2026-03-08",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -2429,6 +4262,63 @@
           }
         },
         {
+          "endpoint": "deepinfra/fp4",
+          "provider": "deepinfra",
+          "variant": "fp4",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['deepinfra/fp4']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 0.6527822393530369,
+              "date": "2026-03-08",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "deepinfra/fp8",
+          "provider": "deepinfra",
+          "variant": "fp8",
+          "metrics": {
+            "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'qwen/qwen3-coder is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'DeepInfra', 'is_byok': False}}, 'user_id': 'redacted'}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 0.6527822393530369,
+              "date": "2026-03-08",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "google-vertex",
+          "provider": "google-vertex",
+          "variant": null,
+          "metrics": {
+            "error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded: limit_rpm/qwen/qwen3-coder-480b-a35b-07-25/803d4906-0d0b-49b6-8705-7ae0a4d45217. High demand for qwen/qwen3-coder on OpenRouter - limited to 80 requests per minute. Please retry shortly.', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '80', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1772936340000'}, 'provider_name': None}}, 'user_id': 'redacted'}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-vertex-chat",
+              "divergence_ratio": 2.390064919707467,
+              "date": "2026-03-08",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "together"
+              ]
+            }
+          }
+        },
+        {
           "endpoint": "hyperbolic/fp8",
           "provider": "hyperbolic",
           "variant": "fp8",
@@ -2457,7 +4347,18 @@
             "infinite_margin_rate": 0.00006266842138246537,
             "total_tokens": 15957,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-nebius-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-08",
+              "comparison_providers": [
+                "deepinfra",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -2473,7 +4374,18 @@
             "infinite_margin_rate": 0.00012580990123922753,
             "total_tokens": 15897,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-novita-chat",
+              "divergence_ratio": 8.478014229110993,
+              "date": "2026-03-08",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -2505,7 +4417,18 @@
             "infinite_margin_rate": 0,
             "total_tokens": 15983,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-together-chat",
+              "divergence_ratio": 0.7085180970211272,
+              "date": "2026-03-08",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -2580,6 +4503,25 @@
           }
         },
         {
+          "endpoint": "deepinfra/fp4",
+          "provider": "deepinfra",
+          "variant": "fp4",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['deepinfra/fp4']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 0.8395277503650216,
+              "date": "2026-03-09",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
           "endpoint": "deepinfra/fp8",
           "provider": "deepinfra",
           "variant": "fp8",
@@ -2592,7 +4534,37 @@
             "infinite_margin_rate": 0,
             "total_tokens": 15914,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 0.8395277503650216,
+              "date": "2026-03-09",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "google-vertex",
+          "provider": "google-vertex",
+          "variant": null,
+          "metrics": {
+            "error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded: limit_rpm/qwen/qwen3-coder-480b-a35b-07-25/803d4906-0d0b-49b6-8705-7ae0a4d45217. High demand for qwen/qwen3-coder on OpenRouter - limited to 80 requests per minute. Please retry shortly.', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '80', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1772979000000'}, 'provider_name': None}}, 'user_id': 'redacted'}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-vertex-chat",
+              "divergence_ratio": 2.9632092337230227,
+              "date": "2026-03-09",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "together"
+              ]
+            }
           }
         },
         {
@@ -2624,7 +4596,18 @@
             "infinite_margin_rate": 0,
             "total_tokens": 15964,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-nebius-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-09",
+              "comparison_providers": [
+                "deepinfra",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -2640,7 +4623,18 @@
             "infinite_margin_rate": 0,
             "total_tokens": 15984,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-novita-chat",
+              "divergence_ratio": 7.954933962543888,
+              "date": "2026-03-09",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -2672,7 +4666,18 @@
             "infinite_margin_rate": 0,
             "total_tokens": 15986,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-together-chat",
+              "divergence_ratio": 0.719268915773188,
+              "date": "2026-03-09",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -2731,6 +4736,63 @@
           }
         },
         {
+          "endpoint": "deepinfra/fp4",
+          "provider": "deepinfra",
+          "variant": "fp4",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['deepinfra/fp4']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 0.8395277503650216,
+              "date": "2026-03-09",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "deepinfra/fp8",
+          "provider": "deepinfra",
+          "variant": "fp8",
+          "metrics": {
+            "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'qwen/qwen3-coder is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'DeepInfra', 'is_byok': False}}, 'user_id': 'redacted'}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 0.8395277503650216,
+              "date": "2026-03-09",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "google-vertex",
+          "provider": "google-vertex",
+          "variant": null,
+          "metrics": {
+            "error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded: limit_rpm/qwen/qwen3-coder-480b-a35b-07-25/803d4906-0d0b-49b6-8705-7ae0a4d45217. High demand for qwen/qwen3-coder on OpenRouter - limited to 80 requests per minute. Please retry shortly.', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '80', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1773023940000'}, 'provider_name': None}}, 'user_id': 'redacted'}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-vertex-chat",
+              "divergence_ratio": 2.9632092337230227,
+              "date": "2026-03-09",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "together"
+              ]
+            }
+          }
+        },
+        {
           "endpoint": "hyperbolic/fp8",
           "provider": "hyperbolic",
           "variant": "fp8",
@@ -2759,7 +4821,18 @@
             "infinite_margin_rate": 0,
             "total_tokens": 16110,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-nebius-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-09",
+              "comparison_providers": [
+                "deepinfra",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -2775,7 +4848,18 @@
             "infinite_margin_rate": 0.00012503125781445363,
             "total_tokens": 15996,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-novita-chat",
+              "divergence_ratio": 7.954933962543888,
+              "date": "2026-03-09",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -2807,7 +4891,18 @@
             "infinite_margin_rate": 0.00006273919317397578,
             "total_tokens": 15939,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-together-chat",
+              "divergence_ratio": 0.719268915773188,
+              "date": "2026-03-09",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -2882,6 +4977,25 @@
           }
         },
         {
+          "endpoint": "deepinfra/fp4",
+          "provider": "deepinfra",
+          "variant": "fp4",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['deepinfra/fp4']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-10",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
           "endpoint": "deepinfra/fp8",
           "provider": "deepinfra",
           "variant": "fp8",
@@ -2894,7 +5008,18 @@
             "infinite_margin_rate": 0.00006282196255811031,
             "total_tokens": 15918,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-10",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -2910,7 +5035,18 @@
             "infinite_margin_rate": 0.00012580990123922753,
             "total_tokens": 15897,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-vertex-chat",
+              "divergence_ratio": 1.1676241610786204,
+              "date": "2026-03-10",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "together"
+              ]
+            }
           }
         },
         {
@@ -2942,7 +5078,18 @@
             "infinite_margin_rate": 0,
             "total_tokens": 16026,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-nebius-chat",
+              "divergence_ratio": 0.1631421786907675,
+              "date": "2026-03-10",
+              "comparison_providers": [
+                "deepinfra",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -2958,7 +5105,18 @@
             "infinite_margin_rate": 0,
             "total_tokens": 16033,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-novita-chat",
+              "divergence_ratio": 3.7079065014503696,
+              "date": "2026-03-10",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -2990,7 +5148,18 @@
             "infinite_margin_rate": 0.00006240249609984399,
             "total_tokens": 16025,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-together-chat",
+              "divergence_ratio": 0.2742411368691791,
+              "date": "2026-03-10",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -3111,6 +5280,25 @@
           }
         },
         {
+          "endpoint": "deepinfra/fp4",
+          "provider": "deepinfra",
+          "variant": "fp4",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['deepinfra/fp4']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-12",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
           "endpoint": "deepinfra/fp8",
           "provider": "deepinfra",
           "variant": "fp8",
@@ -3123,7 +5311,18 @@
             "infinite_margin_rate": 0,
             "total_tokens": 15808,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-12",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -3139,7 +5338,18 @@
             "infinite_margin_rate": 0.00031579612202362154,
             "total_tokens": 15833,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-vertex-chat",
+              "divergence_ratio": 1.935779212431922,
+              "date": "2026-03-12",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "together"
+              ]
+            }
           }
         },
         {
@@ -3171,7 +5381,18 @@
             "infinite_margin_rate": 0,
             "total_tokens": 15925,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-nebius-chat",
+              "divergence_ratio": 0.7507642102552836,
+              "date": "2026-03-12",
+              "comparison_providers": [
+                "deepinfra",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -3187,7 +5408,18 @@
             "infinite_margin_rate": 0.0003128128128128128,
             "total_tokens": 15984,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-novita-chat",
+              "divergence_ratio": 6.053262278824806,
+              "date": "2026-03-12",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -3219,7 +5451,18 @@
             "infinite_margin_rate": 0,
             "total_tokens": 15893,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-together-chat",
+              "divergence_ratio": 0.6906566027931855,
+              "date": "2026-03-12",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -3259,7 +5502,125 @@
       "dataUrl": "../../../data/Qwen_Qwen3-Coder-480B-A35B-Instruct_audit_results_20260312_021603.json",
       "model": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
       "timestamp": "2026-03-12T02:16:03Z",
-      "providerEntries": [],
+      "providerEntries": [
+        {
+          "endpoint": "deepinfra/fp4",
+          "provider": "deepinfra",
+          "variant": "fp4",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['deepinfra/fp4']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-12",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "deepinfra/fp8",
+          "provider": "deepinfra",
+          "variant": "fp8",
+          "metrics": {
+            "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'qwen/qwen3-coder is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'DeepInfra', 'is_byok': False}}, 'user_id': 'redacted'}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-12",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "google-vertex",
+          "provider": "google-vertex",
+          "variant": null,
+          "metrics": {
+            "error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded: limit_rpm/qwen/qwen3-coder-480b-a35b-07-25/803d4906-0d0b-49b6-8705-7ae0a4d45217. High demand for qwen/qwen3-coder on OpenRouter - limited to 80 requests per minute. Please retry shortly.', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '80', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1773281880000'}, 'provider_name': None}}, 'user_id': 'redacted'}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-vertex-chat",
+              "divergence_ratio": 1.935779212431922,
+              "date": "2026-03-12",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "together"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "nebius/fp8",
+          "provider": "nebius",
+          "variant": "fp8",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'Model not found, inaccessible, and/or not deployed', 'param': 'model', 'code': 'NOT_FOUND', 'type': 'error'}, 'request_id': 'redacted'}",
+            "fallback_error": "Failed to create temporary deployment after retries: Fireworks API POST /v1/accounts/philipquirkenz1965/deployments?deploymentId=audit-qwen-qwen3-coder-480b-a35b-instr-20260312021854 failed (400): {\n  \"code\": 3,\n  \"details\": [],\n  \"message\": \"invalid deployment: precision FP4_BLOCKSCALED_MM is not supported for this model because it is not calibrated. To calibrate your model for additional precisions, please run `firectl prepare-model`\"\n}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-nebius-chat",
+              "divergence_ratio": 0.7507642102552836,
+              "date": "2026-03-12",
+              "comparison_providers": [
+                "deepinfra",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "novita/fp8",
+          "provider": "novita",
+          "variant": "fp8",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'Model not found, inaccessible, and/or not deployed', 'param': 'model', 'code': 'NOT_FOUND', 'type': 'error'}, 'request_id': 'redacted'}",
+            "fallback_error": "Failed to create temporary deployment after retries: Fireworks API POST /v1/accounts/philipquirkenz1965/deployments?deploymentId=audit-qwen-qwen3-coder-480b-a35b-instr-20260312021941 failed (400): {\n  \"code\": 3,\n  \"details\": [],\n  \"message\": \"invalid deployment: precision FP4_BLOCKSCALED_MM is not supported for this model because it is not calibrated. To calibrate your model for additional precisions, please run `firectl prepare-model`\"\n}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-novita-chat",
+              "divergence_ratio": 6.053262278824806,
+              "date": "2026-03-12",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "together/fp8",
+          "provider": "together",
+          "variant": "fp8",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'Model not found, inaccessible, and/or not deployed', 'param': 'model', 'code': 'NOT_FOUND', 'type': 'error'}, 'request_id': 'redacted'}",
+            "fallback_error": "Failed to create temporary deployment after retries: Fireworks API POST /v1/accounts/philipquirkenz1965/deployments?deploymentId=audit-qwen-qwen3-coder-480b-a35b-instr-20260312022332 failed (400): {\n  \"code\": 3,\n  \"details\": [],\n  \"message\": \"invalid deployment: precision FP4_BLOCKSCALED_MM is not supported for this model because it is not calibrated. To calibrate your model for additional precisions, please run `firectl prepare-model`\"\n}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-together-chat",
+              "divergence_ratio": 0.6906566027931855,
+              "date": "2026-03-12",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "vertex"
+              ]
+            }
+          }
+        }
+      ],
       "parameters": {
         "n_prompts": 100,
         "max_tokens": 200,
@@ -3315,6 +5676,25 @@
           }
         },
         {
+          "endpoint": "deepinfra/fp4",
+          "provider": "deepinfra",
+          "variant": "fp4",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['deepinfra/fp4']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-14",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
           "endpoint": "deepinfra/fp8",
           "provider": "deepinfra",
           "variant": "fp8",
@@ -3327,7 +5707,37 @@
             "infinite_margin_rate": 0,
             "total_tokens": 15966,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-14",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "google-vertex",
+          "provider": "google-vertex",
+          "variant": null,
+          "metrics": {
+            "error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded: limit_rpm/qwen/qwen3-coder-480b-a35b-07-25/803d4906-0d0b-49b6-8705-7ae0a4d45217. High demand for qwen/qwen3-coder on OpenRouter - limited to 80 requests per minute. Please retry shortly.', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '80', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1773411720000'}, 'provider_name': None}}, 'user_id': 'redacted'}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-vertex-chat",
+              "divergence_ratio": 1.2356013010370208,
+              "date": "2026-03-14",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "together"
+              ]
+            }
           }
         },
         {
@@ -3359,7 +5769,18 @@
             "infinite_margin_rate": 0,
             "total_tokens": 16083,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-nebius-chat",
+              "divergence_ratio": 0.23696415727256706,
+              "date": "2026-03-14",
+              "comparison_providers": [
+                "deepinfra",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -3375,7 +5796,18 @@
             "infinite_margin_rate": 0.00006252735571812669,
             "total_tokens": 15993,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-novita-chat",
+              "divergence_ratio": 3.4713270828276497,
+              "date": "2026-03-14",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -3407,7 +5839,18 @@
             "infinite_margin_rate": 0,
             "total_tokens": 15952,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-together-chat",
+              "divergence_ratio": 0.19517435539360672,
+              "date": "2026-03-14",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -3482,6 +5925,63 @@
           }
         },
         {
+          "endpoint": "deepinfra/fp4",
+          "provider": "deepinfra",
+          "variant": "fp4",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['deepinfra/fp4']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-15",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "deepinfra/fp8",
+          "provider": "deepinfra",
+          "variant": "fp8",
+          "metrics": {
+            "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'qwen/qwen3-coder is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'DeepInfra', 'is_byok': False}}, 'user_id': 'redacted'}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-15",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "google-vertex",
+          "provider": "google-vertex",
+          "variant": null,
+          "metrics": {
+            "error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded: limit_rpm/qwen/qwen3-coder-480b-a35b-07-25/803d4906-0d0b-49b6-8705-7ae0a4d45217. High demand for qwen/qwen3-coder on OpenRouter - limited to 80 requests per minute. Please retry shortly.', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '80', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1773546720000'}, 'provider_name': None}}, 'user_id': 'redacted'}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-vertex-chat",
+              "divergence_ratio": 1.4702167675245397,
+              "date": "2026-03-15",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "together"
+              ]
+            }
+          }
+        },
+        {
           "endpoint": "hyperbolic/fp8",
           "provider": "hyperbolic",
           "variant": "fp8",
@@ -3510,7 +6010,18 @@
             "infinite_margin_rate": 0,
             "total_tokens": 15953,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-nebius-chat",
+              "divergence_ratio": 0.6487576818972302,
+              "date": "2026-03-15",
+              "comparison_providers": [
+                "deepinfra",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -3526,7 +6037,18 @@
             "infinite_margin_rate": 0,
             "total_tokens": 16104,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-novita-chat",
+              "divergence_ratio": 4.305096711108511,
+              "date": "2026-03-15",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -3558,7 +6080,18 @@
             "infinite_margin_rate": 0.00012406947890818859,
             "total_tokens": 16120,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-together-chat",
+              "divergence_ratio": 0.32501391974080607,
+              "date": "2026-03-15",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -3640,6 +6173,25 @@
           }
         },
         {
+          "endpoint": "deepinfra/fp4",
+          "provider": "deepinfra",
+          "variant": "fp4",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['deepinfra/fp4']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-17",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
           "endpoint": "deepinfra/fp8",
           "provider": "deepinfra",
           "variant": "fp8",
@@ -3652,7 +6204,37 @@
             "infinite_margin_rate": 0.00006257822277847309,
             "total_tokens": 15980,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-17",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "google-vertex",
+          "provider": "google-vertex",
+          "variant": null,
+          "metrics": {
+            "error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded: limit_rpm/qwen/qwen3-coder-480b-a35b-07-25/803d4906-0d0b-49b6-8705-7ae0a4d45217. High demand for qwen/qwen3-coder on OpenRouter - limited to 80 requests per minute. Please retry shortly.', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '80', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1773718800000'}, 'provider_name': None}}, 'user_id': 'redacted'}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-vertex-chat",
+              "divergence_ratio": 1.9416419014561068,
+              "date": "2026-03-17",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "together"
+              ]
+            }
           }
         },
         {
@@ -3684,7 +6266,18 @@
             "infinite_margin_rate": 0.00012454075596238869,
             "total_tokens": 16059,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-nebius-chat",
+              "divergence_ratio": 0.4853277338129196,
+              "date": "2026-03-17",
+              "comparison_providers": [
+                "deepinfra",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -3700,7 +6293,18 @@
             "infinite_margin_rate": 0.0001246261216350947,
             "total_tokens": 16048,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-novita-chat",
+              "divergence_ratio": 6.784528938412531,
+              "date": "2026-03-17",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -3732,7 +6336,18 @@
             "infinite_margin_rate": 0,
             "total_tokens": 16095,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-together-chat",
+              "divergence_ratio": 0.8448322362301308,
+              "date": "2026-03-17",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -3807,6 +6422,26 @@
           }
         },
         {
+          "endpoint": "deepinfra/fp4",
+          "provider": "deepinfra",
+          "variant": "fp4",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['deepinfra/fp4']}}}",
+            "collection_complete": false,
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-19",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
           "endpoint": "deepinfra/fp8",
           "provider": "deepinfra",
           "variant": "fp8",
@@ -3819,7 +6454,38 @@
             "infinite_margin_rate": 0.00006297625795075257,
             "total_tokens": 15879,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-19",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "google-vertex",
+          "provider": "google-vertex",
+          "variant": null,
+          "metrics": {
+            "error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded: limit_rpm/qwen/qwen3-coder-480b-a35b-07-25/803d4906-0d0b-49b6-8705-7ae0a4d45217. High demand for qwen/qwen3-coder on OpenRouter - limited to 80 requests per minute. Please retry shortly.', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '80', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1773843720000'}, 'provider_name': None}}, 'user_id': 'redacted'}",
+            "collection_complete": false,
+            "vail": {
+              "endpoint": "qwen3-coder-480b-vertex-chat",
+              "divergence_ratio": 2.15986765216744,
+              "date": "2026-03-19",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "together"
+              ]
+            }
           }
         },
         {
@@ -3851,7 +6517,18 @@
             "infinite_margin_rate": 0.00006260564702936204,
             "total_tokens": 15973,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-nebius-chat",
+              "divergence_ratio": 0.3358625302608077,
+              "date": "2026-03-19",
+              "comparison_providers": [
+                "deepinfra",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -3867,7 +6544,18 @@
             "infinite_margin_rate": 0.00018776991925893472,
             "total_tokens": 15977,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-novita-chat",
+              "divergence_ratio": 3.9638663718759073,
+              "date": "2026-03-19",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -3899,7 +6587,18 @@
             "infinite_margin_rate": 0.00006210022977085015,
             "total_tokens": 16103,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-together-chat",
+              "divergence_ratio": 0.6187513890369651,
+              "date": "2026-03-19",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -3974,6 +6673,66 @@
           }
         },
         {
+          "endpoint": "deepinfra/fp4",
+          "provider": "deepinfra",
+          "variant": "fp4",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['deepinfra/fp4']}}}",
+            "collection_complete": false,
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-19",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "deepinfra/fp8",
+          "provider": "deepinfra",
+          "variant": "fp8",
+          "metrics": {
+            "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'qwen/qwen3-coder is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'DeepInfra', 'is_byok': False}}, 'user_id': 'redacted'}",
+            "collection_complete": false,
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-19",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "google-vertex",
+          "provider": "google-vertex",
+          "variant": null,
+          "metrics": {
+            "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'qwen/qwen3-coder is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Google', 'is_byok': False}}, 'user_id': 'redacted'}",
+            "collection_complete": false,
+            "vail": {
+              "endpoint": "qwen3-coder-480b-vertex-chat",
+              "divergence_ratio": 2.15986765216744,
+              "date": "2026-03-19",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "together"
+              ]
+            }
+          }
+        },
+        {
           "endpoint": "hyperbolic/fp8",
           "provider": "hyperbolic",
           "variant": "fp8",
@@ -4002,7 +6761,18 @@
             "infinite_margin_rate": 0,
             "total_tokens": 16017,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-nebius-chat",
+              "divergence_ratio": 0.3358625302608077,
+              "date": "2026-03-19",
+              "comparison_providers": [
+                "deepinfra",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -4018,7 +6788,18 @@
             "infinite_margin_rate": 0.00012511729746637472,
             "total_tokens": 15985,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-novita-chat",
+              "divergence_ratio": 3.9638663718759073,
+              "date": "2026-03-19",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -4050,7 +6831,18 @@
             "infinite_margin_rate": 0,
             "total_tokens": 16068,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-together-chat",
+              "divergence_ratio": 0.6187513890369651,
+              "date": "2026-03-19",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -4125,6 +6917,26 @@
           }
         },
         {
+          "endpoint": "deepinfra/fp4",
+          "provider": "deepinfra",
+          "variant": "fp4",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['deepinfra/fp4']}}}",
+            "collection_complete": false,
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-20",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
           "endpoint": "deepinfra/fp8",
           "provider": "deepinfra",
           "variant": "fp8",
@@ -4137,7 +6949,38 @@
             "infinite_margin_rate": 0.00006297625795075257,
             "total_tokens": 15879,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-20",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "google-vertex",
+          "provider": "google-vertex",
+          "variant": null,
+          "metrics": {
+            "error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded: limit_rpm/qwen/qwen3-coder-480b-a35b-07-25/803d4906-0d0b-49b6-8705-7ae0a4d45217. High demand for qwen/qwen3-coder on OpenRouter - limited to 80 requests per minute. Please retry shortly.', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '80', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1774069260000'}, 'provider_name': None}}, 'user_id': 'redacted'}",
+            "collection_complete": false,
+            "vail": {
+              "endpoint": "qwen3-coder-480b-vertex-chat",
+              "divergence_ratio": 1.8479628998141568,
+              "date": "2026-03-20",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "together"
+              ]
+            }
           }
         },
         {
@@ -4169,7 +7012,18 @@
             "infinite_margin_rate": 0,
             "total_tokens": 15979,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-nebius-chat",
+              "divergence_ratio": 0.46604441098397187,
+              "date": "2026-03-20",
+              "comparison_providers": [
+                "deepinfra",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -4185,7 +7039,18 @@
             "infinite_margin_rate": 0,
             "total_tokens": 16048,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-novita-chat",
+              "divergence_ratio": 4.820121091904932,
+              "date": "2026-03-20",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -4201,7 +7066,18 @@
             "infinite_margin_rate": 0.00006353643814727746,
             "total_tokens": 15739,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-together-chat",
+              "divergence_ratio": 0.8184191149965897,
+              "date": "2026-03-20",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -4240,123 +7116,213 @@
     {
       "timestamp": "2026-02-27T08:55:31Z",
       "alibaba": 0.9274968394437421,
+      "deepinfra/fp4__vail": 0.4099787184594559,
+      "deepinfra/fp8__vail": 0.4099787184594559,
+      "google__vail": 2.0323812966324413,
       "hyperbolic/fp8": 0.9692760152681309,
       "nebius/fp8": 0.9733283009372837,
+      "nebius/fp8__vail": 0.193798959854895,
       "novita/fp8": 0.9512134566445286,
+      "novita/fp8__vail": 3.1404619139208068,
       "siliconflow/fp8": 0.9626930742401595,
       "together/fp8": 0.9711466865227103,
+      "together/fp8__vail": 1,
       "wandb/bf16": 0.9678147939017504
     },
     {
       "timestamp": "2026-02-27T13:21:56Z",
       "alibaba": 0.9282099936748893,
+      "deepinfra/fp4__vail": 5.030370244029407,
       "deepinfra/fp8": 0.9672672859903984,
+      "deepinfra/fp8__vail": 5.030370244029407,
+      "google__vail": 1,
       "hyperbolic/fp8": 0.9707301786273895,
       "nebius/fp8": 0.9737955931781401,
+      "nebius/fp8__vail": 0.581690317476662,
       "novita/fp8": 0.9523720698874588,
+      "novita/fp8__vail": 1.642374850859975,
       "together/fp8": 0.9720851807906077,
+      "together/fp8__vail": 0.7701302095852911,
       "wandb/bf16": 0.9689093396343739
     },
     {
       "timestamp": "2026-02-28T02:13:38Z",
       "alibaba": 0.9247642991829038,
+      "deepinfra/fp4__vail": 5.030370244029407,
       "deepinfra/fp8": 0.968057572122972,
+      "deepinfra/fp8__vail": 5.030370244029407,
+      "google__vail": 1,
       "hyperbolic/fp8": 0.9679419606870465,
       "nebius/fp8": 0.9730972782258065,
+      "nebius/fp8__vail": 0.581690317476662,
       "novita/fp8": 0.9521877535734349,
+      "novita/fp8__vail": 1.642374850859975,
       "together/fp8": 0.9716453177465489,
+      "together/fp8__vail": 0.7701302095852911,
       "wandb/bf16": 0.9684867394695788
     },
     {
       "timestamp": "2026-02-28T06:01:53Z",
       "alibaba": 0.9266591956169842,
+      "deepinfra/fp4__vail": 5.030370244029407,
       "deepinfra/fp8": 0.9442778610694653,
+      "deepinfra/fp8__vail": 5.030370244029407,
+      "google__vail": 1,
       "hyperbolic/fp8": 0.9726189733674296,
       "nebius/fp8": 0.9720297184241743,
+      "nebius/fp8__vail": 0.581690317476662,
       "novita/fp8": 0.9516360236833905,
+      "novita/fp8__vail": 1.642374850859975,
       "together/fp8": 0.9712579320642031,
+      "together/fp8__vail": 0.7701302095852911,
       "wandb/bf16": 0.9698049512378094
     },
     {
       "timestamp": "2026-02-28T13:36:40Z",
+      "deepinfra/fp4__vail": 1,
+      "deepinfra/fp8__vail": 1,
+      "google__vail": 1.5895472878760142,
+      "nebius/fp8__vail": 0.000955691813907373,
+      "novita/fp8__vail": 2.9041252907214403,
       "together/fp8": 0.9709473420574792,
+      "together/fp8__vail": 0.14467856325989115,
       "wandb/bf16": 0.9712722298221614
     },
     {
-      "timestamp": "2026-03-01T01:54:52Z"
+      "timestamp": "2026-03-01T01:54:52Z",
+      "deepinfra/fp4__vail": 1,
+      "deepinfra/fp8__vail": 1,
+      "google__vail": 1.5895472878760142,
+      "nebius/fp8__vail": 0.000955691813907373,
+      "novita/fp8__vail": 2.9041252907214403,
+      "together/fp8__vail": 0.14467856325989115
     },
     {
       "timestamp": "2026-03-01T15:21:41Z",
       "alibaba": 0.9278988941548183,
+      "deepinfra/fp4__vail": 0.5684948355072532,
       "deepinfra/fp8": 0.9676812048948855,
+      "deepinfra/fp8__vail": 0.5684948355072532,
+      "google__vail": 1.8875002492522321,
       "hyperbolic/fp8": 0.9716875,
       "nebius/fp8": 0.9723036616555424,
+      "nebius/fp8__vail": 1,
       "novita/fp8": 0.9524227418040494,
+      "novita/fp8__vail": 4.347669066559596,
       "siliconflow/fp8": 0.9609516098897677,
       "together/fp8": 0.9721609875921143,
+      "together/fp8__vail": 0.55932197536897,
       "wandb/bf16": 0.9682984554060787
     },
     {
       "timestamp": "2026-03-02T03:13:52Z",
+      "deepinfra/fp4__vail": 0.5684948355072532,
+      "deepinfra/fp8__vail": 0.5684948355072532,
+      "google__vail": 1.8875002492522321,
+      "nebius/fp8__vail": 1,
+      "novita/fp8__vail": 4.347669066559596,
       "siliconflow/fp8": 0.9622781982876287,
       "together/fp8": 0.9738078826994172,
+      "together/fp8__vail": 0.55932197536897,
       "wandb/bf16": 0.9710524674028324
     },
     {
       "timestamp": "2026-03-02T16:10:45Z",
       "alibaba": 0.9280348462849568,
+      "deepinfra/fp4__vail": 1,
       "deepinfra/fp8": 0.9680425265791119,
+      "deepinfra/fp8__vail": 1,
+      "google__vail": 3.4517190202107577,
       "hyperbolic/fp8": 0.9709737827715356,
       "nebius/fp8": 0.9718689305181379,
+      "nebius/fp8__vail": 0.9381407150424081,
       "novita/fp8": 0.9541650817801446,
+      "novita/fp8__vail": 6.494517498709127,
       "siliconflow/fp8": 0.959890723953806,
       "together/fp8": 0.9716518826375535,
+      "together/fp8__vail": 0.9394873126610852,
       "wandb/bf16": 0.9690149625935162
     },
     {
       "timestamp": "2026-03-03T02:42:40Z",
       "alibaba": 0.9250345607641071,
+      "deepinfra/fp4__vail": 1,
       "deepinfra/fp8": 0.9666561214805441,
+      "deepinfra/fp8__vail": 1,
+      "google__vail": 3.4517190202107577,
       "nebius/fp8": 0.9733015793431938,
+      "nebius/fp8__vail": 0.9381407150424081,
       "novita/fp8": 0.9543652042550513,
+      "novita/fp8__vail": 6.494517498709127,
       "siliconflow/fp8": 0.9636408915452621,
       "together/fp8": 0.9720831246870305,
+      "together/fp8__vail": 0.9394873126610852,
       "wandb/bf16": 0.9711568347112576
     },
     {
-      "timestamp": "2026-03-03T13:26:48Z"
+      "timestamp": "2026-03-03T13:26:48Z",
+      "deepinfra/fp4__vail": 0.8218932062567357,
+      "deepinfra/fp8__vail": 0.8218932062567357,
+      "google__vail": 3.281301927487457,
+      "nebius/fp8__vail": 0.4067950216897192,
+      "novita/fp8__vail": 8.38066324494054,
+      "together/fp8__vail": 1
     },
     {
       "timestamp": "2026-03-04T02:17:46Z",
       "alibaba": 0.9257630950885567,
+      "deepinfra/fp4__vail": 0.8218932062567357,
+      "deepinfra/fp8__vail": 0.8218932062567357,
+      "google__vail": 3.281301927487457,
       "hyperbolic/fp8": 0.9734384858044164,
       "nebius/fp8": 0.9692753258200592,
+      "nebius/fp8__vail": 0.4067950216897192,
       "novita/fp8": 0.9545848286103205,
+      "novita/fp8__vail": 8.38066324494054,
       "together/fp8": 0.9724793439771386,
+      "together/fp8__vail": 1,
       "wandb/bf16": 0.9695186831069663
     },
     {
       "timestamp": "2026-03-04T09:47:49Z",
       "alibaba": 0.9260916136349316,
+      "deepinfra/fp4__vail": 0.8218932062567357,
       "deepinfra/fp8": 0.9665682146672532,
+      "deepinfra/fp8__vail": 0.8218932062567357,
+      "google__vail": 3.281301927487457,
       "hyperbolic/fp8": 0.9734746347275349,
       "nebius/fp8": 0.9730711422845691,
+      "nebius/fp8__vail": 0.4067950216897192,
       "novita/fp8": 0.952863215803951,
+      "novita/fp8__vail": 8.38066324494054,
       "together/fp8": 0.9708921370967742,
+      "together/fp8__vail": 1,
       "wandb/bf16": 0.9708125
     },
     {
       "timestamp": "2026-03-04T13:54:54Z",
       "alibaba": 0.9270950770387073,
+      "deepinfra/fp4__vail": 1,
       "deepinfra/fp8": 0.9677764491157405,
+      "deepinfra/fp8__vail": 1,
+      "google__vail": 2.0010375215181773,
       "hyperbolic/fp8": 0.9706557478751784,
       "nebius/fp8": 0.9720950649024895,
+      "nebius/fp8__vail": 0.46988571129960094,
       "novita/fp8": 0.9528478641019236,
+      "novita/fp8__vail": 3.3981038032552244,
       "together/fp8": 0.9707932918786508,
+      "together/fp8__vail": 0.36780706403491076,
       "wandb/bf16": 0.9703112330817688
     },
     {
-      "timestamp": "2026-03-05T02:18:29Z"
+      "timestamp": "2026-03-05T02:18:29Z",
+      "deepinfra/fp4__vail": 1,
+      "deepinfra/fp8__vail": 1,
+      "google-vertex__vail": 2.0010375215181773,
+      "nebius/fp8__vail": 0.46988571129960094,
+      "novita/fp8__vail": 3.3981038032552244,
+      "together/fp8__vail": 0.36780706403491076
     },
     {
       "timestamp": "2026-03-05T07:53:10Z"
@@ -4364,104 +7330,158 @@
     {
       "timestamp": "2026-03-05T14:12:32Z",
       "atlas-cloud/fp8": 0.9567618449952934,
+      "deepinfra/fp4__vail": 1,
       "deepinfra/fp8": 0.9694713794182046,
+      "deepinfra/fp8__vail": 1,
+      "google-vertex__vail": 4.388386657754909,
       "hyperbolic/fp8": 0.9714590390164346,
       "nebius/fp8": 0.9715556669381618,
+      "nebius/fp8__vail": 0.14111253401424442,
       "novita/fp8": 0.9543988087852091,
+      "novita/fp8__vail": 8.43386403439855,
       "siliconflow/fp8": 0.9604558475526217,
       "together/fp8": 0.9706820028755392,
+      "together/fp8__vail": 0.9840919813044423,
       "wandb/bf16": 0.9682421072295909
     },
     {
       "timestamp": "2026-03-06T01:54:22Z",
       "alibaba": 0.9248397130705263,
       "atlas-cloud/fp8": 0.9560665544961675,
+      "deepinfra/fp4__vail": 1,
+      "deepinfra/fp8__vail": 1,
+      "google-vertex__vail": 4.388386657754909,
       "hyperbolic/fp8": 0.9725378787878788,
       "nebius/fp8": 0.9715657541934277,
+      "nebius/fp8__vail": 0.14111253401424442,
       "novita/fp8": 0.9512863639195166,
+      "novita/fp8__vail": 8.43386403439855,
       "siliconflow/fp8": 0.9615720524017467,
       "together/fp8": 0.9739753583102841,
+      "together/fp8__vail": 0.9840919813044423,
       "wandb/bf16": 0.9689115903644848
     },
     {
       "timestamp": "2026-03-06T13:41:21Z",
       "atlas-cloud/fp8": 0.9633481611427855,
+      "deepinfra/fp4__vail": 1,
       "deepinfra/fp8": 0.969136189699517,
+      "deepinfra/fp8__vail": 1,
+      "google-vertex__vail": 1.9296002759807944,
       "hyperbolic/fp8": 0.9699074074074074,
       "nebius/fp8": 0.9720701667081364,
+      "nebius/fp8__vail": 0.5123405979949276,
       "novita/fp8": 0.9531446540880503,
+      "novita/fp8__vail": 5.089017978649787,
       "siliconflow/fp8": 0.9594905250077664,
       "together/fp8": 0.9722464219041692,
+      "together/fp8__vail": 0.5364033644437909,
       "wandb/bf16": 0.9696667704764871
     },
     {
       "timestamp": "2026-03-07T02:00:37Z",
       "alibaba": 0.9245069002457622,
       "atlas-cloud/fp8": 0.9553838484546361,
+      "deepinfra/fp4__vail": 1,
+      "deepinfra/fp8__vail": 1,
       "google-vertex": 0.9562236618655261,
+      "google-vertex__vail": 1.9296002759807944,
       "hyperbolic/fp8": 0.9695706285003112,
       "nebius/fp8": 0.9712471994025392,
+      "nebius/fp8__vail": 0.5123405979949276,
       "novita/fp8": 0.9506958746801473,
+      "novita/fp8__vail": 5.089017978649787,
       "siliconflow/fp8": 0.9591938916009513,
       "together/fp8": 0.9698410712051058,
+      "together/fp8__vail": 0.5364033644437909,
       "wandb/bf16": 0.9696592887341458
     },
     {
       "timestamp": "2026-03-07T16:25:09Z",
       "alibaba": 0.9291185334003014,
       "atlas-cloud/fp8": 0.9575400801603207,
+      "deepinfra/fp4__vail": 0.6527822393530369,
       "deepinfra/fp8": 0.9688267523143774,
+      "deepinfra/fp8__vail": 0.6527822393530369,
+      "google-vertex__vail": 2.390064919707467,
       "hyperbolic/fp8": 0.9723155406246111,
       "nebius/fp8": 0.9714409883901409,
+      "nebius/fp8__vail": 1,
       "novita/fp8": 0.9515939337666357,
+      "novita/fp8__vail": 8.478014229110993,
       "siliconflow/fp8": 0.9618497835226203,
       "together/fp8": 0.9709284344652688,
+      "together/fp8__vail": 0.7085180970211272,
       "wandb/bf16": 0.9676110833749376
     },
     {
       "timestamp": "2026-03-08T02:08:41Z",
       "alibaba": 0.924084924084924,
       "atlas-cloud/fp8": 0.9568472038749449,
+      "deepinfra/fp4__vail": 0.6527822393530369,
+      "deepinfra/fp8__vail": 0.6527822393530369,
+      "google-vertex__vail": 2.390064919707467,
       "hyperbolic/fp8": 0.9709068010075567,
       "nebius/fp8": 0.970921852478536,
+      "nebius/fp8__vail": 1,
       "novita/fp8": 0.954897150405737,
+      "novita/fp8__vail": 8.478014229110993,
       "siliconflow/fp8": 0.9602011672668571,
       "together/fp8": 0.9729712819871114,
+      "together/fp8__vail": 0.7085180970211272,
       "wandb/bf16": 0.9709600700963825
     },
     {
       "timestamp": "2026-03-08T13:59:13Z",
       "alibaba": 0.9256981487292124,
       "atlas-cloud/fp8": 0.9669225488360482,
+      "deepinfra/fp4__vail": 0.8395277503650216,
       "deepinfra/fp8": 0.9693351765740857,
+      "deepinfra/fp8__vail": 0.8395277503650216,
+      "google-vertex__vail": 2.9632092337230227,
       "hyperbolic/fp8": 0.9722714611293999,
       "nebius/fp8": 0.969556502129792,
+      "nebius/fp8__vail": 1,
       "novita/fp8": 0.9518268268268268,
+      "novita/fp8__vail": 7.954933962543888,
       "siliconflow/fp8": 0.9628517823639775,
       "together/fp8": 0.9700988364819216,
+      "together/fp8__vail": 0.719268915773188,
       "wandb/bf16": 0.9718239930490908
     },
     {
       "timestamp": "2026-03-09T02:27:47Z",
       "alibaba": 0.9262429200755192,
+      "deepinfra/fp4__vail": 0.8395277503650216,
+      "deepinfra/fp8__vail": 0.8395277503650216,
+      "google-vertex__vail": 2.9632092337230227,
       "hyperbolic/fp8": 0.9717655916677124,
       "nebius/fp8": 0.9687771570453134,
+      "nebius/fp8__vail": 1,
       "novita/fp8": 0.9543010752688172,
+      "novita/fp8__vail": 7.954933962543888,
       "siliconflow/fp8": 0.9625442574072923,
       "together/fp8": 0.9682539682539683,
+      "together/fp8__vail": 0.719268915773188,
       "wandb/bf16": 0.9691542288557214
     },
     {
       "timestamp": "2026-03-09T13:59:18Z",
       "alibaba": 0.9288361283838955,
       "atlas-cloud/fp8": 0.9568949195329757,
+      "deepinfra/fp4__vail": 1,
       "deepinfra/fp8": 0.9676466892825731,
+      "deepinfra/fp8__vail": 1,
       "google-vertex": 0.9562181543687488,
+      "google-vertex__vail": 1.1676241610786204,
       "hyperbolic/fp8": 0.9735674561019809,
       "nebius/fp8": 0.9726070136028953,
+      "nebius/fp8__vail": 0.1631421786907675,
       "novita/fp8": 0.9501029127424686,
+      "novita/fp8__vail": 3.7079065014503696,
       "siliconflow/fp8": 0.9620523113592172,
       "together/fp8": 0.9743525741029642,
+      "together/fp8__vail": 0.2742411368691791,
       "wandb/bf16": 0.9701659518925975
     },
     {
@@ -4474,39 +7494,63 @@
       "timestamp": "2026-03-11T13:56:39Z",
       "alibaba": 0.9235319758390933,
       "atlas-cloud/fp8": 0.9654629104430579,
+      "deepinfra/fp4__vail": 1,
       "deepinfra/fp8": 0.9679276315789473,
+      "deepinfra/fp8__vail": 1,
       "google-vertex": 0.9590728225857387,
+      "google-vertex__vail": 1.935779212431922,
       "hyperbolic/fp8": 0.9721389305347327,
       "nebius/fp8": 0.9725588697017269,
+      "nebius/fp8__vail": 0.7507642102552836,
       "novita/fp8": 0.9478853853853854,
+      "novita/fp8__vail": 6.053262278824806,
       "siliconflow/fp8": 0.9593153063755891,
       "together/fp8": 0.9719373309003964,
+      "together/fp8__vail": 0.6906566027931855,
       "wandb/bf16": 0.9684413244703982
     },
     {
-      "timestamp": "2026-03-12T02:16:03Z"
+      "timestamp": "2026-03-12T02:16:03Z",
+      "deepinfra/fp4__vail": 1,
+      "deepinfra/fp8__vail": 1,
+      "google-vertex__vail": 1.935779212431922,
+      "nebius/fp8__vail": 0.7507642102552836,
+      "novita/fp8__vail": 6.053262278824806,
+      "together/fp8__vail": 0.6906566027931855
     },
     {
       "timestamp": "2026-03-13T14:08:07Z",
       "alibaba": 0.924191332583989,
       "atlas-cloud/fp8": 0.9619679861024941,
+      "deepinfra/fp4__vail": 1,
       "deepinfra/fp8": 0.9686208192408868,
+      "deepinfra/fp8__vail": 1,
+      "google-vertex__vail": 1.2356013010370208,
       "hyperbolic/fp8": 0.9725890854722153,
       "nebius/fp8": 0.9709009513150532,
+      "nebius/fp8__vail": 0.23696415727256706,
       "novita/fp8": 0.9479147126868005,
+      "novita/fp8__vail": 3.4713270828276497,
       "siliconflow/fp8": 0.9627822605867267,
       "together/fp8": 0.9703485456369108,
+      "together/fp8__vail": 0.19517435539360672,
       "wandb/bf16": 0.9714357619227382
     },
     {
       "timestamp": "2026-03-15T03:41:49Z",
       "alibaba": 0.9265756170905901,
       "atlas-cloud/fp8": 0.957656977475777,
+      "deepinfra/fp4__vail": 1,
+      "deepinfra/fp8__vail": 1,
+      "google-vertex__vail": 1.4702167675245397,
       "hyperbolic/fp8": 0.9718090733710872,
       "nebius/fp8": 0.9710399297937692,
+      "nebius/fp8__vail": 0.6487576818972302,
       "novita/fp8": 0.9524962742175856,
+      "novita/fp8__vail": 4.305096711108511,
       "siliconflow/fp8": 0.9605015673981191,
       "together/fp8": 0.9705955334987593,
+      "together/fp8__vail": 0.32501391974080607,
       "wandb/bf16": 0.9693228346456693
     },
     {
@@ -4515,46 +7559,70 @@
     {
       "timestamp": "2026-03-17T03:27:08Z",
       "alibaba": 0.9277867931594058,
+      "deepinfra/fp4__vail": 1,
       "deepinfra/fp8": 0.9658322903629537,
+      "deepinfra/fp8__vail": 1,
+      "google-vertex__vail": 1.9416419014561068,
       "hyperbolic/fp8": 0.9732915360501567,
       "nebius/fp8": 0.9707951927268198,
+      "nebius/fp8__vail": 0.4853277338129196,
       "novita/fp8": 0.9494017946161516,
+      "novita/fp8__vail": 6.784528938412531,
       "siliconflow/fp8": 0.9594257178526842,
       "together/fp8": 0.9712954333643988,
+      "together/fp8__vail": 0.8448322362301308,
       "wandb/bf16": 0.9720227315306313
     },
     {
       "timestamp": "2026-03-18T14:20:11Z",
       "alibaba": 0.9261765996114558,
       "atlas-cloud/fp8": 0.9529397000690217,
+      "deepinfra/fp4__vail": 1,
       "deepinfra/fp8": 0.9673153221235594,
+      "deepinfra/fp8__vail": 1,
+      "google-vertex__vail": 2.15986765216744,
       "hyperbolic/fp8": 0.9732855616317807,
       "nebius/fp8": 0.9708883741313467,
+      "nebius/fp8__vail": 0.3358625302608077,
       "novita/fp8": 0.949176941853915,
+      "novita/fp8__vail": 3.9638663718759073,
       "siliconflow/fp8": 0.9639792019044039,
       "together/fp8": 0.9717443954542632,
+      "together/fp8__vail": 0.6187513890369651,
       "wandb/bf16": 0.9693534321664383
     },
     {
       "timestamp": "2026-03-19T04:40:11Z",
       "alibaba": 0.9304396914006147,
       "atlas-cloud/fp8": 0.9554449284380834,
+      "deepinfra/fp4__vail": 1,
+      "deepinfra/fp8__vail": 1,
+      "google-vertex__vail": 2.15986765216744,
       "hyperbolic/fp8": 0.9733979737708994,
       "nebius/fp8": 0.9719672847599425,
+      "nebius/fp8__vail": 0.3358625302608077,
       "novita/fp8": 0.9495151704723178,
+      "novita/fp8__vail": 3.9638663718759073,
       "siliconflow/fp8": 0.960029745305819,
       "together/fp8": 0.9706870799103808,
+      "together/fp8__vail": 0.6187513890369651,
       "wandb/bf16": 0.9692672871509775
     },
     {
       "timestamp": "2026-03-21T04:53:59Z",
       "alibaba": 0.9266599974990621,
       "atlas-cloud/fp8": 0.9554028732042473,
+      "deepinfra/fp4__vail": 1,
       "deepinfra/fp8": 0.968448894766673,
+      "deepinfra/fp8__vail": 1,
+      "google-vertex__vail": 1.8479628998141568,
       "hyperbolic/fp8": 0.9712406015037593,
       "nebius/fp8": 0.971087051755429,
+      "nebius/fp8__vail": 0.46604441098397187,
       "novita/fp8": 0.9477816550348953,
+      "novita/fp8__vail": 4.820121091904932,
       "together/fp8": 0.9701378740707796,
+      "together/fp8__vail": 0.8184191149965897,
       "wandb/bf16": 0.9687636386308374
     }
   ]

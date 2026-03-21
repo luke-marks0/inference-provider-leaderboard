@@ -1,6 +1,6 @@
 {
   "version": "v1",
-  "generatedAt": "2026-03-21T07:46:05.158Z",
+  "generatedAt": "2026-03-21T12:11:18.535Z",
   "leaderboard": {
     "count": 21,
     "providers": [
@@ -251,7 +251,7 @@
         "id": "Qwen_Qwen3-Coder-480B-A35B-Instruct_audit_results_20260321_045359",
         "timestamp": "2026-03-21T04:53:59Z",
         "dataUrl": "../../data/Qwen_Qwen3-Coder-480B-A35B-Instruct_audit_results_20260321_045359.json",
-        "providerCount": 8,
+        "providerCount": 10,
         "providerEntries": [
           {
             "endpoint": "alibaba",
@@ -266,10 +266,20 @@
             "exact_match_rate": 0.9554028732042473
           },
           {
+            "endpoint": "deepinfra/fp4",
+            "provider": "deepinfra",
+            "variant": "fp4"
+          },
+          {
             "endpoint": "deepinfra/fp8",
             "provider": "deepinfra",
             "variant": "fp8",
             "exact_match_rate": 0.968448894766673
+          },
+          {
+            "endpoint": "google-vertex",
+            "provider": "google-vertex",
+            "variant": null
           },
           {
             "endpoint": "hyperbolic/fp8",
@@ -361,8 +371,13 @@
         "id": "openai_gpt-oss-120b_audit_results_20260321_043256",
         "timestamp": "2026-03-21T04:32:56Z",
         "dataUrl": "../../data/openai_gpt-oss-120b_audit_results_20260321_043256.json",
-        "providerCount": 14,
+        "providerCount": 15,
         "providerEntries": [
+          {
+            "endpoint": "amazonbedrock",
+            "provider": "amazonbedrock",
+            "variant": null
+          },
           {
             "endpoint": "atlas-cloud/fp8",
             "provider": "atlas-cloud",

@@ -6,7 +6,7 @@
     "seed": 42,
     "top_k": 50,
     "top_p": 0.95,
-    "temperature": 0.0,
+    "temperature": 0,
     "verification_backend": "fireworks",
     "fireworks_verification_mode": "serverless",
     "fireworks_verification_strategy": "fixed-per-audit",
@@ -15,7 +15,24 @@
   },
   "providers": {
     "amazonbedrock": {
-      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'novita', 'chutes', 'siliconflow', 'clarifai', 'google-vertex', 'atlas-cloud', 'phala', 'baseten', 'parasail', 'sambanova', 'amazon-bedrock', 'together', 'wandb', 'groq', 'crusoe', 'fireworks', 'io-net', 'cerebras'], 'requested_providers': ['amazonbedrock']}}}"
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'novita', 'chutes', 'siliconflow', 'clarifai', 'google-vertex', 'atlas-cloud', 'phala', 'baseten', 'parasail', 'sambanova', 'amazon-bedrock', 'together', 'wandb', 'groq', 'crusoe', 'fireworks', 'io-net', 'cerebras'], 'requested_providers': ['amazonbedrock']}}}",
+      "vail": {
+        "endpoint": "gpt-oss-120b-bedrock-chat",
+        "divergence_ratio": 0.9799745742222836,
+        "date": "2026-03-08",
+        "comparison_providers": [
+          "azure",
+          "baseten",
+          "deepinfra",
+          "fireworks",
+          "groq",
+          "nebius",
+          "novita",
+          "parasail",
+          "together",
+          "vertex"
+        ]
+      }
     },
     "atlas-cloud/fp8": {
       "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-oss-120b is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'AtlasCloud', 'is_byok': False}}, 'user_id': 'redacted'}"
@@ -44,13 +61,64 @@
       "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-oss-120b is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Crusoe', 'is_byok': False}}, 'user_id': 'redacted'}"
     },
     "deepinfra/bf16": {
-      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'novita', 'chutes', 'siliconflow', 'clarifai', 'google-vertex', 'atlas-cloud', 'phala', 'baseten', 'parasail', 'sambanova', 'amazon-bedrock', 'together', 'wandb', 'groq', 'crusoe', 'fireworks', 'io-net', 'cerebras'], 'requested_providers': ['deepinfra/bf16']}}}"
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'novita', 'chutes', 'siliconflow', 'clarifai', 'google-vertex', 'atlas-cloud', 'phala', 'baseten', 'parasail', 'sambanova', 'amazon-bedrock', 'together', 'wandb', 'groq', 'crusoe', 'fireworks', 'io-net', 'cerebras'], 'requested_providers': ['deepinfra/bf16']}}}",
+      "vail": {
+        "endpoint": "gpt-oss-120b-deepinfra-chat",
+        "divergence_ratio": 1.6410039911423202,
+        "date": "2026-03-08",
+        "comparison_providers": [
+          "azure",
+          "baseten",
+          "bedrock",
+          "fireworks",
+          "groq",
+          "nebius",
+          "novita",
+          "parasail",
+          "together",
+          "vertex"
+        ]
+      }
     },
     "deepinfra/fp4": {
-      "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-oss-120b is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'DeepInfra', 'is_byok': False}}, 'user_id': 'redacted'}"
+      "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-oss-120b is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'DeepInfra', 'is_byok': False}}, 'user_id': 'redacted'}",
+      "vail": {
+        "endpoint": "gpt-oss-120b-deepinfra-chat",
+        "divergence_ratio": 1.6410039911423202,
+        "date": "2026-03-08",
+        "comparison_providers": [
+          "azure",
+          "baseten",
+          "bedrock",
+          "fireworks",
+          "groq",
+          "nebius",
+          "novita",
+          "parasail",
+          "together",
+          "vertex"
+        ]
+      }
     },
     "fireworks": {
-      "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-oss-120b is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Fireworks', 'is_byok': False}}, 'user_id': 'redacted'}"
+      "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-oss-120b is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Fireworks', 'is_byok': False}}, 'user_id': 'redacted'}",
+      "vail": {
+        "endpoint": "gpt-oss-120b-fireworks-chat",
+        "divergence_ratio": 4.0679642551732105,
+        "date": "2026-03-08",
+        "comparison_providers": [
+          "azure",
+          "baseten",
+          "bedrock",
+          "deepinfra",
+          "groq",
+          "nebius",
+          "novita",
+          "parasail",
+          "together",
+          "vertex"
+        ]
+      }
     },
     "google-vertex": {
       "exact_match_rate": 0.9614563567362429,
@@ -61,7 +129,24 @@
       "infinite_margin_rate": 0.00011859582542694497,
       "total_tokens": 16864,
       "n_sequences": 100,
-      "fireworks_verification_mode": "serverless"
+      "fireworks_verification_mode": "serverless",
+      "vail": {
+        "endpoint": "gpt-oss-120b-vertex-chat",
+        "divergence_ratio": 0.6172142378578861,
+        "date": "2026-03-08",
+        "comparison_providers": [
+          "azure",
+          "baseten",
+          "bedrock",
+          "deepinfra",
+          "fireworks",
+          "groq",
+          "nebius",
+          "novita",
+          "parasail",
+          "together"
+        ]
+      }
     },
     "groq": {
       "exact_match_rate": 0.9721853540308154,
@@ -69,10 +154,27 @@
       "avg_margin": 0.005402004046684748,
       "avg_logit_rank": 0.020889837844076404,
       "avg_gumbel_rank": 0.020889837844076404,
-      "infinite_margin_rate": 0.0,
+      "infinite_margin_rate": 0,
       "total_tokens": 17329,
       "n_sequences": 100,
-      "fireworks_verification_mode": "serverless"
+      "fireworks_verification_mode": "serverless",
+      "vail": {
+        "endpoint": "gpt-oss-120b-groq-chat",
+        "divergence_ratio": 2.4488318480651925,
+        "date": "2026-03-08",
+        "comparison_providers": [
+          "azure",
+          "baseten",
+          "bedrock",
+          "deepinfra",
+          "fireworks",
+          "nebius",
+          "novita",
+          "parasail",
+          "together",
+          "vertex"
+        ]
+      }
     },
     "ionet/fp16": {
       "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'novita', 'chutes', 'siliconflow', 'clarifai', 'google-vertex', 'atlas-cloud', 'phala', 'baseten', 'parasail', 'sambanova', 'amazon-bedrock', 'together', 'wandb', 'groq', 'crusoe', 'fireworks', 'io-net', 'cerebras'], 'requested_providers': ['ionet/fp16']}}}"
@@ -86,7 +188,24 @@
       "infinite_margin_rate": 0.0005164400068858667,
       "total_tokens": 17427,
       "n_sequences": 100,
-      "fireworks_verification_mode": "serverless"
+      "fireworks_verification_mode": "serverless",
+      "vail": {
+        "endpoint": "gpt-oss-120b-novita-chat",
+        "divergence_ratio": -0.2982993359909824,
+        "date": "2026-03-08",
+        "comparison_providers": [
+          "azure",
+          "baseten",
+          "bedrock",
+          "deepinfra",
+          "fireworks",
+          "groq",
+          "nebius",
+          "parasail",
+          "together",
+          "vertex"
+        ]
+      }
     },
     "parasail/fp4": {
       "exact_match_rate": 0.9228739825989335,
@@ -97,7 +216,24 @@
       "infinite_margin_rate": 0.0024136963233230423,
       "total_tokens": 17815,
       "n_sequences": 100,
-      "fireworks_verification_mode": "serverless"
+      "fireworks_verification_mode": "serverless",
+      "vail": {
+        "endpoint": "gpt-oss-120b-parasail-chat",
+        "divergence_ratio": 1,
+        "date": "2026-03-08",
+        "comparison_providers": [
+          "azure",
+          "baseten",
+          "bedrock",
+          "deepinfra",
+          "fireworks",
+          "groq",
+          "nebius",
+          "novita",
+          "together",
+          "vertex"
+        ]
+      }
     },
     "phala": {
       "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-oss-120b is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Phala', 'is_byok': False}}, 'user_id': 'redacted'}"
@@ -133,7 +269,24 @@
       "infinite_margin_rate": 0.0005180750633202855,
       "total_tokens": 17372,
       "n_sequences": 100,
-      "fireworks_verification_mode": "serverless"
+      "fireworks_verification_mode": "serverless",
+      "vail": {
+        "endpoint": "gpt-oss-120b-together-chat",
+        "divergence_ratio": 1.5173722700657355,
+        "date": "2026-03-08",
+        "comparison_providers": [
+          "azure",
+          "baseten",
+          "bedrock",
+          "deepinfra",
+          "fireworks",
+          "groq",
+          "nebius",
+          "novita",
+          "parasail",
+          "vertex"
+        ]
+      }
     },
     "wandb/fp4": {
       "exact_match_rate": 0.9229908215804791,

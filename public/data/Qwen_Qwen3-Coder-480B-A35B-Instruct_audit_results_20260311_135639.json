@@ -6,7 +6,7 @@
     "seed": 42,
     "top_k": 50,
     "top_p": 0.95,
-    "temperature": 0.0,
+    "temperature": 0,
     "verification_backend": "fireworks",
     "fireworks_verification_mode": "on-demand",
     "fireworks_verification_strategy": "fixed-per-audit",
@@ -38,7 +38,18 @@
       "fireworks_verification_mode": "on-demand"
     },
     "deepinfra/fp4": {
-      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['deepinfra/fp4']}}}"
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['deepinfra/fp4']}}}",
+      "vail": {
+        "endpoint": "qwen3-coder-480b-deepinfra-chat",
+        "divergence_ratio": 1,
+        "date": "2026-03-12",
+        "comparison_providers": [
+          "nebius",
+          "novita",
+          "together",
+          "vertex"
+        ]
+      }
     },
     "deepinfra/fp8": {
       "exact_match_rate": 0.9679276315789473,
@@ -46,10 +57,21 @@
       "avg_margin": 0.022480003264268883,
       "avg_logit_rank": 0.030870445344129555,
       "avg_gumbel_rank": 0.030870445344129555,
-      "infinite_margin_rate": 0.0,
+      "infinite_margin_rate": 0,
       "total_tokens": 15808,
       "n_sequences": 100,
-      "fireworks_verification_mode": "on-demand"
+      "fireworks_verification_mode": "on-demand",
+      "vail": {
+        "endpoint": "qwen3-coder-480b-deepinfra-chat",
+        "divergence_ratio": 1,
+        "date": "2026-03-12",
+        "comparison_providers": [
+          "nebius",
+          "novita",
+          "together",
+          "vertex"
+        ]
+      }
     },
     "google-vertex": {
       "exact_match_rate": 0.9590728225857387,
@@ -60,7 +82,18 @@
       "infinite_margin_rate": 0.00031579612202362154,
       "total_tokens": 15833,
       "n_sequences": 100,
-      "fireworks_verification_mode": "on-demand"
+      "fireworks_verification_mode": "on-demand",
+      "vail": {
+        "endpoint": "qwen3-coder-480b-vertex-chat",
+        "divergence_ratio": 1.935779212431922,
+        "date": "2026-03-12",
+        "comparison_providers": [
+          "deepinfra",
+          "nebius",
+          "novita",
+          "together"
+        ]
+      }
     },
     "hyperbolic/fp8": {
       "exact_match_rate": 0.9721389305347327,
@@ -79,10 +112,21 @@
       "avg_margin": 0.01769057437052345,
       "avg_logit_rank": 0.026373626373626374,
       "avg_gumbel_rank": 0.026373626373626374,
-      "infinite_margin_rate": 0.0,
+      "infinite_margin_rate": 0,
       "total_tokens": 15925,
       "n_sequences": 100,
-      "fireworks_verification_mode": "on-demand"
+      "fireworks_verification_mode": "on-demand",
+      "vail": {
+        "endpoint": "qwen3-coder-480b-nebius-chat",
+        "divergence_ratio": 0.7507642102552836,
+        "date": "2026-03-12",
+        "comparison_providers": [
+          "deepinfra",
+          "novita",
+          "together",
+          "vertex"
+        ]
+      }
     },
     "novita/fp8": {
       "exact_match_rate": 0.9478853853853854,
@@ -93,7 +137,18 @@
       "infinite_margin_rate": 0.0003128128128128128,
       "total_tokens": 15984,
       "n_sequences": 100,
-      "fireworks_verification_mode": "on-demand"
+      "fireworks_verification_mode": "on-demand",
+      "vail": {
+        "endpoint": "qwen3-coder-480b-novita-chat",
+        "divergence_ratio": 6.053262278824806,
+        "date": "2026-03-12",
+        "comparison_providers": [
+          "deepinfra",
+          "nebius",
+          "together",
+          "vertex"
+        ]
+      }
     },
     "siliconflow/fp8": {
       "exact_match_rate": 0.9593153063755891,
@@ -112,10 +167,21 @@
       "avg_margin": 0.017248296080605918,
       "avg_logit_rank": 0.02579752092116026,
       "avg_gumbel_rank": 0.02579752092116026,
-      "infinite_margin_rate": 0.0,
+      "infinite_margin_rate": 0,
       "total_tokens": 15893,
       "n_sequences": 100,
-      "fireworks_verification_mode": "on-demand"
+      "fireworks_verification_mode": "on-demand",
+      "vail": {
+        "endpoint": "qwen3-coder-480b-together-chat",
+        "divergence_ratio": 0.6906566027931855,
+        "date": "2026-03-12",
+        "comparison_providers": [
+          "deepinfra",
+          "nebius",
+          "novita",
+          "vertex"
+        ]
+      }
     },
     "wandb/bf16": {
       "exact_match_rate": 0.9684413244703982,
@@ -123,7 +189,7 @@
       "avg_margin": 0.0203088538916413,
       "avg_logit_rank": 0.03099956513636081,
       "avg_gumbel_rank": 0.03099956513636081,
-      "infinite_margin_rate": 0.0,
+      "infinite_margin_rate": 0,
       "total_tokens": 16097,
       "n_sequences": 100,
       "fireworks_verification_mode": "on-demand"

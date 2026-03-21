@@ -1,6 +1,6 @@
 {
   "version": "v1",
-  "generatedAt": "2026-03-21T07:46:05.158Z",
+  "generatedAt": "2026-03-21T12:11:18.535Z",
   "date": "2026-03-02",
   "count": 10,
   "runs": [
@@ -428,6 +428,31 @@
       "timestamp": "2026-03-02T02:13:44Z",
       "providerEntries": [
         {
+          "endpoint": "amazonbedrock",
+          "provider": "amazonbedrock",
+          "variant": null,
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'novita', 'chutes', 'siliconflow', 'clarifai', 'google-vertex', 'atlas-cloud', 'phala', 'baseten', 'parasail', 'sambanova', 'amazon-bedrock', 'together', 'wandb', 'nebius', 'groq', 'crusoe', 'fireworks', 'cerebras'], 'requested_providers': ['amazonbedrock']}}}",
+            "vail": {
+              "endpoint": "gpt-oss-120b-bedrock-chat",
+              "divergence_ratio": 0.2353108119791563,
+              "date": "2026-03-02",
+              "comparison_providers": [
+                "azure",
+                "baseten",
+                "deepinfra",
+                "fireworks",
+                "groq",
+                "nebius",
+                "novita",
+                "parasail",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
           "endpoint": "baseten/fp4",
           "provider": "baseten",
           "variant": "fp4",
@@ -476,6 +501,31 @@
           }
         },
         {
+          "endpoint": "deepinfra/bf16",
+          "provider": "deepinfra",
+          "variant": "bf16",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'novita', 'chutes', 'siliconflow', 'clarifai', 'google-vertex', 'atlas-cloud', 'phala', 'baseten', 'parasail', 'sambanova', 'amazon-bedrock', 'together', 'wandb', 'nebius', 'groq', 'crusoe', 'fireworks', 'cerebras'], 'requested_providers': ['deepinfra/bf16']}}}",
+            "vail": {
+              "endpoint": "gpt-oss-120b-deepinfra-chat",
+              "divergence_ratio": 1.1717713071523435,
+              "date": "2026-03-02",
+              "comparison_providers": [
+                "azure",
+                "baseten",
+                "bedrock",
+                "fireworks",
+                "groq",
+                "nebius",
+                "novita",
+                "parasail",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
           "endpoint": "deepinfra/fp4",
           "provider": "deepinfra",
           "variant": "fp4",
@@ -488,7 +538,24 @@
             "infinite_margin_rate": 0.00011575413821044102,
             "total_tokens": 17278,
             "n_sequences": 100,
-            "fireworks_verification_mode": "serverless"
+            "fireworks_verification_mode": "serverless",
+            "vail": {
+              "endpoint": "gpt-oss-120b-deepinfra-chat",
+              "divergence_ratio": 1.1717713071523435,
+              "date": "2026-03-02",
+              "comparison_providers": [
+                "azure",
+                "baseten",
+                "bedrock",
+                "fireworks",
+                "groq",
+                "nebius",
+                "novita",
+                "parasail",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -504,7 +571,49 @@
             "infinite_margin_rate": 0.0008111239860950173,
             "total_tokens": 17260,
             "n_sequences": 100,
-            "fireworks_verification_mode": "serverless"
+            "fireworks_verification_mode": "serverless",
+            "vail": {
+              "endpoint": "gpt-oss-120b-fireworks-chat",
+              "divergence_ratio": 2.616063735657088,
+              "date": "2026-03-02",
+              "comparison_providers": [
+                "azure",
+                "baseten",
+                "bedrock",
+                "deepinfra",
+                "groq",
+                "nebius",
+                "novita",
+                "parasail",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "google",
+          "provider": "google",
+          "variant": null,
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'novita', 'chutes', 'siliconflow', 'clarifai', 'google-vertex', 'atlas-cloud', 'phala', 'baseten', 'parasail', 'sambanova', 'amazon-bedrock', 'together', 'wandb', 'nebius', 'groq', 'crusoe', 'fireworks', 'cerebras'], 'requested_providers': ['google']}}}",
+            "vail": {
+              "endpoint": "gpt-oss-120b-vertex-chat",
+              "divergence_ratio": 0.16051235095637809,
+              "date": "2026-03-02",
+              "comparison_providers": [
+                "azure",
+                "baseten",
+                "bedrock",
+                "deepinfra",
+                "fireworks",
+                "groq",
+                "nebius",
+                "novita",
+                "parasail",
+                "together"
+              ]
+            }
           }
         },
         {
@@ -520,7 +629,24 @@
             "infinite_margin_rate": 0.00023102691463555504,
             "total_tokens": 17314,
             "n_sequences": 100,
-            "fireworks_verification_mode": "serverless"
+            "fireworks_verification_mode": "serverless",
+            "vail": {
+              "endpoint": "gpt-oss-120b-groq-chat",
+              "divergence_ratio": 1.1670049459215204,
+              "date": "2026-03-02",
+              "comparison_providers": [
+                "azure",
+                "baseten",
+                "bedrock",
+                "deepinfra",
+                "fireworks",
+                "nebius",
+                "novita",
+                "parasail",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -536,7 +662,24 @@
             "infinite_margin_rate": 0.0031719059756442933,
             "total_tokens": 17655,
             "n_sequences": 100,
-            "fireworks_verification_mode": "serverless"
+            "fireworks_verification_mode": "serverless",
+            "vail": {
+              "endpoint": "gpt-oss-120b-nebius-chat",
+              "divergence_ratio": 0.7941792082130794,
+              "date": "2026-03-02",
+              "comparison_providers": [
+                "azure",
+                "baseten",
+                "bedrock",
+                "deepinfra",
+                "fireworks",
+                "groq",
+                "novita",
+                "parasail",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -552,7 +695,24 @@
             "infinite_margin_rate": 0.0004021370712931579,
             "total_tokens": 17407,
             "n_sequences": 100,
-            "fireworks_verification_mode": "serverless"
+            "fireworks_verification_mode": "serverless",
+            "vail": {
+              "endpoint": "gpt-oss-120b-novita-chat",
+              "divergence_ratio": -0.11666781241066225,
+              "date": "2026-03-02",
+              "comparison_providers": [
+                "azure",
+                "baseten",
+                "bedrock",
+                "deepinfra",
+                "fireworks",
+                "groq",
+                "nebius",
+                "parasail",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -568,7 +728,24 @@
             "infinite_margin_rate": 0.002954377592182262,
             "total_tokens": 17601,
             "n_sequences": 100,
-            "fireworks_verification_mode": "serverless"
+            "fireworks_verification_mode": "serverless",
+            "vail": {
+              "endpoint": "gpt-oss-120b-parasail-chat",
+              "divergence_ratio": 0.3674371288140164,
+              "date": "2026-03-02",
+              "comparison_providers": [
+                "azure",
+                "baseten",
+                "bedrock",
+                "deepinfra",
+                "fireworks",
+                "groq",
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -616,7 +793,24 @@
             "infinite_margin_rate": 0.0005185825410544512,
             "total_tokens": 17355,
             "n_sequences": 100,
-            "fireworks_verification_mode": "serverless"
+            "fireworks_verification_mode": "serverless",
+            "vail": {
+              "endpoint": "gpt-oss-120b-together-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-02",
+              "comparison_providers": [
+                "azure",
+                "baseten",
+                "bedrock",
+                "deepinfra",
+                "fireworks",
+                "groq",
+                "nebius",
+                "novita",
+                "parasail",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -657,6 +851,105 @@
       "timestamp": "2026-03-02T03:13:52Z",
       "providerEntries": [
         {
+          "endpoint": "deepinfra/fp4",
+          "provider": "deepinfra",
+          "variant": "fp4",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['deepinfra/fp4']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 0.5684948355072532,
+              "date": "2026-03-02",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "deepinfra/fp8",
+          "provider": "deepinfra",
+          "variant": "fp8",
+          "metrics": {
+            "error": "'NoneType' object is not subscriptable",
+            "serverless_error": "Error code: 404 - {'error': {'message': 'Model not found, inaccessible, and/or not deployed', 'param': 'model', 'code': 'NOT_FOUND', 'type': 'error'}, 'request_id': 'cmpl-[redacted]'}",
+            "fireworks_verification_mode": "on-demand-fallback-failed",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 0.5684948355072532,
+              "date": "2026-03-02",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "google",
+          "provider": "google",
+          "variant": null,
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['google']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-vertex-chat",
+              "divergence_ratio": 1.8875002492522321,
+              "date": "2026-03-02",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "together"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "nebius/fp8",
+          "provider": "nebius",
+          "variant": "fp8",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'Model not found, inaccessible, and/or not deployed', 'param': 'model', 'code': 'NOT_FOUND', 'type': 'error'}, 'request_id': 'cmpl-[redacted]'}",
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-nebius-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-02",
+              "comparison_providers": [
+                "deepinfra",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "novita/fp8",
+          "provider": "novita",
+          "variant": "fp8",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'Model not found, inaccessible, and/or not deployed', 'param': 'model', 'code': 'NOT_FOUND', 'type': 'error'}, 'request_id': 'cmpl-[redacted]'}",
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-novita-chat",
+              "divergence_ratio": 4.347669066559596,
+              "date": "2026-03-02",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
           "endpoint": "siliconflow/fp8",
           "provider": "siliconflow",
           "variant": "fp8",
@@ -685,7 +978,18 @@
             "infinite_margin_rate": 0,
             "total_tokens": 15959,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-together-chat",
+              "divergence_ratio": 0.55932197536897,
+              "date": "2026-03-02",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -1097,6 +1401,31 @@
       "timestamp": "2026-03-02T15:06:54Z",
       "providerEntries": [
         {
+          "endpoint": "amazonbedrock",
+          "provider": "amazonbedrock",
+          "variant": null,
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'novita', 'chutes', 'siliconflow', 'clarifai', 'google-vertex', 'atlas-cloud', 'phala', 'baseten', 'parasail', 'sambanova', 'amazon-bedrock', 'together', 'wandb', 'nebius', 'groq', 'crusoe', 'fireworks', 'cerebras'], 'requested_providers': ['amazonbedrock']}}}",
+            "vail": {
+              "endpoint": "gpt-oss-120b-bedrock-chat",
+              "divergence_ratio": 0.41279403879580434,
+              "date": "2026-03-03",
+              "comparison_providers": [
+                "azure",
+                "baseten",
+                "deepinfra",
+                "fireworks",
+                "groq",
+                "nebius",
+                "novita",
+                "parasail",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
           "endpoint": "baseten/fp4",
           "provider": "baseten",
           "variant": "fp4",
@@ -1145,6 +1474,31 @@
           }
         },
         {
+          "endpoint": "deepinfra/bf16",
+          "provider": "deepinfra",
+          "variant": "bf16",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'novita', 'chutes', 'siliconflow', 'clarifai', 'google-vertex', 'atlas-cloud', 'phala', 'baseten', 'parasail', 'sambanova', 'amazon-bedrock', 'together', 'wandb', 'nebius', 'groq', 'crusoe', 'fireworks', 'cerebras'], 'requested_providers': ['deepinfra/bf16']}}}",
+            "vail": {
+              "endpoint": "gpt-oss-120b-deepinfra-chat",
+              "divergence_ratio": 0.3499390545125149,
+              "date": "2026-03-03",
+              "comparison_providers": [
+                "azure",
+                "baseten",
+                "bedrock",
+                "fireworks",
+                "groq",
+                "nebius",
+                "novita",
+                "parasail",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
           "endpoint": "deepinfra/fp4",
           "provider": "deepinfra",
           "variant": "fp4",
@@ -1157,7 +1511,24 @@
             "infinite_margin_rate": 0.00023089355806972986,
             "total_tokens": 17324,
             "n_sequences": 100,
-            "fireworks_verification_mode": "serverless"
+            "fireworks_verification_mode": "serverless",
+            "vail": {
+              "endpoint": "gpt-oss-120b-deepinfra-chat",
+              "divergence_ratio": 0.3499390545125149,
+              "date": "2026-03-03",
+              "comparison_providers": [
+                "azure",
+                "baseten",
+                "bedrock",
+                "fireworks",
+                "groq",
+                "nebius",
+                "novita",
+                "parasail",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -1173,7 +1544,49 @@
             "infinite_margin_rate": 0.0011475786091347257,
             "total_tokens": 17428,
             "n_sequences": 100,
-            "fireworks_verification_mode": "serverless"
+            "fireworks_verification_mode": "serverless",
+            "vail": {
+              "endpoint": "gpt-oss-120b-fireworks-chat",
+              "divergence_ratio": 2.4600554014700786,
+              "date": "2026-03-03",
+              "comparison_providers": [
+                "azure",
+                "baseten",
+                "bedrock",
+                "deepinfra",
+                "groq",
+                "nebius",
+                "novita",
+                "parasail",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "google",
+          "provider": "google",
+          "variant": null,
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'novita', 'chutes', 'siliconflow', 'clarifai', 'google-vertex', 'atlas-cloud', 'phala', 'baseten', 'parasail', 'sambanova', 'amazon-bedrock', 'together', 'wandb', 'nebius', 'groq', 'crusoe', 'fireworks', 'cerebras'], 'requested_providers': ['google']}}}",
+            "vail": {
+              "endpoint": "gpt-oss-120b-vertex-chat",
+              "divergence_ratio": 0.9605343078431672,
+              "date": "2026-03-03",
+              "comparison_providers": [
+                "azure",
+                "baseten",
+                "bedrock",
+                "deepinfra",
+                "fireworks",
+                "groq",
+                "nebius",
+                "novita",
+                "parasail",
+                "together"
+              ]
+            }
           }
         },
         {
@@ -1189,7 +1602,24 @@
             "infinite_margin_rate": 0.0002898550724637681,
             "total_tokens": 17250,
             "n_sequences": 100,
-            "fireworks_verification_mode": "serverless"
+            "fireworks_verification_mode": "serverless",
+            "vail": {
+              "endpoint": "gpt-oss-120b-groq-chat",
+              "divergence_ratio": 2.0747817707244818,
+              "date": "2026-03-03",
+              "comparison_providers": [
+                "azure",
+                "baseten",
+                "bedrock",
+                "deepinfra",
+                "fireworks",
+                "nebius",
+                "novita",
+                "parasail",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -1205,7 +1635,24 @@
             "infinite_margin_rate": 0.0029058173323457353,
             "total_tokens": 17551,
             "n_sequences": 100,
-            "fireworks_verification_mode": "serverless"
+            "fireworks_verification_mode": "serverless",
+            "vail": {
+              "endpoint": "gpt-oss-120b-nebius-chat",
+              "divergence_ratio": 1.0046572885704115,
+              "date": "2026-03-03",
+              "comparison_providers": [
+                "azure",
+                "baseten",
+                "bedrock",
+                "deepinfra",
+                "fireworks",
+                "groq",
+                "novita",
+                "parasail",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -1221,7 +1668,49 @@
             "infinite_margin_rate": 0.00046176046176046176,
             "total_tokens": 17325,
             "n_sequences": 100,
-            "fireworks_verification_mode": "serverless"
+            "fireworks_verification_mode": "serverless",
+            "vail": {
+              "endpoint": "gpt-oss-120b-novita-chat",
+              "divergence_ratio": 0.04707088756478392,
+              "date": "2026-03-03",
+              "comparison_providers": [
+                "azure",
+                "baseten",
+                "bedrock",
+                "deepinfra",
+                "fireworks",
+                "groq",
+                "nebius",
+                "parasail",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "parasail/fp4",
+          "provider": "parasail",
+          "variant": "fp4",
+          "metrics": {
+            "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-oss-120b is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Parasail', 'is_byok': False}}, 'user_id': 'org_[redacted]'}",
+            "vail": {
+              "endpoint": "gpt-oss-120b-parasail-chat",
+              "divergence_ratio": -0.010858573367370249,
+              "date": "2026-03-03",
+              "comparison_providers": [
+                "azure",
+                "baseten",
+                "bedrock",
+                "deepinfra",
+                "fireworks",
+                "groq",
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -1269,7 +1758,24 @@
             "infinite_margin_rate": 0.0005221932114882506,
             "total_tokens": 17235,
             "n_sequences": 100,
-            "fireworks_verification_mode": "serverless"
+            "fireworks_verification_mode": "serverless",
+            "vail": {
+              "endpoint": "gpt-oss-120b-together-chat",
+              "divergence_ratio": 1.4309710789031451,
+              "date": "2026-03-03",
+              "comparison_providers": [
+                "azure",
+                "baseten",
+                "bedrock",
+                "deepinfra",
+                "fireworks",
+                "groq",
+                "nebius",
+                "novita",
+                "parasail",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -1328,6 +1834,25 @@
           }
         },
         {
+          "endpoint": "deepinfra/fp4",
+          "provider": "deepinfra",
+          "variant": "fp4",
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['deepinfra/fp4']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-03",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
           "endpoint": "deepinfra/fp8",
           "provider": "deepinfra",
           "variant": "fp8",
@@ -1340,7 +1865,37 @@
             "infinite_margin_rate": 0.00006253908692933083,
             "total_tokens": 15990,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-deepinfra-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-03",
+              "comparison_providers": [
+                "nebius",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "google",
+          "provider": "google",
+          "variant": null,
+          "metrics": {
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['google']}}}",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-vertex-chat",
+              "divergence_ratio": 3.4517190202107577,
+              "date": "2026-03-03",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "together"
+              ]
+            }
           }
         },
         {
@@ -1372,7 +1927,18 @@
             "infinite_margin_rate": 0.0000626527159952384,
             "total_tokens": 15961,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-nebius-chat",
+              "divergence_ratio": 0.9381407150424081,
+              "date": "2026-03-03",
+              "comparison_providers": [
+                "deepinfra",
+                "novita",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -1388,7 +1954,18 @@
             "infinite_margin_rate": 0.00012679092177000128,
             "total_tokens": 15774,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-novita-chat",
+              "divergence_ratio": 6.494517498709127,
+              "date": "2026-03-03",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "together",
+                "vertex"
+              ]
+            }
           }
         },
         {
@@ -1420,7 +1997,18 @@
             "infinite_margin_rate": 0,
             "total_tokens": 16121,
             "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
+            "fireworks_verification_mode": "on-demand",
+            "vail": {
+              "endpoint": "qwen3-coder-480b-together-chat",
+              "divergence_ratio": 0.9394873126610852,
+              "date": "2026-03-03",
+              "comparison_providers": [
+                "deepinfra",
+                "nebius",
+                "novita",
+                "vertex"
+              ]
+            }
           }
         },
         {

@@ -110,6 +110,7 @@ function getExactAxisTicks(domain: [number, number] | ["auto", "auto"]) {
 function SeriesChart({
   data,
   providers,
+  providerColors,
   section,
   showXAxis,
   showBrush,
@@ -117,6 +118,7 @@ function SeriesChart({
 }: {
   data: TimeSeriesData[]
   providers: string[]
+  providerColors: Record<string, string>
   section: ChartSection
   showXAxis: boolean
   showBrush: boolean
@@ -130,7 +132,7 @@ function SeriesChart({
 
   return (
     <ResponsiveContainer width="100%" height={height}>
-      <LineChart data={data} syncId="provider-performance-timeline" margin={{ top: 5, right: 20, left: 0, bottom: 5 }}>
+      <LineChart data={data} margin={{ top: 5, right: 20, left: 0, bottom: 5 }}>
         <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" opacity={0.3} />
         {showXAxis ? (
           <XAxis
@@ -160,11 +162,13 @@ function SeriesChart({
           tickLine={{ stroke: "var(--border)" }}
         />
         <Tooltip
+          cursor={{ stroke: "var(--border)", strokeWidth: 1 }}
           contentStyle={{
             backgroundColor: "var(--popover)",
             border: "1px solid var(--border)",
             borderRadius: "var(--radius)",
           }}
+          wrapperStyle={{ zIndex: 1000, pointerEvents: "none" }}
           formatter={(value: number) => formatMetricValue(value, section)}
           labelFormatter={(_, payload) => {
             const point = payload?.[0]?.payload as { time?: string } | undefined
@@ -183,7 +187,7 @@ function SeriesChart({
         ) : null}
         {providers.map((provider, index) => {
           const dataKey = section === "exact" ? provider : `${provider}__vail`
-          const color = CHART_COLORS[index % CHART_COLORS.length]
+          const color = providerColors[provider] ?? CHART_COLORS[index % CHART_COLORS.length]
 
           return (
             <Line
@@ -208,6 +212,10 @@ function SeriesChart({
       </LineChart>
     </ResponsiveContainer>
   )
+}
+
+function sectionTitle(section: ChartSection) {
+  return section === "exact" ? "Exact Match Rate" : "VAIL Divergence Score"
 }
 
 export function TimeSeriesChart({
@@ -270,6 +278,13 @@ export function TimeSeriesChart({
 
   const shouldShowExact = showExactMatch && exactProviders.length > 0
   const shouldShowVail = showVail && vailProviders.length > 0
+  const providerColors = useMemo(
+    () =>
+      Object.fromEntries(
+        providers.map((provider, index) => [provider, CHART_COLORS[index % CHART_COLORS.length]])
+      ) as Record<string, string>,
+    [providers]
+  )
 
   if (!shouldShowExact && !shouldShowVail) {
     return <div className="flex items-center justify-center py-12 text-muted-foreground">No timeline data enabled</div>
@@ -280,24 +295,46 @@ export function TimeSeriesChart({
       <div className="space-y-4">
         <div className="rounded-lg border border-border/70 bg-muted/20 p-3">
           <p className="text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">Exact Match Rate</p>
-          <SeriesChart data={formattedData} providers={exactProviders} section="exact" showXAxis={false} showBrush={false} height={240} />
+          <SeriesChart
+            data={formattedData}
+            providers={exactProviders}
+            providerColors={providerColors}
+            section="exact"
+            showXAxis={false}
+            showBrush={false}
+            height={240}
+          />
         </div>
         <div className="rounded-lg border border-border/70 bg-muted/20 p-3">
           <p className="text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">VAIL Divergence Score</p>
-          <SeriesChart data={formattedData} providers={vailProviders} section="vail" showXAxis={true} showBrush={true} height={240} />
+          <SeriesChart
+            data={formattedData}
+            providers={vailProviders}
+            providerColors={providerColors}
+            section="vail"
+            showXAxis={true}
+            showBrush={true}
+            height={240}
+          />
         </div>
       </div>
     )
   }
 
   return (
-    <SeriesChart
-      data={formattedData}
-      providers={shouldShowExact ? exactProviders : vailProviders}
-      section={shouldShowExact ? "exact" : "vail"}
-      showXAxis={true}
-      showBrush={true}
-      height={400}
-    />
+    <div className="rounded-lg border border-border/70 bg-muted/20 p-3">
+      <p className="text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
+        {sectionTitle(shouldShowExact ? "exact" : "vail")}
+      </p>
+      <SeriesChart
+        data={formattedData}
+        providers={shouldShowExact ? exactProviders : vailProviders}
+        providerColors={providerColors}
+        section={shouldShowExact ? "exact" : "vail"}
+        showXAxis={true}
+        showBrush={true}
+        height={400}
+      />
+    </div>
   )
 }
