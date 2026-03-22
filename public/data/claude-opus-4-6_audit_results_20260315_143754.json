@@ -1,0 +1,56 @@
+{
+  "model": "claude-opus-4-6",
+  "parameters": {
+    "vail_only": true
+  },
+  "providers": {
+    "anthropic": {
+      "vail": {
+        "endpoint": "claude-opus-4.6-anthropic-messages",
+        "divergence_ratio": 0.5244173023337158,
+        "date": "2026-03-14",
+        "comparison_providers": [
+          "azure",
+          "bedrock",
+          "vertex"
+        ]
+      }
+    },
+    "azure": {
+      "vail": {
+        "endpoint": "claude-opus-4.6-azure-messages",
+        "divergence_ratio": 1.4755826976662845,
+        "date": "2026-03-14",
+        "comparison_providers": [
+          "anthropic",
+          "bedrock",
+          "vertex"
+        ]
+      }
+    },
+    "bedrock": {
+      "vail": {
+        "endpoint": "claude-opus-4.6-bedrock-chat",
+        "divergence_ratio": 0.2690757744015766,
+        "date": "2026-03-14",
+        "comparison_providers": [
+          "anthropic",
+          "azure",
+          "vertex"
+        ]
+      }
+    },
+    "vertex": {
+      "vail": {
+        "endpoint": "claude-opus-4.6-vertex-messages",
+        "divergence_ratio": 8.592531892792273,
+        "date": "2026-03-14",
+        "comparison_providers": [
+          "anthropic",
+          "azure",
+          "bedrock"
+        ]
+      }
+    }
+  }
+}

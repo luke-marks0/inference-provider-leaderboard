@@ -1,0 +1,56 @@
+{
+  "model": "deepseek-v3-2",
+  "parameters": {
+    "vail_only": true
+  },
+  "providers": {
+    "azure": {
+      "vail": {
+        "endpoint": "deepseek-v3.2-azure-chat",
+        "divergence_ratio": 0.7729576258661159,
+        "date": "2026-03-11",
+        "comparison_providers": [
+          "bedrock",
+          "fireworks",
+          "novita"
+        ]
+      }
+    },
+    "bedrock": {
+      "vail": {
+        "endpoint": "deepseek-v3.2-bedrock-chat",
+        "divergence_ratio": 1.2439188244179533,
+        "date": "2026-03-11",
+        "comparison_providers": [
+          "azure",
+          "fireworks",
+          "novita"
+        ]
+      }
+    },
+    "fireworks": {
+      "vail": {
+        "endpoint": "deepseek-v3.2-fireworks-chat",
+        "divergence_ratio": 0.9916673542432212,
+        "date": "2026-03-11",
+        "comparison_providers": [
+          "azure",
+          "bedrock",
+          "novita"
+        ]
+      }
+    },
+    "novita": {
+      "vail": {
+        "endpoint": "deepseek-v3.2-novita-chat",
+        "divergence_ratio": 1.008332645756779,
+        "date": "2026-03-11",
+        "comparison_providers": [
+          "azure",
+          "bedrock",
+          "fireworks"
+        ]
+      }
+    }
+  }
+}

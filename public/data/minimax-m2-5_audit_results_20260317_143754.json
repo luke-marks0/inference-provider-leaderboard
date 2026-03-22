@@ -1,0 +1,92 @@
+{
+  "model": "minimax-m2-5",
+  "parameters": {
+    "vail_only": true
+  },
+  "providers": {
+    "baseten": {
+      "vail": {
+        "endpoint": "minimax-m2.5-baseten-chat",
+        "divergence_ratio": 1.7439391770427892,
+        "date": "2026-03-16",
+        "comparison_providers": [
+          "deepinfra",
+          "fireworks",
+          "novita",
+          "parasail",
+          "together"
+        ]
+      }
+    },
+    "deepinfra": {
+      "vail": {
+        "endpoint": "minimax-m2.5-deepinfra-chat",
+        "divergence_ratio": 0.8138309186129977,
+        "date": "2026-03-16",
+        "comparison_providers": [
+          "baseten",
+          "fireworks",
+          "novita",
+          "parasail",
+          "together"
+        ]
+      }
+    },
+    "fireworks": {
+      "vail": {
+        "endpoint": "minimax-m2.5-fireworks-chat",
+        "divergence_ratio": 1.7948920274708529,
+        "date": "2026-03-16",
+        "comparison_providers": [
+          "baseten",
+          "deepinfra",
+          "novita",
+          "parasail",
+          "together"
+        ]
+      }
+    },
+    "novita": {
+      "vail": {
+        "endpoint": "minimax-m2.5-novita-chat",
+        "divergence_ratio": 1.186169081387002,
+        "date": "2026-03-16",
+        "comparison_providers": [
+          "baseten",
+          "deepinfra",
+          "fireworks",
+          "parasail",
+          "together"
+        ]
+      }
+    },
+    "parasail": {
+      "vail": {
+        "endpoint": "minimax-m2.5-parasail-chat",
+        "divergence_ratio": 0.5830475476424076,
+        "date": "2026-03-16",
+        "comparison_providers": [
+          "baseten",
+          "deepinfra",
+          "fireworks",
+          "novita",
+          "together"
+        ]
+      }
+    },
+    "together": {
+      "vail": {
+        "endpoint": "minimax-m2.5-together-chat",
+        "divergence_ratio": 0.4222357407972281,
+        "date": "2026-03-16",
+        "comparison_providers": [
+          "baseten",
+          "deepinfra",
+          "fireworks",
+          "novita",
+          "parasail"
+        ]
+      }
+    }
+  }
+}

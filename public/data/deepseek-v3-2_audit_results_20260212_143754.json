@@ -1,0 +1,78 @@
+{
+  "model": "deepseek-v3-2",
+  "parameters": {
+    "vail_only": true
+  },
+  "providers": {
+    "azure": {
+      "vail": {
+        "endpoint": "deepseek-v3.2-azure-chat",
+        "divergence_ratio": 0.9296831939607078,
+        "date": "2026-02-11",
+        "comparison_providers": [
+          "deepinfra",
+          "fireworks",
+          "nebius",
+          "novita",
+          "vertex"
+        ]
+      }
+    },
+    "deepinfra": {
+      "vail": {
+        "endpoint": "deepseek-v3.2-deepinfra-chat",
+        "divergence_ratio": 1.0326591052371168,
+        "date": "2026-02-11",
+        "comparison_providers": [
+          "azure",
+          "fireworks",
+          "nebius",
+          "novita",
+          "vertex"
+        ]
+      }
+    },
+    "fireworks": {
+      "vail": {
+        "endpoint": "deepseek-v3.2-fireworks-chat",
+        "divergence_ratio": 1.1735465970607182,
+        "date": "2026-02-11",
+        "comparison_providers": [
+          "azure",
+          "deepinfra",
+          "nebius",
+          "novita",
+          "vertex"
+        ]
+      }
+    },
+    "novita": {
+      "vail": {
+        "endpoint": "deepseek-v3.2-novita-chat",
+        "divergence_ratio": 0.9673408947628831,
+        "date": "2026-02-11",
+        "comparison_providers": [
+          "azure",
+          "deepinfra",
+          "fireworks",
+          "nebius",
+          "vertex"
+        ]
+      }
+    },
+    "vertex": {
+      "vail": {
+        "endpoint": "deepseek-v3.2-vertex-chat",
+        "divergence_ratio": 0.882920086925971,
+        "date": "2026-02-11",
+        "comparison_providers": [
+          "azure",
+          "deepinfra",
+          "fireworks",
+          "nebius",
+          "novita"
+        ]
+      }
+    }
+  }
+}

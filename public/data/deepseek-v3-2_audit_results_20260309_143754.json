@@ -1,0 +1,98 @@
+{
+  "model": "deepseek-v3-2",
+  "parameters": {
+    "vail_only": true
+  },
+  "providers": {
+    "azure": {
+      "vail": {
+        "endpoint": "deepseek-v3.2-azure-chat",
+        "divergence_ratio": 1.0731386859695373,
+        "date": "2026-03-08",
+        "comparison_providers": [
+          "bedrock",
+          "deepinfra",
+          "fireworks",
+          "nebius",
+          "novita",
+          "vertex"
+        ]
+      }
+    },
+    "bedrock": {
+      "vail": {
+        "endpoint": "deepseek-v3.2-bedrock-chat",
+        "divergence_ratio": 0.6613125020708382,
+        "date": "2026-03-08",
+        "comparison_providers": [
+          "azure",
+          "deepinfra",
+          "fireworks",
+          "nebius",
+          "novita",
+          "vertex"
+        ]
+      }
+    },
+    "deepinfra": {
+      "vail": {
+        "endpoint": "deepseek-v3.2-deepinfra-chat",
+        "divergence_ratio": 0.6439295096446792,
+        "date": "2026-03-08",
+        "comparison_providers": [
+          "azure",
+          "bedrock",
+          "fireworks",
+          "nebius",
+          "novita",
+          "vertex"
+        ]
+      }
+    },
+    "fireworks": {
+      "vail": {
+        "endpoint": "deepseek-v3.2-fireworks-chat",
+        "divergence_ratio": 2.421540521483496,
+        "date": "2026-03-08",
+        "comparison_providers": [
+          "azure",
+          "bedrock",
+          "deepinfra",
+          "nebius",
+          "novita",
+          "vertex"
+        ]
+      }
+    },
+    "novita": {
+      "vail": {
+        "endpoint": "deepseek-v3.2-novita-chat",
+        "divergence_ratio": 2.2294725841267846,
+        "date": "2026-03-08",
+        "comparison_providers": [
+          "azure",
+          "bedrock",
+          "deepinfra",
+          "fireworks",
+          "nebius",
+          "vertex"
+        ]
+      }
+    },
+    "vertex": {
+      "vail": {
+        "endpoint": "deepseek-v3.2-vertex-chat",
+        "divergence_ratio": 0.5328273328523067,
+        "date": "2026-03-08",
+        "comparison_providers": [
+          "azure",
+          "bedrock",
+          "deepinfra",
+          "fireworks",
+          "nebius",
+          "novita"
+        ]
+      }
+    }
+  }
+}

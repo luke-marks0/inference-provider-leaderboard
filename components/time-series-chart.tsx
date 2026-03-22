@@ -1,6 +1,6 @@
 "use client"
 
-import { useMemo } from "react"
+import { useEffect, useMemo, useState } from "react"
 import {
   Brush,
   CartesianGrid,
@@ -115,6 +115,9 @@ function SeriesChart({
   showXAxis,
   showBrush,
   height,
+  startIndex,
+  endIndex,
+  onBrushChange,
 }: {
   data: TimeSeriesData[]
   providers: string[]
@@ -123,6 +126,9 @@ function SeriesChart({
   showXAxis: boolean
   showBrush: boolean
   height: number
+  startIndex?: number
+  endIndex?: number
+  onBrushChange?: (range: { startIndex?: number; endIndex?: number }) => void
 }) {
   const domain = useMemo(() => getSectionDomain(data, providers, section), [data, providers, section])
   const exactTicks = useMemo(
@@ -183,6 +189,9 @@ function SeriesChart({
             stroke="var(--primary)"
             travellerWidth={12}
             tickFormatter={() => ""}
+            startIndex={startIndex}
+            endIndex={endIndex}
+            onChange={onBrushChange}
           />
         ) : null}
         {providers.map((provider, index) => {
@@ -257,6 +266,20 @@ export function TimeSeriesChart({
 
     return lastValidIndex >= 0 ? withTime.slice(0, lastValidIndex + 1) : withTime
   }, [data, providers])
+  const [brushRange, setBrushRange] = useState(() => ({
+    startIndex: 0,
+    endIndex: Math.max(formattedData.length - 1, 0),
+  }))
+
+  useEffect(() => {
+    setBrushRange((current) => {
+      const nextEndIndex = Math.max(formattedData.length - 1, 0)
+      return {
+        startIndex: Math.min(current.startIndex, nextEndIndex),
+        endIndex: nextEndIndex,
+      }
+    })
+  }, [formattedData.length])
 
   const exactProviders = useMemo(
     () =>
@@ -278,6 +301,19 @@ export function TimeSeriesChart({
 
   const shouldShowExact = showExactMatch && exactProviders.length > 0
   const shouldShowVail = showVail && vailProviders.length > 0
+  const maxBrushIndex = Math.max(formattedData.length - 1, 0)
+  const clampedStartIndex = Math.min(brushRange.startIndex, maxBrushIndex)
+  const clampedEndIndex = Math.max(clampedStartIndex, Math.min(brushRange.endIndex, maxBrushIndex))
+  const visibleData = useMemo(
+    () => formattedData.slice(clampedStartIndex, clampedEndIndex + 1),
+    [clampedEndIndex, clampedStartIndex, formattedData]
+  )
+  const handleBrushChange = (range: { startIndex?: number; endIndex?: number }) => {
+    setBrushRange({
+      startIndex: Math.min(range.startIndex ?? 0, maxBrushIndex),
+      endIndex: Math.max(range.startIndex ?? 0, Math.min(range.endIndex ?? maxBrushIndex, maxBrushIndex)),
+    })
+  }
   const providerColors = useMemo(
     () =>
       Object.fromEntries(
@@ -296,7 +332,7 @@ export function TimeSeriesChart({
         <div className="rounded-lg border border-border/70 bg-muted/20 p-3">
           <p className="text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">Exact Match Rate</p>
           <SeriesChart
-            data={formattedData}
+            data={visibleData}
             providers={exactProviders}
             providerColors={providerColors}
             section="exact"
@@ -315,6 +351,9 @@ export function TimeSeriesChart({
             showXAxis={true}
             showBrush={true}
             height={240}
+            startIndex={clampedStartIndex}
+            endIndex={clampedEndIndex}
+            onBrushChange={handleBrushChange}
           />
         </div>
       </div>
@@ -334,6 +373,9 @@ export function TimeSeriesChart({
         showXAxis={true}
         showBrush={true}
         height={400}
+        startIndex={clampedStartIndex}
+        endIndex={clampedEndIndex}
+        onBrushChange={handleBrushChange}
       />
     </div>
   )

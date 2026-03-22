@@ -1,0 +1,98 @@
+{
+  "model": "deepseek-v3-2",
+  "parameters": {
+    "vail_only": true
+  },
+  "providers": {
+    "azure": {
+      "vail": {
+        "endpoint": "deepseek-v3.2-azure-chat",
+        "divergence_ratio": 1,
+        "date": "2026-02-06",
+        "comparison_providers": [
+          "deepinfra",
+          "fireworks",
+          "nebius",
+          "novita",
+          "parasail",
+          "vertex"
+        ]
+      }
+    },
+    "deepinfra": {
+      "vail": {
+        "endpoint": "deepseek-v3.2-deepinfra-chat",
+        "divergence_ratio": 0.9810259542756004,
+        "date": "2026-02-06",
+        "comparison_providers": [
+          "azure",
+          "fireworks",
+          "nebius",
+          "novita",
+          "parasail",
+          "vertex"
+        ]
+      }
+    },
+    "fireworks": {
+      "vail": {
+        "endpoint": "deepseek-v3.2-fireworks-chat",
+        "divergence_ratio": 1.400850467608851,
+        "date": "2026-02-06",
+        "comparison_providers": [
+          "azure",
+          "deepinfra",
+          "nebius",
+          "novita",
+          "parasail",
+          "vertex"
+        ]
+      }
+    },
+    "novita": {
+      "vail": {
+        "endpoint": "deepseek-v3.2-novita-chat",
+        "divergence_ratio": 1.1477498897471528,
+        "date": "2026-02-06",
+        "comparison_providers": [
+          "azure",
+          "deepinfra",
+          "fireworks",
+          "nebius",
+          "parasail",
+          "vertex"
+        ]
+      }
+    },
+    "parasail": {
+      "vail": {
+        "endpoint": "deepseek-v3.2-parasail-chat",
+        "divergence_ratio": 0.6507104636409677,
+        "date": "2026-02-06",
+        "comparison_providers": [
+          "azure",
+          "deepinfra",
+          "fireworks",
+          "nebius",
+          "novita",
+          "vertex"
+        ]
+      }
+    },
+    "vertex": {
+      "vail": {
+        "endpoint": "deepseek-v3.2-vertex-chat",
+        "divergence_ratio": 1.0926088619314787,
+        "date": "2026-02-06",
+        "comparison_providers": [
+          "azure",
+          "deepinfra",
+          "fireworks",
+          "nebius",
+          "novita",
+          "parasail"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "model": "deepseek-v3-2",
+  "parameters": {
+    "vail_only": true
+  },
+  "providers": {
+    "fireworks": {
+      "vail": {
+        "endpoint": "deepseek-v3.2-fireworks-chat",
+        "divergence_ratio": 1.1066001778830945,
+        "date": "2026-02-05",
+        "comparison_providers": [
+          "novita",
+          "parasail",
+          "vertex"
+        ]
+      }
+    },
+    "novita": {
+      "vail": {
+        "endpoint": "deepseek-v3.2-novita-chat",
+        "divergence_ratio": 1.308373093171342,
+        "date": "2026-02-05",
+        "comparison_providers": [
+          "fireworks",
+          "parasail",
+          "vertex"
+        ]
+      }
+    },
+    "parasail": {
+      "vail": {
+        "endpoint": "deepseek-v3.2-parasail-chat",
+        "divergence_ratio": 0.7313566601195826,
+        "date": "2026-02-05",
+        "comparison_providers": [
+          "fireworks",
+          "novita",
+          "vertex"
+        ]
+      }
+    },
+    "vertex": {
+      "vail": {
+        "endpoint": "deepseek-v3.2-vertex-chat",
+        "divergence_ratio": 0.8933998221169054,
+        "date": "2026-02-05",
+        "comparison_providers": [
+          "fireworks",
+          "novita",
+          "parasail"
+        ]
+      }
+    }
+  }
+}

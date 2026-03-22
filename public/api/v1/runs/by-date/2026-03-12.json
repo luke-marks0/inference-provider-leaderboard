@@ -1,8 +1,8 @@
 {
   "version": "v1",
-  "generatedAt": "2026-03-21T12:11:18.535Z",
+  "generatedAt": "2026-03-22T01:49:47.516Z",
   "date": "2026-03-12",
-  "count": 6,
+  "count": 12,
   "runs": [
     {
       "id": "Qwen_Qwen3-235B-A22B-Instruct-2507_audit_results_20260312_001636",
@@ -1046,6 +1046,600 @@
         "fireworks_verification_strategy": "fixed-per-audit",
         "fireworks_deployment_created_for_audit": true,
         "fireworks_serverless_mapping_error": null
+      }
+    },
+    {
+      "id": "claude-opus-4-6_audit_results_20260312_143754",
+      "filename": "claude-opus-4-6_audit_results_20260312_143754.json",
+      "dataUrl": "../../../../data/claude-opus-4-6_audit_results_20260312_143754.json",
+      "model": "claude-opus-4-6",
+      "timestamp": "2026-03-12T14:37:54Z",
+      "providerEntries": [
+        {
+          "endpoint": "anthropic",
+          "provider": "anthropic",
+          "variant": null,
+          "metrics": {
+            "vail": {
+              "endpoint": "claude-opus-4.6-anthropic-messages",
+              "divergence_ratio": 1.18055802980874,
+              "date": "2026-03-11",
+              "comparison_providers": [
+                "azure",
+                "bedrock",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "azure",
+          "provider": "azure",
+          "variant": null,
+          "metrics": {
+            "vail": {
+              "endpoint": "claude-opus-4.6-azure-messages",
+              "divergence_ratio": 0.8194419701912601,
+              "date": "2026-03-11",
+              "comparison_providers": [
+                "anthropic",
+                "bedrock",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "bedrock",
+          "provider": "bedrock",
+          "variant": null,
+          "metrics": {
+            "vail": {
+              "endpoint": "claude-opus-4.6-bedrock-chat",
+              "divergence_ratio": 0.714701777691718,
+              "date": "2026-03-11",
+              "comparison_providers": [
+                "anthropic",
+                "azure",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "vertex",
+          "provider": "vertex",
+          "variant": null,
+          "metrics": {
+            "vail": {
+              "endpoint": "claude-opus-4.6-vertex-messages",
+              "divergence_ratio": 3.911125815167025,
+              "date": "2026-03-11",
+              "comparison_providers": [
+                "anthropic",
+                "azure",
+                "bedrock"
+              ]
+            }
+          }
+        }
+      ],
+      "parameters": {
+        "vail_only": true
+      }
+    },
+    {
+      "id": "claude-sonnet-4-5_audit_results_20260312_143754",
+      "filename": "claude-sonnet-4-5_audit_results_20260312_143754.json",
+      "dataUrl": "../../../../data/claude-sonnet-4-5_audit_results_20260312_143754.json",
+      "model": "claude-sonnet-4-5",
+      "timestamp": "2026-03-12T14:37:54Z",
+      "providerEntries": [
+        {
+          "endpoint": "anthropic",
+          "provider": "anthropic",
+          "variant": null,
+          "metrics": {
+            "vail": {
+              "endpoint": "claude-sonnet-4.5-anthropic-messages",
+              "divergence_ratio": 0.5192859844388735,
+              "date": "2026-03-11",
+              "comparison_providers": [
+                "azure",
+                "bedrock",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "azure",
+          "provider": "azure",
+          "variant": null,
+          "metrics": {
+            "vail": {
+              "endpoint": "claude-sonnet-4.5-azure-messages",
+              "divergence_ratio": 0.2541366465572474,
+              "date": "2026-03-11",
+              "comparison_providers": [
+                "anthropic",
+                "bedrock",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "bedrock",
+          "provider": "bedrock",
+          "variant": null,
+          "metrics": {
+            "vail": {
+              "endpoint": "claude-sonnet-4.5-bedrock-chat",
+              "divergence_ratio": 1.7128290150244734,
+              "date": "2026-03-11",
+              "comparison_providers": [
+                "anthropic",
+                "azure",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "vertex",
+          "provider": "vertex",
+          "variant": null,
+          "metrics": {
+            "vail": {
+              "endpoint": "claude-sonnet-4.5-vertex-messages",
+              "divergence_ratio": 1.4807140155611267,
+              "date": "2026-03-11",
+              "comparison_providers": [
+                "anthropic",
+                "azure",
+                "bedrock"
+              ]
+            }
+          }
+        }
+      ],
+      "parameters": {
+        "vail_only": true
+      }
+    },
+    {
+      "id": "deepseek-v3-2_audit_results_20260312_143754",
+      "filename": "deepseek-v3-2_audit_results_20260312_143754.json",
+      "dataUrl": "../../../../data/deepseek-v3-2_audit_results_20260312_143754.json",
+      "model": "deepseek-v3-2",
+      "timestamp": "2026-03-12T14:37:54Z",
+      "providerEntries": [
+        {
+          "endpoint": "azure",
+          "provider": "azure",
+          "variant": null,
+          "metrics": {
+            "vail": {
+              "endpoint": "deepseek-v3.2-azure-chat",
+              "divergence_ratio": 0.7729576258661159,
+              "date": "2026-03-11",
+              "comparison_providers": [
+                "bedrock",
+                "fireworks",
+                "novita"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "bedrock",
+          "provider": "bedrock",
+          "variant": null,
+          "metrics": {
+            "vail": {
+              "endpoint": "deepseek-v3.2-bedrock-chat",
+              "divergence_ratio": 1.2439188244179533,
+              "date": "2026-03-11",
+              "comparison_providers": [
+                "azure",
+                "fireworks",
+                "novita"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "fireworks",
+          "provider": "fireworks",
+          "variant": null,
+          "metrics": {
+            "vail": {
+              "endpoint": "deepseek-v3.2-fireworks-chat",
+              "divergence_ratio": 0.9916673542432212,
+              "date": "2026-03-11",
+              "comparison_providers": [
+                "azure",
+                "bedrock",
+                "novita"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "novita",
+          "provider": "novita",
+          "variant": null,
+          "metrics": {
+            "vail": {
+              "endpoint": "deepseek-v3.2-novita-chat",
+              "divergence_ratio": 1.008332645756779,
+              "date": "2026-03-11",
+              "comparison_providers": [
+                "azure",
+                "bedrock",
+                "fireworks"
+              ]
+            }
+          }
+        }
+      ],
+      "parameters": {
+        "vail_only": true
+      }
+    },
+    {
+      "id": "glm5_audit_results_20260312_143754",
+      "filename": "glm5_audit_results_20260312_143754.json",
+      "dataUrl": "../../../../data/glm5_audit_results_20260312_143754.json",
+      "model": "glm5",
+      "timestamp": "2026-03-12T14:37:54Z",
+      "providerEntries": [
+        {
+          "endpoint": "baseten",
+          "provider": "baseten",
+          "variant": null,
+          "metrics": {
+            "vail": {
+              "endpoint": "glm5-baseten-chat",
+              "divergence_ratio": 9.207108202806236,
+              "date": "2026-03-11",
+              "comparison_providers": [
+                "deepinfra",
+                "fireworks",
+                "novita",
+                "openrouter",
+                "together"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "deepinfra",
+          "provider": "deepinfra",
+          "variant": null,
+          "metrics": {
+            "vail": {
+              "endpoint": "glm5-deepinfra-chat",
+              "divergence_ratio": 0.7423870705035986,
+              "date": "2026-03-11",
+              "comparison_providers": [
+                "baseten",
+                "fireworks",
+                "novita",
+                "openrouter",
+                "together"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "fireworks",
+          "provider": "fireworks",
+          "variant": null,
+          "metrics": {
+            "vail": {
+              "endpoint": "glm5-fireworks-chat",
+              "divergence_ratio": 1.2592474186433587,
+              "date": "2026-03-11",
+              "comparison_providers": [
+                "baseten",
+                "deepinfra",
+                "novita",
+                "openrouter",
+                "together"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "novita",
+          "provider": "novita",
+          "variant": null,
+          "metrics": {
+            "vail": {
+              "endpoint": "glm5-novita-chat",
+              "divergence_ratio": 1.1205465313053697,
+              "date": "2026-03-11",
+              "comparison_providers": [
+                "baseten",
+                "deepinfra",
+                "fireworks",
+                "openrouter",
+                "together"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "openrouter",
+          "provider": "openrouter",
+          "variant": null,
+          "metrics": {
+            "vail": {
+              "endpoint": "glm5-openrouter-chat",
+              "divergence_ratio": 0.4461304850797507,
+              "date": "2026-03-11",
+              "comparison_providers": [
+                "baseten",
+                "deepinfra",
+                "fireworks",
+                "novita",
+                "together"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "together",
+          "provider": "together",
+          "variant": null,
+          "metrics": {
+            "vail": {
+              "endpoint": "glm5-together-chat",
+              "divergence_ratio": 0.8794534686946301,
+              "date": "2026-03-11",
+              "comparison_providers": [
+                "baseten",
+                "deepinfra",
+                "fireworks",
+                "novita",
+                "openrouter"
+              ]
+            }
+          }
+        }
+      ],
+      "parameters": {
+        "vail_only": true
+      }
+    },
+    {
+      "id": "kimi-k2-5_audit_results_20260312_143754",
+      "filename": "kimi-k2-5_audit_results_20260312_143754.json",
+      "dataUrl": "../../../../data/kimi-k2-5_audit_results_20260312_143754.json",
+      "model": "kimi-k2-5",
+      "timestamp": "2026-03-12T14:37:54Z",
+      "providerEntries": [
+        {
+          "endpoint": "baseten",
+          "provider": "baseten",
+          "variant": null,
+          "metrics": {
+            "vail": {
+              "endpoint": "kimi-k2.5-baseten-chat",
+              "divergence_ratio": 4.34847363041889,
+              "date": "2026-03-11",
+              "comparison_providers": [
+                "bedrock",
+                "fireworks",
+                "novita",
+                "parasail",
+                "together"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "bedrock",
+          "provider": "bedrock",
+          "variant": null,
+          "metrics": {
+            "vail": {
+              "endpoint": "kimi-k2.5-bedrock-chat",
+              "divergence_ratio": 2.7186409121594495,
+              "date": "2026-03-11",
+              "comparison_providers": [
+                "baseten",
+                "fireworks",
+                "novita",
+                "parasail",
+                "together"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "fireworks",
+          "provider": "fireworks",
+          "variant": null,
+          "metrics": {
+            "vail": {
+              "endpoint": "kimi-k2.5-fireworks-chat",
+              "divergence_ratio": 0.8656165343073657,
+              "date": "2026-03-11",
+              "comparison_providers": [
+                "baseten",
+                "bedrock",
+                "novita",
+                "parasail",
+                "together"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "novita",
+          "provider": "novita",
+          "variant": null,
+          "metrics": {
+            "vail": {
+              "endpoint": "kimi-k2.5-novita-chat",
+              "divergence_ratio": 0.7719234600179984,
+              "date": "2026-03-11",
+              "comparison_providers": [
+                "baseten",
+                "bedrock",
+                "fireworks",
+                "parasail",
+                "together"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "parasail",
+          "provider": "parasail",
+          "variant": null,
+          "metrics": {
+            "vail": {
+              "endpoint": "kimi-k2.5-parasail-chat",
+              "divergence_ratio": 1.0835336432091887,
+              "date": "2026-03-11",
+              "comparison_providers": [
+                "baseten",
+                "bedrock",
+                "fireworks",
+                "novita",
+                "together"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "together",
+          "provider": "together",
+          "variant": null,
+          "metrics": {
+            "vail": {
+              "endpoint": "kimi-k2.5-together-chat",
+              "divergence_ratio": 0.9164663567908116,
+              "date": "2026-03-11",
+              "comparison_providers": [
+                "baseten",
+                "bedrock",
+                "fireworks",
+                "novita",
+                "parasail"
+              ]
+            }
+          }
+        }
+      ],
+      "parameters": {
+        "vail_only": true
+      }
+    },
+    {
+      "id": "minimax-m2-5_audit_results_20260312_143754",
+      "filename": "minimax-m2-5_audit_results_20260312_143754.json",
+      "dataUrl": "../../../../data/minimax-m2-5_audit_results_20260312_143754.json",
+      "model": "minimax-m2-5",
+      "timestamp": "2026-03-12T14:37:54Z",
+      "providerEntries": [
+        {
+          "endpoint": "baseten",
+          "provider": "baseten",
+          "variant": null,
+          "metrics": {
+            "vail": {
+              "endpoint": "minimax-m2.5-baseten-chat",
+              "divergence_ratio": 1.6761526203579473,
+              "date": "2026-03-11",
+              "comparison_providers": [
+                "fireworks",
+                "novita",
+                "parasail",
+                "together"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "fireworks",
+          "provider": "fireworks",
+          "variant": null,
+          "metrics": {
+            "vail": {
+              "endpoint": "minimax-m2.5-fireworks-chat",
+              "divergence_ratio": 1.5895084055561528,
+              "date": "2026-03-11",
+              "comparison_providers": [
+                "baseten",
+                "novita",
+                "parasail",
+                "together"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "novita",
+          "provider": "novita",
+          "variant": null,
+          "metrics": {
+            "vail": {
+              "endpoint": "minimax-m2.5-novita-chat",
+              "divergence_ratio": 1,
+              "date": "2026-03-11",
+              "comparison_providers": [
+                "baseten",
+                "fireworks",
+                "parasail",
+                "together"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "parasail",
+          "provider": "parasail",
+          "variant": null,
+          "metrics": {
+            "vail": {
+              "endpoint": "minimax-m2.5-parasail-chat",
+              "divergence_ratio": 0.6721781433532295,
+              "date": "2026-03-11",
+              "comparison_providers": [
+                "baseten",
+                "fireworks",
+                "novita",
+                "together"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "together",
+          "provider": "together",
+          "variant": null,
+          "metrics": {
+            "vail": {
+              "endpoint": "minimax-m2.5-together-chat",
+              "divergence_ratio": 0.5317670423494267,
+              "date": "2026-03-11",
+              "comparison_providers": [
+                "baseten",
+                "fireworks",
+                "novita",
+                "parasail"
+              ]
+            }
+          }
+        }
+      ],
+      "parameters": {
+        "vail_only": true
       }
     }
   ]

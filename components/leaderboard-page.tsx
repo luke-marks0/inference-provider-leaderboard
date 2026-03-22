@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import Image from "next/image"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -14,6 +14,10 @@ import type { AuditResult } from "@/lib/types"
 type TimeSeriesPoint = {
   timestamp: string
   [key: string]: string | number
+}
+
+function formatModelLabel(model: string) {
+  return model.split("/").at(-1)?.toLowerCase() ?? model.toLowerCase()
 }
 
 export function LeaderboardPage({ enableVailTimeline }: { enableVailTimeline: boolean }) {
@@ -170,8 +174,53 @@ export function LeaderboardPage({ enableVailTimeline }: { enableVailTimeline: bo
     fetchData()
   }, [basePath])
 
-  const models = Array.from(new Set(auditResults.map((r) => r.model)))
+  const modelMetricAvailability = useMemo(() => {
+    const availability = new Map<string, { hasExact: boolean; hasVail: boolean }>()
+
+    for (const result of auditResults) {
+      const current = availability.get(result.model) ?? { hasExact: false, hasVail: false }
+
+      for (const providerData of Object.values(result.providers)) {
+        if (typeof providerData?.exact_match_rate === "number" && Number.isFinite(providerData.exact_match_rate)) {
+          current.hasExact = true
+        }
+
+        if (
+          typeof providerData?.vail?.divergence_ratio === "number" &&
+          Number.isFinite(providerData.vail.divergence_ratio)
+        ) {
+          current.hasVail = true
+        }
+      }
+
+      availability.set(result.model, current)
+    }
+
+    return availability
+  }, [auditResults])
+
+  const models = useMemo(
+    () =>
+      Array.from(modelMetricAvailability.entries())
+        .filter(([, availability]) => availability.hasExact || availability.hasVail)
+        .map(([model]) => model)
+        .sort(),
+    [modelMetricAvailability]
+  )
   const allProviders = Array.from(new Set(auditResults.flatMap((r) => Object.keys(r.providers))))
+
+  useEffect(() => {
+    if (models.length === 0) {
+      if (selectedModel !== "") {
+        setSelectedModel("")
+      }
+      return
+    }
+
+    if (!models.includes(selectedModel)) {
+      setSelectedModel(models[0])
+    }
+  }, [models, selectedModel])
 
   const leaderboardAccumulator = new Map<
     string,
@@ -274,6 +323,9 @@ export function LeaderboardPage({ enableVailTimeline }: { enableVailTimeline: bo
         (typeof point[`${provider}__vail`] === "number" && Number.isFinite(point[`${provider}__vail`]))
     )
   )
+  const selectedModelHasExactData = timelineProviders.some((provider) =>
+    timeSeriesData.some((point) => typeof point[provider] === "number" && Number.isFinite(point[provider]))
+  )
 
   const selectedModelHasVailData =
     enableVailTimeline &&
@@ -365,9 +417,11 @@ export function LeaderboardPage({ enableVailTimeline }: { enableVailTimeline: bo
               <div className="space-y-2">
                 <CardTitle>Provider Performance Over Time</CardTitle>
                 <CardDescription>
-                  {selectedModelHasVailData
+                  {selectedModelHasExactData && selectedModelHasVailData
                     ? "Exact match rate and VAIL divergence over time for selected model"
-                    : "Exact match rate over time for selected model"}
+                    : selectedModelHasVailData
+                      ? "VAIL divergence over time for selected model"
+                      : "Exact match rate over time for selected model"}
                 </CardDescription>
               </div>
               <Select value={selectedModel} onValueChange={setSelectedModel}>
@@ -377,7 +431,7 @@ export function LeaderboardPage({ enableVailTimeline }: { enableVailTimeline: bo
                 <SelectContent>
                   {models.map((model) => (
                     <SelectItem key={model} value={model}>
-                      {model}
+                      {formatModelLabel(model)}
                     </SelectItem>
                   ))}
                 </SelectContent>

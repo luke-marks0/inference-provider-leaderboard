@@ -1,0 +1,73 @@
+{
+  "model": "minimax-m2-5",
+  "parameters": {
+    "vail_only": true
+  },
+  "providers": {
+    "baseten": {
+      "vail": {
+        "endpoint": "minimax-m2.5-baseten-chat",
+        "divergence_ratio": 1.6761526203579473,
+        "date": "2026-03-11",
+        "comparison_providers": [
+          "fireworks",
+          "novita",
+          "parasail",
+          "together"
+        ]
+      }
+    },
+    "fireworks": {
+      "vail": {
+        "endpoint": "minimax-m2.5-fireworks-chat",
+        "divergence_ratio": 1.5895084055561528,
+        "date": "2026-03-11",
+        "comparison_providers": [
+          "baseten",
+          "novita",
+          "parasail",
+          "together"
+        ]
+      }
+    },
+    "novita": {
+      "vail": {
+        "endpoint": "minimax-m2.5-novita-chat",
+        "divergence_ratio": 1,
+        "date": "2026-03-11",
+        "comparison_providers": [
+          "baseten",
+          "fireworks",
+          "parasail",
+          "together"
+        ]
+      }
+    },
+    "parasail": {
+      "vail": {
+        "endpoint": "minimax-m2.5-parasail-chat",
+        "divergence_ratio": 0.6721781433532295,
+        "date": "2026-03-11",
+        "comparison_providers": [
+          "baseten",
+          "fireworks",
+          "novita",
+          "together"
+        ]
+      }
+    },
+    "together": {
+      "vail": {
+        "endpoint": "minimax-m2.5-together-chat",
+        "divergence_ratio": 0.5317670423494267,
+        "date": "2026-03-11",
+        "comparison_providers": [
+          "baseten",
+          "fireworks",
+          "novita",
+          "parasail"
+        ]
+      }
+    }
+  }
+}

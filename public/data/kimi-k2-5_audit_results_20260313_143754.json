@@ -1,0 +1,92 @@
+{
+  "model": "kimi-k2-5",
+  "parameters": {
+    "vail_only": true
+  },
+  "providers": {
+    "baseten": {
+      "vail": {
+        "endpoint": "kimi-k2.5-baseten-chat",
+        "divergence_ratio": 3.4444257195577563,
+        "date": "2026-03-12",
+        "comparison_providers": [
+          "bedrock",
+          "fireworks",
+          "novita",
+          "parasail",
+          "together"
+        ]
+      }
+    },
+    "bedrock": {
+      "vail": {
+        "endpoint": "kimi-k2.5-bedrock-chat",
+        "divergence_ratio": 2.5536245918673295,
+        "date": "2026-03-12",
+        "comparison_providers": [
+          "baseten",
+          "fireworks",
+          "novita",
+          "parasail",
+          "together"
+        ]
+      }
+    },
+    "fireworks": {
+      "vail": {
+        "endpoint": "kimi-k2.5-fireworks-chat",
+        "divergence_ratio": 1.0003923762685945,
+        "date": "2026-03-12",
+        "comparison_providers": [
+          "baseten",
+          "bedrock",
+          "novita",
+          "parasail",
+          "together"
+        ]
+      }
+    },
+    "novita": {
+      "vail": {
+        "endpoint": "kimi-k2.5-novita-chat",
+        "divergence_ratio": 0.6888940281854669,
+        "date": "2026-03-12",
+        "comparison_providers": [
+          "baseten",
+          "bedrock",
+          "fireworks",
+          "parasail",
+          "together"
+        ]
+      }
+    },
+    "parasail": {
+      "vail": {
+        "endpoint": "kimi-k2.5-parasail-chat",
+        "divergence_ratio": 0.9105271606031673,
+        "date": "2026-03-12",
+        "comparison_providers": [
+          "baseten",
+          "bedrock",
+          "fireworks",
+          "novita",
+          "together"
+        ]
+      }
+    },
+    "together": {
+      "vail": {
+        "endpoint": "kimi-k2.5-together-chat",
+        "divergence_ratio": 0.9996076237314057,
+        "date": "2026-03-12",
+        "comparison_providers": [
+          "baseten",
+          "bedrock",
+          "fireworks",
+          "novita",
+          "parasail"
+        ]
+      }
+    }
+  }
+}

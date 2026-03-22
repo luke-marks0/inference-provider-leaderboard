@@ -1,0 +1,56 @@
+{
+  "model": "kimi-k2-5",
+  "parameters": {
+    "vail_only": true
+  },
+  "providers": {
+    "baseten": {
+      "vail": {
+        "endpoint": "kimi-k2.5-baseten-chat",
+        "divergence_ratio": 1.3007684044513164,
+        "date": "2026-02-12",
+        "comparison_providers": [
+          "bedrock",
+          "fireworks",
+          "novita"
+        ]
+      }
+    },
+    "bedrock": {
+      "vail": {
+        "endpoint": "kimi-k2.5-bedrock-chat",
+        "divergence_ratio": 0.6992315955486837,
+        "date": "2026-02-12",
+        "comparison_providers": [
+          "baseten",
+          "fireworks",
+          "novita"
+        ]
+      }
+    },
+    "fireworks": {
+      "vail": {
+        "endpoint": "kimi-k2.5-fireworks-chat",
+        "divergence_ratio": 2.940083314380985,
+        "date": "2026-02-12",
+        "comparison_providers": [
+          "baseten",
+          "bedrock",
+          "novita"
+        ]
+      }
+    },
+    "novita": {
+      "vail": {
+        "endpoint": "kimi-k2.5-novita-chat",
+        "divergence_ratio": 0.35759950269569335,
+        "date": "2026-02-12",
+        "comparison_providers": [
+          "baseten",
+          "bedrock",
+          "fireworks"
+        ]
+      }
+    }
+  }
+}

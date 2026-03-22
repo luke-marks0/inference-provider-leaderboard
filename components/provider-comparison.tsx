@@ -4,6 +4,10 @@ import { TrendingUp, TrendingDown } from "lucide-react"
 import { getExactMatchRateTextColor } from "@/lib/utils"
 import type { AuditResult } from "@/lib/types"
 
+function formatModelLabel(model: string) {
+  return model.split("/").at(-1)?.toLowerCase() ?? model.toLowerCase()
+}
+
 export function ProviderComparison({
   model,
   auditResults,
@@ -66,81 +70,87 @@ export function ProviderComparison({
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Provider Comparison - {model}</CardTitle>
-        <CardDescription>Detailed statistics for each provider</CardDescription>
+        <CardTitle>Provider Comparison - {formatModelLabel(model)}</CardTitle>
+        <CardDescription>
+          {providerStats.length > 0
+            ? "Detailed statistics for each provider"
+            : "No detailed provider data available"}
+        </CardDescription>
       </CardHeader>
       <CardContent>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {providerStats.map((stat, index) => (
-            <Card key={stat.provider} className="border py-5 hover:bg-muted/50 transition-colors">
-              <CardHeader className="pb-2">
-                <div className="flex items-start justify-between">
-                  <div className="flex-1">
-                    <CardTitle className="text-base font-mono">{stat.provider}</CardTitle>
-                    <div className="flex items-center gap-2 mt-1">
-                      <Badge
-                        variant={index === 0 ? "default" : "secondary"}
-                        className="border border-border"
-                      >
-                        #{index + 1}
-                      </Badge>
-                      <Badge variant="outline" className="text-xs bg-[var(--neutral-border-secondary)]">
-                        {stat.dataPoints} runs
-                      </Badge>
+        {providerStats.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {providerStats.map((stat, index) => (
+              <Card key={stat.provider} className="border py-5 hover:bg-muted/50 transition-colors">
+                <CardHeader className="pb-2">
+                  <div className="flex items-start justify-between">
+                    <div className="flex-1">
+                      <CardTitle className="text-base font-mono">{stat.provider}</CardTitle>
+                      <div className="flex items-center gap-2 mt-1">
+                        <Badge
+                          variant={index === 0 ? "default" : "secondary"}
+                          className="border border-border"
+                        >
+                          #{index + 1}
+                        </Badge>
+                        <Badge variant="outline" className="text-xs bg-[var(--neutral-border-secondary)]">
+                          {stat.dataPoints} runs
+                        </Badge>
+                      </div>
                     </div>
-                  </div>
-                  {stat.trend !== 0 && (
-                    <div className="flex items-center">
-                      {stat.trend > 0 ? (
-                        <TrendingUp className="w-5 h-5 text-[var(--chart-5)]" />
-                      ) : (
-                        <TrendingDown className="w-5 h-5 text-destructive" />
-                      )}
-                    </div>
-                  )}
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-2">
-                <div>
-                  <p className="text-xs text-muted-foreground mb-1">Average Score</p>
-                  <p className={`text-2xl font-bold ${getExactMatchRateTextColor(stat.avgScore)}`}>
-                    {(stat.avgScore * 100).toFixed(2)}%
-                  </p>
-                </div>
-                <div className="grid grid-cols-2 gap-3 pt-2 border-t">
-                  <div>
-                    <p className="text-xs text-muted-foreground mb-1">Min</p>
-                    <p className="text-sm font-semibold text-foreground">
-                      {(stat.minScore * 100).toFixed(2)}%
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-muted-foreground mb-1">Max</p>
-                    <p className="text-sm font-semibold text-foreground">
-                      {(stat.maxScore * 100).toFixed(2)}%
-                    </p>
-                  </div>
-                </div>
-                <div className="pt-2 border-t">
-                  <p className="text-xs text-muted-foreground mb-1">Latest Score</p>
-                  <div className="flex items-baseline gap-2">
-                    <p className="text-lg font-bold text-foreground">
-                      {(stat.latestScore * 100).toFixed(2)}%
-                    </p>
                     {stat.trend !== 0 && (
-                      <span
-                        className="text-xs font-medium text-foreground"
-                      >
-                        {stat.trend > 0 ? "+" : ""}
-                        {(stat.trend * 100).toFixed(2)}%
-                      </span>
+                      <div className="flex items-center">
+                        {stat.trend > 0 ? (
+                          <TrendingUp className="w-5 h-5 text-[var(--chart-5)]" />
+                        ) : (
+                          <TrendingDown className="w-5 h-5 text-destructive" />
+                        )}
+                      </div>
                     )}
                   </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+                </CardHeader>
+                <CardContent className="space-y-2">
+                  <div>
+                    <p className="text-xs text-muted-foreground mb-1">Average Score</p>
+                    <p className={`text-2xl font-bold ${getExactMatchRateTextColor(stat.avgScore)}`}>
+                      {(stat.avgScore * 100).toFixed(2)}%
+                    </p>
+                  </div>
+                  <div className="grid grid-cols-2 gap-3 pt-2 border-t">
+                    <div>
+                      <p className="text-xs text-muted-foreground mb-1">Min</p>
+                      <p className="text-sm font-semibold text-foreground">
+                        {(stat.minScore * 100).toFixed(2)}%
+                      </p>
+                    </div>
+                    <div>
+                      <p className="text-xs text-muted-foreground mb-1">Max</p>
+                      <p className="text-sm font-semibold text-foreground">
+                        {(stat.maxScore * 100).toFixed(2)}%
+                      </p>
+                    </div>
+                  </div>
+                  <div className="pt-2 border-t">
+                    <p className="text-xs text-muted-foreground mb-1">Latest Score</p>
+                    <div className="flex items-baseline gap-2">
+                      <p className="text-lg font-bold text-foreground">
+                        {(stat.latestScore * 100).toFixed(2)}%
+                      </p>
+                      {stat.trend !== 0 && (
+                        <span
+                          className="text-xs font-medium text-foreground"
+                        >
+                          {stat.trend > 0 ? "+" : ""}
+                          {(stat.trend * 100).toFixed(2)}%
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        ) : null}
       </CardContent>
     </Card>
   )

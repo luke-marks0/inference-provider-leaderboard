@@ -1,8 +1,8 @@
 {
   "version": "v1",
-  "generatedAt": "2026-03-21T12:11:18.535Z",
+  "generatedAt": "2026-03-22T01:49:47.516Z",
   "date": "2026-02-10",
-  "count": 4,
+  "count": 6,
   "runs": [
     {
       "id": "Qwen_Qwen3-235B-A22B-Instruct-2507_audit_results_20260210_070515",
@@ -595,6 +595,218 @@
         "top_k": 50,
         "top_p": 0.95,
         "temperature": 0
+      }
+    },
+    {
+      "id": "claude-sonnet-4-5_audit_results_20260210_143754",
+      "filename": "claude-sonnet-4-5_audit_results_20260210_143754.json",
+      "dataUrl": "../../../../data/claude-sonnet-4-5_audit_results_20260210_143754.json",
+      "model": "claude-sonnet-4-5",
+      "timestamp": "2026-02-10T14:37:54Z",
+      "providerEntries": [
+        {
+          "endpoint": "anthropic",
+          "provider": "anthropic",
+          "variant": null,
+          "metrics": {
+            "vail": {
+              "endpoint": "claude-sonnet-4.5-anthropic-messages",
+              "divergence_ratio": 0.5967459100872764,
+              "date": "2026-02-09",
+              "comparison_providers": [
+                "azure",
+                "bedrock",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "azure",
+          "provider": "azure",
+          "variant": null,
+          "metrics": {
+            "vail": {
+              "endpoint": "claude-sonnet-4.5-azure-messages",
+              "divergence_ratio": 0.2609669686265187,
+              "date": "2026-02-09",
+              "comparison_providers": [
+                "anthropic",
+                "bedrock",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "bedrock",
+          "provider": "bedrock",
+          "variant": null,
+          "metrics": {
+            "vail": {
+              "endpoint": "claude-sonnet-4.5-bedrock-chat",
+              "divergence_ratio": 1.4032540899127235,
+              "date": "2026-02-09",
+              "comparison_providers": [
+                "anthropic",
+                "azure",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "vertex",
+          "provider": "vertex",
+          "variant": null,
+          "metrics": {
+            "vail": {
+              "endpoint": "claude-sonnet-4.5-vertex-messages",
+              "divergence_ratio": 1.445470927393056,
+              "date": "2026-02-09",
+              "comparison_providers": [
+                "anthropic",
+                "azure",
+                "bedrock"
+              ]
+            }
+          }
+        }
+      ],
+      "parameters": {
+        "vail_only": true
+      }
+    },
+    {
+      "id": "deepseek-v3-2_audit_results_20260210_143754",
+      "filename": "deepseek-v3-2_audit_results_20260210_143754.json",
+      "dataUrl": "../../../../data/deepseek-v3-2_audit_results_20260210_143754.json",
+      "model": "deepseek-v3-2",
+      "timestamp": "2026-02-10T14:37:54Z",
+      "providerEntries": [
+        {
+          "endpoint": "azure",
+          "provider": "azure",
+          "variant": null,
+          "metrics": {
+            "vail": {
+              "endpoint": "deepseek-v3.2-azure-chat",
+              "divergence_ratio": 1,
+              "date": "2026-02-09",
+              "comparison_providers": [
+                "deepinfra",
+                "fireworks",
+                "nebius",
+                "novita",
+                "parasail",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "deepinfra",
+          "provider": "deepinfra",
+          "variant": null,
+          "metrics": {
+            "vail": {
+              "endpoint": "deepseek-v3.2-deepinfra-chat",
+              "divergence_ratio": 0.813065284498442,
+              "date": "2026-02-09",
+              "comparison_providers": [
+                "azure",
+                "fireworks",
+                "nebius",
+                "novita",
+                "parasail",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "fireworks",
+          "provider": "fireworks",
+          "variant": null,
+          "metrics": {
+            "vail": {
+              "endpoint": "deepseek-v3.2-fireworks-chat",
+              "divergence_ratio": 1.3393196502514075,
+              "date": "2026-02-09",
+              "comparison_providers": [
+                "azure",
+                "deepinfra",
+                "nebius",
+                "novita",
+                "parasail",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "novita",
+          "provider": "novita",
+          "variant": null,
+          "metrics": {
+            "vail": {
+              "endpoint": "deepseek-v3.2-novita-chat",
+              "divergence_ratio": 1.1946265998906822,
+              "date": "2026-02-09",
+              "comparison_providers": [
+                "azure",
+                "deepinfra",
+                "fireworks",
+                "nebius",
+                "parasail",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "parasail",
+          "provider": "parasail",
+          "variant": null,
+          "metrics": {
+            "vail": {
+              "endpoint": "deepseek-v3.2-parasail-chat",
+              "divergence_ratio": 0.7875560013596056,
+              "date": "2026-02-09",
+              "comparison_providers": [
+                "azure",
+                "deepinfra",
+                "fireworks",
+                "nebius",
+                "novita",
+                "vertex"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "vertex",
+          "provider": "vertex",
+          "variant": null,
+          "metrics": {
+            "vail": {
+              "endpoint": "deepseek-v3.2-vertex-chat",
+              "divergence_ratio": 1.1292488294868734,
+              "date": "2026-02-09",
+              "comparison_providers": [
+                "azure",
+                "deepinfra",
+                "fireworks",
+                "nebius",
+                "novita",
+                "parasail"
+              ]
+            }
+          }
+        }
+      ],
+      "parameters": {
+        "vail_only": true
       }
     }
   ]
