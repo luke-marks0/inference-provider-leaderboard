@@ -202,10 +202,12 @@ export function LeaderboardPage({ enableVailTimeline }: { enableVailTimeline: bo
   const models = useMemo(
     () =>
       Array.from(modelMetricAvailability.entries())
-        .filter(([, availability]) => availability.hasExact || availability.hasVail)
+        .filter(([, availability]) =>
+          enableVailTimeline ? availability.hasExact || availability.hasVail : availability.hasExact
+        )
         .map(([model]) => model)
         .sort(),
-    [modelMetricAvailability]
+    [enableVailTimeline, modelMetricAvailability]
   )
   const allProviders = Array.from(new Set(auditResults.flatMap((r) => Object.keys(r.providers))))
 
