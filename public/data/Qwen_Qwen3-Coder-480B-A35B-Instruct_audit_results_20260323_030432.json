@@ -1,0 +1,190 @@
+{
+  "model": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
+  "parameters": {
+    "n_prompts": 100,
+    "max_tokens": 200,
+    "seed": 42,
+    "top_k": 50,
+    "top_p": 0.95,
+    "temperature": 0.0,
+    "verification_backend": "fireworks",
+    "fireworks_verification_mode": "on-demand",
+    "fireworks_verification_strategy": "fixed-per-audit",
+    "fireworks_deployment_created_for_audit": true,
+    "fireworks_serverless_mapping_error": null
+  },
+  "providers": {
+    "alibaba": {
+      "exact_match_rate": 0.9247795910710936,
+      "avg_prob": 0.900497328962315,
+      "avg_margin": 0.106305285700426,
+      "avg_logit_rank": 0.09504158069155255,
+      "avg_gumbel_rank": 0.09504158069155255,
+      "infinite_margin_rate": 0.0014381291815169137,
+      "total_tokens": 15993,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand",
+      "serverless_error": "Error code: 404 - {'error': {'message': 'Model not found, inaccessible, and/or not deployed', 'param': 'model', 'code': 'NOT_FOUND', 'type': 'error'}, 'request_id': 'redacted'}",
+      "on_demand_first_error": "Error code: 404 - {'error': {'message': 'Model not found, inaccessible, and/or not deployed', 'param': 'model', 'code': 'NOT_FOUND', 'type': 'error'}, 'request_id': 'redacted'}"
+    },
+    "atlas-cloud/fp8": {
+      "exact_match_rate": 0.9564161633771248,
+      "avg_prob": 0.9189700629375293,
+      "avg_margin": 0.04046439578129622,
+      "avg_logit_rank": 0.045264927464043335,
+      "avg_gumbel_rank": 0.045264927464043335,
+      "infinite_margin_rate": 0.0001867878712408941,
+      "total_tokens": 16061,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    },
+    "deepinfra/fp4": {
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'venice', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['deepinfra/fp4']}}}",
+      "collection_complete": false,
+      "vail": {
+        "endpoint": "qwen3-coder-480b-deepinfra-chat",
+        "divergence_ratio": 1.0,
+        "date": "2026-03-22",
+        "comparison_providers": [
+          "nebius",
+          "novita",
+          "together",
+          "vertex"
+        ]
+      }
+    },
+    "deepinfra/fp8": {
+      "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'qwen/qwen3-coder is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'DeepInfra', 'is_byok': False}}, 'user_id': 'redacted'}",
+      "collection_complete": false,
+      "vail": {
+        "endpoint": "qwen3-coder-480b-deepinfra-chat",
+        "divergence_ratio": 1.0,
+        "date": "2026-03-22",
+        "comparison_providers": [
+          "nebius",
+          "novita",
+          "together",
+          "vertex"
+        ]
+      }
+    },
+    "google-vertex": {
+      "error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded: limit_rpm/qwen/qwen3-coder-480b-a35b-07-25/803d4906-0d0b-49b6-8705-7ae0a4d45217. High demand for qwen/qwen3-coder on OpenRouter - limited to 80 requests per minute. Please retry shortly.', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '80', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1774235160000'}, 'provider_name': None}}, 'user_id': 'redacted'}",
+      "collection_complete": false,
+      "vail": {
+        "endpoint": "qwen3-coder-480b-vertex-chat",
+        "divergence_ratio": 2.44424779443783,
+        "date": "2026-03-22",
+        "comparison_providers": [
+          "deepinfra",
+          "nebius",
+          "novita",
+          "together"
+        ]
+      }
+    },
+    "hyperbolic/fp8": {
+      "exact_match_rate": 0.96900878293601,
+      "avg_prob": 0.9293897637913836,
+      "avg_margin": 0.019081714491323665,
+      "avg_logit_rank": 0.028920953575909663,
+      "avg_gumbel_rank": 0.028920953575909663,
+      "infinite_margin_rate": 0.0,
+      "total_tokens": 15940,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    },
+    "nebius/fp8": {
+      "exact_match_rate": 0.9706065512517126,
+      "avg_prob": 0.9304643222915541,
+      "avg_margin": 0.01805530687550601,
+      "avg_logit_rank": 0.027649769585253458,
+      "avg_gumbel_rank": 0.027649769585253458,
+      "infinite_margin_rate": 6.227425582264292e-05,
+      "total_tokens": 16058,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand",
+      "vail": {
+        "endpoint": "qwen3-coder-480b-nebius-chat",
+        "divergence_ratio": 0.6184446271043846,
+        "date": "2026-03-22",
+        "comparison_providers": [
+          "deepinfra",
+          "novita",
+          "together",
+          "vertex"
+        ]
+      }
+    },
+    "novita/fp8": {
+      "exact_match_rate": 0.95288706569706,
+      "avg_prob": 0.9193532085011786,
+      "avg_margin": 0.05071070306464036,
+      "avg_logit_rank": 0.05059357324880353,
+      "avg_gumbel_rank": 0.05059357324880353,
+      "infinite_margin_rate": 0.00037292560134253216,
+      "total_tokens": 16089,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand",
+      "vail": {
+        "endpoint": "qwen3-coder-480b-novita-chat",
+        "divergence_ratio": 5.881938215072883,
+        "date": "2026-03-22",
+        "comparison_providers": [
+          "deepinfra",
+          "nebius",
+          "together",
+          "vertex"
+        ]
+      }
+    },
+    "siliconflow/fp8": {
+      "exact_match_rate": 0.9596067805154704,
+      "avg_prob": 0.9226748780587956,
+      "avg_margin": 0.03481570952749787,
+      "avg_logit_rank": 0.04303988909194026,
+      "avg_gumbel_rank": 0.04303988909194026,
+      "infinite_margin_rate": 0.00018904782910076249,
+      "total_tokens": 15869,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    },
+    "together/fp8": {
+      "exact_match_rate": 0.9701182687468546,
+      "avg_prob": 0.9299576444121075,
+      "avg_margin": 0.019010204691039072,
+      "avg_logit_rank": 0.02849773527931555,
+      "avg_gumbel_rank": 0.02849773527931555,
+      "infinite_margin_rate": 0.00012581781580271766,
+      "total_tokens": 15896,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand",
+      "vail": {
+        "endpoint": "qwen3-coder-480b-together-chat",
+        "divergence_ratio": 0.9670051459298481,
+        "date": "2026-03-22",
+        "comparison_providers": [
+          "deepinfra",
+          "nebius",
+          "novita",
+          "vertex"
+        ]
+      }
+    },
+    "venice/fp8": {
+      "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'qwen/qwen3-coder is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Venice', 'is_byok': False}}, 'user_id': 'redacted'}",
+      "collection_complete": false
+    },
+    "wandb/bf16": {
+      "exact_match_rate": 0.9704101379611711,
+      "avg_prob": 0.9321410743900669,
+      "avg_margin": 0.020145780511199498,
+      "avg_logit_rank": 0.029340158561707973,
+      "avg_gumbel_rank": 0.029340158561707973,
+      "infinite_margin_rate": 6.242586928022972e-05,
+      "total_tokens": 16019,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    }
+  }
+}
