@@ -1,0 +1,77 @@
+{
+  "model": "moonshotai/Kimi-K2-Thinking",
+  "parameters": {
+    "n_prompts": 100,
+    "max_tokens": 200,
+    "seed": 42,
+    "top_k": 50,
+    "top_p": 0.95,
+    "temperature": 0.0,
+    "verification_backend": "fireworks",
+    "fireworks_verification_mode": "serverless",
+    "fireworks_verification_strategy": "fixed-per-audit",
+    "fireworks_deployment_created_for_audit": false,
+    "fireworks_serverless_mapping_error": null
+  },
+  "providers": {
+    "atlas-cloud/int4": {
+      "exact_match_rate": 0.8887428600313401,
+      "avg_prob": 0.8446844832385544,
+      "avg_margin": 0.14607833691728794,
+      "avg_logit_rank": 0.16686043572764495,
+      "avg_gumbel_rank": 0.16686043572764495,
+      "infinite_margin_rate": 0.005206490421068594,
+      "total_tokens": 19783,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "deepinfra/fp4": {
+      "error": "Error code: 502 - {'error': {'message': 'Provider returned error', 'code': 502, 'metadata': {'raw': 'error code: 502', 'provider_name': 'DeepInfra', 'is_byok': False}}, 'user_id': 'redacted'}",
+      "collection_complete": false
+    },
+    "google-vertex": {
+      "exact_match_rate": 0.9265012510425354,
+      "avg_prob": 0.8657112003038416,
+      "avg_margin": 0.058548650004672007,
+      "avg_logit_rank": 0.11118640533778149,
+      "avg_gumbel_rank": 0.11118640533778149,
+      "infinite_margin_rate": 0.006307339449541285,
+      "total_tokens": 19184,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "moonshotai/int4": {
+      "exact_match_rate": 0.9625933885989152,
+      "avg_prob": 0.8948689136172226,
+      "avg_margin": 0.01615513535643007,
+      "avg_logit_rank": 0.035615597175314706,
+      "avg_gumbel_rank": 0.035615597175314706,
+      "infinite_margin_rate": 5.117183502200389e-05,
+      "total_tokens": 19542,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "nebius/int4": {
+      "exact_match_rate": 0.9588422457148722,
+      "avg_prob": 0.8936093793120667,
+      "avg_margin": 0.017187054768309236,
+      "avg_logit_rank": 0.06117212357590065,
+      "avg_gumbel_rank": 0.06117212357590065,
+      "infinite_margin_rate": 0.005234527352971364,
+      "total_tokens": 19486,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "novita/bf16": {
+      "exact_match_rate": 0.8878056250319024,
+      "avg_prob": 0.8404597747358762,
+      "avg_margin": 0.1422490376132656,
+      "avg_logit_rank": 0.17640753407176765,
+      "avg_gumbel_rank": 0.17640753407176765,
+      "infinite_margin_rate": 0.006839875453014139,
+      "total_tokens": 19591,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    }
+  }
+}
