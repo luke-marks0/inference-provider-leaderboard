@@ -1,0 +1,107 @@
+{
+  "model": "kimi-k2-5",
+  "parameters": {
+    "vail_only": true
+  },
+  "providers": {
+    "baseten": {
+      "vail": {
+        "endpoint": "kimi-k2.5-baseten-chat",
+        "divergence_ratio": 3.20480884905002,
+        "date": "2026-03-26",
+        "comparison_providers": [
+          "bedrock",
+          "deepinfra",
+          "fireworks",
+          "novita",
+          "together"
+        ]
+      }
+    },
+    "bedrock": {
+      "vail": {
+        "endpoint": "kimi-k2.5-bedrock-chat",
+        "divergence_ratio": 3.325084533044289,
+        "date": "2026-03-26",
+        "comparison_providers": [
+          "baseten",
+          "deepinfra",
+          "fireworks",
+          "novita",
+          "together"
+        ]
+      }
+    },
+    "deepinfra": {
+      "vail": {
+        "endpoint": "kimi-k2.5-deepinfra-chat",
+        "divergence_ratio": 0.9236448504433201,
+        "date": "2026-03-26",
+        "comparison_providers": [
+          "baseten",
+          "bedrock",
+          "fireworks",
+          "novita",
+          "together"
+        ]
+      }
+    },
+    "fireworks": {
+      "vail": {
+        "endpoint": "kimi-k2.5-fireworks-chat",
+        "divergence_ratio": 0.8971148883497534,
+        "date": "2026-03-26",
+        "comparison_providers": [
+          "baseten",
+          "bedrock",
+          "deepinfra",
+          "novita",
+          "together"
+        ]
+      }
+    },
+    "novita": {
+      "vail": {
+        "endpoint": "kimi-k2.5-novita-chat",
+        "divergence_ratio": 0.9066466523049646,
+        "date": "2026-03-26",
+        "comparison_providers": [
+          "baseten",
+          "bedrock",
+          "deepinfra",
+          "fireworks",
+          "together"
+        ]
+      }
+    },
+    "parasail": {
+      "vail": {
+        "endpoint": "kimi-k2.5-parasail-chat",
+        "divergence_ratio": 0.9755460566908934,
+        "date": "2026-03-24",
+        "comparison_providers": [
+          "baseten",
+          "bedrock",
+          "deepinfra",
+          "fireworks",
+          "novita",
+          "together"
+        ]
+      }
+    },
+    "together": {
+      "vail": {
+        "endpoint": "kimi-k2.5-together-chat",
+        "divergence_ratio": 1.07635514955668,
+        "date": "2026-03-26",
+        "comparison_providers": [
+          "baseten",
+          "bedrock",
+          "deepinfra",
+          "fireworks",
+          "novita"
+        ]
+      }
+    }
+  }
+}
