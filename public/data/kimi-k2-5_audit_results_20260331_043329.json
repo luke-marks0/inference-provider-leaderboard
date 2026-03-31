@@ -1,0 +1,98 @@
+{
+  "model": "kimi-k2-5",
+  "parameters": {
+    "vail_only": true
+  },
+  "providers": {
+    "baseten": {
+      "vail": {
+        "endpoint": "kimi-k2.5-baseten-chat",
+        "divergence_ratio": 5.868952033173576,
+        "date": "2026-03-31",
+        "comparison_providers": [
+          "fireworks",
+          "parasail",
+          "together"
+        ]
+      }
+    },
+    "bedrock": {
+      "vail": {
+        "endpoint": "kimi-k2.5-bedrock-chat",
+        "divergence_ratio": 9.483127555885325,
+        "date": "2026-03-30",
+        "comparison_providers": [
+          "deepinfra",
+          "fireworks",
+          "novita",
+          "parasail",
+          "together"
+        ]
+      }
+    },
+    "deepinfra": {
+      "vail": {
+        "endpoint": "kimi-k2.5-deepinfra-chat",
+        "divergence_ratio": 0.7090103756132817,
+        "date": "2026-03-30",
+        "comparison_providers": [
+          "bedrock",
+          "fireworks",
+          "novita",
+          "parasail",
+          "together"
+        ]
+      }
+    },
+    "fireworks": {
+      "vail": {
+        "endpoint": "kimi-k2.5-fireworks-chat",
+        "divergence_ratio": 0.8970456932421239,
+        "date": "2026-03-31",
+        "comparison_providers": [
+          "baseten",
+          "parasail",
+          "together"
+        ]
+      }
+    },
+    "novita": {
+      "vail": {
+        "endpoint": "kimi-k2.5-novita-chat",
+        "divergence_ratio": 1.3411019649643594,
+        "date": "2026-03-30",
+        "comparison_providers": [
+          "bedrock",
+          "deepinfra",
+          "fireworks",
+          "parasail",
+          "together"
+        ]
+      }
+    },
+    "parasail": {
+      "vail": {
+        "endpoint": "kimi-k2.5-parasail-chat",
+        "divergence_ratio": 0.7155971206847651,
+        "date": "2026-03-31",
+        "comparison_providers": [
+          "baseten",
+          "fireworks",
+          "together"
+        ]
+      }
+    },
+    "together": {
+      "vail": {
+        "endpoint": "kimi-k2.5-together-chat",
+        "divergence_ratio": 1.1029543067578762,
+        "date": "2026-03-31",
+        "comparison_providers": [
+          "baseten",
+          "fireworks",
+          "parasail"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "model": "deepseek-v3-2",
+  "parameters": {
+    "vail_only": true
+  },
+  "providers": {
+    "azure": {
+      "vail": {
+        "endpoint": "deepseek-v3.2-azure-chat",
+        "divergence_ratio": 1.0542703646824838,
+        "date": "2026-03-31",
+        "comparison_providers": [
+          "bedrock",
+          "fireworks",
+          "parasail"
+        ]
+      }
+    },
+    "bedrock": {
+      "vail": {
+        "endpoint": "deepseek-v3.2-bedrock-chat",
+        "divergence_ratio": 0.9457296353175162,
+        "date": "2026-03-31",
+        "comparison_providers": [
+          "azure",
+          "fireworks",
+          "parasail"
+        ]
+      }
+    },
+    "deepinfra": {
+      "vail": {
+        "endpoint": "deepseek-v3.2-deepinfra-chat",
+        "divergence_ratio": 1.0,
+        "date": "2026-03-30",
+        "comparison_providers": [
+          "azure",
+          "bedrock",
+          "fireworks",
+          "novita",
+          "parasail",
+          "vertex"
+        ]
+      }
+    },
+    "fireworks": {
+      "vail": {
+        "endpoint": "deepseek-v3.2-fireworks-chat",
+        "divergence_ratio": 5.760533452396483,
+        "date": "2026-03-31",
+        "comparison_providers": [
+          "azure",
+          "bedrock",
+          "parasail"
+        ]
+      }
+    },
+    "novita": {
+      "vail": {
+        "endpoint": "deepseek-v3.2-novita-chat",
+        "divergence_ratio": 3.2499959984467686,
+        "date": "2026-03-30",
+        "comparison_providers": [
+          "azure",
+          "bedrock",
+          "deepinfra",
+          "fireworks",
+          "parasail",
+          "vertex"
+        ]
+      }
+    },
+    "parasail": {
+      "vail": {
+        "endpoint": "deepseek-v3.2-parasail-chat",
+        "divergence_ratio": 0.7872832900783655,
+        "date": "2026-03-31",
+        "comparison_providers": [
+          "azure",
+          "bedrock",
+          "fireworks"
+        ]
+      }
+    },
+    "vertex": {
+      "vail": {
+        "endpoint": "deepseek-v3.2-vertex-chat",
+        "divergence_ratio": 0.7222488695248375,
+        "date": "2026-03-30",
+        "comparison_providers": [
+          "azure",
+          "bedrock",
+          "deepinfra",
+          "fireworks",
+          "novita",
+          "parasail"
+        ]
+      }
+    }
+  }
+}
