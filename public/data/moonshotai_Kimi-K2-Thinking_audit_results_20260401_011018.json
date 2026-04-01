@@ -1,0 +1,59 @@
+{
+  "model": "moonshotai/Kimi-K2-Thinking",
+  "parameters": {
+    "n_prompts": 100,
+    "max_tokens": 200,
+    "seed": 42,
+    "top_k": 50,
+    "top_p": 0.95,
+    "temperature": 0.0,
+    "verification_backend": "fireworks",
+    "fireworks_verification_mode": "serverless",
+    "fireworks_verification_strategy": "fixed-per-audit",
+    "fireworks_deployment_created_for_audit": false,
+    "fireworks_serverless_mapping_error": null
+  },
+  "providers": {
+    "atlas-cloud/int4": {
+      "error": "Error code: 400 - {'error': {'message': 'Provider returned error', 'code': 400, 'metadata': {'raw': '{\"code\":400,\"msg\":\"bad request\"}', 'provider_name': 'AtlasCloud', 'is_byok': False}}, 'user_id': 'redacted'}",
+      "collection_complete": false
+    },
+    "deepinfra/fp4": {
+      "exact_match_rate": 0.9313319878910191,
+      "avg_prob": 0.8790918553667175,
+      "avg_margin": 0.05585229030227003,
+      "avg_logit_rank": 0.09984863773965691,
+      "avg_gumbel_rank": 0.09984863773965691,
+      "infinite_margin_rate": 0.005751765893037336,
+      "total_tokens": 19820,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "google-vertex": {
+      "exact_match_rate": 0.9233783644426111,
+      "avg_prob": 0.866015084578559,
+      "avg_margin": 0.060309164129394785,
+      "avg_logit_rank": 0.11616994946890791,
+      "avg_gumbel_rank": 0.11616994946890791,
+      "infinite_margin_rate": 0.006393730019593689,
+      "total_tokens": 19394,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "nebius/int4": {
+      "exact_match_rate": 0.9594288070935147,
+      "avg_prob": 0.8920251505281567,
+      "avg_margin": 0.01821208432145538,
+      "avg_logit_rank": 0.05711929064852046,
+      "avg_gumbel_rank": 0.05711929064852046,
+      "infinite_margin_rate": 0.004124136508918445,
+      "total_tokens": 19398,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "novita/bf16": {
+      "error": "'NoneType' object is not subscriptable",
+      "collection_complete": false
+    }
+  }
+}
