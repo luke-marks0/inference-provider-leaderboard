@@ -1,0 +1,185 @@
+{
+  "model": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
+  "parameters": {
+    "n_prompts": 100,
+    "max_tokens": 200,
+    "seed": 42,
+    "top_k": 50,
+    "top_p": 0.95,
+    "temperature": 0.0,
+    "verification_backend": "fireworks",
+    "fireworks_verification_mode": "on-demand",
+    "fireworks_verification_strategy": "fixed-per-audit",
+    "fireworks_deployment_created_for_audit": true,
+    "fireworks_serverless_mapping_error": null
+  },
+  "providers": {
+    "alibaba": {
+      "exact_match_rate": 0.9277749937359058,
+      "avg_prob": 0.9032830983762676,
+      "avg_margin": 0.09968313422658191,
+      "avg_logit_rank": 0.08844901027311451,
+      "avg_gumbel_rank": 0.08844901027311451,
+      "infinite_margin_rate": 0.0011275369581558506,
+      "total_tokens": 15964,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand",
+      "serverless_error": "Error code: 404 - {'error': {'message': 'Model not found, inaccessible, and/or not deployed', 'param': 'model', 'code': 'NOT_FOUND', 'type': 'error'}, 'request_id': 'redacted'}"
+    },
+    "atlas-cloud/fp8": {
+      "exact_match_rate": 0.9563536600573638,
+      "avg_prob": 0.9220994720501245,
+      "avg_margin": 0.042778967621618445,
+      "avg_logit_rank": 0.04364633994263624,
+      "avg_gumbel_rank": 0.04364633994263624,
+      "infinite_margin_rate": 0.00012470382840753212,
+      "total_tokens": 16038,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    },
+    "deepinfra/fp4": {
+      "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'venice', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'together'], 'requested_providers': ['deepinfra/fp4']}}}",
+      "collection_complete": false,
+      "vail": {
+        "endpoint": "qwen3-coder-480b-deepinfra-chat",
+        "divergence_ratio": 1.0,
+        "date": "2026-04-02",
+        "comparison_providers": [
+          "nebius",
+          "novita",
+          "together",
+          "vertex"
+        ]
+      }
+    },
+    "deepinfra/fp8": {
+      "exact_match_rate": 0.9683484801002821,
+      "avg_prob": 0.9289514628381964,
+      "avg_margin": 0.022211299349643897,
+      "avg_logit_rank": 0.03127546223754309,
+      "avg_gumbel_rank": 0.03127546223754309,
+      "infinite_margin_rate": 6.267627702914446e-05,
+      "total_tokens": 15955,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand",
+      "vail": {
+        "endpoint": "qwen3-coder-480b-deepinfra-chat",
+        "divergence_ratio": 1.0,
+        "date": "2026-04-02",
+        "comparison_providers": [
+          "nebius",
+          "novita",
+          "together",
+          "vertex"
+        ]
+      }
+    },
+    "google-vertex": {
+      "exact_match_rate": 0.9581304155334893,
+      "avg_prob": 0.9232843875306048,
+      "avg_margin": 0.03712966149683823,
+      "avg_logit_rank": 0.04484219846942002,
+      "avg_gumbel_rank": 0.04484219846942002,
+      "infinite_margin_rate": 0.0001264942128897603,
+      "total_tokens": 15811,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand",
+      "vail": {
+        "endpoint": "qwen3-coder-480b-vertex-chat",
+        "divergence_ratio": 1.9057982764681494,
+        "date": "2026-04-02",
+        "comparison_providers": [
+          "deepinfra",
+          "nebius",
+          "novita",
+          "together"
+        ]
+      }
+    },
+    "nebius/fp8": {
+      "exact_match_rate": 0.9716851690158413,
+      "avg_prob": 0.9292838759175205,
+      "avg_margin": 0.017991834794908474,
+      "avg_logit_rank": 0.026381439441187475,
+      "avg_gumbel_rank": 0.026381439441187475,
+      "infinite_margin_rate": 0.0,
+      "total_tokens": 16034,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand",
+      "vail": {
+        "endpoint": "qwen3-coder-480b-nebius-chat",
+        "divergence_ratio": 0.05837688537852799,
+        "date": "2026-04-02",
+        "comparison_providers": [
+          "deepinfra",
+          "novita",
+          "together",
+          "vertex"
+        ]
+      }
+    },
+    "novita/fp8": {
+      "exact_match_rate": 0.9488078102509544,
+      "avg_prob": 0.9180420904605485,
+      "avg_margin": 0.05332272853860869,
+      "avg_logit_rank": 0.05382063958946117,
+      "avg_gumbel_rank": 0.05382063958946117,
+      "infinite_margin_rate": 0.00018774641717253895,
+      "total_tokens": 15979,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand",
+      "vail": {
+        "endpoint": "qwen3-coder-480b-novita-chat",
+        "divergence_ratio": 4.33325189212041,
+        "date": "2026-04-02",
+        "comparison_providers": [
+          "deepinfra",
+          "nebius",
+          "together",
+          "vertex"
+        ]
+      }
+    },
+    "siliconflow/fp8": {
+      "error": "Expecting value: line 113 column 1 (char 616)",
+      "collection_complete": false
+    },
+    "together/fp8": {
+      "exact_match_rate": 0.9690624410488587,
+      "avg_prob": 0.9274726566702052,
+      "avg_margin": 0.020719236254677083,
+      "avg_logit_rank": 0.029742815820914294,
+      "avg_gumbel_rank": 0.029742815820914294,
+      "infinite_margin_rate": 6.288121738036849e-05,
+      "total_tokens": 15903,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand",
+      "vail": {
+        "endpoint": "qwen3-coder-480b-together-chat",
+        "divergence_ratio": 0.6084895007380247,
+        "date": "2026-04-02",
+        "comparison_providers": [
+          "deepinfra",
+          "nebius",
+          "novita",
+          "vertex"
+        ]
+      }
+    },
+    "venice/fp8": {
+      "exact_match_rate": 0.9183469004383219,
+      "avg_prob": 0.8960983433825069,
+      "avg_margin": 0.1401269622455422,
+      "avg_logit_rank": 0.10588603631809643,
+      "avg_gumbel_rank": 0.10588603631809643,
+      "infinite_margin_rate": 0.001377582968065122,
+      "total_tokens": 15970,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "on-demand"
+    },
+    "wandb/bf16": {
+      "error": "Expecting value: line 171 column 1 (char 935)",
+      "collection_complete": false
+    }
+  }
+}

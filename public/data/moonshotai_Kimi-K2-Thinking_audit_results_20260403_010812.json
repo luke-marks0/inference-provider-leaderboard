@@ -1,0 +1,66 @@
+{
+  "model": "moonshotai/Kimi-K2-Thinking",
+  "parameters": {
+    "n_prompts": 100,
+    "max_tokens": 200,
+    "seed": 42,
+    "top_k": 50,
+    "top_p": 0.95,
+    "temperature": 0.0,
+    "verification_backend": "fireworks",
+    "fireworks_verification_mode": "serverless",
+    "fireworks_verification_strategy": "fixed-per-audit",
+    "fireworks_deployment_created_for_audit": false,
+    "fireworks_serverless_mapping_error": null
+  },
+  "providers": {
+    "atlas-cloud/int4": {
+      "error": "Error code: 400 - {'error': {'message': 'Provider returned error', 'code': 400, 'metadata': {'raw': '{\"code\":400,\"msg\":\"bad request\",\"request_id\":\"9ec7f607-b919-4760-a6d8-6ee6a2b4f86b\"}', 'provider_name': 'AtlasCloud', 'is_byok': False}}, 'user_id': 'redacted'}",
+      "collection_complete": false
+    },
+    "deepinfra/fp4": {
+      "exact_match_rate": 0.9329039456334314,
+      "avg_prob": 0.880240716625659,
+      "avg_margin": 0.05445055665258413,
+      "avg_logit_rank": 0.10127802008317273,
+      "avg_gumbel_rank": 0.10127802008317273,
+      "infinite_margin_rate": 0.00608580991987017,
+      "total_tokens": 19718,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "google-vertex": {
+      "exact_match_rate": 0.925703642384106,
+      "avg_prob": 0.8689132399809293,
+      "avg_margin": 0.05912619394363447,
+      "avg_logit_rank": 0.11372102649006623,
+      "avg_gumbel_rank": 0.11372102649006623,
+      "infinite_margin_rate": 0.006363824503311259,
+      "total_tokens": 19328,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "nebius/int4": {
+      "exact_match_rate": 0.9577543645340255,
+      "avg_prob": 0.8917404751746485,
+      "avg_margin": 0.020029636201775676,
+      "avg_logit_rank": 0.05894029622843182,
+      "avg_gumbel_rank": 0.05894029622843182,
+      "infinite_margin_rate": 0.003919173410698834,
+      "total_tokens": 19647,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "novita/bf16": {
+      "exact_match_rate": 0.8892437145174371,
+      "avg_prob": 0.8416040454264258,
+      "avg_margin": 0.13925304025414648,
+      "avg_logit_rank": 0.17832522303325224,
+      "avg_gumbel_rank": 0.17832522303325224,
+      "infinite_margin_rate": 0.006792376317923763,
+      "total_tokens": 19728,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    }
+  }
+}
