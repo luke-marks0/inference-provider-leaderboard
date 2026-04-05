@@ -1,0 +1,101 @@
+{
+  "model": "deepseek-v3-2",
+  "parameters": {
+    "vail_only": true
+  },
+  "providers": {
+    "azure": {
+      "vail": {
+        "endpoint": "deepseek-v3.2-azure-chat",
+        "divergence_ratio": 0.9068138229398907,
+        "date": "2026-04-05",
+        "comparison_providers": [
+          "bedrock",
+          "fireworks"
+        ]
+      }
+    },
+    "bedrock": {
+      "vail": {
+        "endpoint": "deepseek-v3.2-bedrock-chat",
+        "divergence_ratio": 1.0,
+        "date": "2026-04-05",
+        "comparison_providers": [
+          "azure",
+          "fireworks"
+        ]
+      }
+    },
+    "deepinfra": {
+      "vail": {
+        "endpoint": "deepseek-v3.2-deepinfra-chat",
+        "divergence_ratio": 1.0,
+        "date": "2026-04-04",
+        "comparison_providers": [
+          "azure",
+          "bedrock",
+          "fireworks",
+          "novita",
+          "parasail",
+          "vertex"
+        ]
+      }
+    },
+    "fireworks": {
+      "vail": {
+        "endpoint": "deepseek-v3.2-fireworks-chat",
+        "divergence_ratio": 3.2658876516330713,
+        "date": "2026-04-05",
+        "comparison_providers": [
+          "azure",
+          "bedrock"
+        ]
+      }
+    },
+    "novita": {
+      "vail": {
+        "endpoint": "deepseek-v3.2-novita-chat",
+        "divergence_ratio": 2.965411818633134,
+        "date": "2026-04-04",
+        "comparison_providers": [
+          "azure",
+          "bedrock",
+          "deepinfra",
+          "fireworks",
+          "parasail",
+          "vertex"
+        ]
+      }
+    },
+    "parasail": {
+      "vail": {
+        "endpoint": "deepseek-v3.2-parasail-chat",
+        "divergence_ratio": 0.5086726455583169,
+        "date": "2026-04-04",
+        "comparison_providers": [
+          "azure",
+          "bedrock",
+          "deepinfra",
+          "fireworks",
+          "novita",
+          "vertex"
+        ]
+      }
+    },
+    "vertex": {
+      "vail": {
+        "endpoint": "deepseek-v3.2-vertex-chat",
+        "divergence_ratio": 0.8098812827091532,
+        "date": "2026-04-04",
+        "comparison_providers": [
+          "azure",
+          "bedrock",
+          "deepinfra",
+          "fireworks",
+          "novita",
+          "parasail"
+        ]
+      }
+    }
+  }
+}

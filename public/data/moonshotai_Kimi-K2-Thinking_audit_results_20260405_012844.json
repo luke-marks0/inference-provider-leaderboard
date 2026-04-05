@@ -1,0 +1,59 @@
+{
+  "model": "moonshotai/Kimi-K2-Thinking",
+  "parameters": {
+    "n_prompts": 100,
+    "max_tokens": 200,
+    "seed": 42,
+    "top_k": 50,
+    "top_p": 0.95,
+    "temperature": 0.0,
+    "verification_backend": "fireworks",
+    "fireworks_verification_mode": "serverless",
+    "fireworks_verification_strategy": "fixed-per-audit",
+    "fireworks_deployment_created_for_audit": false,
+    "fireworks_serverless_mapping_error": null
+  },
+  "providers": {
+    "atlas-cloud/int4": {
+      "error": "Error code: 400 - {'error': {'message': 'Provider returned error', 'code': 400, 'metadata': {'raw': '{\"code\":400,\"msg\":\"bad request\",\"request_id\":\"59d065f9-2d07-4fa8-a5e7-88dce6012e24\"}', 'provider_name': 'AtlasCloud', 'is_byok': False}}, 'user_id': 'redacted'}",
+      "collection_complete": false
+    },
+    "deepinfra/fp4": {
+      "exact_match_rate": 0.9279967616252593,
+      "avg_prob": 0.8745914217890518,
+      "avg_margin": 0.06099654394720179,
+      "avg_logit_rank": 0.10641096999443404,
+      "avg_gumbel_rank": 0.10641096999443404,
+      "infinite_margin_rate": 0.006122552244092496,
+      "total_tokens": 19763,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "google-vertex": {
+      "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'moonshotai/kimi-k2-thinking is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Google', 'is_byok': False}}, 'user_id': 'redacted'}",
+      "collection_complete": false
+    },
+    "nebius/int4": {
+      "exact_match_rate": 0.96175694867113,
+      "avg_prob": 0.8948855446450427,
+      "avg_margin": 0.018010885263897495,
+      "avg_logit_rank": 0.05320551836072226,
+      "avg_gumbel_rank": 0.05320551836072226,
+      "infinite_margin_rate": 0.003854737269222966,
+      "total_tokens": 19716,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    },
+    "novita/bf16": {
+      "exact_match_rate": 0.9152585119798234,
+      "avg_prob": 0.8636989325697976,
+      "avg_margin": 0.10094881045671708,
+      "avg_logit_rank": 0.11899117276166457,
+      "avg_gumbel_rank": 0.11899117276166457,
+      "infinite_margin_rate": 0.003430012610340479,
+      "total_tokens": 19825,
+      "n_sequences": 100,
+      "fireworks_verification_mode": "serverless"
+    }
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "model": "minimax-m2-5",
+  "parameters": {
+    "vail_only": true
+  },
+  "providers": {
+    "baseten": {
+      "vail": {
+        "endpoint": "minimax-m2.5-baseten-chat",
+        "divergence_ratio": 0.44541150491451864,
+        "date": "2026-04-04",
+        "comparison_providers": [
+          "deepinfra",
+          "fireworks",
+          "novita",
+          "parasail",
+          "together"
+        ]
+      }
+    },
+    "deepinfra": {
+      "vail": {
+        "endpoint": "minimax-m2.5-deepinfra-chat",
+        "divergence_ratio": 1.0,
+        "date": "2026-04-05",
+        "comparison_providers": [
+          "fireworks",
+          "together"
+        ]
+      }
+    },
+    "fireworks": {
+      "vail": {
+        "endpoint": "minimax-m2.5-fireworks-chat",
+        "divergence_ratio": 1.3737532623995212,
+        "date": "2026-04-05",
+        "comparison_providers": [
+          "deepinfra",
+          "together"
+        ]
+      }
+    },
+    "novita": {
+      "vail": {
+        "endpoint": "minimax-m2.5-novita-chat",
+        "divergence_ratio": 1.441257138087848,
+        "date": "2026-04-04",
+        "comparison_providers": [
+          "baseten",
+          "deepinfra",
+          "fireworks",
+          "parasail",
+          "together"
+        ]
+      }
+    },
+    "parasail": {
+      "vail": {
+        "endpoint": "minimax-m2.5-parasail-chat",
+        "divergence_ratio": 0.4570893758206124,
+        "date": "2026-04-04",
+        "comparison_providers": [
+          "baseten",
+          "deepinfra",
+          "fireworks",
+          "novita",
+          "together"
+        ]
+      }
+    },
+    "together": {
+      "vail": {
+        "endpoint": "minimax-m2.5-together-chat",
+        "divergence_ratio": 0.2815919220623882,
+        "date": "2026-04-05",
+        "comparison_providers": [
+          "deepinfra",
+          "fireworks"
+        ]
+      }
+    }
+  }
+}
