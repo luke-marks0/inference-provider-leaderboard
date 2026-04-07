@@ -1,4 +1,4 @@
-# Inference Provider Leaderboard API
+# Inference Trust API
 
 This project exposes an API as static JSON files under:
 
