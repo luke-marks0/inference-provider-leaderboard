@@ -1,28 +1,28 @@
 {
   "version": "v1",
   "generatedAt": "2026-04-07T23:41:59.313Z",
-  "date": "2026-03-15",
-  "count": 12,
+  "date": "2026-03-27",
+  "count": 21,
   "runs": [
     {
-      "id": "Qwen_Qwen3-235B-A22B-Instruct-2507_audit_results_20260315_015258",
-      "filename": "Qwen_Qwen3-235B-A22B-Instruct-2507_audit_results_20260315_015258.json",
-      "dataUrl": "../../../../data/Qwen_Qwen3-235B-A22B-Instruct-2507_audit_results_20260315_015258.json",
+      "id": "Qwen_Qwen3-235B-A22B-Instruct-2507_audit_results_20260327_004740",
+      "filename": "Qwen_Qwen3-235B-A22B-Instruct-2507_audit_results_20260327_004740.json",
+      "dataUrl": "../../../../data/Qwen_Qwen3-235B-A22B-Instruct-2507_audit_results_20260327_004740.json",
       "model": "Qwen/Qwen3-235B-A22B-Instruct-2507",
-      "timestamp": "2026-03-15T01:52:58Z",
+      "timestamp": "2026-03-27T00:47:40Z",
       "providerEntries": [
         {
           "endpoint": "alibaba",
           "provider": "alibaba",
           "variant": null,
           "metrics": {
-            "exact_match_rate": 0.8730812429801572,
-            "avg_prob": 0.8028286051582451,
-            "avg_margin": 0.12045965017818198,
-            "avg_logit_rank": 0.19318607263197304,
-            "avg_gumbel_rank": 0.19318607263197304,
-            "infinite_margin_rate": 0.007550230874828404,
-            "total_tokens": 16026,
+            "exact_match_rate": 0.8759520539393183,
+            "avg_prob": 0.8078603406810865,
+            "avg_margin": 0.11765731563959132,
+            "avg_logit_rank": 0.18591584467474093,
+            "avg_gumbel_rank": 0.18591584467474093,
+            "infinite_margin_rate": 0.0072418529154700964,
+            "total_tokens": 16018,
             "n_sequences": 100,
             "fireworks_verification_mode": "on-demand",
             "serverless_error": "Error code: 404 - {'error': {'message': 'Model not found, inaccessible, and/or not deployed', 'param': 'model', 'code': 'NOT_FOUND', 'type': 'error'}, 'request_id': 'redacted'}"
@@ -33,13 +33,29 @@
           "provider": "atlas-cloud",
           "variant": "fp8",
           "metrics": {
-            "exact_match_rate": 0.9575333041466008,
-            "avg_prob": 0.8434107384033838,
-            "avg_margin": 0.01784632377956266,
-            "avg_logit_rank": 0.03865157295640753,
-            "avg_gumbel_rank": 0.03865157295640753,
-            "infinite_margin_rate": 0.00037525798986803426,
-            "total_tokens": 15989,
+            "exact_match_rate": 0.9564514122184895,
+            "avg_prob": 0.8426097421919635,
+            "avg_margin": 0.019009268776346285,
+            "avg_logit_rank": 0.041184521587657084,
+            "avg_gumbel_rank": 0.041184521587657084,
+            "infinite_margin_rate": 0.00012442453651860148,
+            "total_tokens": 16074,
+            "n_sequences": 100,
+            "fireworks_verification_mode": "on-demand"
+          }
+        },
+        {
+          "endpoint": "chutes/bf16",
+          "provider": "chutes",
+          "variant": "bf16",
+          "metrics": {
+            "exact_match_rate": 0.962239663803226,
+            "avg_prob": 0.8447189946504601,
+            "avg_margin": 0.01362672860012361,
+            "avg_logit_rank": 0.03343427476670169,
+            "avg_gumbel_rank": 0.03343427476670169,
+            "infinite_margin_rate": 0.00006180087757246153,
+            "total_tokens": 16181,
             "n_sequences": 100,
             "fireworks_verification_mode": "on-demand"
           }
@@ -49,13 +65,13 @@
           "provider": "deepinfra",
           "variant": "fp8",
           "metrics": {
-            "exact_match_rate": 0.9588444057032564,
-            "avg_prob": 0.8423031884325074,
-            "avg_margin": 0.01571667816469984,
-            "avg_logit_rank": 0.03648589751572131,
-            "avg_gumbel_rank": 0.03648589751572131,
-            "infinite_margin_rate": 0.0001867878712408941,
-            "total_tokens": 16061,
+            "exact_match_rate": 0.9608663088253652,
+            "avg_prob": 0.845576845611047,
+            "avg_margin": 0.014985147984997192,
+            "avg_logit_rank": 0.03420297091499189,
+            "avg_gumbel_rank": 0.03420297091499189,
+            "infinite_margin_rate": 0,
+            "total_tokens": 16022,
             "n_sequences": 100,
             "fireworks_verification_mode": "on-demand"
           }
@@ -65,29 +81,13 @@
           "provider": "google-vertex",
           "variant": null,
           "metrics": {
-            "exact_match_rate": 0.9494021397105098,
-            "avg_prob": 0.842729843232988,
-            "avg_margin": 0.025237854130694626,
-            "avg_logit_rank": 0.05028319697923222,
-            "avg_gumbel_rank": 0.05028319697923222,
-            "infinite_margin_rate": 0.0002517306482064191,
-            "total_tokens": 15890,
-            "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
-          }
-        },
-        {
-          "endpoint": "hyperbolic",
-          "provider": "hyperbolic",
-          "variant": null,
-          "metrics": {
-            "exact_match_rate": 0.9618411191606295,
-            "avg_prob": 0.8455823188024807,
-            "avg_margin": 0.012872044574967212,
-            "avg_logit_rank": 0.03185111166625031,
-            "avg_gumbel_rank": 0.03185111166625031,
-            "infinite_margin_rate": 0,
-            "total_tokens": 16012,
+            "exact_match_rate": 0.9483535745586578,
+            "avg_prob": 0.8385101025485361,
+            "avg_margin": 0.024910761930953134,
+            "avg_logit_rank": 0.05008138224615,
+            "avg_gumbel_rank": 0.05008138224615,
+            "infinite_margin_rate": 0.00031300863903843744,
+            "total_tokens": 15974,
             "n_sequences": 100,
             "fireworks_verification_mode": "on-demand"
           }
@@ -97,13 +97,13 @@
           "provider": "novita",
           "variant": "fp8",
           "metrics": {
-            "exact_match_rate": 0.9583124687030545,
-            "avg_prob": 0.8451798626764561,
-            "avg_margin": 0.017646779043289096,
-            "avg_logit_rank": 0.038307461191787684,
-            "avg_gumbel_rank": 0.038307461191787684,
-            "infinite_margin_rate": 0.00012518778167250875,
-            "total_tokens": 15976,
+            "exact_match_rate": 0.9547610133533009,
+            "avg_prob": 0.8401855858924763,
+            "avg_margin": 0.0200786046571725,
+            "avg_logit_rank": 0.04255584674903282,
+            "avg_gumbel_rank": 0.04255584674903282,
+            "infinite_margin_rate": 0.00018719580681392738,
+            "total_tokens": 16026,
             "n_sequences": 100,
             "fireworks_verification_mode": "on-demand"
           }
@@ -113,29 +113,13 @@
           "provider": "siliconflow",
           "variant": "fp8",
           "metrics": {
-            "exact_match_rate": 0.9498846849093062,
-            "avg_prob": 0.8402944031250857,
-            "avg_margin": 0.024218317784955118,
-            "avg_logit_rank": 0.049429657794676805,
-            "avg_gumbel_rank": 0.049429657794676805,
-            "infinite_margin_rate": 0.00006233248145608676,
-            "total_tokens": 16043,
-            "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
-          }
-        },
-        {
-          "endpoint": "together",
-          "provider": "together",
-          "variant": null,
-          "metrics": {
-            "exact_match_rate": 0.9639706795875264,
-            "avg_prob": 0.8461782798905317,
-            "avg_margin": 0.012268623787623471,
-            "avg_logit_rank": 0.02963101006336191,
-            "avg_gumbel_rank": 0.02963101006336191,
-            "infinite_margin_rate": 0.00006211951795254069,
-            "total_tokens": 16098,
+            "exact_match_rate": 0.9485353819249266,
+            "avg_prob": 0.838218751435526,
+            "avg_margin": 0.023793514897779096,
+            "avg_logit_rank": 0.05077759040659546,
+            "avg_gumbel_rank": 0.05077759040659546,
+            "infinite_margin_rate": 0.00024982824308288055,
+            "total_tokens": 16011,
             "n_sequences": 100,
             "fireworks_verification_mode": "on-demand"
           }
@@ -145,13 +129,13 @@
           "provider": "wandb",
           "variant": "bf16",
           "metrics": {
-            "exact_match_rate": 0.9624619966495005,
-            "avg_prob": 0.8435020833150529,
-            "avg_margin": 0.013683024633904195,
-            "avg_logit_rank": 0.03338090215300614,
-            "avg_gumbel_rank": 0.03338090215300614,
-            "infinite_margin_rate": 0.0000620462865297512,
-            "total_tokens": 16117,
+            "exact_match_rate": 0.9634671829138824,
+            "avg_prob": 0.8472487286487215,
+            "avg_margin": 0.013659980578544659,
+            "avg_logit_rank": 0.03390994816711422,
+            "avg_gumbel_rank": 0.03390994816711422,
+            "infinite_margin_rate": 0.00018734777992880785,
+            "total_tokens": 16013,
             "n_sequences": 100,
             "fireworks_verification_mode": "on-demand"
           }
@@ -172,24 +156,24 @@
       }
     },
     {
-      "id": "moonshotai_Kimi-K2-Thinking_audit_results_20260315_021445",
-      "filename": "moonshotai_Kimi-K2-Thinking_audit_results_20260315_021445.json",
-      "dataUrl": "../../../../data/moonshotai_Kimi-K2-Thinking_audit_results_20260315_021445.json",
+      "id": "moonshotai_Kimi-K2-Thinking_audit_results_20260327_011040",
+      "filename": "moonshotai_Kimi-K2-Thinking_audit_results_20260327_011040.json",
+      "dataUrl": "../../../../data/moonshotai_Kimi-K2-Thinking_audit_results_20260327_011040.json",
       "model": "moonshotai/Kimi-K2-Thinking",
-      "timestamp": "2026-03-15T02:14:45Z",
+      "timestamp": "2026-03-27T01:10:40Z",
       "providerEntries": [
         {
           "endpoint": "atlas-cloud/int4",
           "provider": "atlas-cloud",
           "variant": "int4",
           "metrics": {
-            "exact_match_rate": 0.8822904009720535,
-            "avg_prob": 0.8362821790170707,
-            "avg_margin": 0.15338620861662824,
-            "avg_logit_rank": 0.17962737950587282,
-            "avg_gumbel_rank": 0.17962737950587282,
-            "infinite_margin_rate": 0.006075334143377886,
-            "total_tokens": 19752,
+            "exact_match_rate": 0.893187212767032,
+            "avg_prob": 0.8512729162671149,
+            "avg_margin": 0.13644332556638641,
+            "avg_logit_rank": 0.16216352709459117,
+            "avg_gumbel_rank": 0.16216352709459117,
+            "infinite_margin_rate": 0.0048482399878794,
+            "total_tokens": 19801,
             "n_sequences": 100,
             "fireworks_verification_mode": "serverless"
           }
@@ -199,13 +183,13 @@
           "provider": "deepinfra",
           "variant": "fp4",
           "metrics": {
-            "exact_match_rate": 0.9319967761434617,
-            "avg_prob": 0.8748531626768749,
-            "avg_margin": 0.053028132592434454,
-            "avg_logit_rank": 0.09968768889784405,
-            "avg_gumbel_rank": 0.09968768889784405,
-            "infinite_margin_rate": 0.005943985492645578,
-            "total_tokens": 19852,
+            "exact_match_rate": 0.9315575849822425,
+            "avg_prob": 0.8756509840487371,
+            "avg_margin": 0.05414764371584449,
+            "avg_logit_rank": 0.10040588533739218,
+            "avg_gumbel_rank": 0.10040588533739218,
+            "infinite_margin_rate": 0.006037544393708777,
+            "total_tokens": 19710,
             "n_sequences": 100,
             "fireworks_verification_mode": "serverless"
           }
@@ -215,13 +199,13 @@
           "provider": "google-vertex",
           "variant": null,
           "metrics": {
-            "exact_match_rate": 0.9270680628272251,
-            "avg_prob": 0.867570273643579,
-            "avg_margin": 0.059257522597477214,
-            "avg_logit_rank": 0.11178010471204189,
-            "avg_gumbel_rank": 0.11178010471204189,
-            "infinite_margin_rate": 0.006178010471204189,
-            "total_tokens": 19100,
+            "exact_match_rate": 0.9247182804674458,
+            "avg_prob": 0.8667425129764789,
+            "avg_margin": 0.05939940893564941,
+            "avg_logit_rank": 0.11508764607679466,
+            "avg_gumbel_rank": 0.11508764607679466,
+            "infinite_margin_rate": 0.006260434056761269,
+            "total_tokens": 19168,
             "n_sequences": 100,
             "fireworks_verification_mode": "serverless"
           }
@@ -231,29 +215,29 @@
           "provider": "moonshotai",
           "variant": "int4",
           "metrics": {
-            "exact_match_rate": 0.9678389398572885,
-            "avg_prob": 0.8984761430717678,
-            "avg_margin": 0.013843347168591019,
-            "avg_logit_rank": 0.031192660550458717,
-            "avg_gumbel_rank": 0.031192660550458717,
-            "infinite_margin_rate": 0.0001529051987767584,
-            "total_tokens": 19620,
+            "exact_match_rate": 0.9684437374929448,
+            "avg_prob": 0.8989910552556951,
+            "avg_margin": 0.01546710844899687,
+            "avg_logit_rank": 0.029401200677305145,
+            "avg_gumbel_rank": 0.029401200677305145,
+            "infinite_margin_rate": 0,
+            "total_tokens": 19489,
             "n_sequences": 100,
             "fireworks_verification_mode": "serverless"
           }
         },
         {
-          "endpoint": "nebius/fp8",
+          "endpoint": "nebius/int4",
           "provider": "nebius",
-          "variant": "fp8",
+          "variant": "int4",
           "metrics": {
-            "exact_match_rate": 0.9593119077049855,
-            "avg_prob": 0.8917983791667724,
-            "avg_margin": 0.017870107833937353,
-            "avg_logit_rank": 0.06103213844252163,
-            "avg_gumbel_rank": 0.06103213844252163,
-            "infinite_margin_rate": 0.005201895344046147,
-            "total_tokens": 19416,
+            "exact_match_rate": 0.9591087543975935,
+            "avg_prob": 0.892227908018004,
+            "avg_margin": 0.018205407662660926,
+            "avg_logit_rank": 0.056544128894100855,
+            "avg_gumbel_rank": 0.056544128894100855,
+            "infinite_margin_rate": 0.004078927242135318,
+            "total_tokens": 19613,
             "n_sequences": 100,
             "fireworks_verification_mode": "serverless"
           }
@@ -263,29 +247,13 @@
           "provider": "novita",
           "variant": "bf16",
           "metrics": {
-            "exact_match_rate": 0.9030716029292107,
-            "avg_prob": 0.8568189576292303,
-            "avg_margin": 0.1195821572606791,
-            "avg_logit_rank": 0.13893409275834012,
-            "avg_gumbel_rank": 0.13893409275834012,
-            "infinite_margin_rate": 0.004322620016273393,
-            "total_tokens": 19664,
-            "n_sequences": 100,
-            "fireworks_verification_mode": "serverless"
-          }
-        },
-        {
-          "endpoint": "siliconflow/fp8",
-          "provider": "siliconflow",
-          "variant": "fp8",
-          "metrics": {
-            "exact_match_rate": 0.9607743766470708,
-            "avg_prob": 0.8958589374804226,
-            "avg_margin": 0.020375792417503043,
-            "avg_logit_rank": 0.03988445165213866,
-            "avg_gumbel_rank": 0.03988445165213866,
-            "infinite_margin_rate": 0.00020271639975674033,
-            "total_tokens": 19732,
+            "exact_match_rate": 0.9024229521492295,
+            "avg_prob": 0.8534367624525425,
+            "avg_margin": 0.11728934673850727,
+            "avg_logit_rank": 0.14806366585563666,
+            "avg_gumbel_rank": 0.14806366585563666,
+            "infinite_margin_rate": 0.0056772100567721,
+            "total_tokens": 19728,
             "n_sequences": 100,
             "fireworks_verification_mode": "serverless"
           }
@@ -306,24 +274,40 @@
       }
     },
     {
-      "id": "openai_gpt-oss-20b_audit_results_20260315_030123",
-      "filename": "openai_gpt-oss-20b_audit_results_20260315_030123.json",
-      "dataUrl": "../../../../data/openai_gpt-oss-20b_audit_results_20260315_030123.json",
+      "id": "openai_gpt-oss-20b_audit_results_20260327_012854",
+      "filename": "openai_gpt-oss-20b_audit_results_20260327_012854.json",
+      "dataUrl": "../../../../data/openai_gpt-oss-20b_audit_results_20260327_012854.json",
       "model": "openai/gpt-oss-20b",
-      "timestamp": "2026-03-15T03:01:23Z",
+      "timestamp": "2026-03-27T01:28:54Z",
       "providerEntries": [
+        {
+          "endpoint": "chutes/bf16",
+          "provider": "chutes",
+          "variant": "bf16",
+          "metrics": {
+            "exact_match_rate": 0.96,
+            "avg_prob": 0.6741783487080513,
+            "avg_margin": 0.00864926608454609,
+            "avg_logit_rank": 0.03518005540166205,
+            "avg_gumbel_rank": 0.03518005540166205,
+            "infinite_margin_rate": 0.00022160664819944597,
+            "total_tokens": 18050,
+            "n_sequences": 100,
+            "fireworks_verification_mode": "serverless"
+          }
+        },
         {
           "endpoint": "clarifai/fp4",
           "provider": "clarifai",
           "variant": "fp4",
           "metrics": {
-            "exact_match_rate": 0.9685057471264368,
-            "avg_prob": 0.6865283729583453,
-            "avg_margin": 0.003589035560344828,
-            "avg_logit_rank": 0.02074712643678161,
-            "avg_gumbel_rank": 0.02074712643678161,
-            "infinite_margin_rate": 0,
-            "total_tokens": 17400,
+            "exact_match_rate": 0.9684694921031701,
+            "avg_prob": 0.6764699706289002,
+            "avg_margin": 0.0035812285168456337,
+            "avg_logit_rank": 0.02198613793887058,
+            "avg_gumbel_rank": 0.02198613793887058,
+            "infinite_margin_rate": 0.00005681172594023406,
+            "total_tokens": 17602,
             "n_sequences": 100,
             "fireworks_verification_mode": "serverless"
           }
@@ -333,13 +317,13 @@
           "provider": "deepinfra",
           "variant": "bf16",
           "metrics": {
-            "exact_match_rate": 0.9623589858148107,
-            "avg_prob": 0.6821959398423291,
-            "avg_margin": 0.005952754970956211,
-            "avg_logit_rank": 0.03200044677761644,
-            "avg_gumbel_rank": 0.03200044677761644,
-            "infinite_margin_rate": 0.00011169440411035407,
-            "total_tokens": 17906,
+            "exact_match_rate": 0.9636455017590886,
+            "avg_prob": 0.6739169122913562,
+            "avg_margin": 0.006901840741768599,
+            "avg_logit_rank": 0.0322778801585972,
+            "avg_gumbel_rank": 0.0322778801585972,
+            "infinite_margin_rate": 0.00016753224995811694,
+            "total_tokens": 17907,
             "n_sequences": 100,
             "fireworks_verification_mode": "serverless"
           }
@@ -349,13 +333,13 @@
           "provider": "fireworks",
           "variant": null,
           "metrics": {
-            "exact_match_rate": 0.9661045436719143,
-            "avg_prob": 0.6744540999429054,
-            "avg_margin": 0.0065450209267301765,
-            "avg_logit_rank": 0.028517003753711693,
-            "avg_gumbel_rank": 0.028517003753711693,
-            "infinite_margin_rate": 0.0002241021905989131,
-            "total_tokens": 17849,
+            "exact_match_rate": 0.9673329525985152,
+            "avg_prob": 0.6747347285705592,
+            "avg_margin": 0.00722371733076264,
+            "avg_logit_rank": 0.026327812678469446,
+            "avg_gumbel_rank": 0.026327812678469446,
+            "infinite_margin_rate": 0.00028555111364934324,
+            "total_tokens": 17510,
             "n_sequences": 100,
             "fireworks_verification_mode": "serverless"
           }
@@ -365,29 +349,13 @@
           "provider": "google-vertex",
           "variant": null,
           "metrics": {
-            "exact_match_rate": 0.976496596660655,
-            "avg_prob": 0.6802764333857874,
-            "avg_margin": 0.001982443964996036,
-            "avg_logit_rank": 0.010588166850893014,
-            "avg_gumbel_rank": 0.010588166850893014,
-            "infinite_margin_rate": 0.0001745302228169178,
-            "total_tokens": 17189,
-            "n_sequences": 100,
-            "fireworks_verification_mode": "serverless"
-          }
-        },
-        {
-          "endpoint": "groq",
-          "provider": "groq",
-          "variant": null,
-          "metrics": {
-            "exact_match_rate": 0.9769569637411047,
-            "avg_prob": 0.681141694386089,
-            "avg_margin": 0.0022084895303851803,
-            "avg_logit_rank": 0.00994013328815091,
-            "avg_gumbel_rank": 0.00994013328815091,
-            "infinite_margin_rate": 0,
-            "total_tokens": 17706,
+            "exact_match_rate": 0.9776533086961543,
+            "avg_prob": 0.677143305921342,
+            "avg_margin": 0.0016082060518114426,
+            "avg_logit_rank": 0.009643145859799054,
+            "avg_gumbel_rank": 0.009643145859799054,
+            "infinite_margin_rate": 0.00005774338838203026,
+            "total_tokens": 17318,
             "n_sequences": 100,
             "fireworks_verification_mode": "serverless"
           }
@@ -397,29 +365,13 @@
           "provider": "nebius",
           "variant": "fp4",
           "metrics": {
-            "exact_match_rate": 0.9599777962808771,
-            "avg_prob": 0.677752905101403,
-            "avg_margin": 0.00710098122570794,
-            "avg_logit_rank": 0.033805162364696086,
-            "avg_gumbel_rank": 0.033805162364696086,
-            "infinite_margin_rate": 0.0002775464890369137,
-            "total_tokens": 18015,
-            "n_sequences": 100,
-            "fireworks_verification_mode": "serverless"
-          }
-        },
-        {
-          "endpoint": "nextbit/fp8",
-          "provider": "nextbit",
-          "variant": "fp8",
-          "metrics": {
-            "exact_match_rate": 0.9640524699972091,
-            "avg_prob": 0.6742624385524001,
-            "avg_margin": 0.007906642435064481,
-            "avg_logit_rank": 0.03237510466089869,
-            "avg_gumbel_rank": 0.03237510466089869,
-            "infinite_margin_rate": 0.00016745743790120012,
-            "total_tokens": 17915,
+            "exact_match_rate": 0.9599468909050675,
+            "avg_prob": 0.6756891372374956,
+            "avg_margin": 0.007347938509737745,
+            "avg_logit_rank": 0.03446558973224165,
+            "avg_gumbel_rank": 0.03446558973224165,
+            "infinite_margin_rate": 0.00011064394777605666,
+            "total_tokens": 18076,
             "n_sequences": 100,
             "fireworks_verification_mode": "serverless"
           }
@@ -429,13 +381,13 @@
           "provider": "novita",
           "variant": "fp4",
           "metrics": {
-            "exact_match_rate": 0.9686426842312672,
-            "avg_prob": 0.6831095714884804,
-            "avg_margin": 0.004795903221875352,
-            "avg_logit_rank": 0.021392782750661487,
-            "avg_gumbel_rank": 0.021392782750661487,
-            "infinite_margin_rate": 0.00028148398356133537,
-            "total_tokens": 17763,
+            "exact_match_rate": 0.962678739027218,
+            "avg_prob": 0.6765609707639219,
+            "avg_margin": 0.007677293193708244,
+            "avg_logit_rank": 0.032407663004471926,
+            "avg_gumbel_rank": 0.032407663004471926,
+            "infinite_margin_rate": 0.00011041793187213604,
+            "total_tokens": 18113,
             "n_sequences": 100,
             "fireworks_verification_mode": "serverless"
           }
@@ -445,13 +397,13 @@
           "provider": "parasail",
           "variant": "fp4",
           "metrics": {
-            "exact_match_rate": 0.9632553226972038,
-            "avg_prob": 0.6792401352142253,
-            "avg_margin": 0.007319056142137293,
-            "avg_logit_rank": 0.03085218744788482,
-            "avg_gumbel_rank": 0.03085218744788482,
-            "infinite_margin_rate": 0.0000555895269331258,
-            "total_tokens": 17989,
+            "exact_match_rate": 0.9630456626102489,
+            "avg_prob": 0.6735221329088465,
+            "avg_margin": 0.0064539916017696645,
+            "avg_logit_rank": 0.030590599531093,
+            "avg_gumbel_rank": 0.030590599531093,
+            "infinite_margin_rate": 0.00005582226191805292,
+            "total_tokens": 17914,
             "n_sequences": 100,
             "fireworks_verification_mode": "serverless"
           }
@@ -461,13 +413,13 @@
           "provider": "together",
           "variant": null,
           "metrics": {
-            "exact_match_rate": 0.9778933680104032,
-            "avg_prob": 0.6780309440423707,
-            "avg_margin": 0.0014618346101656584,
-            "avg_logit_rank": 0.009441963023689716,
-            "avg_gumbel_rank": 0.009441963023689716,
-            "infinite_margin_rate": 0,
-            "total_tokens": 17687,
+            "exact_match_rate": 0.9769658459094519,
+            "avg_prob": 0.6807881546355365,
+            "avg_margin": 0.003039812635752995,
+            "avg_logit_rank": 0.011517077045274026,
+            "avg_gumbel_rank": 0.011517077045274026,
+            "infinite_margin_rate": 0.00034040621808691704,
+            "total_tokens": 17626,
             "n_sequences": 100,
             "fireworks_verification_mode": "serverless"
           }
@@ -477,13 +429,13 @@
           "provider": "wandb",
           "variant": "fp4",
           "metrics": {
-            "exact_match_rate": 0.9597829734869672,
-            "avg_prob": 0.6777397163293774,
-            "avg_margin": 0.007473320185744657,
-            "avg_logit_rank": 0.034567625013983666,
-            "avg_gumbel_rank": 0.034567625013983666,
-            "infinite_margin_rate": 0.00022373867322966775,
-            "total_tokens": 17878,
+            "exact_match_rate": 0.9627695043342965,
+            "avg_prob": 0.679374528245201,
+            "avg_margin": 0.006611687402745359,
+            "avg_logit_rank": 0.031006890420093355,
+            "avg_gumbel_rank": 0.031006890420093355,
+            "infinite_margin_rate": 0.00011113580795732385,
+            "total_tokens": 17996,
             "n_sequences": 100,
             "fireworks_verification_mode": "serverless"
           }
@@ -504,25 +456,49 @@
       }
     },
     {
-      "id": "openai_gpt-oss-120b_audit_results_20260315_031731",
-      "filename": "openai_gpt-oss-120b_audit_results_20260315_031731.json",
-      "dataUrl": "../../../../data/openai_gpt-oss-120b_audit_results_20260315_031731.json",
+      "id": "openai_gpt-oss-120b_audit_results_20260327_014232",
+      "filename": "openai_gpt-oss-120b_audit_results_20260327_014232.json",
+      "dataUrl": "../../../../data/openai_gpt-oss-120b_audit_results_20260327_014232.json",
       "model": "openai/gpt-oss-120b",
-      "timestamp": "2026-03-15T03:17:31Z",
+      "timestamp": "2026-03-27T01:42:32Z",
       "providerEntries": [
         {
-          "endpoint": "amazonbedrock",
-          "provider": "amazonbedrock",
-          "variant": null,
+          "endpoint": "atlas-cloud/fp8",
+          "provider": "atlas-cloud",
+          "variant": "fp8",
           "metrics": {
-            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'novita', 'chutes', 'siliconflow', 'clarifai', 'google-vertex', 'atlas-cloud', 'phala', 'baseten', 'parasail', 'sambanova', 'amazon-bedrock', 'together', 'wandb', 'groq', 'crusoe', 'fireworks', 'io-net'], 'requested_providers': ['amazonbedrock']}}}",
+            "exact_match_rate": 0.9491063138347261,
+            "avg_prob": 0.7966657953744126,
+            "avg_margin": 0.018968509189789283,
+            "avg_logit_rank": 0.049036675951717734,
+            "avg_gumbel_rank": 0.049036675951717734,
+            "infinite_margin_rate": 0.00029015784586815225,
+            "total_tokens": 17232,
+            "n_sequences": 100,
+            "fireworks_verification_mode": "serverless"
+          }
+        },
+        {
+          "endpoint": "baseten/fp4",
+          "provider": "baseten",
+          "variant": "fp4",
+          "metrics": {
+            "exact_match_rate": 0.9262713355622031,
+            "avg_prob": 0.7821287349470454,
+            "avg_margin": 0.037137630677765224,
+            "avg_logit_rank": 0.10463956830312628,
+            "avg_gumbel_rank": 0.10463956830312628,
+            "infinite_margin_rate": 0.00668660918528946,
+            "total_tokens": 17049,
+            "n_sequences": 100,
+            "fireworks_verification_mode": "serverless",
             "vail": {
-              "endpoint": "gpt-oss-120b-bedrock-chat",
-              "divergence_ratio": 0.5565930065772471,
-              "date": "2026-03-15",
+              "endpoint": "gpt-oss-120b-baseten-chat",
+              "divergence_ratio": 2.1272843854675343,
+              "date": "2026-03-26",
               "comparison_providers": [
                 "azure",
-                "baseten",
+                "bedrock",
                 "deepinfra",
                 "fireworks",
                 "groq",
@@ -537,33 +513,17 @@
           }
         },
         {
-          "endpoint": "atlas-cloud/fp8",
-          "provider": "atlas-cloud",
-          "variant": "fp8",
+          "endpoint": "chutes/bf16",
+          "provider": "chutes",
+          "variant": "bf16",
           "metrics": {
-            "exact_match_rate": 0.9482928525882558,
-            "avg_prob": 0.7992028859888796,
-            "avg_margin": 0.019667782713824373,
-            "avg_logit_rank": 0.0510695032172048,
-            "avg_gumbel_rank": 0.0510695032172048,
-            "infinite_margin_rate": 0.00040577357834328446,
-            "total_tokens": 17251,
-            "n_sequences": 100,
-            "fireworks_verification_mode": "serverless"
-          }
-        },
-        {
-          "endpoint": "baseten/fp4",
-          "provider": "baseten",
-          "variant": "fp4",
-          "metrics": {
-            "exact_match_rate": 0.9258767115373505,
-            "avg_prob": 0.7830808625577114,
-            "avg_margin": 0.03748959143702152,
-            "avg_logit_rank": 0.10734300075105437,
-            "avg_gumbel_rank": 0.10734300075105437,
-            "infinite_margin_rate": 0.007163903171760356,
-            "total_tokens": 17309,
+            "exact_match_rate": 0.921819838287211,
+            "avg_prob": 0.7739262475688794,
+            "avg_margin": 0.04591100184463974,
+            "avg_logit_rank": 0.10186766883042933,
+            "avg_gumbel_rank": 0.10186766883042933,
+            "infinite_margin_rate": 0.0027901150210682154,
+            "total_tokens": 17562,
             "n_sequences": 100,
             "fireworks_verification_mode": "serverless"
           }
@@ -573,13 +533,13 @@
           "provider": "clarifai",
           "variant": "fp4",
           "metrics": {
-            "exact_match_rate": 0.9622728054584027,
-            "avg_prob": 0.8011385455640431,
-            "avg_margin": 0.00973258762184633,
-            "avg_logit_rank": 0.030846855111518835,
-            "avg_gumbel_rank": 0.030846855111518835,
-            "infinite_margin_rate": 0.000057336161917321254,
-            "total_tokens": 17441,
+            "exact_match_rate": 0.960956816744293,
+            "avg_prob": 0.7923146450171173,
+            "avg_margin": 0.01127868469813952,
+            "avg_logit_rank": 0.03513311482950952,
+            "avg_gumbel_rank": 0.03513311482950952,
+            "infinite_margin_rate": 0.00017250301880282904,
+            "total_tokens": 17391,
             "n_sequences": 100,
             "fireworks_verification_mode": "serverless"
           }
@@ -589,19 +549,12 @@
           "provider": "deepinfra",
           "variant": "bf16",
           "metrics": {
-            "exact_match_rate": 0.9506030353742282,
-            "avg_prob": 0.7910507335016659,
-            "avg_margin": 0.01734941490800866,
-            "avg_logit_rank": 0.04881989728201281,
-            "avg_gumbel_rank": 0.04881989728201281,
-            "infinite_margin_rate": 0.00023082693750360668,
-            "total_tokens": 17329,
-            "n_sequences": 100,
-            "fireworks_verification_mode": "serverless",
+            "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-oss-120b is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'DeepInfra', 'is_byok': False}}, 'user_id': 'redacted'}",
+            "collection_complete": false,
             "vail": {
               "endpoint": "gpt-oss-120b-deepinfra-chat",
-              "divergence_ratio": 1.0998294617691649,
-              "date": "2026-03-15",
+              "divergence_ratio": 0.9934249505260592,
+              "date": "2026-03-26",
               "comparison_providers": [
                 "azure",
                 "baseten",
@@ -623,19 +576,19 @@
           "provider": "fireworks",
           "variant": null,
           "metrics": {
-            "exact_match_rate": 0.9479668194210801,
-            "avg_prob": 0.8010243274621781,
-            "avg_margin": 0.02366883887223448,
-            "avg_logit_rank": 0.0586460931608562,
-            "avg_gumbel_rank": 0.0586460931608562,
-            "infinite_margin_rate": 0.00104414409188468,
-            "total_tokens": 17239,
+            "exact_match_rate": 0.9492563429571304,
+            "avg_prob": 0.7931573477488036,
+            "avg_margin": 0.02265506671989051,
+            "avg_logit_rank": 0.05879265091863517,
+            "avg_gumbel_rank": 0.05879265091863517,
+            "infinite_margin_rate": 0.0011665208515602217,
+            "total_tokens": 17145,
             "n_sequences": 100,
             "fireworks_verification_mode": "serverless",
             "vail": {
               "endpoint": "gpt-oss-120b-fireworks-chat",
-              "divergence_ratio": 2.9291822761511215,
-              "date": "2026-03-15",
+              "divergence_ratio": 2.2747506667111512,
+              "date": "2026-03-26",
               "comparison_providers": [
                 "azure",
                 "baseten",
@@ -657,19 +610,19 @@
           "provider": "google-vertex",
           "variant": null,
           "metrics": {
-            "exact_match_rate": 0.9323645814873885,
-            "avg_prob": 0.7947448912846314,
-            "avg_margin": 0.03584230119721684,
-            "avg_logit_rank": 0.08068994033906314,
-            "avg_gumbel_rank": 0.08068994033906314,
-            "infinite_margin_rate": 0.002067458207809085,
-            "total_tokens": 16929,
+            "exact_match_rate": 0.9358086101735063,
+            "avg_prob": 0.7939964300871952,
+            "avg_margin": 0.034943769209668865,
+            "avg_logit_rank": 0.08012080298454433,
+            "avg_gumbel_rank": 0.08012080298454433,
+            "infinite_margin_rate": 0.003079291762894534,
+            "total_tokens": 16887,
             "n_sequences": 100,
             "fireworks_verification_mode": "serverless",
             "vail": {
               "endpoint": "gpt-oss-120b-vertex-chat",
-              "divergence_ratio": 1.311922748703988,
-              "date": "2026-03-15",
+              "divergence_ratio": 1,
+              "date": "2026-03-26",
               "comparison_providers": [
                 "azure",
                 "baseten",
@@ -691,19 +644,19 @@
           "provider": "groq",
           "variant": null,
           "metrics": {
-            "exact_match_rate": 0.9708788959709959,
-            "avg_prob": 0.8054311837619574,
-            "avg_margin": 0.006056469402450436,
-            "avg_logit_rank": 0.022162446640547336,
-            "avg_gumbel_rank": 0.022162446640547336,
-            "infinite_margin_rate": 0.00011695222501608094,
-            "total_tokens": 17101,
+            "exact_match_rate": 0.9710584665655269,
+            "avg_prob": 0.8000427602148728,
+            "avg_margin": 0.006204080990692654,
+            "avg_logit_rank": 0.0215311004784689,
+            "avg_gumbel_rank": 0.0215311004784689,
+            "infinite_margin_rate": 0.00005834986579530867,
+            "total_tokens": 17138,
             "n_sequences": 100,
             "fireworks_verification_mode": "serverless",
             "vail": {
               "endpoint": "gpt-oss-120b-groq-chat",
-              "divergence_ratio": 1.1710558439077774,
-              "date": "2026-03-15",
+              "divergence_ratio": 1.155889065498734,
+              "date": "2026-03-26",
               "comparison_providers": [
                 "azure",
                 "baseten",
@@ -725,19 +678,19 @@
           "provider": "novita",
           "variant": "fp4",
           "metrics": {
-            "exact_match_rate": 0.9452979515828678,
-            "avg_prob": 0.7877529611165771,
-            "avg_margin": 0.02268189634940618,
-            "avg_logit_rank": 0.05615689013035382,
-            "avg_gumbel_rank": 0.05615689013035382,
-            "infinite_margin_rate": 0.0004073556797020484,
-            "total_tokens": 17184,
+            "exact_match_rate": 0.9392377201112141,
+            "avg_prob": 0.787582994998208,
+            "avg_margin": 0.028017961994796798,
+            "avg_logit_rank": 0.0666705282669138,
+            "avg_gumbel_rank": 0.0666705282669138,
+            "infinite_margin_rate": 0.00017377201112140871,
+            "total_tokens": 17264,
             "n_sequences": 100,
             "fireworks_verification_mode": "serverless",
             "vail": {
               "endpoint": "gpt-oss-120b-novita-chat",
-              "divergence_ratio": 0.7369676499182297,
-              "date": "2026-03-15",
+              "divergence_ratio": 0.6349388314070523,
+              "date": "2026-03-26",
               "comparison_providers": [
                 "azure",
                 "baseten",
@@ -759,19 +712,19 @@
           "provider": "parasail",
           "variant": "fp4",
           "metrics": {
-            "exact_match_rate": 0.9620588404628937,
-            "avg_prob": 0.8049669703212914,
-            "avg_margin": 0.009897443226797743,
-            "avg_logit_rank": 0.03201105417698198,
-            "avg_gumbel_rank": 0.03201105417698198,
-            "infinite_margin_rate": 0,
-            "total_tokens": 17369,
+            "exact_match_rate": 0.9211842254801682,
+            "avg_prob": 0.773444001588984,
+            "avg_margin": 0.04939729965141287,
+            "avg_logit_rank": 0.1039890896692806,
+            "avg_gumbel_rank": 0.1039890896692806,
+            "infinite_margin_rate": 0.002557108762359359,
+            "total_tokens": 17598,
             "n_sequences": 100,
             "fireworks_verification_mode": "serverless",
             "vail": {
               "endpoint": "gpt-oss-120b-parasail-chat",
-              "divergence_ratio": 0.6226888024063582,
-              "date": "2026-03-15",
+              "divergence_ratio": 0.9280317833718075,
+              "date": "2026-03-26",
               "comparison_providers": [
                 "azure",
                 "baseten",
@@ -793,13 +746,13 @@
           "provider": "phala",
           "variant": null,
           "metrics": {
-            "exact_match_rate": 0.9547158927026248,
-            "avg_prob": 0.793951578801847,
-            "avg_margin": 0.01735367199897216,
-            "avg_logit_rank": 0.04459186616671474,
-            "avg_gumbel_rank": 0.04459186616671474,
-            "infinite_margin_rate": 0.00028843380444188056,
-            "total_tokens": 17335,
+            "exact_match_rate": 0.9529555078600846,
+            "avg_prob": 0.790176228659943,
+            "avg_margin": 0.01782663131933469,
+            "avg_logit_rank": 0.04774058820117176,
+            "avg_gumbel_rank": 0.04774058820117176,
+            "infinite_margin_rate": 0.00040605603573293117,
+            "total_tokens": 17239,
             "n_sequences": 100,
             "fireworks_verification_mode": "serverless"
           }
@@ -809,13 +762,13 @@
           "provider": "sambanova",
           "variant": null,
           "metrics": {
-            "exact_match_rate": 0.9682731617435366,
-            "avg_prob": 0.8084657052698079,
-            "avg_margin": 0.007892211928121041,
-            "avg_logit_rank": 0.025968791385961882,
-            "avg_gumbel_rank": 0.025968791385961882,
-            "infinite_margin_rate": 0.00005758046870501526,
-            "total_tokens": 17367,
+            "exact_match_rate": 0.9718211862932684,
+            "avg_prob": 0.8021272869105995,
+            "avg_margin": 0.006624271570219181,
+            "avg_logit_rank": 0.021684930712587695,
+            "avg_gumbel_rank": 0.021684930712587695,
+            "infinite_margin_rate": 0.000057981098161999185,
+            "total_tokens": 17247,
             "n_sequences": 100,
             "fireworks_verification_mode": "serverless"
           }
@@ -825,13 +778,13 @@
           "provider": "siliconflow",
           "variant": "fp8",
           "metrics": {
-            "exact_match_rate": 0.943054909260121,
-            "avg_prob": 0.7983970704108495,
-            "avg_margin": 0.025801011769654648,
-            "avg_logit_rank": 0.058108422522103305,
-            "avg_gumbel_rank": 0.058108422522103305,
-            "infinite_margin_rate": 0.00017449976733364356,
-            "total_tokens": 17192,
+            "exact_match_rate": 0.943241180959089,
+            "avg_prob": 0.7997793036391484,
+            "avg_margin": 0.025824447833493944,
+            "avg_logit_rank": 0.06039795738686388,
+            "avg_gumbel_rank": 0.06039795738686388,
+            "infinite_margin_rate": 0.0007043493572812115,
+            "total_tokens": 17037,
             "n_sequences": 100,
             "fireworks_verification_mode": "serverless"
           }
@@ -841,19 +794,19 @@
           "provider": "together",
           "variant": null,
           "metrics": {
-            "exact_match_rate": 0.9395575983912668,
-            "avg_prob": 0.7977702230072203,
-            "avg_margin": 0.0255982406496063,
-            "avg_logit_rank": 0.0619936799770181,
-            "avg_gumbel_rank": 0.0619936799770181,
-            "infinite_margin_rate": 0.0003447285262855501,
-            "total_tokens": 17405,
+            "exact_match_rate": 0.9406730321378668,
+            "avg_prob": 0.7962743246108125,
+            "avg_margin": 0.025426575705859444,
+            "avg_logit_rank": 0.06113181183046111,
+            "avg_gumbel_rank": 0.06113181183046111,
+            "infinite_margin_rate": 0.0002911038658593386,
+            "total_tokens": 17176,
             "n_sequences": 100,
             "fireworks_verification_mode": "serverless",
             "vail": {
               "endpoint": "gpt-oss-120b-together-chat",
-              "divergence_ratio": 1,
-              "date": "2026-03-15",
+              "divergence_ratio": 1.2520645631869975,
+              "date": "2026-03-26",
               "comparison_providers": [
                 "azure",
                 "baseten",
@@ -875,13 +828,13 @@
           "provider": "wandb",
           "variant": "fp4",
           "metrics": {
-            "exact_match_rate": 0.9194479013463062,
-            "avg_prob": 0.7721640929344349,
-            "avg_margin": 0.046940998180644615,
-            "avg_logit_rank": 0.10617716936305012,
-            "avg_gumbel_rank": 0.10617716936305012,
-            "infinite_margin_rate": 0.003111211675528906,
-            "total_tokens": 17678,
+            "exact_match_rate": 0.921987422808906,
+            "avg_prob": 0.7682543554053403,
+            "avg_margin": 0.04867692332686875,
+            "avg_logit_rank": 0.1018639170585236,
+            "avg_gumbel_rank": 0.1018639170585236,
+            "infinite_margin_rate": 0.00220950654353861,
+            "total_tokens": 17651,
             "n_sequences": 100,
             "fireworks_verification_mode": "serverless"
           }
@@ -902,24 +855,24 @@
       }
     },
     {
-      "id": "Qwen_Qwen3-Coder-480B-A35B-Instruct_audit_results_20260315_034149",
-      "filename": "Qwen_Qwen3-Coder-480B-A35B-Instruct_audit_results_20260315_034149.json",
-      "dataUrl": "../../../../data/Qwen_Qwen3-Coder-480B-A35B-Instruct_audit_results_20260315_034149.json",
+      "id": "Qwen_Qwen3-Coder-480B-A35B-Instruct_audit_results_20260327_020551",
+      "filename": "Qwen_Qwen3-Coder-480B-A35B-Instruct_audit_results_20260327_020551.json",
+      "dataUrl": "../../../../data/Qwen_Qwen3-Coder-480B-A35B-Instruct_audit_results_20260327_020551.json",
       "model": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
-      "timestamp": "2026-03-15T03:41:49Z",
+      "timestamp": "2026-03-27T02:05:51Z",
       "providerEntries": [
         {
           "endpoint": "alibaba",
           "provider": "alibaba",
           "variant": null,
           "metrics": {
-            "exact_match_rate": 0.9265756170905901,
-            "avg_prob": 0.9033725311734413,
-            "avg_margin": 0.10036278734243051,
-            "avg_logit_rank": 0.09090339556446561,
-            "avg_gumbel_rank": 0.09090339556446561,
-            "infinite_margin_rate": 0.001378273399323393,
-            "total_tokens": 15962,
+            "exact_match_rate": 0.9270031545741325,
+            "avg_prob": 0.9043818455210124,
+            "avg_margin": 0.10106218786049227,
+            "avg_logit_rank": 0.09066246056782334,
+            "avg_gumbel_rank": 0.09066246056782334,
+            "infinite_margin_rate": 0.00138801261829653,
+            "total_tokens": 15850,
             "n_sequences": 100,
             "fireworks_verification_mode": "on-demand",
             "serverless_error": "Error code: 404 - {'error': {'message': 'Model not found, inaccessible, and/or not deployed', 'param': 'model', 'code': 'NOT_FOUND', 'type': 'error'}, 'request_id': 'redacted'}"
@@ -930,13 +883,13 @@
           "provider": "atlas-cloud",
           "variant": "fp8",
           "metrics": {
-            "exact_match_rate": 0.957656977475777,
-            "avg_prob": 0.9202793793748276,
-            "avg_margin": 0.04128993357054404,
-            "avg_logit_rank": 0.042972190763810245,
-            "avg_gumbel_rank": 0.042972190763810245,
+            "exact_match_rate": 0.9502304721564719,
+            "avg_prob": 0.9180996044302767,
+            "avg_margin": 0.05176178931120667,
+            "avg_logit_rank": 0.05369378348075246,
+            "avg_gumbel_rank": 0.05369378348075246,
             "infinite_margin_rate": 0,
-            "total_tokens": 15894,
+            "total_tokens": 16054,
             "n_sequences": 100,
             "fireworks_verification_mode": "on-demand"
           }
@@ -946,11 +899,12 @@
           "provider": "deepinfra",
           "variant": "fp4",
           "metrics": {
-            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'hyperbolic', 'together'], 'requested_providers': ['deepinfra/fp4']}}}",
+            "error": "Error code: 404 - {'error': {'message': 'No allowed providers are available for the selected model.', 'code': 404, 'metadata': {'available_providers': ['deepinfra', 'google-vertex', 'siliconflow', 'novita', 'venice', 'nebius', 'atlas-cloud', 'alibaba', 'wandb', 'together'], 'requested_providers': ['deepinfra/fp4']}}}",
+            "collection_complete": false,
             "vail": {
               "endpoint": "qwen3-coder-480b-deepinfra-chat",
               "divergence_ratio": 1,
-              "date": "2026-03-15",
+              "date": "2026-03-26",
               "comparison_providers": [
                 "nebius",
                 "novita",
@@ -966,10 +920,11 @@
           "variant": "fp8",
           "metrics": {
             "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'qwen/qwen3-coder is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'DeepInfra', 'is_byok': False}}, 'user_id': 'redacted'}",
+            "collection_complete": false,
             "vail": {
               "endpoint": "qwen3-coder-480b-deepinfra-chat",
               "divergence_ratio": 1,
-              "date": "2026-03-15",
+              "date": "2026-03-26",
               "comparison_providers": [
                 "nebius",
                 "novita",
@@ -984,11 +939,12 @@
           "provider": "google-vertex",
           "variant": null,
           "metrics": {
-            "error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded: limit_rpm/qwen/qwen3-coder-480b-a35b-07-25/803d4906-0d0b-49b6-8705-7ae0a4d45217. High demand for qwen/qwen3-coder on OpenRouter - limited to 80 requests per minute. Please retry shortly.', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '80', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1773546720000'}, 'provider_name': None}}, 'user_id': 'redacted'}",
+            "error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded: limit_rpm/qwen/qwen3-coder-480b-a35b-07-25/803d4906-0d0b-49b6-8705-7ae0a4d45217. High demand for qwen/qwen3-coder on OpenRouter - limited to 80 requests per minute. Please retry shortly.', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '80', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1774577220000'}, 'provider_name': None}}, 'user_id': 'redacted'}",
+            "collection_complete": false,
             "vail": {
               "endpoint": "qwen3-coder-480b-vertex-chat",
-              "divergence_ratio": 1.4702167675245397,
-              "date": "2026-03-15",
+              "divergence_ratio": 1.093071761506597,
+              "date": "2026-03-26",
               "comparison_providers": [
                 "deepinfra",
                 "nebius",
@@ -999,39 +955,23 @@
           }
         },
         {
-          "endpoint": "hyperbolic/fp8",
-          "provider": "hyperbolic",
-          "variant": "fp8",
-          "metrics": {
-            "exact_match_rate": 0.9718090733710872,
-            "avg_prob": 0.9309813180056884,
-            "avg_margin": 0.017622773196823656,
-            "avg_logit_rank": 0.027195220611114568,
-            "avg_gumbel_rank": 0.027195220611114568,
-            "infinite_margin_rate": 0.00006223162611239032,
-            "total_tokens": 16069,
-            "n_sequences": 100,
-            "fireworks_verification_mode": "on-demand"
-          }
-        },
-        {
           "endpoint": "nebius/fp8",
           "provider": "nebius",
           "variant": "fp8",
           "metrics": {
-            "exact_match_rate": 0.9710399297937692,
-            "avg_prob": 0.92826752039125,
-            "avg_margin": 0.01926548518499655,
-            "avg_logit_rank": 0.028145176455839027,
-            "avg_gumbel_rank": 0.028145176455839027,
-            "infinite_margin_rate": 0,
-            "total_tokens": 15953,
+            "exact_match_rate": 0.9695744151319065,
+            "avg_prob": 0.9291538668264699,
+            "avg_margin": 0.019432289570256597,
+            "avg_logit_rank": 0.02936784469885515,
+            "avg_gumbel_rank": 0.02936784469885515,
+            "infinite_margin_rate": 0.00006222000995520159,
+            "total_tokens": 16072,
             "n_sequences": 100,
             "fireworks_verification_mode": "on-demand",
             "vail": {
               "endpoint": "qwen3-coder-480b-nebius-chat",
-              "divergence_ratio": 0.6487576818972302,
-              "date": "2026-03-15",
+              "divergence_ratio": 0.4607602991514556,
+              "date": "2026-03-26",
               "comparison_providers": [
                 "deepinfra",
                 "novita",
@@ -1046,19 +986,19 @@
           "provider": "novita",
           "variant": "fp8",
           "metrics": {
-            "exact_match_rate": 0.9524962742175856,
-            "avg_prob": 0.9180105243743454,
-            "avg_margin": 0.049673188994076495,
-            "avg_logit_rank": 0.04886984600099354,
-            "avg_gumbel_rank": 0.04886984600099354,
-            "infinite_margin_rate": 0,
-            "total_tokens": 16104,
+            "exact_match_rate": 0.9491801226686695,
+            "avg_prob": 0.916527420916443,
+            "avg_margin": 0.05554385445291267,
+            "avg_logit_rank": 0.056890724746526476,
+            "avg_gumbel_rank": 0.056890724746526476,
+            "infinite_margin_rate": 0.00043810239078733256,
+            "total_tokens": 15978,
             "n_sequences": 100,
             "fireworks_verification_mode": "on-demand",
             "vail": {
               "endpoint": "qwen3-coder-480b-novita-chat",
-              "divergence_ratio": 4.305096711108511,
-              "date": "2026-03-15",
+              "divergence_ratio": 5.725905284360424,
+              "date": "2026-03-26",
               "comparison_providers": [
                 "deepinfra",
                 "nebius",
@@ -1073,13 +1013,13 @@
           "provider": "siliconflow",
           "variant": "fp8",
           "metrics": {
-            "exact_match_rate": 0.9605015673981191,
-            "avg_prob": 0.9240602469672873,
-            "avg_margin": 0.03178490522139498,
-            "avg_logit_rank": 0.03962382445141066,
-            "avg_gumbel_rank": 0.03962382445141066,
-            "infinite_margin_rate": 0,
-            "total_tokens": 15950,
+            "exact_match_rate": 0.9609728857727865,
+            "avg_prob": 0.9247366576551385,
+            "avg_margin": 0.032957511612131625,
+            "avg_logit_rank": 0.039523484519451514,
+            "avg_gumbel_rank": 0.039523484519451514,
+            "infinite_margin_rate": 0.0000620462865297512,
+            "total_tokens": 16117,
             "n_sequences": 100,
             "fireworks_verification_mode": "on-demand"
           }
@@ -1089,19 +1029,19 @@
           "provider": "together",
           "variant": "fp8",
           "metrics": {
-            "exact_match_rate": 0.9705955334987593,
-            "avg_prob": 0.930397188748931,
-            "avg_margin": 0.017554188827853565,
-            "avg_logit_rank": 0.028722084367245656,
-            "avg_gumbel_rank": 0.028722084367245656,
-            "infinite_margin_rate": 0.00012406947890818859,
-            "total_tokens": 16120,
+            "exact_match_rate": 0.9711130521587222,
+            "avg_prob": 0.9305613452638029,
+            "avg_margin": 0.018854097559245726,
+            "avg_logit_rank": 0.028450212128774643,
+            "avg_gumbel_rank": 0.028450212128774643,
+            "infinite_margin_rate": 0.00006239081607187422,
+            "total_tokens": 16028,
             "n_sequences": 100,
             "fireworks_verification_mode": "on-demand",
             "vail": {
               "endpoint": "qwen3-coder-480b-together-chat",
-              "divergence_ratio": 0.32501391974080607,
-              "date": "2026-03-15",
+              "divergence_ratio": 0.4464459225813141,
+              "date": "2026-03-26",
               "comparison_providers": [
                 "deepinfra",
                 "nebius",
@@ -1112,17 +1052,33 @@
           }
         },
         {
+          "endpoint": "venice/fp8",
+          "provider": "venice",
+          "variant": "fp8",
+          "metrics": {
+            "exact_match_rate": 0.9210096697224665,
+            "avg_prob": 0.8998646533603433,
+            "avg_margin": 0.13241609367245424,
+            "avg_logit_rank": 0.09914605048348613,
+            "avg_gumbel_rank": 0.09914605048348613,
+            "infinite_margin_rate": 0.0011930177068943866,
+            "total_tokens": 15926,
+            "n_sequences": 100,
+            "fireworks_verification_mode": "on-demand"
+          }
+        },
+        {
           "endpoint": "wandb/bf16",
           "provider": "wandb",
           "variant": "bf16",
           "metrics": {
-            "exact_match_rate": 0.9693228346456693,
-            "avg_prob": 0.9303072598354788,
-            "avg_margin": 0.020626553272637797,
-            "avg_logit_rank": 0.029606299212598424,
-            "avg_gumbel_rank": 0.029606299212598424,
+            "exact_match_rate": 0.9705093833780161,
+            "avg_prob": 0.9290510095497709,
+            "avg_margin": 0.019789503030820384,
+            "avg_logit_rank": 0.02955296464866887,
+            "avg_gumbel_rank": 0.02955296464866887,
             "infinite_margin_rate": 0,
-            "total_tokens": 15875,
+            "total_tokens": 16039,
             "n_sequences": 100,
             "fireworks_verification_mode": "on-demand"
           }
@@ -1143,27 +1099,43 @@
       }
     },
     {
-      "id": "Qwen_Qwen3-32B_audit_results_20260315_040030",
-      "filename": "Qwen_Qwen3-32B_audit_results_20260315_040030.json",
-      "dataUrl": "../../../../data/Qwen_Qwen3-32B_audit_results_20260315_040030.json",
+      "id": "Qwen_Qwen3-32B_audit_results_20260327_022415",
+      "filename": "Qwen_Qwen3-32B_audit_results_20260327_022415.json",
+      "dataUrl": "../../../../data/Qwen_Qwen3-32B_audit_results_20260327_022415.json",
       "model": "Qwen/Qwen3-32B",
-      "timestamp": "2026-03-15T04:00:30Z",
+      "timestamp": "2026-03-27T02:24:15Z",
       "providerEntries": [
         {
           "endpoint": "alibaba",
           "provider": "alibaba",
           "variant": null,
           "metrics": {
-            "exact_match_rate": 0.8193907530539662,
-            "avg_prob": 0.7210138194297208,
-            "avg_margin": 0.1627399428787955,
-            "avg_logit_rank": 0.30302561723622495,
-            "avg_gumbel_rank": 0.30302561723622495,
-            "infinite_margin_rate": 0.016390907685170868,
-            "total_tokens": 19401,
+            "exact_match_rate": 0.8201561611251874,
+            "avg_prob": 0.7199931709746058,
+            "avg_margin": 0.1630517983966905,
+            "avg_logit_rank": 0.3019804540048606,
+            "avg_gumbel_rank": 0.3019804540048606,
+            "infinite_margin_rate": 0.016650292155747454,
+            "total_tokens": 19339,
             "n_sequences": 100,
             "fireworks_verification_mode": "on-demand",
             "serverless_error": "Error code: 404 - {'error': {'message': 'Model not found, inaccessible, and/or not deployed', 'param': 'model', 'code': 'NOT_FOUND', 'type': 'error'}, 'request_id': 'redacted'}"
+          }
+        },
+        {
+          "endpoint": "chutes/bf16",
+          "provider": "chutes",
+          "variant": "bf16",
+          "metrics": {
+            "exact_match_rate": 0.9645186136071887,
+            "avg_prob": 0.789712220796256,
+            "avg_margin": 0.008668623137204522,
+            "avg_logit_rank": 0.02988446726572529,
+            "avg_gumbel_rank": 0.02988446726572529,
+            "infinite_margin_rate": 0.0007702182284980744,
+            "total_tokens": 19475,
+            "n_sequences": 100,
+            "fireworks_verification_mode": "on-demand"
           }
         },
         {
@@ -1171,12 +1143,12 @@
           "provider": "deepinfra",
           "variant": "fp8",
           "metrics": {
-            "exact_match_rate": 0.9701454452666497,
-            "avg_prob": 0.792263353961437,
-            "avg_margin": 0.007463285878920216,
-            "avg_logit_rank": 0.02786425108446032,
-            "avg_gumbel_rank": 0.02786425108446032,
-            "infinite_margin_rate": 0.0008675682572084715,
+            "exact_match_rate": 0.9684613421791274,
+            "avg_prob": 0.7922371785379575,
+            "avg_margin": 0.008226815867594484,
+            "avg_logit_rank": 0.029599387598877265,
+            "avg_gumbel_rank": 0.029599387598877265,
+            "infinite_margin_rate": 0.0007655014034192396,
             "total_tokens": 19595,
             "n_sequences": 100,
             "fireworks_verification_mode": "on-demand"
@@ -1187,13 +1159,13 @@
           "provider": "groq",
           "variant": null,
           "metrics": {
-            "exact_match_rate": 0.9166328394560584,
-            "avg_prob": 0.7719285596525781,
-            "avg_margin": 0.03866231492870573,
-            "avg_logit_rank": 0.1304546377105744,
-            "avg_gumbel_rank": 0.1304546377105744,
-            "infinite_margin_rate": 0.010960016237061092,
-            "total_tokens": 19708,
+            "exact_match_rate": 0.9139092982011654,
+            "avg_prob": 0.7735731706045869,
+            "avg_margin": 0.03882190095197589,
+            "avg_logit_rank": 0.1306815302761591,
+            "avg_gumbel_rank": 0.1306815302761591,
+            "infinite_margin_rate": 0.010590321763364581,
+            "total_tokens": 19735,
             "n_sequences": 100,
             "fireworks_verification_mode": "on-demand"
           }
@@ -1203,13 +1175,13 @@
           "provider": "novita",
           "variant": "fp8",
           "metrics": {
-            "exact_match_rate": 0.9530748458755796,
-            "avg_prob": 0.7873851247289837,
-            "avg_margin": 0.019171152538982814,
-            "avg_logit_rank": 0.04809700922199012,
-            "avg_gumbel_rank": 0.04809700922199012,
-            "infinite_margin_rate": 0.000968054211035818,
-            "total_tokens": 19627,
+            "exact_match_rate": 0.9462289083146981,
+            "avg_prob": 0.7847165079029527,
+            "avg_margin": 0.02520094345733925,
+            "avg_logit_rank": 0.05737954868875788,
+            "avg_gumbel_rank": 0.05737954868875788,
+            "infinite_margin_rate": 0.000914820085383208,
+            "total_tokens": 19676,
             "n_sequences": 100,
             "fireworks_verification_mode": "on-demand"
           }
@@ -1219,13 +1191,13 @@
           "provider": "siliconflow",
           "variant": "fp8",
           "metrics": {
-            "exact_match_rate": 0.9118531735916391,
-            "avg_prob": 0.7716156590192098,
-            "avg_margin": 0.053329696889064894,
-            "avg_logit_rank": 0.1062962018863115,
-            "avg_gumbel_rank": 0.1062962018863115,
-            "infinite_margin_rate": 0.0017843487127198571,
-            "total_tokens": 19615,
+            "exact_match_rate": 0.9169901920719248,
+            "avg_prob": 0.7741269199093742,
+            "avg_margin": 0.05036503199477821,
+            "avg_logit_rank": 0.10390273804658766,
+            "avg_gumbel_rank": 0.10390273804658766,
+            "infinite_margin_rate": 0.0017879035553739272,
+            "total_tokens": 19576,
             "n_sequences": 100,
             "fireworks_verification_mode": "on-demand"
           }
@@ -1246,11 +1218,11 @@
       }
     },
     {
-      "id": "claude-opus-4-6_audit_results_20260315_143754",
-      "filename": "claude-opus-4-6_audit_results_20260315_143754.json",
-      "dataUrl": "../../../../data/claude-opus-4-6_audit_results_20260315_143754.json",
+      "id": "claude-opus-4-6_audit_results_20260327_024551",
+      "filename": "claude-opus-4-6_audit_results_20260327_024551.json",
+      "dataUrl": "../../../../data/claude-opus-4-6_audit_results_20260327_024551.json",
       "model": "claude-opus-4-6",
-      "timestamp": "2026-03-15T14:37:54Z",
+      "timestamp": "2026-03-27T02:45:51Z",
       "providerEntries": [
         {
           "endpoint": "anthropic",
@@ -1259,8 +1231,8 @@
           "metrics": {
             "vail": {
               "endpoint": "claude-opus-4.6-anthropic-messages",
-              "divergence_ratio": 0.5244173023337158,
-              "date": "2026-03-14",
+              "divergence_ratio": 0.36506768389356364,
+              "date": "2026-03-26",
               "comparison_providers": [
                 "azure",
                 "bedrock",
@@ -1276,8 +1248,8 @@
           "metrics": {
             "vail": {
               "endpoint": "claude-opus-4.6-azure-messages",
-              "divergence_ratio": 1.4755826976662845,
-              "date": "2026-03-14",
+              "divergence_ratio": 0.9450112977297509,
+              "date": "2026-03-26",
               "comparison_providers": [
                 "anthropic",
                 "bedrock",
@@ -1293,8 +1265,8 @@
           "metrics": {
             "vail": {
               "endpoint": "claude-opus-4.6-bedrock-chat",
-              "divergence_ratio": 0.2690757744015766,
-              "date": "2026-03-14",
+              "divergence_ratio": 1.054988702270249,
+              "date": "2026-03-26",
               "comparison_providers": [
                 "anthropic",
                 "azure",
@@ -1310,8 +1282,8 @@
           "metrics": {
             "vail": {
               "endpoint": "claude-opus-4.6-vertex-messages",
-              "divergence_ratio": 8.592531892792273,
-              "date": "2026-03-14",
+              "divergence_ratio": 7.5193760519847945,
+              "date": "2026-03-26",
               "comparison_providers": [
                 "anthropic",
                 "azure",
@@ -1326,11 +1298,11 @@
       }
     },
     {
-      "id": "claude-sonnet-4-5_audit_results_20260315_143754",
-      "filename": "claude-sonnet-4-5_audit_results_20260315_143754.json",
-      "dataUrl": "../../../../data/claude-sonnet-4-5_audit_results_20260315_143754.json",
+      "id": "claude-sonnet-4-5_audit_results_20260327_024551",
+      "filename": "claude-sonnet-4-5_audit_results_20260327_024551.json",
+      "dataUrl": "../../../../data/claude-sonnet-4-5_audit_results_20260327_024551.json",
       "model": "claude-sonnet-4-5",
-      "timestamp": "2026-03-15T14:37:54Z",
+      "timestamp": "2026-03-27T02:45:51Z",
       "providerEntries": [
         {
           "endpoint": "anthropic",
@@ -1339,8 +1311,8 @@
           "metrics": {
             "vail": {
               "endpoint": "claude-sonnet-4.5-anthropic-messages",
-              "divergence_ratio": 0.3514839365784426,
-              "date": "2026-03-14",
+              "divergence_ratio": 1.4092522717983276,
+              "date": "2026-03-26",
               "comparison_providers": [
                 "azure",
                 "bedrock",
@@ -1356,8 +1328,8 @@
           "metrics": {
             "vail": {
               "endpoint": "claude-sonnet-4.5-azure-messages",
-              "divergence_ratio": 0.8389603055907644,
-              "date": "2026-03-14",
+              "divergence_ratio": 0.520655084997061,
+              "date": "2026-03-26",
               "comparison_providers": [
                 "anthropic",
                 "bedrock",
@@ -1373,8 +1345,8 @@
           "metrics": {
             "vail": {
               "endpoint": "claude-sonnet-4.5-bedrock-chat",
-              "divergence_ratio": 3.0169501510836176,
-              "date": "2026-03-14",
+              "divergence_ratio": 0.5907477282016723,
+              "date": "2026-03-26",
               "comparison_providers": [
                 "anthropic",
                 "azure",
@@ -1390,8 +1362,8 @@
           "metrics": {
             "vail": {
               "endpoint": "claude-sonnet-4.5-vertex-messages",
-              "divergence_ratio": 1.1610396944092358,
-              "date": "2026-03-14",
+              "divergence_ratio": 4.764902843172539,
+              "date": "2026-03-26",
               "comparison_providers": [
                 "anthropic",
                 "azure",
@@ -1406,11 +1378,22 @@
       }
     },
     {
-      "id": "deepseek-v3-2_audit_results_20260315_143754",
-      "filename": "deepseek-v3-2_audit_results_20260315_143754.json",
-      "dataUrl": "../../../../data/deepseek-v3-2_audit_results_20260315_143754.json",
+      "id": "claude-sonnet-4-6_audit_results_20260327_024551",
+      "filename": "claude-sonnet-4-6_audit_results_20260327_024551.json",
+      "dataUrl": "../../../../data/claude-sonnet-4-6_audit_results_20260327_024551.json",
+      "model": "claude-sonnet-4-6",
+      "timestamp": "2026-03-27T02:45:51Z",
+      "providerEntries": [],
+      "parameters": {
+        "vail_only": true
+      }
+    },
+    {
+      "id": "deepseek-v3-2_audit_results_20260327_024551",
+      "filename": "deepseek-v3-2_audit_results_20260327_024551.json",
+      "dataUrl": "../../../../data/deepseek-v3-2_audit_results_20260327_024551.json",
       "model": "deepseek-v3-2",
-      "timestamp": "2026-03-15T14:37:54Z",
+      "timestamp": "2026-03-27T02:45:51Z",
       "providerEntries": [
         {
           "endpoint": "azure",
@@ -1419,8 +1402,8 @@
           "metrics": {
             "vail": {
               "endpoint": "deepseek-v3.2-azure-chat",
-              "divergence_ratio": 1.4081752185351062,
-              "date": "2026-03-14",
+              "divergence_ratio": 0.8568847471350339,
+              "date": "2026-03-26",
               "comparison_providers": [
                 "bedrock",
                 "deepinfra",
@@ -1439,8 +1422,8 @@
           "metrics": {
             "vail": {
               "endpoint": "deepseek-v3.2-bedrock-chat",
-              "divergence_ratio": 0.7570857235481884,
-              "date": "2026-03-14",
+              "divergence_ratio": 0.8319727311427029,
+              "date": "2026-03-26",
               "comparison_providers": [
                 "azure",
                 "deepinfra",
@@ -1459,8 +1442,8 @@
           "metrics": {
             "vail": {
               "endpoint": "deepseek-v3.2-deepinfra-chat",
-              "divergence_ratio": 1,
-              "date": "2026-03-14",
+              "divergence_ratio": 1.1044509794389235,
+              "date": "2026-03-26",
               "comparison_providers": [
                 "azure",
                 "bedrock",
@@ -1479,8 +1462,8 @@
           "metrics": {
             "vail": {
               "endpoint": "deepseek-v3.2-fireworks-chat",
-              "divergence_ratio": 3.5098569703579137,
-              "date": "2026-03-14",
+              "divergence_ratio": 6.675130653459159,
+              "date": "2026-03-26",
               "comparison_providers": [
                 "azure",
                 "bedrock",
@@ -1499,8 +1482,8 @@
           "metrics": {
             "vail": {
               "endpoint": "deepseek-v3.2-novita-chat",
-              "divergence_ratio": 2.6679599866386337,
-              "date": "2026-03-14",
+              "divergence_ratio": 3.513494608365073,
+              "date": "2026-03-26",
               "comparison_providers": [
                 "azure",
                 "bedrock",
@@ -1519,8 +1502,8 @@
           "metrics": {
             "vail": {
               "endpoint": "deepseek-v3.2-parasail-chat",
-              "divergence_ratio": 0.6420229168270568,
-              "date": "2026-03-14",
+              "divergence_ratio": 0.6202951140740326,
+              "date": "2026-03-26",
               "comparison_providers": [
                 "azure",
                 "bedrock",
@@ -1539,8 +1522,8 @@
           "metrics": {
             "vail": {
               "endpoint": "deepseek-v3.2-vertex-chat",
-              "divergence_ratio": 0.7663302015105274,
-              "date": "2026-03-14",
+              "divergence_ratio": 1,
+              "date": "2026-03-26",
               "comparison_providers": [
                 "azure",
                 "bedrock",
@@ -1558,11 +1541,33 @@
       }
     },
     {
-      "id": "glm5_audit_results_20260315_143754",
-      "filename": "glm5_audit_results_20260315_143754.json",
-      "dataUrl": "../../../../data/glm5_audit_results_20260315_143754.json",
+      "id": "gemini-3-1-flash_audit_results_20260327_024551",
+      "filename": "gemini-3-1-flash_audit_results_20260327_024551.json",
+      "dataUrl": "../../../../data/gemini-3-1-flash_audit_results_20260327_024551.json",
+      "model": "gemini-3-1-flash",
+      "timestamp": "2026-03-27T02:45:51Z",
+      "providerEntries": [],
+      "parameters": {
+        "vail_only": true
+      }
+    },
+    {
+      "id": "gemini-3-1-pro_audit_results_20260327_024551",
+      "filename": "gemini-3-1-pro_audit_results_20260327_024551.json",
+      "dataUrl": "../../../../data/gemini-3-1-pro_audit_results_20260327_024551.json",
+      "model": "gemini-3-1-pro",
+      "timestamp": "2026-03-27T02:45:51Z",
+      "providerEntries": [],
+      "parameters": {
+        "vail_only": true
+      }
+    },
+    {
+      "id": "glm5_audit_results_20260327_024551",
+      "filename": "glm5_audit_results_20260327_024551.json",
+      "dataUrl": "../../../../data/glm5_audit_results_20260327_024551.json",
       "model": "glm5",
-      "timestamp": "2026-03-15T14:37:54Z",
+      "timestamp": "2026-03-27T02:45:51Z",
       "providerEntries": [
         {
           "endpoint": "baseten",
@@ -1571,14 +1576,13 @@
           "metrics": {
             "vail": {
               "endpoint": "glm5-baseten-chat",
-              "divergence_ratio": 11.525604998620363,
-              "date": "2026-03-14",
+              "divergence_ratio": 6.623881317294781,
+              "date": "2026-03-26",
               "comparison_providers": [
                 "deepinfra",
                 "fireworks",
                 "novita",
                 "openrouter",
-                "parasail",
                 "together"
               ]
             }
@@ -1591,14 +1595,13 @@
           "metrics": {
             "vail": {
               "endpoint": "glm5-deepinfra-chat",
-              "divergence_ratio": 0.5811268035543489,
-              "date": "2026-03-14",
+              "divergence_ratio": 0.6642073708867721,
+              "date": "2026-03-26",
               "comparison_providers": [
                 "baseten",
                 "fireworks",
                 "novita",
                 "openrouter",
-                "parasail",
                 "together"
               ]
             }
@@ -1611,14 +1614,13 @@
           "metrics": {
             "vail": {
               "endpoint": "glm5-fireworks-chat",
-              "divergence_ratio": 1.8028353957287964,
-              "date": "2026-03-14",
+              "divergence_ratio": 1.0786337206649936,
+              "date": "2026-03-26",
               "comparison_providers": [
                 "baseten",
                 "deepinfra",
                 "novita",
                 "openrouter",
-                "parasail",
                 "together"
               ]
             }
@@ -1631,14 +1633,13 @@
           "metrics": {
             "vail": {
               "endpoint": "glm5-novita-chat",
-              "divergence_ratio": 1.19756167936373,
-              "date": "2026-03-14",
+              "divergence_ratio": 1.2583397029310448,
+              "date": "2026-03-26",
               "comparison_providers": [
                 "baseten",
                 "deepinfra",
                 "fireworks",
                 "openrouter",
-                "parasail",
                 "together"
               ]
             }
@@ -1651,14 +1652,13 @@
           "metrics": {
             "vail": {
               "endpoint": "glm5-openrouter-chat",
-              "divergence_ratio": 0.4689401653088905,
-              "date": "2026-03-14",
+              "divergence_ratio": 0.4595100245414008,
+              "date": "2026-03-26",
               "comparison_providers": [
                 "baseten",
                 "deepinfra",
                 "fireworks",
                 "novita",
-                "parasail",
                 "together"
               ]
             }
@@ -1671,8 +1671,8 @@
           "metrics": {
             "vail": {
               "endpoint": "glm5-parasail-chat",
-              "divergence_ratio": 0.5524313263879163,
-              "date": "2026-03-14",
+              "divergence_ratio": 1.311191081493833,
+              "date": "2026-03-25",
               "comparison_providers": [
                 "baseten",
                 "deepinfra",
@@ -1691,15 +1691,35 @@
           "metrics": {
             "vail": {
               "endpoint": "glm5-together-chat",
-              "divergence_ratio": 1,
-              "date": "2026-03-14",
+              "divergence_ratio": 0.9213662793350064,
+              "date": "2026-03-26",
+              "comparison_providers": [
+                "baseten",
+                "deepinfra",
+                "fireworks",
+                "novita",
+                "openrouter"
+              ]
+            }
+          }
+        },
+        {
+          "endpoint": "vertex",
+          "provider": "vertex",
+          "variant": null,
+          "metrics": {
+            "vail": {
+              "endpoint": "glm5-vertex-chat",
+              "divergence_ratio": 0.9538817933848462,
+              "date": "2026-03-23",
               "comparison_providers": [
                 "baseten",
                 "deepinfra",
                 "fireworks",
                 "novita",
                 "openrouter",
-                "parasail"
+                "parasail",
+                "together"
               ]
             }
           }
@@ -1710,11 +1730,55 @@
       }
     },
     {
-      "id": "kimi-k2-5_audit_results_20260315_143754",
-      "filename": "kimi-k2-5_audit_results_20260315_143754.json",
-      "dataUrl": "../../../../data/kimi-k2-5_audit_results_20260315_143754.json",
+      "id": "gpt-5-2-codex_audit_results_20260327_024551",
+      "filename": "gpt-5-2-codex_audit_results_20260327_024551.json",
+      "dataUrl": "../../../../data/gpt-5-2-codex_audit_results_20260327_024551.json",
+      "model": "gpt-5-2-codex",
+      "timestamp": "2026-03-27T02:45:51Z",
+      "providerEntries": [],
+      "parameters": {
+        "vail_only": true
+      }
+    },
+    {
+      "id": "gpt-5-2_audit_results_20260327_024551",
+      "filename": "gpt-5-2_audit_results_20260327_024551.json",
+      "dataUrl": "../../../../data/gpt-5-2_audit_results_20260327_024551.json",
+      "model": "gpt-5-2",
+      "timestamp": "2026-03-27T02:45:51Z",
+      "providerEntries": [],
+      "parameters": {
+        "vail_only": true
+      }
+    },
+    {
+      "id": "gpt-5-4_audit_results_20260327_024551",
+      "filename": "gpt-5-4_audit_results_20260327_024551.json",
+      "dataUrl": "../../../../data/gpt-5-4_audit_results_20260327_024551.json",
+      "model": "gpt-5-4",
+      "timestamp": "2026-03-27T02:45:51Z",
+      "providerEntries": [],
+      "parameters": {
+        "vail_only": true
+      }
+    },
+    {
+      "id": "grok-code-fast-1_audit_results_20260327_024551",
+      "filename": "grok-code-fast-1_audit_results_20260327_024551.json",
+      "dataUrl": "../../../../data/grok-code-fast-1_audit_results_20260327_024551.json",
+      "model": "grok-code-fast-1",
+      "timestamp": "2026-03-27T02:45:51Z",
+      "providerEntries": [],
+      "parameters": {
+        "vail_only": true
+      }
+    },
+    {
+      "id": "kimi-k2-5_audit_results_20260327_024551",
+      "filename": "kimi-k2-5_audit_results_20260327_024551.json",
+      "dataUrl": "../../../../data/kimi-k2-5_audit_results_20260327_024551.json",
       "model": "kimi-k2-5",
-      "timestamp": "2026-03-15T14:37:54Z",
+      "timestamp": "2026-03-27T02:45:51Z",
       "providerEntries": [
         {
           "endpoint": "baseten",
@@ -1723,14 +1787,13 @@
           "metrics": {
             "vail": {
               "endpoint": "kimi-k2.5-baseten-chat",
-              "divergence_ratio": 6.210532150097045,
-              "date": "2026-03-14",
+              "divergence_ratio": 3.20480884905002,
+              "date": "2026-03-26",
               "comparison_providers": [
                 "bedrock",
                 "deepinfra",
                 "fireworks",
                 "novita",
-                "parasail",
                 "together"
               ]
             }
@@ -1743,14 +1806,13 @@
           "metrics": {
             "vail": {
               "endpoint": "kimi-k2.5-bedrock-chat",
-              "divergence_ratio": 4.392865023778845,
-              "date": "2026-03-14",
+              "divergence_ratio": 3.325084533044289,
+              "date": "2026-03-26",
               "comparison_providers": [
                 "baseten",
                 "deepinfra",
                 "fireworks",
                 "novita",
-                "parasail",
                 "together"
               ]
             }
@@ -1763,14 +1825,13 @@
           "metrics": {
             "vail": {
               "endpoint": "kimi-k2.5-deepinfra-chat",
-              "divergence_ratio": 1.0355686298212294,
-              "date": "2026-03-14",
+              "divergence_ratio": 0.9236448504433201,
+              "date": "2026-03-26",
               "comparison_providers": [
                 "baseten",
                 "bedrock",
                 "fireworks",
                 "novita",
-                "parasail",
                 "together"
               ]
             }
@@ -1783,14 +1844,13 @@
           "metrics": {
             "vail": {
               "endpoint": "kimi-k2.5-fireworks-chat",
-              "divergence_ratio": 0.8927440944560175,
-              "date": "2026-03-14",
+              "divergence_ratio": 0.8971148883497534,
+              "date": "2026-03-26",
               "comparison_providers": [
                 "baseten",
                 "bedrock",
                 "deepinfra",
                 "novita",
-                "parasail",
                 "together"
               ]
             }
@@ -1803,14 +1863,13 @@
           "metrics": {
             "vail": {
               "endpoint": "kimi-k2.5-novita-chat",
-              "divergence_ratio": 0.8071375463468357,
-              "date": "2026-03-14",
+              "divergence_ratio": 0.9066466523049646,
+              "date": "2026-03-26",
               "comparison_providers": [
                 "baseten",
                 "bedrock",
                 "deepinfra",
                 "fireworks",
-                "parasail",
                 "together"
               ]
             }
@@ -1823,8 +1882,8 @@
           "metrics": {
             "vail": {
               "endpoint": "kimi-k2.5-parasail-chat",
-              "divergence_ratio": 0.8570773161305006,
-              "date": "2026-03-14",
+              "divergence_ratio": 0.9755460566908934,
+              "date": "2026-03-24",
               "comparison_providers": [
                 "baseten",
                 "bedrock",
@@ -1843,15 +1902,14 @@
           "metrics": {
             "vail": {
               "endpoint": "kimi-k2.5-together-chat",
-              "divergence_ratio": 1,
-              "date": "2026-03-14",
+              "divergence_ratio": 1.07635514955668,
+              "date": "2026-03-26",
               "comparison_providers": [
                 "baseten",
                 "bedrock",
                 "deepinfra",
                 "fireworks",
-                "novita",
-                "parasail"
+                "novita"
               ]
             }
           }
@@ -1862,11 +1920,11 @@
       }
     },
     {
-      "id": "minimax-m2-5_audit_results_20260315_143754",
-      "filename": "minimax-m2-5_audit_results_20260315_143754.json",
-      "dataUrl": "../../../../data/minimax-m2-5_audit_results_20260315_143754.json",
+      "id": "minimax-m2-5_audit_results_20260327_024551",
+      "filename": "minimax-m2-5_audit_results_20260327_024551.json",
+      "dataUrl": "../../../../data/minimax-m2-5_audit_results_20260327_024551.json",
       "model": "minimax-m2-5",
-      "timestamp": "2026-03-15T14:37:54Z",
+      "timestamp": "2026-03-27T02:45:51Z",
       "providerEntries": [
         {
           "endpoint": "baseten",
@@ -1875,8 +1933,8 @@
           "metrics": {
             "vail": {
               "endpoint": "minimax-m2.5-baseten-chat",
-              "divergence_ratio": 2.9862512642805674,
-              "date": "2026-03-14",
+              "divergence_ratio": 0.43360140042211337,
+              "date": "2026-03-26",
               "comparison_providers": [
                 "deepinfra",
                 "fireworks",
@@ -1894,8 +1952,8 @@
           "metrics": {
             "vail": {
               "endpoint": "minimax-m2.5-deepinfra-chat",
-              "divergence_ratio": 0.5034117779403287,
-              "date": "2026-03-14",
+              "divergence_ratio": 1.9621954709888965,
+              "date": "2026-03-26",
               "comparison_providers": [
                 "baseten",
                 "fireworks",
@@ -1913,8 +1971,8 @@
           "metrics": {
             "vail": {
               "endpoint": "minimax-m2.5-fireworks-chat",
-              "divergence_ratio": 1.5929441666866713,
-              "date": "2026-03-14",
+              "divergence_ratio": 1.637470995435841,
+              "date": "2026-03-26",
               "comparison_providers": [
                 "baseten",
                 "deepinfra",
@@ -1932,8 +1990,8 @@
           "metrics": {
             "vail": {
               "endpoint": "minimax-m2.5-novita-chat",
-              "divergence_ratio": 1.3367207200812998,
-              "date": "2026-03-14",
+              "divergence_ratio": 1.497154374703079,
+              "date": "2026-03-26",
               "comparison_providers": [
                 "baseten",
                 "deepinfra",
@@ -1951,8 +2009,8 @@
           "metrics": {
             "vail": {
               "endpoint": "minimax-m2.5-parasail-chat",
-              "divergence_ratio": 0.6321872214820172,
-              "date": "2026-03-14",
+              "divergence_ratio": 0.4611913345496961,
+              "date": "2026-03-26",
               "comparison_providers": [
                 "baseten",
                 "deepinfra",
@@ -1970,8 +2028,8 @@
           "metrics": {
             "vail": {
               "endpoint": "minimax-m2.5-together-chat",
-              "divergence_ratio": 0.6632792799187001,
-              "date": "2026-03-14",
+              "divergence_ratio": 0.502845625296921,
+              "date": "2026-03-26",
               "comparison_providers": [
                 "baseten",
                 "deepinfra",
@@ -1983,6 +2041,28 @@
           }
         }
       ],
+      "parameters": {
+        "vail_only": true
+      }
+    },
+    {
+      "id": "mistral-large_audit_results_20260327_024551",
+      "filename": "mistral-large_audit_results_20260327_024551.json",
+      "dataUrl": "../../../../data/mistral-large_audit_results_20260327_024551.json",
+      "model": "mistral-large",
+      "timestamp": "2026-03-27T02:45:51Z",
+      "providerEntries": [],
+      "parameters": {
+        "vail_only": true
+      }
+    },
+    {
+      "id": "qwen3-5-397b_audit_results_20260327_024551",
+      "filename": "qwen3-5-397b_audit_results_20260327_024551.json",
+      "dataUrl": "../../../../data/qwen3-5-397b_audit_results_20260327_024551.json",
+      "model": "qwen3-5-397b",
+      "timestamp": "2026-03-27T02:45:51Z",
+      "providerEntries": [],
       "parameters": {
         "vail_only": true
       }
